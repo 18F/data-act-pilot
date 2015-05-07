@@ -3,7 +3,7 @@
 def getNonFederalFundingAmount(record):
     #prism fields
     amount = 0
-    fields = ['GRANTHEADER.SBA1222PERSONALSERVICENF', 'GRANTHEADER.SBA1222FRINGEBENEFITSNF', 'GRANTHEADER.SBA1222CONSULTANTSNF', 'GRANTHEADER.SBA1222TRAVELNF', 'GRANTHEADER.SBA1222EQUIPMENTNF', 'GRANTHEADER.SBA1222SUPPLIESNF', 'GRANTHEADER.SBA1222CONTRACTUALNF', 'GRANTHEADER.SBA1222OTHERNF', 'GRANTHEADER.SBA1222INDCOSTNF', 'GRANTHEADER.SBA1222OTHERCOSTNF']
+    fields = ['grantheader.sba1222personalservicenf', 'grantheader.sba1222fringebenefitsnf', 'grantheader.sba1222consultantsnf', 'grantheader.sba1222travelnf', 'grantheader.sba1222equipmentnf', 'grantheader.sba1222suppliesnf', 'grantheader.sba1222contractualnf', 'grantheader.sba1222othernf', 'grantheader.sba1222indcostnf', 'grantheader.sba1222othercostnf']
 
     for f in fields: amount += record[f]
     return f
@@ -12,7 +12,7 @@ def getFundingOfficeName(record):
     return record['itemacct.acctfield3'] + record['addr.name']
 
 def getObligatedAmount(record):
-    return record['PO_LINES_ALL.QUANTITY'] * record['PO_LINES_ALL.UNIT_PRICE']
+    return record['po_lines_all.quantity'] * record['po_lines_all.unit_price']
 
 schema_map = {
 
@@ -40,14 +40,14 @@ schema_map = {
 
     #fields from award message
     'award.fundingActionObligation.amount': getObligatedAmount, #'header.obligatedamt', #prism, is table name correct?
-    'award.fundignActionObligation.currency': 'USD', #assuming all SBA is in US Dollars
+    'award.fundingActionObligation.currency': 'USD', #assuming all SBA is in US Dollars
     'award.nonFederalFundingAmount.amount': getObligatedAmount, #getNonFederalFundingAmount,  #changed in subsequent SBA mapping
     'award.nonFederalFundingAmount.currency': 'USD',
     'award.currentTotalFundingObligationAmount.amount': getObligatedAmount, #'header.obligatedamt',
     'award.currentTotalFundingObligationAmount.currency': 'USD',
     'award.currentTotalValue.amount': getObligatedAmount, #'header.amount',
     'award.currentTotalValue.currency': 'USD',
-    'award.potentialTotalValue.amount': getObligatedAmount, 'header.amount',
+    'award.potentialTotalValue.amount': getObligatedAmount, #'header.amount',
     'award.potentialTotalValue.currency': 'USD',
     'award.typeOfTransactionCode': 'po_distributions_all.attribute_category', #'header.awardtype', #MISSING from proto files, or named differently (line 21 in sba mapping excel)
     'award.fundingAgency.agencyName': 'Small Business Administration',
