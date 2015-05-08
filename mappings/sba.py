@@ -17,26 +17,26 @@ def getObligatedAmount(record):
 schema_map = {
 
     #fields from awardee message
-    'award.awardee.businessName': 'docvendor.Name',
-    'award.awardee.DUNSNumber': 'docvendor.duns',
-    'award.awardee.DUNSPlusFour': 'docvendor.DUNSPLUS4',
-    'award.awardee.parentDUNSNumber': None,
-    'award.awardee.parentBusinessName': None,
-    'award.awardee.businessCongressionalDistrict': 'grantheader.sba1222congdistno',
-    'award.awardee.businessType': None,
-    'award.awardee.highlyCompensatedOfficer': None,
-    'award.awardee.businessCongressionalDistrict': None,
+    'award.awardees[0].businessName': 'docvendor.Name',
+    'award.awardees[0].DUNSNumber': 'docvendor.duns',
+    'award.awardees[0].DUNSPlusFour': 'docvendor.DUNSPLUS4',
+    'award.awardees[0].parentDUNSNumber': None,
+    'award.awardees[0].parentBusinessName': None,
+    'award.awardees[0].businessCongressionalDistrict': 'grantheader.sba1222congdistno',
+    'award.awardees[0].businessType': None,
+    'award.awardees[0].highlyCompensatedOfficer': None,
+    'award.awardees[0].businessCongressionalDistrict': None,
 
     #fields from address message
-    'award.awardee.businessAddress.street1': 'docvendor.address1',
-    'award.awardee.businessAddress.street2': 'ap_supplier_sites.address2',
-    'award.awardee.businessAddress.street3': 'ap_supplier_sites.address3',
-    'award.awardee.businessAddress.city': 'ap_supplier_sites.city',
-    'award.awardee.businessAddress.state': 'ap_supplier_sites.state',
-    'award.awardee.businessAddress.postalCode': 'ap_supplier_sites.zip',
-    'award.awardee.businessAddress.USZopCodePlusFour': 'ap_supplier_sites.zip',
-    'award.awardee.businessAddress.countryName': 'grantheader.recipientcountryname', #was changed to NA in subsequent SBA mapping
-    'award.awardee.businessAddress.countryCode': 'grantheader.recipientcountrycode', #was changed to NA in subsequent SBA mapping
+    'award.awardees[0].businessAddress.street1': 'docvendor.address1',
+    'award.awardees[0].businessAddress.street2': 'ap_supplier_sites.address2',
+    'award.awardees[0].businessAddress.street3': 'ap_supplier_sites.address3',
+    'award.awardees[0].businessAddress.city': 'ap_supplier_sites.city',
+    'award.awardees[0].businessAddress.state': 'ap_supplier_sites.state',
+    'award.awardees[0].businessAddress.postalCode': 'ap_supplier_sites.zip',
+    'award.awardees[0].businessAddress.USZopCodePlusFour': 'ap_supplier_sites.zip',
+    'award.awardees[0].businessAddress.countryName': 'grantheader.recipientcountryname', #was changed to NA in subsequent SBA mapping
+    'award.awardees[0].businessAddress.countryCode': 'grantheader.recipientcountrycode', #was changed to NA in subsequent SBA mapping
 
     #fields from award message
     'award.fundingActionObligation.amount': getObligatedAmount, #'header.obligatedamt', #prism, is table name correct?
@@ -61,7 +61,6 @@ schema_map = {
     'award.CFDAProgramNumber': 'header.cfdanumber', #prism, was changed to NA in subsequent mapping
 
     'award.CFDAProgramTitle': None, #in their main CFDA table, not in the data they sent us. We could reference using the program number though, was changed to NA in subsequent mapping
-
     
     #on AgencyTransaction message
     'treasuryAccountSymbol': None, #jaams

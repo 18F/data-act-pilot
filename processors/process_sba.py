@@ -16,9 +16,9 @@ def open_output_file(outfile=None):
 def process_record(record):
     
     schema_record = Action()
-    schema_record.award = Award()
-    schema_record.award.awardee = Awardee()
-    schema_record.award.awardee.businessAddress = Address()
+    aw = schema_record.award.awardees.add() 
+    schema_record.award.typeOfTransactionCode = "GRANT"
+    schema_record.award.awardees[0].businessAddress.street1 = "1175 HERNDON PARKWAY"
 
     for schema_field, sba_field in schema_map.items():
         try:
@@ -34,9 +34,8 @@ def process_record(record):
             value = None
 
         if value:
-            #eval('obj = schema_record.{0}'.format(schema_field))
-            #obj = value
-            schema_record.award.awardees[0].businessAddress.street1 = 'bla'
+            exec('schema_record.{0} = "{1}"'.format(schema_field, value))
+
     return schema_record
 
 def run():
@@ -52,7 +51,7 @@ def run():
     for record in data: 
         #turn CSV row or whole csv into dict
         new_rec = process_record(record)
-        output.write(new_rec.SerializeToString())
+        output.write(new_rec.SerializeToString() + '\n\n')
 
    # record validation errors
    # write out to file for uploading (compiled instances of protobuf messages)
