@@ -10,7 +10,7 @@ def open_input_file(filename):
 
 def open_output_file(outfile=None):
     if not outfile:
-        outfile = 'sbadata.txt'
+        outfile = 'data/sbadata.txt'
     return open(outfile, 'w')
 
 def process_record(record):
@@ -34,7 +34,10 @@ def process_record(record):
             value = None
 
         if value:
-            exec('schema_record.{0} = "{1}"'.format(schema_field, value))
+            if type(value) == type('string'):
+                exec('schema_record.{0} = "{1}"'.format(schema_field, value))
+            else:
+                exec('schema_record.{0} = {1}'.format(schema_field, value))
 
     return schema_record
 
@@ -46,13 +49,13 @@ def run():
 
     args = parser.parse_args()
     data = open_input_file(args.infile)
-    output = open_output_file()
+    output = open_output_file(args.outfile)
 
     for record in data: 
         #turn CSV row or whole csv into dict
         new_rec = process_record(record)
-        output.write(new_rec.SerializeToString() + '\n\n')
-
+        #output.write(new_rec.SerializeToString() + '\n')
+        output.write("{0}\n".format(new_rec))
    # record validation errors
    # write out to file for uploading (compiled instances of protobuf messages)
 

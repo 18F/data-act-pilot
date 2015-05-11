@@ -5,14 +5,14 @@ def getNonFederalFundingAmount(record):
     amount = 0
     fields = ['grantheader.sba1222personalservicenf', 'grantheader.sba1222fringebenefitsnf', 'grantheader.sba1222consultantsnf', 'grantheader.sba1222travelnf', 'grantheader.sba1222equipmentnf', 'grantheader.sba1222suppliesnf', 'grantheader.sba1222contractualnf', 'grantheader.sba1222othernf', 'grantheader.sba1222indcostnf', 'grantheader.sba1222othercostnf']
 
-    for f in fields: amount += record[f]
+    for f in fields: amount += float(record[f])
     return f
 
 def getFundingOfficeName(record):
     return record['itemacct.acctfield3'] + record['addr.name']
 
 def getObligatedAmount(record):
-    return record['po_lines_all.quantity'] * record['po_lines_all.unit_price']
+    return float(record['po_lines_all.quantity']) * float(record['po_lines_all.unit_price'])
 
 schema_map = {
 

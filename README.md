@@ -17,3 +17,13 @@ For reference, the data accessed in the code are structured as follows:
 * `data/jaams/sql`: sql for jaams table creation/joins
 * `data/prism`: text file extracts from Prism
 * `data/prism/sql`: prism create table scripts
+
+
+### Running the Processor 
+
+The processor converts raw SBA data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`. 
+
+Example usage:
+
+`python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb`
+
