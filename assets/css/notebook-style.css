@@ -1,0 +1,78 @@
+/* Adapted from https://github.com/ketch/teaching-numerics-with-notebooks */
+<style>
+
+#notebook_panel { /* main background */
+    background: #888;
+    color: #f6f6f6;
+}
+
+div.cell { 
+    width: 100%;
+}
+
+div #notebook { /* centre the content */
+    background: #fff; /* white background for content */
+    width: 80%;
+    margin: auto;
+    padding-left: 1em;
+}
+
+div #notebook-container {
+    width: 80%;
+}
+
+#notebook li { /* More space between bullet points */
+margin-top:0.6em;
+}
+
+/* draw border around running cells */
+div.cell.border-box-sizing.code_cell.running {
+    border: 3px solid #111;
+}
+
+/* Put a solid color box around each cell and its output, visually linking them together */
+div.cell.code_cell {
+    background-color: rgba(171,165,131,0.3); 
+    border-radius: 10px; /* rounded borders */
+    padding: 1em;
+    margin-top: 1em;
+}
+
+div.text_cell_render{
+    font-family: 'Cambria,Georgia,"Times New Roman"';
+    line-height: 135%;
+    font-size: 130%;
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* Formatting for header cells */
+.text_cell_render h1,h2,h3,h4,h5,h6 {
+    font-family: 'freight-sans-pro', 'Myriad Pro', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Helvetica, Arial;
+    font-weight: 400;
+    /*margin-bottom: 0.1em;*/
+    margin-top: 0.2em;
+    display: block;
+}	
+
+.text_cell_render h1 {
+    font-size: 32pt;
+    line-height: 100%;
+    color: rgb(12,85,97);
+}
+
+.text_cell_render h2 {
+    font-weight: 700;
+    font-size: 24pt;
+    line-height: 100%;
+    color: #364447;
+    display: block;
+}	
+
+.text_cell_render h3 {
+    font-style: italic;
+    color: #364447;
+}
+
+</style>
