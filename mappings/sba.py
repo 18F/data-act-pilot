@@ -10,6 +10,11 @@ def getObligatedAmount(record):
 
     return float(record['po_lines_all.quantity']) * float(record['po_lines_all.unit_price'])
 
+def getOutlayAmount(record):
+    """po_distributions_all.quantity_billed"""
+    return float(record['po_distributions_all.quantity_billed'])
+
+
 schema_map = {
 
     #fields from awardee message
@@ -76,6 +81,8 @@ schema_map = {
     'transaction.treasuryAccountSymbol.subAccount': 'gl_code_combinations.code_combination_id',
     'transaction.objectClass': 'gl_code_combinations.segment5',
     'transaction.programActivity': 'gl_code_combinations.segment4', 
+    'transaction.outlays[0].amount': getOutlayAmount,
+    'transaction.outlays[0].currency': 'USD',
 
     #on Action
     'recordType': 'faadsciv.recordtype',
