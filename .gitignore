@@ -1,4 +1,7 @@
+*.swp
+*.swo
 .DS_Store
 data/
 *.pyc
 .ipynb_checkpoints/
+*_pb2.py
