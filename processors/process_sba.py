@@ -55,7 +55,7 @@ def run():
         #turn CSV row or whole csv into dict
         new_rec = process_record(record)
         #output.write(new_rec.SerializeToString() + '\n')
-        output.write("{0}\n".format(new_rec))
+        output.write("{0}\n\n".format(new_rec))
    # record validation errors
    # write out to file for uploading (compiled instances of protobuf messages)
 

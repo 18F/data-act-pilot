@@ -12,6 +12,7 @@ message AgencyTransaction {
     optional string objectClass = 2;
     repeated Amount outlays = 3;
     optional TreasuryAccountSymbol treasuryAccountSymbol = 4;
+    optional string programActivity = 5;
 }
 
 message Amount {
@@ -54,7 +55,7 @@ message Agency {
 message Award {
     optional string id = 1;
     optional string awardDescription = 2;
-    optional int32 awardNumber = 3;
+    optional string awardNumber = 3;
     optional Agency fundingAgency = 4;
     optional Agency awardingAgency = 5;
     optional string parentAward = 6; // Should point to the ID of another award
@@ -98,6 +99,7 @@ message Awardee {
     optional Address businessAddress = 8;
     optional string businessCongressionalDistrict = 9;
     repeated HighlyCompensatedOfficer highlyCompensatedOfficers = 10;
+    optional string recipientType = 11;
 }
 
 message Address {
@@ -105,10 +107,11 @@ message Address {
     optional string street2 = 2;
     optional string street3 = 3;
     optional string city = 4;
-    optional string countryName = 5;
-    optional string countryCode = 6;
-    optional string postalCode = 7;
-    optional string USZipCodePlusFour = 8;
+    optional string state = 5;
+    optional string countryName = 6;
+    optional string countryCode = 7;
+    optional string postalCode = 8;
+    optional string USZipCodePlusFour = 9;
 }
 
 message HighlyCompensatedOfficer {
