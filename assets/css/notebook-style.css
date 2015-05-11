@@ -12,14 +12,16 @@ div.cell {
 
 div #notebook { /* centre the content */
     background: #fff; /* white background for content */
-    width: 80%;
-    margin: auto;
+    /*width: 80%;*/
+    /*margin: auto;*/
     padding-left: 1em;
 }
 
-div #notebook-container {
+/*
+#div #notebook-container {
     width: 80%;
 }
+*/
 
 #notebook li { /* More space between bullet points */
 margin-top:0.6em;
@@ -42,7 +44,7 @@ div.text_cell_render{
     font-family: 'Cambria,Georgia,"Times New Roman"';
     line-height: 135%;
     font-size: 130%;
-    width:700px;
+    /*width:700px;*/
     margin-left:auto;
     margin-right:auto;
 }
