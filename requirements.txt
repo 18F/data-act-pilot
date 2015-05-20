@@ -1,3 +1,6 @@
 pandas==0.16.0
-ipython[noteboook]
+ipython[notebook]
 protobuf
+requests
+beautifulsoup4
+unidecode
