@@ -4,3 +4,6 @@ protobuf
 requests
 beautifulsoup4
 unidecode
+pyopenssl
+ndg-httpsclient
+pyasn1
