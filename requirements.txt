@@ -1,9 +1,9 @@
+pyopenssl
 pandas==0.16.0
 ipython[notebook]
 protobuf
 requests
 beautifulsoup4
 unidecode
-pyopenssl
 ndg-httpsclient
 pyasn1
