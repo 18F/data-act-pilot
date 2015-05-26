@@ -9,35 +9,36 @@ This is the easiest way to get the code up and running on any platform that can 
 From the command line:
 
 1. Clone the project repository from GitHub to your local environment:
+
         $ git clone git@github.com:18F/intercessor.git
-    **note:** if you don't have a GitHub account and want to get a read-only version of the code, use this command instead:  
+    **note:** if you don't have a GitHub account and want to get a read-only version of the code, use this command instead:
+
         $ git clone git://github.com/18F/intercessor.git
 
-2. Change to the project directory:  
+2. Change to the project directory:
+
         $ cd intercessor
 
-3. Unzip a copy of the data directory and files. These aren't included with the code because they contain PII (personally identifiable information). We're working on putting up a secure cloud version that can be accessed by credentialed users, but for now:
-    * Request a secure transmission of the data.zip file from a member of the project team.
-    * Copy data.zip to the project's root directory and unzip it. The resulting directory structure should look like this:
+3. Unzip a copy of the data directory and files. These aren't included with the code because they contain PII (personally identifiable information). We're working on putting up a secure cloud version that can be accessed by credentialed users. For now, request a secure transmission of the data.zip file from a member of the project team. Copy data.zip to the project's root directory and unzip it. The resulting directory structure should look like this:
 
-          intercessor
-            /assets
-            /data
-              /jaams
-                AP_CHECKS_ALL.txt
-                AP_INVOICE_DISTRIBUTIONS_ALL.txt
-                ...
-                /sql
-              /prism
-                association.txt
-                cfda.txt
-                ...
-                /sql
-            /mappings
-            /processor
-            /schema
-            .gitignore
-            ...
+          intercessor  
+            /assets  
+            /data  
+              /jaams  
+                AP_CHECKS_ALL.txt  
+                AP_INVOICE_DISTRIBUTIONS_ALL.txt  
+                ...  
+                /sql  
+              /prism  
+                association.txt  
+                cfda.txt  
+                ...  
+                /sql  
+            /mappings  
+            /processor  
+            /schema  
+            .gitignore  
+            ...  
 
 4. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads "VirtualBox downloads")  
 
