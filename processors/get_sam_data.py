@@ -1,6 +1,7 @@
 import argparse
 import os
 import requests
+from pprint import pprint
 
 fields = ['duns', 'duns4', 'cage', 'ncage', 'dodaac', 'purposeOfRegistration',
           'registrationDate', 'expirationDate', 'activationDate',
@@ -33,7 +34,7 @@ class SamData(object):
         base_url = 'https://api.data.gov/sam/v1/registrations/'
         api_key = os.environ['DOT_GOV_API_KEY']
         req = requests.get(base_url + str(duns) + '?api_key=' + api_key)
-        sam_data = []
+        sam_data = {}
         results = req.json()
         if 'sam_data' in results:
             if 'registration' in results['sam_data']:
@@ -60,4 +61,4 @@ if __name__ == '__main__':
             results['duns'] = data.get_field('duns', data.sam_data)
     else:
         results = data.sam_data
-    print results
+    pprint(results)
