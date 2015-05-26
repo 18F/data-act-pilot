@@ -9,12 +9,12 @@ This is the easiest way to get the code up and running on any platform that can 
 From the command line:
 
 1. Clone the project repository from GitHub to your local environment:
-        $ git clone git@github.com:18F/data-act-workshop.git  
+        $ git clone git@github.com:18F/intercessor.git
     **note:** if you don't have a GitHub account and want to get a read-only version of the code, use this command instead:  
-        $ git clone git://github.com/18F/data-act-workshop.git
+        $ git clone git://github.com/18F/intercessor.git
 
 2. Change to the project directory:  
-        $ cd data-act-workshop
+        $ cd intercessor
 
 3. Unzip a copy of the data directory and files. These aren't included with the code because they contain PII (personally identifiable information). We're working on putting up a secure cloud version that can be accessed by credentialed users, but for now:
     * Request a secure transmission of the data.zip file from a member of the project team.
