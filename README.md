@@ -8,10 +8,10 @@ Below is an overview of the process.
 ![Intercessor Process Flow](https://raw.githubusercontent.com/18F/intercessor/master/intercessor-flow.png)
 
 ## Glossary
-* **JAAMS**: SBA's financial system  
-* **Prism**: SBA's grants and contracts system  
-* **SAM**: Federal government-wide system that contains information about entities (businesses, individuals, or government agencies) that do business with the federal government. SAM stands for _System for Award Management_.  
-* **DATA Act Schema (_Schema_)**: The generic model of the relationships between the data elements that agencies must report to Treasury as part of the DATA Act and previous transparency legislation.  
+* **JAAMS**: SBA's financial system
+* **Prism**: SBA's grants and contracts system
+* **SAM**: Federal government-wide system that contains information about entities (businesses, individuals, or government agencies) that do business with the federal government. SAM stands for _System for Award Management_.
+* **DATA Act Schema (_Schema_)**: The generic model of the relationships between the data elements that agencies must report to Treasury as part of the DATA Act and previous transparency legislation.
 
 ## Resources
 Here's a list of DATA Act resources and artifacts that might be useful to people working on this pilot:
@@ -43,10 +43,23 @@ For reference, the data accessed in the code are structured as follows. The text
 * `data/prism/sql`: sql for Prism table creation/joins
 
 ### Running the Processor
-[INSTALL.md](INSTALL.md "Installation instructions") has more information about installing and running the processor.  
+[INSTALL.md](INSTALL.md "Installation instructions") has more information about installing and running the processor.
 
 The processor converts raw SBA data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`.
 
 Example usage:
 
 `python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb`
+
+### Querying the SAM api
+The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions can be found at [SAM Field Definitions](http://gsa.github.io/sam_api/sam/fields.html).
+
+Example usage:
+
+To get all fields for a given DUNS:
+
+`python processors/get_sam_data.py 8291938660000`
+
+To limit response to a list of fields:
+
+`python processors/get_sam_data.py 8291938660000 --fields registrationDate legalBusinessName samAddress`
