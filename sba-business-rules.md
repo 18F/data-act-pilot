@@ -11,18 +11,18 @@ Business rules or validation rules will be applied to ensure that submitted data
 - Required field validation ensures that users input data in required fields. If required field is empty, an error will be raised. [DATA act schema](https://github.com/18F/intercessor/blob/master/schema/data-act-schema.png) documents the required fields.
 
 *Data types:*
-- Data type validation ensures that the data types match with the [DATA Act schema](https://github.com/18F/intercessor/blob/master/schema/data-act-schema.png) . For example, `parentAward` data type required is a string, If a number is entered an error will be raised. 
+- Data type validation ensures that the data types match with the [DATA Act schema](https://github.com/18F/intercessor/blob/master/schema/data-act-schema.png) . For example, `parentAward` data type required is a string. If a number is entered an error will be raised. 
 
 
 **Awardee validation:**  
 
 *Award id:*
-- Award id validation ensures that `Award id` is an exact number length (if it is not blank). This length can be determined and set. Additionally, award id validation ensures DUNSNumber and SAM number match. If either of those criterias are not met an error will be raised
+- Award id validation ensures that `Award id` is an exact number length (if it is not blank). This length can be determined and set. Additionally, award id validation ensures DUNSNumber and SAM number match. If either of those criterias are not met an error will be raised.
 
 *Address:* 
 
 - Address validation ensures that users input data in the Awardee Address fields. If address fields are empty, an error will be raised. 
-- state and zip codes validation will ensure that Awardee Zip/Postal Code is valid by looking up the first five characters of the value in a zip code object that contains a record for every valid zip code in the US. If the zip code is not found in the zip code object, an error will be raised. 
+- State and zip codes validation will ensure that Awardee Zip/Postal Code is valid by looking up the first five characters of the value in a zip code object that contains a record for every valid zip code in the US. If the zip code is not found in the zip code object, an error will be raised. 
 
 *Business type:*
 
