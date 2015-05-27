@@ -18,7 +18,8 @@ Here's a list of DATA Act resources and artifacts that might be useful to people
 
 * [Finalized data element definitions](http://fedspendingtransparency.github.io/dataelements/ "Federal Spending Transparency Data Elements").
 * [In-progress data element definitions](http://fedspendingtransparency.github.io/data-exchange-standard/ "Collaboration Space: Federal Spending Data Elements"). For elements on this list that have been finalized, use the finalized version of the definition.
-* [Working DATA Act award-level schema](https://raw.githubusercontent.com/18F/intercessor/master/schema/data-act-schema.png "Draft DATA Act award-level schema diagram"). Because the official draft of the award-level DATA Act schema has not yet been published, we created this working copy to use for the pilot. **This is not an official version/draft of the DATA Act schema**.
+* [Working DATA Act award-level schema definition](https://github.com/18F/intercessor/blob/master/schema/data-act-schema.proto). Because the official draft of the award-level DATA Act schema has not yet been published, we created this working copy to use for the pilot. This draft schema is expressed as [Protocol Buffers](https://developers.google.com/protocol-buffers/). **This is not an official version/draft of the DATA Act schema**.
+* [Working DATA Act award-level schema diagram](https://raw.githubusercontent.com/18F/intercessor/master/schema/data-act-schema.png "Draft DATA Act award-level schema diagram"). A visual representation of the above schema.
 * Mapping document. This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
 * [SBA Entity Relationship Diagram](https://raw.githubusercontent.com/18F/intercessor/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD"). A diagram of the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
 * [Research Questions](https://github.com/18F/intercessor/labels/research%20questions "open issues labeled as 'research'"). Questions (and some answers) that have emerged during the pilot. Closed (_i.e._, answered) questions are [here](https://github.com/18F/intercessor/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
@@ -42,13 +43,18 @@ For reference, the data accessed in the code are structured as follows. The text
 * `data/prism`: text file extracts from Prism
 * `data/prism/sql`: sql for Prism table creation/joins
 
-### Running the Processor
-[INSTALL.md](INSTALL.md "Installation instructions") has more information about installing and running the processor.
+### Running the Processors
+These directions assume that the project is already installed on your system. If you don't have the project installed and running, please see [INSTALL.md](INSTALL.md "Installation instructions").
 
-The processor converts raw SBA data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`.
+There are two processes that convert SBA data to DATA Act format. 
 
-Example usage:
+The first reads raw text files from SBA (JAAMS and Prism) and combines them into a single file of awards+modifications (what the [draft schema](https://raw.githubusercontent.com/18F/intercessor/master/schema/data-act-schema.png) calls an _action_).
 
+The second converts that combined data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`.
+
+Example usage (to run both processes):
+
+`python processors/process_source.py -o data/data_act.csv`
 `python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb`
 
 ### Querying the SAM api

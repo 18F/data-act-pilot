@@ -25,7 +25,6 @@ def process_record(record):
     aw = schema_record.award.awardees.add()
     outlay = schema_record.transaction.outlays.add()
     schema_record.award.typeOfTransactionCode = "GRANT"
-    schema_record.award.awardees[0].businessAddress.street1 = "1175 HERNDON PARKWAY"
 
     for schema_field, sba_field in schema_map.items():
         try:
