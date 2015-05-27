@@ -98,9 +98,15 @@ def run():
     )
 
     jp_merge = join_data(
+        jp_merge, jaams['po_line_locations_all'],
+        ['po_lines_all.po_line_id'],
+        ['po_line_locations_all.po_line_id']
+    )
+
+    jp_merge = join_data(
         jp_merge, jaams['po_distributions_all'],
-        ['po_lines_all.po_header_id', 'po_lines_all.po_line_id'],
-        ['po_distributions_all.po_header_id', 'po_distributions_all.po_line_id']
+        ['po_line_locations_all.po_line_id'],
+        ['po_distributions_all.po_line_id']
     )
 
     jp_merge = join_data(
