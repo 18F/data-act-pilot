@@ -1,29 +1,65 @@
 # Intercessor
-Yet another DATA Act repository. This one contains code that translates agency data to a uniform DATA act format.
+This DATA Act repository contains the code for a small pilot project that translates financial and awards data from the Small Business Administration to a uniform DATA act format.
+
+Progress and upcoming work are viewable on our Github/Waffle-based task board: https://waffle.io/18F/intercessor
+
+Below is an overview of the process.
+
+![Intercessor Process Flow](https://raw.githubusercontent.com/18F/intercessor/master/intercessor-flow.png)
+
+## Glossary
+* **JAAMS**: SBA's financial system
+* **Prism**: SBA's grants and contracts system
+* **SAM**: Federal government-wide system that contains information about entities (businesses, individuals, or government agencies) that do business with the federal government. SAM stands for _System for Award Management_.
+* **DATA Act Schema (_Schema_)**: The generic model of the relationships between the data elements that agencies must report to Treasury as part of the DATA Act and previous transparency legislation.
+
+## Resources
+Here's a list of DATA Act resources and artifacts that might be useful to people working on this pilot:
+
+* [Finalized data element definitions](http://fedspendingtransparency.github.io/dataelements/ "Federal Spending Transparency Data Elements").
+* [In-progress data element definitions](http://fedspendingtransparency.github.io/data-exchange-standard/ "Collaboration Space: Federal Spending Data Elements"). For elements on this list that have been finalized, use the finalized version of the definition.
+* [Working DATA Act award-level schema](https://raw.githubusercontent.com/18F/intercessor/master/schema/data-act-schema.png "Draft DATA Act award-level schema diagram"). Because the official draft of the award-level DATA Act schema has not yet been published, we created this working copy to use for the pilot. **This is not an official version/draft of the DATA Act schema**.
+* Mapping document. This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
+* [SBA Entity Relationship Diagram](https://raw.githubusercontent.com/18F/intercessor/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD"). A diagram of the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
+* [Research Questions](https://github.com/18F/intercessor/labels/research%20questions "open issues labeled as 'research'"). Questions (and some answers) that have emerged during the pilot. Closed (_i.e._, answered) questions are [here](https://github.com/18F/intercessor/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
+* [DATA Act Playbook](https://www.usaspending.gov/Documents/Summary%20of%20DATA%20Act%20Playbook.pdf "DATA Act Playbook"). Recommended steps for agencies to fulfill DATA Act requirements.
 
 ## Data
-Because it contains PII, the Small Business Administration (SBA) data used for this project is not included in the code repository. The data includes:
+For the first iterations of this pilot, we're using SBA 2014 grants data.
 
-* Extracts from JAAMS, the financial system that includes a record of SBA's payments
-* Exracts from Prism, the Oracle Financial System that contains information about SBA awards (grants, loans, and contracts)
+Because it contains PII (personally identifiable information), the SBA data is not included in the code repository. The data includes:
+
+* Extracts from JAAMS, SBA's financial system
+* Extracts from Prism, SBA's awards system
 
 These extracts will be supplemented by calls to the [SAM API](https://gsa.github.io/sam_api/sam/index.html), which contains details about entities (businesses and individuals) that receive federal funds.
 
 ### Data Structure
-For reference, the data accessed in the code are structured as follows:
+For reference, the data accessed in the code are structured as follows. The text files are extracts from their respective underlying databases and have been provided to the team in comma-quote delimited format.
 
-* `data/data_act_prism_grants_fy14.csv`: prism data combined into a single .csv (this is what we're using but the smaller files in data/prism are included for reference)
 * `data/jaams`: text file extracts from JAAMS
-* `data/jaams/sql`: sql for jaams table creation/joins
+* `data/jaams/sql`: sql for JAAMS table creation/joins
 * `data/prism`: text file extracts from Prism
-* `data/prism/sql`: prism create table scripts
+* `data/prism/sql`: sql for Prism table creation/joins
 
+### Running the Processor
+[INSTALL.md](INSTALL.md "Installation instructions") has more information about installing and running the processor.
 
-### Running the Processor 
-
-The processor converts raw SBA data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`. 
+The processor converts raw SBA data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`.
 
 Example usage:
 
 `python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb`
 
+### Querying the SAM api
+The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions can be found at [SAM Field Definitions](http://gsa.github.io/sam_api/sam/fields.html).
+
+Example usage:
+
+To get all fields for a given DUNS:
+
+`python processors/get_sam_data.py 8291938660000`
+
+To limit response to a list of fields:
+
+`python processors/get_sam_data.py 8291938660000 --fields registrationDate legalBusinessName samAddress`

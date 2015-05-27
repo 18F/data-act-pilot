@@ -99,7 +99,6 @@ message Awardee {
     optional Address businessAddress = 8;
     optional string businessCongressionalDistrict = 9;
     repeated HighlyCompensatedOfficer highlyCompensatedOfficers = 10;
-    optional string recipientType = 11;
 }
 
 message Address {
