@@ -54,6 +54,11 @@ The following fields will be validated against their respective authoritative so
 - CFDA Code
 - NAICS Code
 
+**Join Rules:**
+
+The following diagram shows the fields used to join the data. In every case, records that don't join with the fields below are dropped from the merged JAAMS/Prism DATA Act file. The only exception is the join to NAICS, because the grant records we're using don't have a NAICS code.
+
+![JAAMS/Prism DATA Act Mapping](assets/images/jaams-prism-data-act-mapping.png)
 
 Questions: 
 
