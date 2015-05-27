@@ -4,8 +4,7 @@ import glob, argparse
 pd.options.mode.chained_assignment = None
 
 def read_data(data_dir):
-    # read all .txt files in specified directory
-    # return a dictionary of pandas DataFrames
+    """returns all .txt files in specified directory as a dict of DataFrames"""
     files = glob.glob('data/{}/*.txt'.format(data_dir))
     df_dict = {}
     for file in files:
@@ -19,7 +18,7 @@ def read_data(data_dir):
     return df_dict
 
 def join_data(df1, df2, key1, key2):
-    #return joined databframes (full join)
+    """joins two dataframes and returns the merged output"""
     print('Joining {} ({} rows) to {} ({} rows)'.format(
         key2, len(df2.index), key1, len(df1.index)))
     joined = pd.merge(
