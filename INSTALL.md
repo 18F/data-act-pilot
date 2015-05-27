@@ -52,9 +52,11 @@ From the command line:
 
         $ vagrant ssh
 
-8. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there to run the processor.
+8. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there to run the processors.
 
         $ cd /vagrant
         $ workon intercessor
+        $ python processors/process_source.py -o data/data_act.csv
+        $ python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb
 
 Because the project directory on your host machine is shared with the VM, you can use your existing tools (IDE, browser, etc.) and everything will be synced with the VM.
