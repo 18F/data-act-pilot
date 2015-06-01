@@ -5,20 +5,7 @@ apt-get install git -y
 apt-get install python-dev -y
 apt-get install python-pip -y
 apt-get install libffi-dev -y
-
-# Add Postgres repository to apt
-cd /etc/apt/sources.list.d/
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > pgdg.list'
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update
-sudo apt-get upgrade -y
-
-# Install the Postgresql 9.4 packages
-sudo apt-get install postgresql-9.4 -y
-sudo apt-get install postgresql-contrib-9.4 -y
-
-apt-get install python-psycopg2 -y
-apt-get install libpq-dev -y
+apt-get install libssl-dev -y
 
 pip install virtualenv
 pip install virtualenvwrapper
