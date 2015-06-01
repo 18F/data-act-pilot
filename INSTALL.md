@@ -44,15 +44,19 @@ From the command line:
 
 5. Install [Vagrant](http://www.vagrantup.com/downloads.html "Vagrant downloads")  
 
-6. From project root directory, run:
+6. Open _bootstrap.sh_ (in the project root directory), find the string that reads `YOUR_SAM_API_KEY` and replace it with your SAM API key. If you don't have a key, you can get one in less than a minute by signing up at [https://gsa.github.io/sam_api/sam/key](https://gsa.github.io/sam_api/sam/key "SAM API Key").
+
+        echo "export DOT_GOV_API_KEY='YOUR_SAM_API_KEY'" >> ~/.bashrc
+
+7. From project root directory, run:
 
          $ vagrant up
 
-7. Once the VM is fully started and provisioned (~15 minutes), connect to it with:
+8. Once the VM is fully started and provisioned (~15 minutes), connect to it with:
 
         $ vagrant ssh
 
-8. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there to run the processors.
+9. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there to run the processors.
 
         $ cd /vagrant
         $ workon intercessor

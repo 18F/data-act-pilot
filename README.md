@@ -46,7 +46,7 @@ For reference, the data accessed in the code are structured as follows. The text
 ### Running the Processors
 These directions assume that the project is already installed on your system. If you don't have the project installed and running, please see [INSTALL.md](INSTALL.md "Installation instructions").
 
-There are two processes that convert SBA data to DATA Act format. 
+There are two processes that convert SBA data to DATA Act format.
 
 The first reads raw text files from SBA (JAAMS and Prism) and combines them into a single file of awards+modifications (what the [draft schema](https://raw.githubusercontent.com/18F/intercessor/master/schema/data-act-schema.png) calls an _action_).
 
@@ -55,6 +55,7 @@ The second converts that combined data into text protocol buffers in the draft d
 Example usage (to run both processes):
 
 `python processors/process_source.py -o data/data_act.csv`
+
 `python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb`
 
 ### Querying the SAM api
