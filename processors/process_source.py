@@ -19,11 +19,11 @@ def read_data(data_dir):
 
 def join_data(df1, df2, key1, key2):
     """joins two dataframes and returns the merged output"""
-    print('Joining {} ({} rows) to {} ({} rows)'.format(
-        key2, len(df2.index), key1, len(df1.index)))
+    #print('Joining {} ({} rows) to {} ({} rows)'.format(
+        #key2, len(df2.index), key1, len(df1.index)))
     joined = pd.merge(
         df1, df2, left_on = key1, right_on = key2)
-    print('Joined rows = {}\n'.format(len(joined.index)))
+    #print('Joined rows = {}\n'.format(len(joined.index)))
     return joined
 
 def run():
@@ -88,7 +88,7 @@ def run():
     jp_merge = join_data(
         jp_merge, jaams['ap_supplier_sites_all'],
         ['po_headers_all.vendor_id', 'po_headers_all.vendor_site_id'],
-        ['ap_supplier_sites_all.vendor_id', 'ap_supplier_sites_all.vendor_site_id'] 
+        ['ap_supplier_sites_all.vendor_id', 'ap_supplier_sites_all.vendor_site_id']
     )
 
     jp_merge = join_data(
@@ -118,14 +118,14 @@ def run():
     fv_fund_parameters = jaams['fv_fund_parameters']
     fv_treasury_symbols = jaams['fv_treasury_symbols']
     jp_merge = pd.merge(
-        pd.merge(fv_fund_parameters, fv_treasury_symbols, 
+        pd.merge(fv_fund_parameters, fv_treasury_symbols,
         left_on = 'fv_fund_parameters.treasury_symbol_id',
         right_on = 'fv_treasury_symbols.treasury_symbol_id'),
         jp_merge,
         left_on = 'fv_fund_parameters.fund_value',
         right_on = 'gl_code_combinations.segment2'
     )
-    
+
     jp_merge = join_data(
         jp_merge, prism['association'],
         ['header.dockey', 'header.verkey'],
@@ -142,7 +142,7 @@ def run():
         jp_merge, prism['docaddr'],
         ['header.issuingdocaddresskey'],
         ['docaddr.docaddrkey'])
-    
+
     #hard-coded agency values
     jp_merge['funding_agency_name'] = 'Small Business Administration'
     jp_merge['funding_agency_code'] = '73'

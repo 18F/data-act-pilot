@@ -49,23 +49,25 @@ def process_record(record):
 
 def run():
 
+    print ('Reading the DATA Act schema + mapping file...')
     parser = argparse.ArgumentParser(description="Take in a file with SBA data and output a compiled protobuf file in the DATA act schema")
     parser.add_argument('-i', dest='infile', required=True, help='the infile that contains SBA data')
     parser.add_argument('-o', dest='outfile', help='the outfile that will contain the processed data')
 
     args = parser.parse_args()
+    print ('Reading the matched data file...')
     data = open_input_file(args.infile)
     output = open_output_file(args.outfile)
 
+    rec_count = 0
     for record in data:
+        rec_count += 1
         #turn CSV row or whole csv into dict
         new_rec = process_record(record)
         #output.write(new_rec.SerializeToString() + '\n')
         output.write("{0}\n\n".format(new_rec))
    # record validation errors
    # write out to file for uploading (compiled instances of protobuf messages)
-
+    print ('Converted {} records to DATA Act schema'.format(rec_count))
 
 run()
-
-
