@@ -46,13 +46,37 @@ Business rules or validation rules will be applied to ensure that submitted data
         - 23 = small business
         - 25 = all other
     
-**Award validation:** 
+**Authoritative sources:** 
 
-The following fields will be validated against their respective authoritative sources:
+The following fields will be validated against identified authoritative sources: 
 
-- Object Class
-- CFDA Code
-- NAICS Code
+- SAM:
+    - Legal Business Name
+    - Legal Business Identifier Number
+    - Ultimate Parent Unique Identifier
+    - Legal Business Address
+    - Legal Business Congressional District
+    - Legal Business Country Code
+    - Legal Business Country Name
+    - Top 5 Highly Compensated Officer Names
+    - Top 5 Highly Compensated Officer Total Compensations
+- [OMB - listing of Agency/Bureau and Treasury Codes](https://www.whitehouse.gov/sites/default/files/omb/assets/a11_current_year/app_c.pdf)
+    - Awarding Agency Name
+    - Awarding Agency Code
+    - Treasury Account Symbol (excluding Sub-Account), Appropriations Account, and Agency
+    - Agency Name
+    - Agency Code
+    - Sub Tier  Agency Name
+    - Sub Tier  Agency Code
+    - Awarding Sub Tier  Agency Name
+    - Awarding Sub Tier  Agency Code
+- [Object Class](https://www.whitehouse.gov/sites/default/files/omb/assets/a11_current_year/s83.pdf)
+- [Catalog of Federal Domestic Assistence](https://www.cfda.gov/) for assistence awards
+    - CFDA Program Number
+    - CFDA Program Title
+- [US Census](http://www.census.gov/eos/www/naics/) 
+    - NAICS Code
+    - NAICS Description
 
 **Join Rules:**
 
