@@ -6,13 +6,14 @@ import argparse
 
 REQUIRED_FIELDS = [
     'award.awardingAgency.officeCode',
-    'award.actionDate'
+    'award.awardees.businessName',
+    'award.awardees.businessAddress',
     ]
 LENGTHS = [('award.awardingAgency.officeCode', 6)]
 NUMERIC_FIELDS = ['transaction.programActivity']
 POSSIBLE_VALUES = [
     ('transaction.objectClass', ['4110', '4101']),
-    ('award.awardees.businessType', ['0', '1','2','3','4','5', '6', '11','12','20','21','22','23','25',])
+    ('award.awardees.businessType', ['0', '1','2','3','4','5', '6', '11','12','20','21','22','23','25'])
     ]
 
 
