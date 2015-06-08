@@ -4,6 +4,11 @@ title: DATA Act business rules
 As an SBA user, I need to see the business rules being applied to my source data
     
 Business rules or validation rules will be applied to ensure that submitted data by the US Small Business Administration meets the DATA Act criteria. Goals of these validation rules will improve cleanliness, accuracy, and meaningfulness of the data set. Agency submissions will be checked against these rules before the data submission is accepted by Treasury. Below is a draft of proposed rules and are subject to change. 
+
+Validation will occur in *two areas* of intercessor proccess: 
+
+- The first validation will be step three after the unification of the SBA data. SBA can import unified data through the validation tool that will run standard validation checks and provide feedback on errors raised. 
+- The final validation will occur when data is submitted to Treasury. This validation will include both standard authorativtive sources checks. 
     
 **Standard validation**
 
@@ -48,7 +53,7 @@ Business rules or validation rules will be applied to ensure that submitted data
     
 **Authoritative sources:** 
 
-The following fields will be validated against identified authoritative sources: 
+The following fields will be validated against identified authoritative sources. These sources are maintained in various formats and : 
 
 - SAM:
     - Legal Business Name
