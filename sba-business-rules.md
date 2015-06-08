@@ -5,10 +5,10 @@ As an SBA user, I need to see the business rules being applied to my source data
     
 Business rules or validation rules will be applied to ensure that submitted data by the US Small Business Administration meets the DATA Act criteria. Goals of these validation rules will improve cleanliness, accuracy, and meaningfulness of the data set. Agency submissions will be checked against these rules before the data submission is accepted by Treasury. Below is a draft of proposed rules and are subject to change. 
 
-Validation will occur in *two areas* of intercessor proccess: 
+Validation will occur in *two areas* of intercessor process: 
 
 - The first validation will be step three after the unification of the SBA data. SBA can import unified data through the validation tool that will run standard validation checks and provide feedback on errors raised. 
-- The final validation will occur when data is submitted to Treasury. This validation will include both standard authorativtive sources checks. 
+- The final validation will occur when data is submitted to Treasury. This validation will include both standard authoritative sources checks. 
     
 **Standard validation**
 
@@ -22,7 +22,7 @@ Validation will occur in *two areas* of intercessor proccess:
 **Awardee validation:**  
 
 *Award id:*
-- Award id validation ensures that `Award id` is an exact number length (if it is not blank). This length can be determined and set. Additionally, award id validation ensures DUNSNumber and SAM number match. If either of those criterias are not met an error will be raised.
+- Award id validation ensures that `Award id` is an exact number length (if it is not blank). This length can be determined and set. Additionally, award id validation ensures DUNSNumber and SAM number match. If either of those criteria are not met an error will be raised.
 
 *Address:* 
 
@@ -33,7 +33,7 @@ Validation will occur in *two areas* of intercessor proccess:
 
 - The Business type two-position numeric code depicts the type of recipient or borrower. Business Type validation ensures that:
     - the numeric code is the exact number length of two. If business type is empty and is not the exact number length, an error will be raised. 
-    - the two position numeric code depicts the correct type of recipient or borrow. If buissness type is not accurate in the business type object, an error will be raised. Below are the following business types: 
+    - the two position numeric code depicts the correct type of recipient or borrow. If business type is not accurate in the business type object, an error will be raised. Below are the following business types: 
     - Government codes:
         - 00 = State government
         - 01 = county government
@@ -76,7 +76,7 @@ The following fields will be validated against identified authoritative sources.
     - Awarding Sub Tier  Agency Name
     - Awarding Sub Tier  Agency Code
 - [Object Class](https://www.whitehouse.gov/sites/default/files/omb/assets/a11_current_year/s83.pdf)
-- [Catalog of Federal Domestic Assistence](https://www.cfda.gov/) for assistence awards
+- [Catalog of Federal Domestic Assistence](https://www.cfda.gov/) for assistance awards
     - CFDA Program Number
     - CFDA Program Title
 - [US Census](http://www.census.gov/eos/www/naics/) 
@@ -93,4 +93,4 @@ Questions:
 
 - How do you keep track of changing addresses? 
 - In general, how do we want to track data that changes over time?  
-- Authorative sources are in various formats? How will we be able to validate against these sources in the future? 
+- Authoritative sources are in various formats. How will we be able to validate against these sources in the future? 
