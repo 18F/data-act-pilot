@@ -53,7 +53,7 @@ Validation will occur in *two areas* of intercessor proccess:
     
 **Authoritative sources:** 
 
-The following fields will be validated against identified authoritative sources. These sources are maintained in various formats and : 
+The following fields will be validated against identified authoritative sources. Each source is in various formats: 
 
 - SAM:
     - Legal Business Name
@@ -93,4 +93,4 @@ Questions:
 
 - How do you keep track of changing addresses? 
 - In general, how do we want to track data that changes over time?  
-- What are the authoritative sources to validate addresses, NACIS code, CFDA code? 
+- Authorative sources are in various formats? How will we be able to validate against these sources in the future? 
