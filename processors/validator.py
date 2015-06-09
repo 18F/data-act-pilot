@@ -10,7 +10,7 @@ REQUIRED_FIELDS = [
     'award.awardees.businessAddress.street1',
     'award.awardees.businessAddress.city',
     'award.awardees.businessAddress.state',
-    'award.awardees.businessAddress.postalCode',
+    'award.awardees.businessAddress.postalCode'
     ]
 LENGTHS = [('award.awardingAgency.officeCode', 6)]
 NUMERIC_FIELDS = ['transaction.programActivity']
