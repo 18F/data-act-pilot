@@ -28,15 +28,13 @@ Note that the required fields included below will be revised once the DATA Act s
 
 *Financial Account Information*
 * Treasury Account Symbol (TAS)
-    * sub-level prefix
+    * agency id
     * allocation transfer agency ID
     * beginning period of availability
     * ending period of availability
     * availability type code
     * main Account
     * sub Account
-    * as of time
-    * Account
 * Object Class
 * Amount of Budget Authority Appropriated
 * Amount of Other Budgetary Resources
