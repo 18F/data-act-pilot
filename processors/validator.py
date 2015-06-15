@@ -3,6 +3,7 @@ from google.protobuf import text_format
 from protobuf_to_dict import protobuf_to_dict
 import codecs
 import argparse
+import itertools
 
 REQUIRED_FIELDS = [
     'award.awardingAgency.officeCode',
@@ -12,7 +13,9 @@ REQUIRED_FIELDS = [
     'award.awardees.businessAddress.state',
     'award.awardees.businessAddress.postalCode'
     ]
-LENGTHS = [('award.awardingAgency.officeCode', 6)]
+LENGTHS = [
+    ('award.awardingAgency.officeCode', 6),
+    ('award.fundingAgency.officeCode', 6)]
 NUMERIC_FIELDS = ['transaction.programActivity']
 POSSIBLE_VALUES = [
     ('transaction.objectClass', ['4110', '4101']),
@@ -20,52 +23,73 @@ POSSIBLE_VALUES = [
     ]
 
 
-def get_dot_notation(field, record):
+REPEATED_FIELDS = [
+    'award.awardees',
+    'award.placesOfPerformance',
+    'award.awardees.highlyCompensatedOfficers',
+    'transaction.outlays',
+]
+
+
+def get_values(field, record):
+    result = []
     try:
-        result = reduce(dict.__getitem__, field.split('.'), record)
+        value = reduce(dict.__getitem__, field.split('.'), record)
+        if isinstance(value, list):
+            result = value
+        else:
+            result.append(value)
     except KeyError:
-        result = []
+        result.append('')
+    except TypeError:
+        for repeated_field in REPEATED_FIELDS:
+            if field.startswith(repeated_field) and repeated_field != field:
+                records = get_values(repeated_field, record)
+                for r in records:
+                    new_field = field.replace(repeated_field + '.', '')
+                    result.append(get_values(new_field, r))
+    if all([isinstance(l, list) for l in result]):
+        result = list(itertools.chain.from_iterable(result))
     return result
 
 
 def check_required_fields(record):
     result = []
     for field in REQUIRED_FIELDS:
-        if not get_dot_notation(field, record):
-            result.append("Required field {0} missing".format(field))
+        for value in get_values(field, record):
+            if not value:
+                result.append("Required field {0} missing".format(field))
     return result
 
 
 def check_lengths(record):
     result = []
     for field, length in LENGTHS:
-        value = get_dot_notation(field, record)
-        if value:
-            if len(value) != length:
-                result.append("Value of {0} must be exactly "
-                              "{1} characters".format(field, length))
+        for value in get_values(field, record):
+            if value:
+                if len(value) != length:
+                    result.append("Value of {0} must be exactly "
+                                  "{1} characters".format(field, length))
     return result
 
 
 def check_numeric_fields(record):
     result = []
     for field in NUMERIC_FIELDS:
-        value = get_dot_notation(field, record)
-        if value:
-            try:
-                float(value)
-            except ValueError:
-                result.append("Value of {0} must be numeric".format(field))
+        for value in get_values(field, record):
+            if value:
+                try:
+                    float(value)
+                except ValueError:
+                    result.append("Value of {0} must be numeric".format(field))
     return result
-
 
 def check_enums(record):
     result = []
-    for field, values in POSSIBLE_VALUES:
-        value = get_dot_notation(field, record)
-        if value:
-            if value not in values:
-                result.append("{0} must be one of: {1}".format(field, values))
+    for field, enum in POSSIBLE_VALUES:
+        for value in get_values(field, record):
+            if value not in enum:
+                result.append("Value of {0} must be one of {1}".format(field, enum))
     return result
 
 if __name__ == '__main__':
@@ -87,6 +111,8 @@ if __name__ == '__main__':
         record = protobuf_to_dict(record)
         records.append(record)
     record_count = 0
+    error_count = 0
+    errors = {}
     for record in records:
         record_count += 1
         results = []
@@ -95,7 +121,12 @@ if __name__ == '__main__':
         results += check_numeric_fields(record)
         results += check_enums(record)
         if results:
-            print('\n')
-            print('In record {0}, the following errors were found:'.format(record_count))
-            for result in results:
-                print(result)
+            error_count += len(results)
+            errors[str(record_count)] = results
+    print('Parsed {0} records and found {1} errors.'.format(record_count, error_count))
+    print('\n')
+    for rec, errs in errors.iteritems():
+        if errs:
+            print('In record {0}, the following errors were found:'.format(rec))
+            for err in errs:
+                print(err)
