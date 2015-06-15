@@ -1,5 +1,14 @@
 # Intercessor
+
 This DATA Act repository contains the code for a small pilot project that translates financial and awards data from the Small Business Administration to a uniform DATA act format.
+
+## Background
+
+This project represents an exploratory effort to better understand the DATA Act submission process from the agency perspective. **The artifacts here do not represent official DATA Act guidance or documents. The code does not represent an official DATA Act product.** Rather, this repository is learning-in-progress intended to help clarify the steps and tools needed for agencies to submit data to Treasury.
+
+Many thanks to SBA for leading the way.
+
+## Overview
 
 Progress and upcoming work are viewable on our Github/Waffle-based task board: https://waffle.io/18F/intercessor
 
