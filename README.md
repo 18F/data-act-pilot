@@ -1,4 +1,4 @@
-# Intercessor
+# DATA Act Pilot
 
 This DATA Act repository contains the code for a small pilot project that translates financial and awards data from the Small Business Administration to a uniform DATA act format.
 
@@ -10,11 +10,11 @@ Many thanks to SBA for leading the way.
 
 ## Overview
 
-Progress and upcoming work are viewable on our Github/Waffle-based task board: https://waffle.io/18F/intercessor
+Progress and upcoming work are viewable on our Github/Waffle-based task board: https://waffle.io/18F/data-act-pilot
 
 Below is an overview of the process.
 
-![Intercessor Process Flow](https://raw.githubusercontent.com/18F/intercessor/master/intercessor-flow.png)
+![DATA Act Pilot Process Flow](https://raw.githubusercontent.com/18F/data-act-pilot/master/updated-validation-flow.png)
 
 ## Glossary
 * **JAAMS**: SBA's financial system
@@ -27,11 +27,11 @@ Here's a list of DATA Act resources and artifacts that might be useful to people
 
 * [Finalized data element definitions](http://fedspendingtransparency.github.io/dataelements/ "Federal Spending Transparency Data Elements").
 * [In-progress data element definitions](http://fedspendingtransparency.github.io/data-exchange-standard/ "Collaboration Space: Federal Spending Data Elements"). For elements on this list that have been finalized, use the finalized version of the definition.
-* [Working DATA Act award-level schema definition](https://github.com/18F/intercessor/blob/master/schema/data-act-schema.proto). Because the official draft of the award-level DATA Act schema has not yet been published, we created this working copy to use for the pilot. This draft schema is expressed as [Protocol Buffers](https://developers.google.com/protocol-buffers/). **This is not an official version/draft of the DATA Act schema**.
-* [Working DATA Act award-level schema diagram](https://raw.githubusercontent.com/18F/intercessor/master/schema/data-act-schema.png "Draft DATA Act award-level schema diagram"). A visual representation of the above schema.
+* [Working DATA Act award-level schema definition](https://github.com/18F/data-act-pilot/blob/master/schema/data-act-schema.proto). Because the official draft of the award-level DATA Act schema has not yet been published, we created this working copy to use for the pilot. This draft schema is expressed as [Protocol Buffers](https://developers.google.com/protocol-buffers/). **This is not an official version/draft of the DATA Act schema**.
+* [Working DATA Act award-level schema diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/schema/data-act-schema.png "Draft DATA Act award-level schema diagram"). A visual representation of the above schema.
 * Mapping document. This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
-* [SBA Entity Relationship Diagram](https://raw.githubusercontent.com/18F/intercessor/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD"). A diagram of the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
-* [Research Questions](https://github.com/18F/intercessor/labels/research%20questions "open issues labeled as 'research'"). Questions (and some answers) that have emerged during the pilot. Closed (_i.e._, answered) questions are [here](https://github.com/18F/intercessor/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
+* [SBA Entity Relationship Diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD"). A diagram of the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
+* [Research Questions](https://github.com/18F/data-act-pilot/labels/research%20questions "open issues labeled as 'research'"). Questions (and some answers) that have emerged during the pilot. Closed (_i.e._, answered) questions are [here](https://github.com/18F/data-act-pilot/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
 * [DATA Act Playbook](https://www.usaspending.gov/Documents/Summary%20of%20DATA%20Act%20Playbook.pdf "DATA Act Playbook"). Recommended steps for agencies to fulfill DATA Act requirements.
 
 ## Data
@@ -57,7 +57,7 @@ These directions assume that the project is already installed on your system. If
 
 There are two processes that convert SBA data to DATA Act format.
 
-The first reads raw text files from SBA (JAAMS and Prism) and combines them into a single file of awards+modifications (what the [draft schema](https://raw.githubusercontent.com/18F/intercessor/master/schema/data-act-schema.png) calls an _action_).
+The first reads raw text files from SBA (JAAMS and Prism) and combines them into a single file of awards+modifications (what the [draft schema](https://raw.githubusercontent.com/18F/data-act-pilot/master/schema/data-act-schema.png) calls an _action_).
 
 The second converts that combined data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`.
 
