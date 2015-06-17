@@ -10,18 +10,18 @@ From the command line:
 
 1. Clone the project repository from GitHub to your local environment:
 
-        $ git clone git@github.com:18F/intercessor.git
+        $ git clone git@github.com:18F/data-act-pilot.git
     **note:** if you don't have a GitHub account and want to get a read-only version of the code, use this command instead:
 
-        $ git clone git://github.com/18F/intercessor.git
+        $ git clone git://github.com/18F/data-act-pilot.git
 
 2. Change to the project directory:
 
-        $ cd intercessor
+        $ cd data-act-pilot
 
 3. Unzip a copy of the data directory and files. These aren't included with the code because they contain PII (personally identifiable information). We're working on putting up a secure cloud version that can be accessed by credentialed users. For now, request a secure transmission of the data.zip file from a member of the project team. Copy data.zip to the project's root directory and unzip it. The resulting directory structure should look like this:
 
-          intercessor  
+          data-act-pilot  
             /assets  
             /data  
               /jaams  
@@ -59,7 +59,7 @@ From the command line:
 9. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there to run the processors.
 
         $ cd /vagrant
-        $ workon intercessor
+        $ workon data-act-pilot
         $ python processors/process_source.py -o data/data_act.csv
         $ python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb
 

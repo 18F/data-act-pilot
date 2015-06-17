@@ -19,6 +19,6 @@ echo "export PYTHONPATH=/vagrant" >> ~/.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 source ~/.bashrc
 source /usr/local/bin/virtualenvwrapper.sh
-mkvirtualenv intercessor
+mkvirtualenv data-act-pilot
 pip install -r /vagrant/requirements.txt
 EOF
