@@ -9,7 +9,10 @@ def read_data(data_dir):
     df_dict = {}
     for file in files:
         key = file.split('/')[-1][:-4].lower()
-        df_dict[key] = pd.read_csv(file)
+        df_dict[key] = pd.read_csv(
+            file,
+            dtype = {'DUNS': np.object}
+        )
         rows = len(df_dict[key].index)
         df_dict[key].rename(
             columns=lambda x: '{}.'.format(key) + x.lower(), inplace = True)
