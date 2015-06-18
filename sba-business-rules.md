@@ -25,15 +25,18 @@ Validation will occur in *two areas* of the DATA Act pilot process:
 - Data type validation ensures that the data types match with the [DATA Act schema](https://github.com/18F/data-act-pilot/blob/master/schema/data-act-schema.png). For example, `parentAward` data type required is a string. If a number is entered an error will be raised.
 
 
-**Awardee validation:**  
+**Award validation:**  
 
 *Award id:*
 - Award id validation ensures that `Award id` is an exact number length (if it is not blank). This length can be determined and set. Additionally, award id validation ensures DUNSNumber and SAM number match. If either of those criteria are not met an error will be raised.
 
 *Address:*
 
-- Address validation ensures that users input data in the Awardee Address fields. If address fields are empty, an error will be raised.
-- State and zip codes validation will ensure that Awardee Zip/Postal Code is valid by looking up the first five characters of the value in a zip code object that contains a record for every valid zip code in the US. If the zip code is not found in the zip code object, an error will be raised.
+- Address validation ensures that users input data in the Awardee Address fields. If address fields are empty, an error will be raised. 
+- State and zip codes validation will ensure that Awardee Zip/Postal Code is valid by looking up the first five characters of the value in a zip code object that contains a record for every valid zip code in the US. If the zip code is not found in the zip code object, an error will be raised. 
+- Type of Transaction Code must be of the values listed here: [http://fedspendingtransparency.github.io/whitepapers/type-transaction-code/](http://fedspendingtransparency.github.io/whitepapers/type-transaction-code/) (see FAADS+, type of transaction code). If transaction code is not of the listed, an error will raise. 
+- Record Type: must be '1' or '2' (based on [draft whitepaper](http://fedspendingtransparency.github.io/whitepapers/type-transaction-code/))
+- Type of Action: must be 'B', 'C', or 'D' (based on [draft whitepaper](http://fedspendingtransparency.github.io/whitepapers/type-transaction-code/))
 
 *Business type:*
 
@@ -100,3 +103,4 @@ Questions:
 - How do you keep track of changing addresses?
 - In general, how do we want to track data that changes over time?  
 - Authoritative sources are in various formats. How will we be able to validate against these sources in the future?
+- What are the applicable transaction codes for contract data?
