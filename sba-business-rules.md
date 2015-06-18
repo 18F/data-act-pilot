@@ -15,6 +15,12 @@ Validation will occur in *two areas* of the DATA Act pilot process:
 *Required fields:*
 - Required field validation ensures that users input data in required fields. If required field is empty, an error will be raised. [DATA act schema](https://github.com/18F/data-act-pilot/blob/master/schema/data-act-schema.png) documents the required fields.
 
+    - In contract records: 
+        - If NAICS code and description is empty, an error will be raised
+        - If fields in Highly Compensated Officers are empty, error will be raised
+    - In assistance awards records (grants, loans, insurance, payments to individuals)
+        - If CFDA code and description is empty, an error will be raised
+
 *Data types:*
 - Data type validation ensures that the data types match with the [DATA Act schema](https://github.com/18F/data-act-pilot/blob/master/schema/data-act-schema.png). For example, `parentAward` data type required is a string. If a number is entered an error will be raised.
 
