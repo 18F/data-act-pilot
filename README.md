@@ -1,12 +1,20 @@
 # DATA Act Pilot
 
-This DATA Act repository contains the code for a small pilot project that translates financial and awards data from the Small Business Administration to a uniform DATA act format.
+This repository contains code for a Small Business Administration pilot project that:
+* maps agency financial and award data to DATA Act elements and
+* translates them to a uniform DATA Act standard.
+
+This work is a small experiment using real agency data. The diagrams and other artifacts here do not represent official DATA Act guidance or policy, and the code does not represent an official DATA Act product.
 
 ## Background
 
-This project represents an exploratory effort to better understand the DATA Act submission process from the agency perspective. **The artifacts here do not represent official DATA Act guidance or documents. The code does not represent an official DATA Act product.** Rather, this repository is learning-in-progress intended to help clarify the steps and tools needed for agencies to submit data to Treasury.
+This project is an exploration of the DATA Act data submission process from the agency perspective. The repository is learning-in-progress, subject to change, and its goal is to clarify the steps and tools agencies will need as they undertake DATA Act compliance.
 
-Many thanks to SBA for leading the way.
+Thanks to the Small Business Administration for leading the way and lending their time and expertise to this effort.
+
+### Questions?
+
+Because this is a small experiment and a tiny piece of the overall DATA Act implementation, 18F is unable to speak with vendors individually about the work. We welcome the DATA Act community to follow the project and contribute here.
 
 ## Overview
 
