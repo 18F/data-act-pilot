@@ -11,7 +11,27 @@ def read_data(data_dir):
         key = file.split('/')[-1][:-4].lower()
         df_dict[key] = pd.read_csv(
             file,
-            dtype = {'DUNS': np.object}
+            dtype = {
+                'DUNS': np.object,
+                'DUNSPLUS4': np.object,
+                'CFDAPROGRAMNUMBER': np.object,
+                'ZIP': np.object,
+                'SBA122CONGDISTNO': np.object,
+                'RECIPIENTCOUNTRYCODE': np.object,
+                'ASSISTANCETRANSTYPE': np.object,
+                'SEGMENT3': np.object,
+                'PRIMARYSICCODE': np.object,
+                'TAS#': np.object,
+                'SEGMENT1': np.object,
+                'VERSIONNUM': np.object,
+                'ISSUINGDOCADDRESSKEY': np.object,
+                'PLACEOFPERFZIP': np.object,
+                'PLACEOFPERFCOUNTRYCODE': np.object,
+                'RECIPIENTTYPE': np.object,
+                'SEGMENT5': np.object,
+                'ACCTFIELD6': np.object,
+                'SEGMENT4': np.object
+            }
         )
         rows = len(df_dict[key].index)
         df_dict[key].rename(
