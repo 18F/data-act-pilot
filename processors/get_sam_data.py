@@ -27,7 +27,7 @@ class SamData(object):
             self.duns = duns
         else:
             raise ValueError('Invalid DUNS number.')
-        self.sam_data = self.get_sam_data(duns)
+        self.sam_data = self.get_sam_data(self.duns)
         self.sample_duns = '1132780760000'
 
     def get_sam_data(self, duns):
@@ -41,8 +41,8 @@ class SamData(object):
                 sam_data = results['sam_data']['registration']
         return sam_data
 
-    def get_field(self, fieldname, sam_data):
-        return sam_data.get(fieldname)
+    def get_field(self, fieldname):
+        return self.sam_data.get(fieldname)
 
 if __name__ == '__main__':
 
@@ -56,9 +56,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
     data = SamData(args.duns)
     if args.fields:
-        results = {k: data.get_field(k, data.sam_data) for k in args.fields}
+        results = {k: data.get_field(k) for k in args.fields}
         if 'duns' not in results:
-            results['duns'] = data.get_field('duns', data.sam_data)
+            results['duns'] = data.get_field('duns')
     else:
         results = data.sam_data
     pprint(results)
