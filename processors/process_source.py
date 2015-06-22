@@ -25,6 +25,7 @@ def read_data(data_dir):
                 'SEGMENT1': np.object,
                 'VERSIONNUM': np.object,
                 'ISSUINGDOCADDRESSKEY': np.object,
+                'DOCADDRKEY': np.object,
                 'PLACEOFPERFZIP': np.object,
                 'PLACEOFPERFCOUNTRYCODE': np.object,
                 'RECIPIENTTYPE': np.object,
