@@ -33,8 +33,8 @@ Below is an overview of the process.
 ## Resources
 Here's a list of DATA Act resources and artifacts that might be useful to people working on this pilot:
 
-* [Finalized data element definitions](http://fedspendingtransparency.github.io/dataelements/ "Federal Spending Transparency Data Elements").
-* [In-progress data element definitions](http://fedspendingtransparency.github.io/data-exchange-standard/ "Collaboration Space: Federal Spending Data Elements"). For elements on this list that have been finalized, use the finalized version of the definition.
+* [Finalized data element definitions](https://max.gov/maxportal/assets/public/offm/DataStandardsFinal.htm "Finalized Data Act Element Definitions").
+* [In-progress data element definitions](http://fedspendingtransparency.github.io/dataelements/ "Collaboration Space: Federal Spending Data Elements"). For elements on this list that have been finalized, use the finalized version of the definition.
 * [Working DATA Act award-level schema definition](https://github.com/18F/data-act-pilot/blob/master/schema/data-act-schema.proto). Because the official draft of the award-level DATA Act schema has not yet been published, we created this working copy to use for the pilot. This draft schema is expressed as [Protocol Buffers](https://developers.google.com/protocol-buffers/). **This is not an official version/draft of the DATA Act schema**.
 * [Working DATA Act award-level schema diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/schema/data-act-schema.png "Draft DATA Act award-level schema diagram"). A visual representation of the above schema.
 * Mapping document. This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
