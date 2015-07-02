@@ -19,7 +19,7 @@ LENGTHS = [
 NUMERIC_FIELDS = ['transaction.programActivity']
 POSSIBLE_VALUES = [
     ('transaction.objectClass', ['4110', '4101']),
-    ('award.awardees.businessType', ['0', '1','2','3','4','5', '6', '11','12','20','21','22','23','25'])
+    ('award.awardees.businessType', ['00', '01','02','03','04','05', '06', '11','12','20','21','22','23','25'])
     ]
 
 
@@ -106,10 +106,11 @@ if __name__ == '__main__':
     pbs = pbs.split('\n\n')
     records = []
     for pb in pbs:
-        record = schema.data_act_schema_pb2.Action()
-        text_format.Merge(pb, record)
-        record = protobuf_to_dict(record)
-        records.append(record)
+        if pb != '\n':
+            record = schema.data_act_schema_pb2.Action()
+            text_format.Merge(pb, record)
+            record = protobuf_to_dict(record)
+            records.append(record)
     record_count = 0
     error_count = 0
     errors = {}
@@ -122,11 +123,12 @@ if __name__ == '__main__':
         results += check_enums(record)
         if results:
             error_count += len(results)
-            errors[str(record_count)] = results
+            errors[get_values('award.awardNumber', record)[0]] = results
+    print('\n')
     print('Parsed {0} records and found {1} errors.'.format(record_count, error_count))
     print('\n')
     for rec, errs in errors.iteritems():
         if errs:
-            print('In record {0}, the following errors were found:'.format(rec))
+            print('In Award Number {0}, the following errors were found:'.format(rec))
             for err in errs:
                 print(err)
