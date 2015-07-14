@@ -7,4 +7,14 @@ Home
 
 {% block main_content %}
 <h1>Home</h1>
+<h2>Upload</h2>
+
+{% if upload_filename %}
+<h5>File successfully uploaded: {{ upload_filename }}</h5>
+{% endif %}
+<form action="/" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" accept=".csv">
+  <input type="submit" value="Upload">
+</form>
+
 {% endblock %}
