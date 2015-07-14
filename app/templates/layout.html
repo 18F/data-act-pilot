@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}{% endblock %} - DATA-Act</title>
+  {% set title = self.title() %}
+
+</head>
+<body>
+  <a href="#main_content" class="u-visually_hidden">skip navigation</a>
+
+  <main id=#main_content">
+    {% block main_content %}{% endblock %}
+  </main>
+
+<footer>
+</footer>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
