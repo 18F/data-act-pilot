@@ -1,4 +1,5 @@
-from flask import Flask, request, url_for, render_template
+from flask import Flask, request, url_for, render_template 
+import os
 
 app = Flask(__name__)
 
@@ -21,6 +22,6 @@ def hello_world():
 
     return render_template('home.html')
 
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+if __name__ == "__main__":
+    port = int(os.getenv('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
