@@ -1,4 +1,41 @@
+/*
+* Elements
+*/
+
+html, body {
+ margin: 0;
+ overflow-x: hidden;
+ box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+ul {
+ margin: 0;
+}
 
 h1 {
   color: blue;
+}
+
+[aria-hidden=true] {
+ display: none !important;
+}
+
+/*
+* Components
+*/
+
+.panel-side {
+	float: left;
+	width: 10rem;
+	padding: 2rem;
+}
+
+.panel-main {
+	width: calc(100% - 10rem);
+	float: left;
+	padding: 2rem;
 }
