@@ -1,7 +1,7 @@
 
 import os
 from functools import wraps
-from flask import Flask, request, Response, url_for, render_template
+from flask import Flask, request, Response, url_for, render_template 
 
 app = Flask(__name__)
 username = os.getenv('WEB_USERNAME', '')
@@ -50,6 +50,6 @@ def hello_world():
 
     return render_template('home.html')
 
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+if __name__ == "__main__":
+    port = int(os.getenv('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

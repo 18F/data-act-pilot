@@ -1,0 +1,5 @@
+# cloud foundry
+Flask==0.10.1
+whitenoise==1.0.6
+dj-database-url==0.3.0
+waitress==0.8.9

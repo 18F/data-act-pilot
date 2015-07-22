@@ -1,0 +1,9 @@
+---
+#all applications use these settings and services
+applications:
+- name: data-act-pilot
+  memory: 512M
+  command: "python app.py"
+#  instances: 1
+  #path: ./app
+    #timeout: 180
