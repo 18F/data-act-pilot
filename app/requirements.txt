@@ -1,14 +1,5 @@
 # cloud foundry
 Flask==0.10.1
-pyopenssl
-pandas==0.16.0
-ipython[notebook]
-protobuf
-requests
-beautifulsoup4
-unidecode
-ndg-httpsclient
-pyasn1
 whitenoise==1.0.6
 dj-database-url==0.3.0
 waitress==0.8.9

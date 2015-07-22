@@ -1,8 +1,0 @@
----
-#all applications use these settings and services
-applications:
-- name: data-act
-  memory: 512M
-  instances: 1
-  path: ./app
-    timeout: 180
