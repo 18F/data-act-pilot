@@ -18,6 +18,7 @@ Deploying the site on Cloud Foundry is best done on the command line. Here are t
 9. To build the site `cf push`
 
 This application is password protected. To update authorization credentials: 
+
 1. Log in
 2. Set username: `cf set-env data-act-pilot  WEB_USERNAME '<username>'`
 3. Set password:  `cf set-env data-act-pilot  WEB_PASSWORD '<password>'` 
