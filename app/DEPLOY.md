@@ -11,11 +11,17 @@ Deploying the site on Cloud Foundry is best done on the command line. Here are t
     cf login
     ```
 4. Enter you username (gsa email) and password
-5. Select org 2. data-act
-6. Select space - 3. pilot-dev
-7. Make sure you are in the app folder of the data-act 
-8. To build the site `cf push`
+5. A prompt will display to choose an org - select org #2. data-act
+6. Followed by another promt to choose a space - select space #3. pilot-dev
+7. Steps 5 and 6 can be done using the command `cf target -o data-act -s pilot-dev`
+8. Make sure you are in the `app/` folder of the data-act repo
+9. To build the site `cf push`
 
+This application is password protected. To update authorization credentials: 
+1. Log in
+2. Set username: `cf set-env data-act-pilot  WEB_USERNAME '<username>'`
+3. Set password:  `cf set-env data-act-pilot  WEB_PASSWORD '<password>'` 
+4. To check if those credentials saved: `cf restage data-act-pilot` 
 
 
 
