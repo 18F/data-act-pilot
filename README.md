@@ -1,8 +1,9 @@
 # DATA Act Pilot
 
 This repository contains code for a Small Business Administration pilot project that:
-* maps agency financial and award data to DATA Act elements and
-* translates them to a uniform DATA Act standard.
+* maps agency financial and award data to DATA Act elements,
+* translates them to a uniform DATA Act format, and
+* validates the results.
 
 This work is a small experiment using real agency data. The diagrams and other artifacts here do not represent official DATA Act guidance or policy, and the code does not represent an official DATA Act product.
 
@@ -35,8 +36,6 @@ Here's a list of DATA Act resources and artifacts that might be useful to people
 
 * [Finalized data element definitions](https://max.gov/maxportal/assets/public/offm/DataStandardsFinal.htm "Finalized Data Act Element Definitions").
 * [In-progress data element definitions](http://fedspendingtransparency.github.io/dataelements/ "Collaboration Space: Federal Spending Data Elements"). For elements on this list that have been finalized, use the finalized version of the definition.
-* [Working DATA Act award-level schema definition](https://github.com/18F/data-act-pilot/blob/master/schema/data-act-schema.proto). Because the official draft of the award-level DATA Act schema has not yet been published, we created this working copy to use for the pilot. This draft schema is expressed as [Protocol Buffers](https://developers.google.com/protocol-buffers/). **This is not an official version/draft of the DATA Act schema**.
-* [Working DATA Act award-level schema diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/schema/data-act-schema.png "Draft DATA Act award-level schema diagram"). A visual representation of the above schema.
 * Mapping document. This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
 * [SBA Entity Relationship Diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD"). A diagram of the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
 * [Research Questions](https://github.com/18F/data-act-pilot/labels/research%20questions "open issues labeled as 'research'"). Questions (and some answers) that have emerged during the pilot. Closed (_i.e._, answered) questions are [here](https://github.com/18F/data-act-pilot/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
@@ -63,17 +62,17 @@ For reference, the data accessed in the code are structured as follows. The text
 ### Running the Processors
 These directions assume that the project is already installed on your system. If you don't have the project installed and running, please see [INSTALL.md](INSTALL.md "Installation instructions").
 
-There are two processes that convert SBA data to DATA Act format.
+There are two steps for converting SBA data to DATA Act input format.
 
-The first reads raw text files from SBA (JAAMS and Prism) and combines them into a single file of awards+modifications (what the [draft schema](https://raw.githubusercontent.com/18F/data-act-pilot/master/schema/data-act-schema.png) calls an _action_).
+The first reads raw text files from SBA (JAAMS and Prism), joins the awards and financial data, and writes it to four standardized DATA Act files.
 
-The second converts that combined data into text protocol buffers in the draft data act schema. The mapping from the schema to the SBA data can be found in `mappings/sba.py`.
+The second validates the four files against the pilot's working subset of business rules, found here: [sba-business-rules.md](sba-business-rules.md "SBA Business Rules").
 
 Example usage (to run both processes):
 
 `python processors/process_source.py -o data/data_act.csv`
 
-`python processors/process_sba.py -i data/data_act.csv -o data/output_sba_pb`
+`python processors/validattor [micah to fill in]`
 
 ### Querying the SAM api
 The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions can be found at [SAM Field Definitions](http://gsa.github.io/sam_api/sam/fields.html).
