@@ -1,12 +1,12 @@
 ---
 title: Deploying DATA Act Pilot app to Cloud Foundry
 ---
-Deploying the site on Cloud Foundry is best done on the command line. Here are the steps to deploy the DATA Act pilot site: 
+These are instructions for the internal 18F site for deploying the DATA Act pilot to Cloud Foundry. The following steps are instructions for deployment and is best done through the command line. 
 
 1. Set up Cloud Foundry on your computer. Follow the documentation [https://docs.18f.gov/getting-started/setup/](https://docs.18f.gov/getting-started/setup/)
 2. Set up your account by [creating an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new). 
-3. Connect to the 18F api: `cf api https://api.18f.gov`
 4. Login: `cf login`
+3. Connect to the 18F api: `cf api https://api.18f.gov`
 5. Enter you username (gsa email) and password
 6. A prompt will display to choose an org - select org #2. data-act
 7. Followed by another promt to choose a space - select space #3. pilot-dev
