@@ -7,7 +7,7 @@
     "base": "./app"
   },
   "scripts": {
-    "build": "cp $npm_package_config_base/src/css/main.css $npm_package_config_base/static/css/main.css",
+    "build": "cp $npm_package_config_base/src/css/screen.css $npm_package_config_base/static/css/screen.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": ""
