@@ -589,6 +589,7 @@ def create_approp(data_act):
     df = pd.DataFrame(data=data, columns=columns)
     df = pd.concat([df, data_act], join='inner')
     df.drop_duplicates(inplace=True)
+    df = add_empty_columns(df, columns.tolist())
     return df
 
 def create_approp_oc_pgm(data_act):
@@ -599,6 +600,7 @@ def create_approp_oc_pgm(data_act):
     df = pd.DataFrame(data=data, columns=columns)
     df = pd.concat([df, data_act], join='inner')
     df.drop_duplicates(inplace=True)
+    df = add_empty_columns(df, columns.tolist())
     return df
 
 def create_award_financial(data_act):
@@ -609,6 +611,7 @@ def create_award_financial(data_act):
     df = pd.DataFrame(data=data, columns=columns)
     df = pd.concat([df, data_act], join='inner')
     df.drop_duplicates(inplace=True)
+    df = add_empty_columns(df, columns.tolist())
     return df
 
 def create_award(data_act):
@@ -619,6 +622,14 @@ def create_award(data_act):
     df = pd.DataFrame(data=data, columns=columns)
     df = pd.concat([df, data_act], join='inner')
     df.drop_duplicates(inplace=True)
+    df = add_empty_columns(df, columns.tolist())
+    return df
+
+def add_empty_columns(df, collist):
+    """add missing columns from the csv spec to a file"""
+    for c in collist:
+        if c not in df.columns:
+            df[c] = np.nan
     return df
 
 def run():
@@ -641,11 +652,11 @@ def run():
     approp = create_approp(data_act)
     approp.to_csv('data/appropriation.csv', index=False)
     approp_oc_pgm = create_approp_oc_pgm(data_act)
-    approp_oc_pgm.to_csv('data/object_class_program_activity.csv')
-    award = create_award(data_act)
-    award.to_csv('data/award.csv', index=False)
+    approp_oc_pgm.to_csv('data/object_class_program_activity.csv', index = False)
+    #award = create_award(data_act)
+    #award.to_csv('data/award.csv', index=False)
     award_financial = create_award_financial(data_act)
-    award_financial.to_csv('data/award_financial.csv', index=False)
+    award_financial.to_csv('data/award_financial.csv', index = False)
 
     if not outfile:
         outfile = 'data/data_act.csv'
