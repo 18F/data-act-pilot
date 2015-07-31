@@ -456,10 +456,11 @@ def join_awards_financial(awards, financial):
     tas = pd.read_csv(
         'data/other/sba_tas_fy2014_summary.csv',
         usecols = ['tas', 'BudgetAuthorityAppropriatedAmount',
-            'OtherBudgetaryResourcesAmount'],
+            'OtherBudgetaryResourcesAmount', 'UnobligatedAmount'],
             thousands = ',',
             dtype = {'BudgetAuthorityAppropriatedAmount' : np.int64,
-                'OtherBudgetaryResourcesAmount' : np.int64}
+                'OtherBudgetaryResourcesAmount' : np.int64,
+                'UnobligatedAmount': np.int64}
     )
     tas['tas'] = tas['tas'].str[1:3] + tas['tas'].str[4:8]
     tas_agg = pd.merge(
@@ -577,7 +578,48 @@ def join_awards_financial(awards, financial):
     #split TAS into parts
     everything['AgencyIdentifier'] = everything['tas'].str[:2]
     everything['MainAccountCode'] = everything['tas'].str[-4:]
+
     return everything
+
+def create_approp(data_act):
+    """create appropriation.csv"""
+    spec = pd.read_csv('schema/appropriation.csv')
+    data = spec.sourceSystem
+    columns = spec.elementMappingName
+    df = pd.DataFrame(data=data, columns=columns)
+    df = pd.concat([df, data_act], join='inner')
+    df.drop_duplicates(inplace=True)
+    return df
+
+def create_approp_oc_pgm(data_act):
+    """create object_class_program_activity.csv"""
+    spec = pd.read_csv('schema/object_class_program_activity.csv')
+    data = spec.sourceSystem
+    columns = spec.elementMappingName
+    df = pd.DataFrame(data=data, columns=columns)
+    df = pd.concat([df, data_act], join='inner')
+    df.drop_duplicates(inplace=True)
+    return df
+
+def create_award_financial(data_act):
+    """create award_financial.csv"""
+    spec = pd.read_csv('schema/award_financial.csv')
+    data = spec.sourceSystem
+    columns = spec.elementMappingName
+    df = pd.DataFrame(data=data, columns=columns)
+    df = pd.concat([df, data_act], join='inner')
+    df.drop_duplicates(inplace=True)
+    return df
+
+def create_award(data_act):
+    """create award.csv"""
+    spec = pd.read_csv('schema/award.csv')
+    data = spec.sourceSystem
+    columns = spec.elementMappingName
+    df = pd.DataFrame(data=data, columns=columns)
+    df = pd.concat([df, data_act], join='inner')
+    df.drop_duplicates(inplace=True)
+    return df
 
 def run():
 
@@ -596,6 +638,15 @@ def run():
         len(financial.index)))
     financial.to_csv('data/data_act_financial_details.csv', index = False)
     data_act = join_awards_financial(awards, financial)
+    approp = create_approp(data_act)
+    approp.to_csv('data/appropriation.csv', index=False)
+    approp_oc_pgm = create_approp_oc_pgm(data_act)
+    approp_oc_pgm.to_csv('data/object_class_program_activity.csv')
+    award = create_award(data_act)
+    award.to_csv('data/award.csv', index=False)
+    award_financial = create_award_financial(data_act)
+    award_financial.to_csv('data/award_financial.csv', index=False)
+
     if not outfile:
         outfile = 'data/data_act.csv'
     data_act.to_csv('{}'.format(outfile), index = False)
