@@ -1,7 +1,7 @@
 ---
 title: Deploying DATA Act Pilot app to Cloud Foundry
 ---
-These are instructions for the internal 18F site for deploying the DATA Act pilot to Cloud Foundry. The following steps are instructions for deployment and is best done through the command line. 
+These are instructions for the internal 18F team on deploying the DATA Act pilot to Cloud Foundry. The following steps are instructions for deployment and is best done through the command line. 
 
 1. Set up Cloud Foundry on your computer. Follow the documentation [https://docs.18f.gov/getting-started/setup/](https://docs.18f.gov/getting-started/setup/)
 2. Set up your account by [creating an issue in the DevOps issue tracker](https://github.com/18F/DevOps/issues/new). 
@@ -17,8 +17,8 @@ These are instructions for the internal 18F site for deploying the DATA Act pilo
 This application is password protected. To update authorization credentials: 
 
 1. Log in
-2. Set username: `cf set-env data-act-pilot  WEB_USERNAME '<username>'`
-3. Set password:  `cf set-env data-act-pilot  WEB_PASSWORD '<password>'` 
+2. Set username: `cf set-env data-act-pilot-v2  WEB_USERNAME '<username>'`
+3. Set password:  `cf set-env data-act-pilot-v2  WEB_PASSWORD '<password>'` 
 4. To check if those credentials saved: `cf restage data-act-pilot` 
 
 
