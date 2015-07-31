@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import glob, argparse
+from dateutil.parser import parse
 pd.options.mode.chained_assignment = None
 
 def read_data(data_dir):
@@ -68,6 +69,13 @@ def get_value(row):
         return credit
     else:
         return debit * -1
+
+def split_date(dte):
+    """return month, day, and year from a date string"""
+    m = parse(dte).month
+    d = parse(dte).day
+    y = parse(dte).year
+    return [m,d,y]
 
 def prep_financial():
     """merge financial data from JAAMS"""
@@ -447,13 +455,11 @@ def join_awards_financial(awards, financial):
     # (pulled these from the budget appendix as a stand-in)
     tas = pd.read_csv(
         'data/other/sba_tas_fy2014_summary.csv',
-        usecols = ['tas', 'acct_ba_appropriated',
-            'acct_other_budgetary_resources',
-            'acct_total_budgetary_resources'],
+        usecols = ['tas', 'BudgetAuthorityAppropriatedAmount',
+            'OtherBudgetaryResourcesAmount'],
             thousands = ',',
-            dtype = {'acct_ba_appropriated' : np.int64,
-                'acct_other_budgetary_resources' : np.int64,
-                'acct_total_budgetary_resources' : np.int64}
+            dtype = {'BudgetAuthorityAppropriatedAmount' : np.int64,
+                'OtherBudgetaryResourcesAmount' : np.int64}
     )
     tas['tas'] = tas['tas'].str[1:3] + tas['tas'].str[4:8]
     tas_agg = pd.merge(
@@ -474,7 +480,7 @@ def join_awards_financial(awards, financial):
             'gl_code_combinations.segment4']
     )
     everything = everything.rename(
-        columns = {'po_headers_all.segment1' : 'award_num'})
+        columns = {'po_headers_all.segment1' : 'fainAwardNumber'})
     # add data act detailed data from awards system
     awards = awards[['header.docnum',
         'header.versionnum',
@@ -517,52 +523,60 @@ def join_awards_financial(awards, financial):
         'awarding_sub_tier_agency_code',
         'itemacct.itemacctkey'
     ]]
-    awards = awards.rename(columns = {'header.docnum' : 'award_num'})
+    awards = awards.rename(columns = {'header.docnum' : 'fainAwardNumber'})
     everything = pd.merge(
         everything,
         awards,
-        left_on = 'award_num',
-        right_on = 'award_num'
+        left_on = 'fainAwardNumber',
+        right_on = 'fainAwardNumber'
     )
 
     everything = everything.rename(columns = {
-        'gl_code_combinations.segment5' : 'object_class',
-        'gl_code_combinations.segment4' : 'program_activity_code',
-        'outlay_amt' : 'acct_outlay_amt',
-        'obligated_amt': 'acct_obligated_amt',
-        'po_lines_all.item_description' : 'award_desc',
-        'po_distributions_all.attribute10' : 'period_of_perf_start_date',
-        'po_distributions_all.attribute11' : 'period_of_perf_end_date',
-        'gl_gl_code_combinations.segment3': 'funding_office',
-        'header.versionnum' : 'award_mod',
-        'header.amount' : 'award_potential_value',
-        'itemacct.obligatedamt' : 'funding_action_obligation',
-        'header.awardtype' : 'award_type',
-        'grantheader.sba1222countyname' : 'recipient_county_name',
-        'grantheader.sba1222countycode' : 'recipient_county_code',
-        'grantheader.sba1222congdistno' : 'pop_cong_district',
-        'docaddr.name' : 'awarding_office_name',
-        'docvendor.name' : 'recipient_name',
-        'docvendor.duns' : 'duns',
-        'docvendor.address1' : 'recipient_addr1',
-        'docvendor.address2' : 'recipient_addr2',
-        'docvendor.address3' : 'recipient_addr3',
-        'docvendor.city' : 'recipient_city',
-        'docvendor.state' : 'recipient_state',
-        'docvendor.zip' : 'recipient_zip',
-        'faadsciv.recordtype' : 'record_type',
-        'faadsciv.assistancetranstype' : 'type_of_transaction',
-        'faadsciv.countycityname' : 'pop_city_name',
-        'faadsciv.countycitycode' : 'pop_city_code',
-        'faadsciv.principalstatecode' : 'pop_state_code',
-        'faadsciv.principalstatename' : 'pop_state_name',
-        'faadsciv.placeofperfzip' : 'pop_zip',
-        'faadsciv.cfdaprogramnumber' : 'cfda_num',
-        'faadsciv.cfdaprogramtitle' : 'cfda_desc',
-        'faadsciv.recipienttype' : 'recipient_type',
-        'grantheader.recipientcountrycode': 'recipient_country_code',
-        'grantheader.recipientcountryname' : 'recipient_country_name'
+        'gl_code_combinations.segment5' : 'ObjectClass',
+        'gl_code_combinations.segment4' : 'ProgramActivity',
+        'outlay_amt' : 'OutlayAmount',
+        'obligated_amt': 'ObligatedAmount',
+        'po_lines_all.item_description' : 'AwardDescription',
+        'gl_gl_code_combinations.segment3': 'FundingOfficeCode',
+        'header.versionnum' : 'AwardModAmendmentNumber',
+        'header.amount' : 'PotentialTotalValueAwardAmount',
+        'itemacct.obligatedamt' : 'FundingActionObligationAmount',
+        #'header.awardtype' : 'AssistanceType',
+        'grantheader.sba1222congdistno' : 'PlaceOfPerfCongressionalDistrict',
+        'docaddr.name' : 'AwardingOfficeName',
+        'docvendor.name' : 'RecipientLegalEntityName',
+        'docvendor.duns' : 'RecipientDunsNumber',
+        'docvendor.address1' : 'RecipientLegalEntityAddressStreet1',
+        'docvendor.address2' : 'RecipientLegalEntityAddressStreet2',
+        'docvendor.city' : 'RecipientLegalEntitylCityName',
+        'docvendor.state' : 'RecipientLegalEntityStateCode',
+        'docvendor.zip' : 'RecipientLegalEntityZip',
+        'faadsciv.recordtype' : 'RecordType',
+        'faadsciv.assistancetranstype' : 'AssistanceType',
+        'faadsciv.countycityname' : 'PlaceOfPerfCity',
+        'faadsciv.principalstatename' : 'PlaceOfPerfState',
+        'faadsciv.placeofperfzip' : 'PlaceOfPerfZip+4',
+        'faadsciv.cfdaprogramnumber' : 'CFDA_Code',
+        'faadsciv.cfdaprogramtitle' : 'CFDA_Description',
+        'faadsciv.recipienttype' : 'BusinessType',
+        'grantheader.recipientcountrycode': 'RecipientLegalEntityCountryCode',
+        'grantheader.recipientcountryname' : 'RecipientLegalEntityCountryName'
     })
+
+    #split out dates per new spec
+    everything['PeriodOfPerfStartMonth'], everything['PeriodOfPerfDay'], everything['PeriodOfPerfYear'] = zip(
+            *everything['po_distributions_all.attribute10'].apply(
+                lambda x: split_date(x)))
+    everything['PeriodOfPerfCurrentEndMonth'], everything['PeriodOfPerfCurrentEndDay'], everything['PeriodOfPerfCurrentEndYear'] = zip(
+            *everything['po_distributions_all.attribute11'].apply(
+                lambda x: split_date(x)))
+    everything['PeriodOfPerfPotentialEndMonth'], everything['PeriodOfPerfPotentialEndDay'], everything['PeriodOfPerfPotentialEndYear'] = zip(
+            *everything['po_distributions_all.attribute11'].apply(
+                lambda x: split_date(x)))
+
+    #split TAS into parts
+    everything['AgencyIdentifier'] = everything['tas'].str[:2]
+    everything['MainAccountCode'] = everything['tas'].str[-4:]
     return everything
 
 def run():
