@@ -1,7 +1,9 @@
 *.swp
 *.swo
-.DS_Store
-data/
 *.pyc
+.DS_Store
 .ipynb_checkpoints/
 .vagrant
+
+local_settings.py
+data/

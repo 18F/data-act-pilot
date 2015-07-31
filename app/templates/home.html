@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block main_content %}
+  <div class="wrapper">
+    <h1>Data ACT Validator</h1>
+    <p>Use the form below to upload and validate your <a href="#">DATA Act files</a></p>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div class="field field-file">
+        <label>
+          <span class="label-text">appropriation.csv</span>
+          <input type="file" name="appropriation.csv">
+        </label>
+      </div>
+      <div class="field field-file">
+        <label>
+          <span class="label-text">object_class_program_activity.csv</span>
+          <input type="file" name="object_class_program_activity.csv">
+        </label>
+      </div>
+      <div class="field field-file">
+        <label>
+          <span class="label-text">award.csv</span>
+          <input type="file" name="award.csv">
+        </label>
+      </div>
+      <div class="field field-file">
+        <label>
+          <span class="label-text">award_financial.csv</span>
+          <input type="file" name="award_financial.csv">
+        </label>
+      </div>
+      <footer>
+        <button type="submit">Validate me</button>
+      </footer>
+    </form>
+  </div>
+{% if upload_filename %}
+<h5>File successfully uploaded: {{ upload_filename }}</h5>
+
+  <div class="wrapper">
+    <h1>Neato mosquito! Here&rsquo;s what we&rsquo;ve got</h1>
+    <section class="files files-valid">
+      <h1>[This/these] file[s] [is/are] <strong>valid</strong></h1>
+      <article class="file">
+        <h1>appropriation.csv</h1>
+      </article>
+      <article class="file">
+        <h1>award_financial.csv</h1>
+      </article>
+    </section>
+    <section class="files files-in-incorrect-format">
+      <header>
+        <h1>[This/these] file[s] [is/are] <strong>not in the correct format.</strong></h1>
+        <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>            
+      </header>
+      <article class="file">
+        <h1>object_class_program_activity.csv</h1>
+      </article>
+    </section>
+    <section class="files files-with-invalid-fields">
+      <h1>[This/these] file[s] [is/are] <strong>contain [an] invalid [field/fields].</strong></h1>
+      <article class="file file-with-errors">
+        <h1>award.csv</h1>
+        <article class="error">
+          <h1>[Award ID]</h1>
+          <p><span class="attribute">[Attribute]</span> is missing <span class="value">[value]</span>.</p>
+        </article>
+        <article class="error">
+          <h1>[Award ID]</h1>
+          <p><span class="attribute">[Attribute]</span> is missing <span class="value">[value]</span>.</p>
+        </article>
+        <article class="error">
+          <h1>[Award ID]</h1>
+          <p><span class="attribute">[Attribute]</span> is missing <span class="value">[value]</span>.</p>
+        </article>
+      </article>
+    </section>    
+  </div>
+
+{% endif %}
+  <input type="file" name="file" accept=".csv">
+  <input type="submit" value="Upload">
+{% endblock %}

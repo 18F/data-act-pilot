@@ -1,3 +1,4 @@
+Flask==0.10.1
 pyopenssl
 pandas==0.16.0
 ipython[notebook]
@@ -6,3 +7,4 @@ beautifulsoup4
 unidecode
 ndg-httpsclient
 pyasn1
+

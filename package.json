@@ -1,0 +1,14 @@
+{
+  "name": "data-act-pilot",
+  "version": "0.1.0",
+  "description": "This repository contains code for a Small Business Administration pilot project that: * maps agency financial and award data to DATA Act elements and * translates them to a uniform DATA Act standard.",
+  "main": "app/static/main.js",
+  "config": {
+    "base": "./app"
+  },
+  "scripts": {
+    "build": "cp $npm_package_config_base/src/css/screen.css $npm_package_config_base/static/css/screen.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
+}
