@@ -481,7 +481,7 @@ def join_awards_financial(awards, financial):
             'gl_code_combinations.segment4']
     )
     everything = everything.rename(
-        columns = {'po_headers_all.segment1' : 'fainAwardNumber'})
+        columns = {'po_headers_all.segment1' : 'FainAwardNumber'})
     # add data act detailed data from awards system
     awards = awards[['header.docnum',
         'header.versionnum',
@@ -524,12 +524,12 @@ def join_awards_financial(awards, financial):
         'awarding_sub_tier_agency_code',
         'itemacct.itemacctkey'
     ]]
-    awards = awards.rename(columns = {'header.docnum' : 'fainAwardNumber'})
+    awards = awards.rename(columns = {'header.docnum' : 'FainAwardNumber'})
     everything = pd.merge(
         everything,
         awards,
-        left_on = 'fainAwardNumber',
-        right_on = 'fainAwardNumber'
+        left_on = 'FainAwardNumber',
+        right_on = 'FainAwardNumber'
     )
 
     everything = everything.rename(columns = {
@@ -653,8 +653,8 @@ def run():
     approp.to_csv('data/appropriation.csv', index=False)
     approp_oc_pgm = create_approp_oc_pgm(data_act)
     approp_oc_pgm.to_csv('data/object_class_program_activity.csv', index = False)
-    #award = create_award(data_act)
-    #award.to_csv('data/award.csv', index=False)
+    award = create_award(data_act)
+    award.to_csv('data/award.csv', index=False)
     award_financial = create_award_financial(data_act)
     award_financial.to_csv('data/award_financial.csv', index = False)
 
