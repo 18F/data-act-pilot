@@ -1,0 +1,10 @@
+fieldname,required,data_type,field_length,unique
+UnobligatedAmount
+BudgetAuthorityAppropriatedAmount
+OtherBudgetaryResourcesAmount
+AgencyIdentifier
+MainAccountCode
+AllocationTransferAgencyIdentifier
+BeginningPeriodOfAvailability
+EndingPeriodOfAvailability
+AvailabilityTypeCode

@@ -1,0 +1,11 @@
+fieldname,required,data_type,field_length,unique
+ObjectClass
+ProgramActivity
+OutlayAmount
+ObligatedAmount
+AgencyIdentifier
+MainAccountCode
+AllocationTransferAgencyIdentifier
+BeginningPeriodOfAvailability
+EndingPeriodOfAvailability
+AvailabilityTypeCode

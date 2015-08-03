@@ -1,0 +1,15 @@
+fieldname,required,data_type,field_length,unique
+ObjectClass
+FainAwardNumber
+AwardModAmendmentNumber
+AgencyIdentifier
+MainAccountCode
+AllocationTransferAgencyIdentifier
+BeginningPeriodOfAvailability
+EndingPeriodOfAvailability
+AvailabilityTypeCode
+ParentAwardIDprefix
+ParentAwardYear
+ParentAwardType
+ParentAwardNumber
+TransactionObligatedAmount
