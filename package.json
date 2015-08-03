@@ -7,8 +7,16 @@
     "base": "./app"
   },
   "scripts": {
-    "build": "cp $npm_package_config_base/src/css/screen.css $npm_package_config_base/static/css/screen.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build-dirs && cp -r $npm_package_config_base/src/css/* $npm_package_config_base/static/css/",
+    "build-dirs": "mkdir -p $npm_package_config_base/static/css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm-watch"
   },
-  "author": ""
+  "watch": {
+    "build": "$npm_package_config_base/src/**/*"
+  },
+  "author": "",
+  "devDependencies": {
+    "npm-watch": "0.0.0"
+  }
 }
