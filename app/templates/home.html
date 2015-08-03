@@ -11,25 +11,25 @@
       <div class="field field-file">
         <label>
           <span class="label-text">appropriation.csv</span>
-          <input type="file" name="appropriation.csv">
+          <input type="file" accept=".csv" name="appropriation.csv">
         </label>
       </div>
       <div class="field field-file">
         <label>
           <span class="label-text">object_class_program_activity.csv</span>
-          <input type="file" name="object_class_program_activity.csv">
+          <input type="file" accept=".csv" name="object_class_program_activity.csv">
         </label>
       </div>
       <div class="field field-file">
         <label>
           <span class="label-text">award.csv</span>
-          <input type="file" name="award.csv">
+          <input type="file" accept=".csv" name="award.csv">
         </label>
       </div>
       <div class="field field-file">
         <label>
           <span class="label-text">award_financial.csv</span>
-          <input type="file" name="award_financial.csv">
+          <input type="file" accept=".csv" name="award_financial.csv">
         </label>
       </div>
       <footer>
@@ -37,22 +37,30 @@
       </footer>
     </form>
   </div>
-{% if file_errors %}
+{% if file_errors or correct_files %}
 <p>
   <div class="wrapper">
     <h1>Neato mosquito! Here&rsquo;s what we&rsquo;ve got</h1>
     <section class="files files-valid">
       <h1>[This/these] file[s] [is/are] <strong>valid</strong></h1>
+      {% for file in correct_files %}
+      <article class="file">
+        <h1>{{ file['template_name'] }} - {{ file['filename'] }}</h1>
+      </article>
+      {% endfor %}
     </section>
 
     <section class="files files-in-incorrect-format">
       <header>
         <h1>[This/these] file[s] [is/are] <strong>not in the correct format.</strong></h1>
-        <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>            
+        <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>
       </header>
       {% for file in file_errors %}
-      <article class="file">
+      <article class="file-with-errors">
         <h1>{{ file['template_name'] }} - {{ file['filename'] }}</h1>
+        <article class="error">
+          <p>{{ file['message'] }}</p>
+        </article>
       </article>
       {% endfor %}
     </section>

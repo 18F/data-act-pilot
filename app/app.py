@@ -12,11 +12,144 @@ username = os.getenv('WEB_USERNAME', '')
 password = os.getenv('WEB_PASSWORD', '')
 
 ALLOWED_EXTENSIONS = ['csv']
+# TODO create this dict dynamically by reading csv schema files.
 VALIDATION = {
-    'appropriation.csv': ['header1', 'header2'],
-    'object_class_program_activity.csv': [],
-    'award.csv': [],
-    'award_financial.csv': []
+    'appropriation.csv': [
+        'AllocationTransferAgencyIdentifier',
+        'AgencyIdentifier',
+        'BeginningPeriodOfAvailability',
+        'EndingPeriodOfAvailability',
+        'AvailabilityTypeCode',
+        'MainAccountCode',
+        'BudgetAuthorityAppropriatedAmount',
+        'UnobligatedAmount',
+        'OtherBudgetaryResourcesAmount'
+        ],
+    'object_class_program_activity.csv': [
+        'AllocationTransferAgencyIdentifier',
+        'AgencyIdentifier',
+        'BeginningPeriodOfAvailability',
+        'EndingPeriodOfAvailability',
+        'AvailabilityTypeCode',
+        'MainAccountCode',
+        'ObjectClass',
+        'ObligatedAmount',
+        'ProgramActivity',
+        'OutlayAmount'
+        ],
+    'award.csv': [
+        'piidPrefix',
+        'piidAwardYear',
+        'piidAwardType',
+        'piidAwardNumber',
+        'FainAwardNumber',
+        'AwardDescription',
+        'AwardModAmendmentNumber',
+        'ParentAwardIDprefix',
+        'ParentAwardYear',
+        'ParentAwardType',
+        'ParentAwardNumber',
+        'RecordType',
+        'ActionDateDay',
+        'ActionDateMonth',
+        'ActionDateYear',
+        'TypeOfAction',
+        'ReasonForModification',
+        'TypeOfContractPricing',
+        'idvType',
+        'ContractAwardType',
+        'AssistanceType',
+        'FederalPrimeAward',
+        'NonFederalFundingAmount',
+        'CurrentTotalFundingObligationAmount',
+        'CurrentTotalValueAwardAmount',
+        'FaceValueLoanGuarantee',
+        'PotentialTotalValueAwardAmount',
+        'AwardingAgencyName',
+        'AwardingAgencyCode',
+        'AwardingSubTierAgencyName',
+        'AwardingSubTierAgencyCode',
+        'AwardingOfficeName',
+        'AwardingOfficeCode',
+        'FundingAgencyName',
+        'FundingAgencyCode',
+        'FundingSubTierAgencyName',
+        'FundingOfficeName',
+        'FundingOfficeCode',
+        'RecipientLegalEntityName',
+        'RecipientDunsNumber',
+        'RecipientUltimateParentUniqueId',
+        'RecipientUltimateParentLegalEntityName',
+        'RecipientLegalEntityAddressStreet1',
+        'RecipientLegalEntityAddressStreet2',
+        'RecipientLegalEntitylCityName',
+        'RecipientLegalEntityStateCode',
+        'RecipientLegalEntityZip',
+        'RecipientLegalEntityZip+4',
+        'RecipientLegalEntityPostalCode',
+        'RecipientLegalEntityCongresionalDistrict',
+        'RecipientLegalEntityCountryCode',
+        'RecipientLegalEntityCountryName',
+        'HighCompOfficer1FirstName',
+        'HighCompOfficer1MiddleInitial',
+        'HighCompOfficer1LastName',
+        'HighCompOfficer2FirstName',
+        'HighCompOfficer2MiddleInitial',
+        'HighCompOfficer2LastName',
+        'HighCompOfficer3FirstName',
+        'HighCompOfficer3MiddleInitial',
+        'HighCompOfficer3LastName',
+        'HighCompOfficer4FirstName',
+        'HighCompOfficer4MiddleInitial',
+        'HighCompOfficer4LastName',
+        'HighCompOfficer5FirstName',
+        'HighCompOfficer5MiddleInitial',
+        'HighCompOfficer5LastName',
+        'HighCompOfficer1Amount',
+        'HighCompOfficer2Amount',
+        'HighCompOfficer3Amount',
+        'HighCompOfficer4Amount',
+        'HighCompOfficer5Amount',
+        'BusinessType',
+        'NAICS_Code',
+        'NAICS_Description',
+        'CFDA_Code',
+        'CFDA_Description',
+        'PeriodOfPerfStartDay',
+        'PeriodOfPerfStartMonth',
+        'PeriodOfPerfStartYear',
+        'PeriodOfPerfCurrentEndDay',
+        'PerioOfPerfCurrentEndMonth',
+        'PeriodOfPerfCurrentEndYear',
+        'PeriodOfPerfPotentialEndDay',
+        'PeriodOfPerfPotentialEndMonth',
+        'PeriodOfPerfPotentialEndYear',
+        'OrderingPeriodEndDay',
+        'OrderingPeriodEndMonth',
+        'OrderingPeriodEndYear',
+        'PlaceOfPerfCity',
+        'PlaceOfPerfState',
+        'PlaceOfPerfCounty',
+        'PlaceOfPerfZip+4',
+        'PlaceOfPerfCongressionalDistrict',
+        'PlaceOfPerfCountryName'
+        ],
+    'award_financial.csv': [
+        'AllocationTransferAgencyIdentifier',
+        'AgencyIdentifier',
+        'BeginningPeriodOfAvailability',
+        'EndingPeriodOfAvailability',
+        'AvailabilityTypeCode',
+        'MainAccountCode',
+        'ParentAwardIDprefix',
+        'ParentAwardYear',
+        'ParentAwardType',
+        'ParentAwardNumber',
+        'FainAwardNumber',
+        'AwardModAmendmentNumber',
+        'ObjectClass',
+        'TransactionObligatedAmount'
+        ]
 }
 
 ch = logging.StreamHandler(sys.stdout)
@@ -33,12 +166,12 @@ def allowed_file(filename):
 
 def validate_headers(csv_file, correct_headers):
     reader = csv.reader(csv_file)
-    row_count = sum(1 for row in reader)
-    if row_count < 1:
+    try:
+        headers = reader.next()
+    except StopIteration:
         return False
-    headers = next(reader)
 
-    return not headers == correct_headers
+    return sorted(headers) == sorted(correct_headers)
 
 def check_file(file, valid_headers, template_name):
     error = {}
@@ -82,17 +215,21 @@ def requires_auth(f):
 def hello_world():
     if request.method == 'POST':
         files = request.files
-        log.warn('files')
-        log.warn(files)
+        correct_files = []
         file_errors  = []
         for name in VALIDATION.keys():
             error = check_file(files[name], VALIDATION[name], name)
             if error:
                 file_errors.append(error)
+            else:
+                correct_files.append({
+                    'filename': files[name].filename,
+                    'template_name': name
+                    })
 
-        log.warn('errors')
-        log.warn(file_errors)
-        return render_template('home.html', file_errors=file_errors)
+        return render_template('home.html',
+                correct_files=correct_files,
+                file_errors=file_errors)
 
     return render_template('home.html')
 
