@@ -94,7 +94,6 @@ class Validator(object):
 
         results = []
         for field in row:
-            print field
             if field in rules:
                 rule = rules[field]
                 if not self.check_required(rule['required'], row[field]):
@@ -127,11 +126,8 @@ class Validator(object):
         '''
         results = {}
         row_count = 0
-        print "Validating " + filename
         for row in data:
             row_count += 1
-            print row_count
-            print row
             errors = self.validate_row(row, rules)
             if errors:
                 row_id = filename + '_row' + str(row_count)
