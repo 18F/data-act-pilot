@@ -12,7 +12,7 @@ These are instructions for the internal 18F team on deploying the DATA Act pilot
 7. Followed by another promt to choose a space - select space #3. pilot-dev
 8. Steps 5 and 6 can be done using the command `cf target -o data-act -s pilot-dev`
 9. Make sure you are in the `app/` folder of the data-act repo
-10. To build the site `cf push`
+10. To build the site `cf push data-act-pilot-v2 -d 18f.gov`
 
 This application is password protected. To update authorization credentials: 
 
