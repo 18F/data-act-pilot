@@ -59,8 +59,11 @@ class Validator(object):
                 return True
 
     def check_data_type(self, data_type, value):
-        if type(value) == eval(data_type):
+        try:
+            eval(data_type)(value)
             return True
+        except ValueError:
+            return False
 
     def check_length(self, length, value):
         if len(value) <= length:
@@ -99,16 +102,18 @@ class Validator(object):
                 if not self.check_required(rule['required'], row[field]):
                     error = self.generate_error('required_error', field)
                     results.append(error)
-                if not self.check_data_type(rule['data_type'], row[field]):
-                    error = self.generate_error('type_error',
-                                                field,
-                                                data_type=rule['data_type'])
-                    results.append(error)
-                if not self.check_length(rule['field_length'], row[field]):
-                    error = self.generate_error('len_error',
-                                                field,
-                                                length=rule['field_length'])
-                    results.append(error)
+                    continue
+                if row[field]:
+                    if not self.check_data_type(rule['data_type'], row[field]):
+                        error = self.generate_error('type_error',
+                                                    field,
+                                                    data_type=rule['data_type'])
+                        results.append(error)
+                    if not self.check_length(rule['field_length'], row[field]):
+                        error = self.generate_error('len_error',
+                                                    field,
+                                                    length=rule['field_length'])
+                        results.append(error)
             else:
                 raise TypeError('Field {} not recognized.'.format(field))
         return results
