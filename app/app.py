@@ -7,9 +7,13 @@ from functools import wraps
 
 from flask import Flask, request, Response, url_for, render_template
 
+from validator.validator import Validator
+
 app = Flask(__name__)
 username = os.getenv('WEB_USERNAME', '')
 password = os.getenv('WEB_PASSWORD', '')
+
+RULES_DIR = './rules/'
 
 ALLOWED_EXTENSIONS = ['csv']
 # TODO create this dict dynamically by reading csv schema files.
@@ -189,6 +193,15 @@ def check_file(file, valid_headers, template_name):
 
     return None
 
+def validate_files(files):
+    validator = Validator(
+        files['appropriation.csv'],
+        files['object_class_program_activity.csv'],
+        files['award.csv'],
+        files['award_financial.csv'],
+        RULES_DIR)
+    return validator.results
+
 def check_auth(ausername, apassword):
     """Checks that the username / password combination is valid for basic
     HTTP auth.
@@ -214,22 +227,33 @@ def requires_auth(f):
 @requires_auth
 def hello_world():
     if request.method == 'POST':
-        files = request.files
         correct_files = []
+        files = request.files
         file_errors  = []
+        checked_files = {
+            'appropriation.csv': None,
+            'object_class_program_activity.csv': None,
+            'award.csv': None,
+            'award_financial.csv': None
+                }
         for name in VALIDATION.keys():
             error = check_file(files[name], VALIDATION[name], name)
             if error:
                 file_errors.append(error)
             else:
-                correct_files.append({
-                    'filename': files[name].filename,
-                    'template_name': name
-                    })
+                checked_files[name] = files[name].stream
+
+        validation_errors = validate_files(checked_files)
+
+        correct_files.append({
+            'filename': files[name].filename,
+            'template_name': name
+            })
 
         return render_template('home.html',
                 correct_files=correct_files,
-                file_errors=file_errors)
+                file_errors=file_errors,
+                validation_errors=validation_errors)
 
     return render_template('home.html')
 

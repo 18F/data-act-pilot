@@ -66,6 +66,9 @@
     </section>
     <section class="files files-with-invalid-fields">
       <h1>[This/these] file[s] [is/are] <strong>contain [an] invalid [field/fields].</strong></h1>
+      {% for error in validation_errors %}
+        {{ error }}
+      {% endfor %}
     </section>
   </div>
 </p>
