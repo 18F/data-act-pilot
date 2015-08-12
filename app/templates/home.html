@@ -37,7 +37,7 @@
       </footer>
     </form>
   </div>
-{% if file_errors or correct_files %}
+{% if wrong_files or invalid_files or correct_files %}
 <p>
   <div class="wrapper">
     <h1>Neato mosquito! Here&rsquo;s what we&rsquo;ve got</h1>
@@ -55,7 +55,7 @@
         <h1>[This/these] file[s] [is/are] <strong>not in the correct format.</strong></h1>
         <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>
       </header>
-      {% for file in file_errors %}
+      {% for file in wrong_files %}
       <article class="file-with-errors">
         <h1>{{ file['template_name'] }} - {{ file['filename'] }}</h1>
         <article class="error">
@@ -66,8 +66,27 @@
     </section>
     <section class="files files-with-invalid-fields">
       <h1>[This/these] file[s] [is/are] <strong>contain [an] invalid [field/fields].</strong></h1>
-      {% for error in validation_errors %}
-        {{ error }}
+      {% for file in invalid_files %}
+        <h1>{{ file['template_name'] }} - {{ file['filename'] }}</h1>
+        <article class="error">
+          {% for rows in file['errors'] %}
+          {% for row, errors in rows.iteritems() %}
+            <p>Row: {{ row }} </p>
+            <table>
+              <tr>
+                <th>Field name</th>
+                <th>Error</th>
+              </tr>
+              {% for error in errors['errors'] %}
+                <tr>
+                  <td>{{ error['fieldname'] }}</td>
+                  <td>{{ error['error_string'] }}</td>
+                </tr>
+              {% endfor %}
+            </table>
+          {% endfor %}
+          {% endfor %}
+        </article>
       {% endfor %}
     </section>
   </div>

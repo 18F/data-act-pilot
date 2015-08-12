@@ -47,8 +47,7 @@ class Validator(object):
 
         if filepath is None:
             return ''
-        print(open(filepath))
-        return [row for row in csv.DictReader(open(filepath))]
+        return [row for row in csv.DictReader(filepath)]
 
     def load_simple_rules(self, rules_file):
         base = os.path.dirname(__file__)
@@ -162,6 +161,20 @@ class Validator(object):
                                           self.award,
                                           self.award_rules))
         return results
+
+class ValidatorSingle(Validator):
+    def __init__(self,
+               file_obj,
+               file_template,
+               rules_dir):
+        self.file_data = self.load_data(file_obj)
+        self.file_template = file_template
+        self.rules = self.load_simple_rules(rules_dir +
+                file_template[:-4] + '_rules' + file_template[-4:])
+        self.results = []
+        self.results.append(self.validate_file(file_template[:-4],
+                                               self.file_data,
+                                               self.rules))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=(

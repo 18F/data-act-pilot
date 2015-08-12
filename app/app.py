@@ -7,7 +7,7 @@ from functools import wraps
 
 from flask import Flask, request, Response, url_for, render_template
 
-from validator.validator import Validator
+from validator.validator import ValidatorSingle
 
 app = Flask(__name__)
 username = os.getenv('WEB_USERNAME', '')
@@ -162,6 +162,15 @@ log = logging.getLogger('werkzeug')
 log.setLevel(logging.INFO)
 log.addHandler(ch)
 
+
+def file_info(file_obj, template_name, errors, err_message=''):
+    return {
+        'filename': file_obj.filename or '',
+        'template_name': template_name,
+        'message': err_message,
+        'errors': errors
+    }
+
 def allowed_file(filename):
     """Checks if the filename is an allowed type of file.
     """
@@ -175,31 +184,29 @@ def validate_headers(csv_file, correct_headers):
     except StopIteration:
         return False
 
+    csv_file.seek(0)
     return sorted(headers) == sorted(correct_headers)
 
 def check_file(file, valid_headers, template_name):
-    error = {}
-    error['template_name'] = template_name
+    message = ''
     if not file:
-        error['message'] = 'File was not uploaded'
-        return error
-    error['filename'] = file.filename or ''
+        message = 'File was not uploaded'
+        return file_info(file, template_name, [], message)
     if not allowed_file(file.filename):
-        error['message'] = 'File is of incorrect type'
-        return error
+        message = 'File is of incorrect type'
+        return file_info(file, template_name, [], message)
     if not validate_headers(file, valid_headers):
-        error['message'] = 'File headers are incorrect'
-        return error
+        message = 'File headers are incorrect'
+        return file_info(file, template_name, [], message)
 
     return None
 
-def validate_files(files):
-    validator = Validator(
-        files['appropriation.csv'],
-        files['object_class_program_activity.csv'],
-        files['award.csv'],
-        files['award_financial.csv'],
-        RULES_DIR)
+def validate_file(file, template_name):
+    validator = ValidatorSingle(
+            file,
+            template_name,
+            RULES_DIR)
+
     return validator.results
 
 def check_auth(ausername, apassword):
@@ -227,33 +234,35 @@ def requires_auth(f):
 @requires_auth
 def hello_world():
     if request.method == 'POST':
+        log.warning('post')
         correct_files = []
         files = request.files
-        file_errors  = []
-        checked_files = {
-            'appropriation.csv': None,
-            'object_class_program_activity.csv': None,
-            'award.csv': None,
-            'award_financial.csv': None
-                }
+        wrong_files  = []
+        invalid_files = []
         for name in VALIDATION.keys():
             error = check_file(files[name], VALIDATION[name], name)
             if error:
-                file_errors.append(error)
+                wrong_files.append(error)
             else:
-                checked_files[name] = files[name].stream
-
-        validation_errors = validate_files(checked_files)
-
-        correct_files.append({
-            'filename': files[name].filename,
-            'template_name': name
-            })
+                error = validate_file(files[name], name)
+                log.warning(error)
+                if error:
+                    invalid_files.append(file_info(
+                       files[name],
+                       name,
+                       error
+                        ))
+                else:
+                    correct_file.append(file_info(
+                        files[name],
+                        name,
+                        []
+                        ))
 
         return render_template('home.html',
-                correct_files=correct_files,
-                file_errors=file_errors,
-                validation_errors=validation_errors)
+                                correct_files=correct_files,
+                                invalid_files=invalid_files,
+                                wrong_files=wrong_files)
 
     return render_template('home.html')
 
