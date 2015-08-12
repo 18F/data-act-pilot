@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import glob, argparse
 from dateutil.parser import parse
-pd.options.mode.chained_assignment = None
 
 def read_data(data_dir):
     """returns all .txt files in specified directory as a dict of DataFrames"""
@@ -75,7 +74,7 @@ def split_date(dte):
     m = parse(dte).month
     d = parse(dte).day
     y = parse(dte).year
-    return [m,d,y]
+    return [m, d, y]
 
 def prep_financial():
     """merge financial data from JAAMS"""
@@ -565,7 +564,7 @@ def join_awards_financial(awards, financial):
     })
 
     #split out dates per new spec
-    everything['PeriodOfPerfStartMonth'], everything['PeriodOfPerfDay'], everything['PeriodOfPerfYear'] = zip(
+    everything['PeriodOfPerfStartMonth'], everything['PeriodOfPerfStartDay'], everything['PeriodOfPerfStartYear'] = zip(
             *everything['po_distributions_all.attribute10'].apply(
                 lambda x: split_date(x)))
     everything['PeriodOfPerfCurrentEndMonth'], everything['PeriodOfPerfCurrentEndDay'], everything['PeriodOfPerfCurrentEndYear'] = zip(
@@ -579,6 +578,8 @@ def join_awards_financial(awards, financial):
     everything['AgencyIdentifier'] = everything['tas'].str[:2]
     everything['MainAccountCode'] = everything['tas'].str[-4:]
 
+    #clean up a few columns
+    everything['RecipientLegalEntityZip'] = everything.RecipientLegalEntityZip.replace('[^0-9]','')
     return everything
 
 def create_approp(data_act):
@@ -654,7 +655,7 @@ def run():
     approp_oc_pgm = create_approp_oc_pgm(data_act)
     approp_oc_pgm.to_csv('data/object_class_program_activity.csv', index = False)
     award = create_award(data_act)
-    award.to_csv('data/award.csv', index=False)
+    award.to_csv('data/award.csv', index=False, float_format='%.0f')
     award_financial = create_award_financial(data_act)
     award_financial.to_csv('data/award_financial.csv', index = False)
 
