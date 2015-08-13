@@ -45,11 +45,15 @@ class Validator(object):
         Outputs:
             A list of dicts produced by csv.DictReader'''
 
-        return [row for row in csv.DictReader(open(filepath))]
+        if filepath is None:
+            return ''
+        return [row for row in csv.DictReader(filepath)]
 
     def load_simple_rules(self, rules_file):
+        base = os.path.dirname(__file__)
+        filepath = filename = os.path.join(base, rules_file)
         rules_dict = {}
-        rules = csv.DictReader(open(rules_file, 'rU'))
+        rules = csv.DictReader(open(filepath, 'rU'))
         for row in rules:
             rules_dict[row['fieldname']] = row
         return rules_dict
@@ -115,7 +119,7 @@ class Validator(object):
                                                     length=rule['field_length'])
                         results.append(error)
             else:
-                raise TypeError('Field {} not recognized.'.format(field))
+                raise TypeError('field ' + field + 'not recongized')
         return results
 
     def validate_file(self, filename, data, rules):
@@ -158,6 +162,20 @@ class Validator(object):
                                           self.award_rules))
         return results
 
+class ValidatorSingle(Validator):
+    def __init__(self,
+               file_obj,
+               file_template,
+               rules_dir):
+        self.file_data = self.load_data(file_obj)
+        self.file_template = file_template
+        self.rules = self.load_simple_rules(rules_dir +
+                file_template[:-4] + '_rules' + file_template[-4:])
+        self.results = []
+        self.results.append(self.validate_file(file_template[:-4],
+                                               self.file_data,
+                                               self.rules))
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=(
         'Validates the four CSV files in the DATA Act Agency submission'))
@@ -173,5 +191,6 @@ if __name__ == '__main__':
                           args.object_class,
                           args.award_financial,
                           args.award,
-                          args.rules_dir)
+                          args.rules_dir
+                          )
     pprint(validator.results)
