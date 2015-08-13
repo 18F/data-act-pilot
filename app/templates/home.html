@@ -42,22 +42,23 @@
   <div class="wrapper">
     <h1>Neato mosquito! Here&rsquo;s what we&rsquo;ve got</h1>
     <section class="files files-valid">
-      <h1>[This/these] file[s] [is/are] <strong>valid</strong></h1>
+      <h2>[This/these] file[s] [is/are] <strong>valid</strong></h2>
       {% for file in correct_files %}
       <article class="file">
-        <h1>{{ file['template_name'] }} - {{ file['filename'] }}</h1>
+        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
       </article>
       {% endfor %}
     </section>
 
     <section class="files files-in-incorrect-format">
       <header>
-        <h1>[This/these] file[s] [is/are] <strong>not in the correct format.</strong></h1>
+        <h2>[This/these] file[s] [is/are] <strong>not in the correct
+            format.</strong></h2>
         <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>
       </header>
       {% for file in wrong_files %}
       <article class="file-with-errors">
-        <h1>{{ file['template_name'] }} - {{ file['filename'] }}</h1>
+        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
         <article class="error">
           <p>{{ file['message'] }}</p>
         </article>
@@ -65,24 +66,29 @@
       {% endfor %}
     </section>
     <section class="files files-with-invalid-fields">
-      <h1>[This/these] file[s] [is/are] <strong>contain [an] invalid [field/fields].</strong></h1>
+      <h2>[This/these] file[s] [is/are] <strong>contain [an] invalid
+          [field/fields].</strong></h2>
       {% for file in invalid_files %}
-        <h1>{{ file['template_name'] }} - {{ file['filename'] }}</h1>
+        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
         <article class="error">
           {% for rows in file['errors'] %}
           {% for row, errors in rows.iteritems() %}
-            <p>Row: {{ row }} </p>
-            <table>
+          <p><strong>Row: {{ row }}</strong></p>
+            <table class="usa-table-bordered">
+              <thead>
               <tr>
                 <th>Field name</th>
                 <th>Error</th>
               </tr>
+              </thead>
+              <tbody>
               {% for error in errors['errors'] %}
                 <tr>
                   <td>{{ error['fieldname'] }}</td>
                   <td>{{ error['error_string'] }}</td>
                 </tr>
               {% endfor %}
+              </tbody>
             </table>
           {% endfor %}
           {% endfor %}
