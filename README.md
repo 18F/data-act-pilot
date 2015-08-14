@@ -23,7 +23,7 @@ Progress and upcoming work are viewable on our Github/Waffle-based task board: h
 
 Below is an overview of the process.
 
-![DATA Act Pilot Process Flow](https://raw.githubusercontent.com/18F/data-act-pilot/master/updated-validation-flow.png)
+![DATA Act Pilot Process Flow](https://raw.githubusercontent.com/18F/data-act-pilot/master/SBA%20pilot%20process.png)
 
 ## Glossary
 * **JAAMS**: SBA's financial system
