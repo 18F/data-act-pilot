@@ -6,12 +6,16 @@ import sys
 from functools import wraps
 
 from flask import Flask, request, Response, url_for, render_template
+from flask.ext.babel import Babel
 
 from validator.validator import ValidatorSingle
+
 
 app = Flask(__name__)
 username = os.getenv('WEB_USERNAME', '')
 password = os.getenv('WEB_PASSWORD', '')
+app.jinja_env.add_extension('jinja2.ext.i18n')
+babel = Babel(app)
 
 RULES_DIR = './rules/'
 

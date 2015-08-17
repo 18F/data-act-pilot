@@ -7,8 +7,9 @@
     "base": "./app"
   },
   "scripts": {
-    "build": "npm run build-dirs && cp -r $npm_package_config_base/src/css/* $npm_package_config_base/static/css/",
+    "build": "npm run clean && npm run build-dirs && cp -r $npm_package_config_base/src/css/* $npm_package_config_base/static/css/",
     "build-dirs": "mkdir -p $npm_package_config_base/static/css",
+    "clean": "rm -rf $npm_package_config_base/static/css/*.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm-watch"
   },

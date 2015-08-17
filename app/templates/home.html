@@ -42,7 +42,12 @@
   <div class="wrapper">
     <h1>Neato mosquito! Here&rsquo;s what we&rsquo;ve got</h1>
     <section class="files files-valid">
-      <h2>[This/these] file[s] [is/are] <strong>valid</strong></h2>
+      {% trans count=correct_files|length %}
+      <h2>This file is <strong>valid</strong></h2>
+      {% pluralize %}
+      <h2>These files are <strong>valid</strong></h2>
+      {% endtrans %}
+
       {% for file in correct_files %}
       <article class="file">
         <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
@@ -52,8 +57,11 @@
 
     <section class="files files-in-incorrect-format">
       <header>
-        <h2>[This/these] file[s] [is/are] <strong>not in the correct
-            format.</strong></h2>
+        {% trans count=wrong_files|length %}
+        <h2>This file is <strong>not in the correct format.</strong></h2>
+        {% pluralize %}
+        <h2>These files are <strong>not in the correct format.</strong></h2>
+        {% endtrans %}
         <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>
       </header>
       {% for file in wrong_files %}
@@ -66,8 +74,12 @@
       {% endfor %}
     </section>
     <section class="files files-with-invalid-fields">
-      <h2>[This/these] file[s] [is/are] <strong>contain [an] invalid
-          [field/fields].</strong></h2>
+      {% trans count=invalid_files|length %}
+        <h2>This file <strong>contains invalid fields.</strong></h2>
+      {% pluralize %}
+        <h2>These files <strong>contain invalid fields.</strong></h2>
+      {% endtrans %}
+
       {% for file in invalid_files %}
         <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
         <article class="error">
