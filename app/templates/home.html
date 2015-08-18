@@ -85,7 +85,7 @@
         <article class="error">
           {% for rows in file['errors'] %}
           {% for row, errors in rows.iteritems() %}
-          <p><strong>Row: {{ row }}</strong></p>
+          <p><strong>Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</strong></p>
             <table class="usa-table-bordered">
               <thead>
               <tr>
