@@ -2,16 +2,21 @@
 import csv
 import logging
 import os
+import re
 import sys
 from functools import wraps
 
 from flask import Flask, request, Response, url_for, render_template
+from flask.ext.babel import Babel
 
 from validator.validator import ValidatorSingle
+
 
 app = Flask(__name__)
 username = os.getenv('WEB_USERNAME', '')
 password = os.getenv('WEB_PASSWORD', '')
+app.jinja_env.add_extension('jinja2.ext.i18n')
+babel = Babel(app)
 
 RULES_DIR = './rules/'
 
@@ -162,6 +167,11 @@ log = logging.getLogger('werkzeug')
 log.setLevel(logging.INFO)
 log.addHandler(ch)
 
+@app.template_filter('regex_replace')
+def regex_replace(s, find, replace):
+    """A non-optimal implementation of a regex filter"""
+    return re.sub(find, replace, s)
+
 
 def file_info(file_obj, template_name, errors, err_message=''):
     return {
@@ -245,7 +255,6 @@ def hello_world():
                 wrong_files.append(error)
             else:
                 error = validate_file(files[name], name)
-                log.warning(error)
                 if error:
                     invalid_files.append(file_info(
                        files[name],
