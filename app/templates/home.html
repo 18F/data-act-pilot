@@ -41,72 +41,81 @@
 <p>
   <div class="wrapper">
     <h1>Neato mosquito! Here&rsquo;s what we&rsquo;ve got</h1>
-    <section class="files files-valid">
-      {% trans count=correct_files|length %}
-      <h2>This file is <strong>valid</strong></h2>
-      {% pluralize %}
-      <h2>These files are <strong>valid</strong></h2>
-      {% endtrans %}
-
-      {% for file in correct_files %}
-      <article class="file">
-        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
-      </article>
-      {% endfor %}
-    </section>
-
-    <section class="files files-in-incorrect-format">
-      <header>
-        {% trans count=wrong_files|length %}
-        <h2>This file is <strong>not in the correct format.</strong></h2>
+    {% if correct_files|length > 1 %}
+      <section class="files files-valid">
+        {% trans count=correct_files|length %}
+        <h2>This file is <strong>valid</strong></h2>
         {% pluralize %}
-        <h2>These files are <strong>not in the correct format.</strong></h2>
+        <h2>These files are <strong>valid</strong></h2>
         {% endtrans %}
-        <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>
-      </header>
-      {% for file in wrong_files %}
-      <article class="file-with-errors">
-        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
-        <article class="error">
-          <p>{{ file['message'] }}</p>
-        </article>
-      </article>
-      {% endfor %}
-    </section>
-    <section class="files files-with-invalid-fields">
-      {% trans count=invalid_files|length %}
-        <h2>This file <strong>contains invalid fields.</strong></h2>
-      {% pluralize %}
-        <h2>These files <strong>contain invalid fields.</strong></h2>
-      {% endtrans %}
 
-      {% for file in invalid_files %}
-        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
-        <article class="error">
-          {% for rows in file['errors'] %}
-          {% for row, errors in rows.iteritems() %}
-          <p><strong>Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</strong></p>
-            <table class="usa-table-bordered">
-              <thead>
-              <tr>
-                <th>Field name</th>
-                <th>Error</th>
-              </tr>
-              </thead>
-              <tbody>
-              {% for error in errors['errors'] %}
-                <tr>
-                  <td>{{ error['fieldname'] }}</td>
-                  <td>{{ error['error_string'] }}</td>
-                </tr>
-              {% endfor %}
-              </tbody>
-            </table>
-          {% endfor %}
-          {% endfor %}
+        {% for file in correct_files %}
+        <article class="file">
+          <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
         </article>
-      {% endfor %}
-    </section>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {% if wrong_files|length > 1 %}
+      <section class="files files-in-incorrect-format">
+        <header>
+          {% trans count=wrong_files|length %}
+          <h2>This file is <strong>not in the correct format.</strong></h2>
+          {% pluralize %}
+          <h2>These files are <strong>not in the correct format.</strong></h2>
+          {% endtrans %}
+          <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>
+        </header>
+        {% for file in wrong_files %}
+        <article class="file-with-errors">
+          <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
+          <article class="error">
+            <p>{{ file['message'] }}</p>
+          </article>
+        </article>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+
+    {% if invalid_files|length > 1 %}
+      <section class="files files-with-invalid-fields">
+        {% trans count=invalid_files|length %}
+          <h2>This file <strong>contains invalid fields.</strong></h2>
+        {% pluralize %}
+          <h2>These files <strong>contain invalid fields.</strong></h2>
+        {% endtrans %}
+
+        {% for file in invalid_files %}
+          <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
+          <article class="error">
+            {% for rows in file['errors'] %}
+            {% for row, errors in rows.iteritems() %}
+            <p><strong>Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</strong></p>
+              <table class="usa-table-bordered">
+                <thead>
+                <tr>
+                  <th>Field name</th>
+                  <th>Error</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for error in errors['errors'] %}
+                  <tr>
+                    <td>{{ error['fieldname'] }}</td>
+                    <td>{{ error['error_string'] }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            {% endfor %}
+            {% endfor %}
+          </article>
+        {% endfor %}
+      </section>
+    {% endif %}
+
   </div>
 </p>
 {% endif %}
