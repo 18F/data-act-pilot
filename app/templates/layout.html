@@ -7,10 +7,15 @@
     <link rel="stylesheet"
       href="{{ url_for('static', filename='css/reset.css') }}" />
     <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/usfwds.css') }}" />
+    <link rel="stylesheet"
       href="{{ url_for('static', filename='css/screen.css') }}" media="screen" />
   </head>
   <body>
-    <main>
+    <aside class="sidebar">
+      <h2>DATA Act Pilot</h2>
+    </aside>
+    <main class="main">
       {% block main_content %}{% endblock %}
     </main>
     {% block scripts %}{% endblock %}

@@ -4,43 +4,39 @@
 
 
 {% block main_content %}
-  <div class="wrapper">
-    <h1>Data ACT Validator</h1>
-    <p>Use the form below to upload and validate your <a href="#">DATA Act files</a></p>
-    <form action="/" method="post" enctype="multipart/form-data">
-      <div class="field field-file">
-        <label>
-          <span class="label-text">appropriation.csv</span>
-          <input type="file" accept=".csv" name="appropriation.csv">
-        </label>
-      </div>
-      <div class="field field-file">
-        <label>
-          <span class="label-text">object_class_program_activity.csv</span>
-          <input type="file" accept=".csv" name="object_class_program_activity.csv">
-        </label>
-      </div>
-      <div class="field field-file">
-        <label>
-          <span class="label-text">award.csv</span>
-          <input type="file" accept=".csv" name="award.csv">
-        </label>
-      </div>
-      <div class="field field-file">
-        <label>
-          <span class="label-text">award_financial.csv</span>
-          <input type="file" accept=".csv" name="award_financial.csv">
-        </label>
-      </div>
-      <footer>
-        <button type="submit">Validate me</button>
-      </footer>
-    </form>
+<h1>Validator</h1>
+<p>Use the form below to upload and validate your <a href="#">DATA Act files</a></p>
+<form action="/" method="post" enctype="multipart/form-data" 
+    class="usa-grid box">
+  <div class="usa-width-one-half">
+    <label>
+      <span class="label-text">appropriation.csv</span>
+      <input type="file" accept=".csv" name="appropriation.csv">
+    </label>
+    <label>
+      <span class="label-text">object_class_program_activity.csv</span>
+      <input type="file" accept=".csv" name="object_class_program_activity.csv">
+    </label>
   </div>
+  <div class="usa-width-one-half usa-end-row">
+    <label>
+      <span class="label-text">award.csv</span>
+      <input type="file" accept=".csv" name="award.csv">
+    </label>
+    <label>
+      <span class="label-text">award_financial.csv</span>
+      <input type="file" accept=".csv" name="award_financial.csv">
+    </label>
+  </div>
+  <div class="clear"></div>
+  <footer>
+    <button type="submit">Validate me</button>
+  </footer>
+</form>
 {% if wrong_files or invalid_files or correct_files %}
 <p>
   <div class="wrapper">
-    <h1>Neato mosquito! Here&rsquo;s what we&rsquo;ve got</h1>
+    <h1>Here&rsquo;s what we&rsquo;ve got</h1>
     {% if correct_files|length > 1 %}
       <section class="files files-valid">
         {% trans count=correct_files|length %}
@@ -119,5 +115,4 @@
   </div>
 </p>
 {% endif %}
-
 {% endblock %}
