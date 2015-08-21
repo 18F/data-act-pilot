@@ -11,13 +11,10 @@
     "build-dirs": "mkdir -p $npm_package_config_base/static/css",
     "clean": "rm -rf $npm_package_config_base/static/css/*.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm-watch"
-  },
-  "watch": {
-    "build": "$npm_package_config_base/src/**/*"
+    "watch": "watch 'npm run build' $npm_package_config_base/src/css/"
   },
   "author": "",
   "devDependencies": {
-    "npm-watch": "0.0.0"
+    "watch": "^0.16.0"
   }
 }
