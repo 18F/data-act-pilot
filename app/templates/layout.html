@@ -12,12 +12,14 @@
       href="{{ url_for('static', filename='css/screen.css') }}" media="screen" />
   </head>
   <body>
-    <aside class="sidebar">
-      <h2>DATA Act Pilot</h2>
-    </aside>
-    <main class="main">
-      {% block main_content %}{% endblock %}
-    </main>
+    <div style="position: relative">
+      <aside class="sidebar">
+        <h2>DATA Act Pilot</h2>
+      </aside>
+      <main class="main">
+        {% block main_content %}{% endblock %}
+      </main>
+    </div>
     {% block scripts %}{% endblock %}
   </body>
 </html>

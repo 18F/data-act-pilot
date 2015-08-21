@@ -1,22 +1,41 @@
 
+html, body {overflow:auto}
+
+body {
+}
+
 [type="file"] {
   background: #fff;
 }
 
 .main {
-  margin-left: 30rem;
+  padding: 2rem 1rem;
   max-width: 140rem;
-  padding: 4rem 2rem;
-  width: calc(100% - 30rem);
+  width: 100%;
 }
 
 .sidebar {
+  background: #606060;
   bottom: 0;
+  color: #fff;
   left: 0;
-  padding: 3rem;
-  position: absolute;
+  padding: 2rem 1rem;
   top: 0;
-  width: 30rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+  .main {
+    margin-left: 30rem;
+    padding: 4rem 2rem;
+    width: calc(100% - 30rem);
+  }
+
+  .sidebar {
+    padding: 3rem;
+    position: absolute;
+    width: 30rem;
+  }
 }
 
 .clear {
@@ -25,11 +44,55 @@
 
 .box {
   background: #F0F0F0;
+  padding: 1rem 2rem;
 }
 
+.box-muted {
+  padding: 2rem 0;
+  border: dotted #ccc;
+  margin: 3rem 0 4rem 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 2px;
+  border-bottom-width: 0;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section h2 {
+  margin-bottom: .5em;
+}
+
+.alert {
+  color: #af0000;
+}
 
 /* USFWDS overrides */
 h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+  margin-top: .5em
+}
+
+* + p {
+  margin-top: .5em
+}
+
+p {
+  margin-bottom: 0;
+}
+
+p + table {
   margin-top: 0;
 }
 
