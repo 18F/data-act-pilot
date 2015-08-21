@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xmlns:ussglfin="http://www.xbrl.org/int/gl/cor/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" targetNamespace="http://www.xbrl.org/int/gl/cor/2006-10-25" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/int/gl/gen/2006-10-25" schemaLocation="../gen/da-gen-2015-06-29.xsd"/>
+	<!--beginnig of USSGL financial taxonomy type definitions-->
+	<xs:complexType name="accountingEntriesComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="ussglfin:fiscalYear" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="ussglfin:period" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="ussglfin:USSGLentryHeader" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="USSGLentryHeaderComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="gen:treasuryAccountSymbol" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:entryDetail" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element ref="ussglfin:obligatedAmount" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:unobligatedAmount" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:budgetAuthorityAppropriated" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:otherBudgetaryResources" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:outlays" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:appropriationAccount" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="entryDetailComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="ussglfin:account" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:amount" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:debitCreditCode" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:beginningEndIndicator" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:programActivity" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="accountComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="ussglfin:accountNumber" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:objectClass" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="gen:awardID" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="ussglfin:accountDescription" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--	<xs:complexType name="amountItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:monetaryItemType"/>
+		</xs:simpleContent>
+	</xs:complexType>-->
+	<xs:complexType name="beginningEndIndicatorItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:tokenItemType">
+				<xs:enumeration value="B"/>
+				<xs:enumeration value="E"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="fiscalYearItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:pureItemType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<!--end of USSGL financial taxonomy type definitions-->
+	<!--beginning of USSGL financial taxonomy element definitions -->
+	<xs:element name="accountingEntries" type="ussglfin:accountingEntriesComplexType" substitutionGroup="xbrli:tuple" nillable="false" id="ussglfin_accountingEntries"/>
+	<xs:element name="fiscalYear" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="false" id="ussglfin_fiscalYear" xbrli:periodType="instant"/>
+	<xs:element name="period" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="false" id="ussglfin_period" xbrli:periodType="instant"/>
+	<xs:element name="USSGLentryHeader" type="ussglfin:USSGLentryHeaderComplexType" substitutionGroup="xbrli:tuple" nillable="true" id="ussglfin_USSGLentryHeader"/>
+	<xs:element name="obligatedAmount" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_obligatedAmount" xbrli:periodType="instant"/>
+	<xs:element name="unobligatedAmount" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_unobligatedAmount" xbrli:periodType="instant"/>
+	<xs:element name="budgetAuthorityAppropriated" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_budgetAuthorityAppropriated" xbrli:periodType="instant"/>
+	<xs:element name="otherBudgetaryResources" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_otherBudgetaryResources" xbrli:periodType="instant"/>
+	<xs:element name="outlays" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_outlays" xbrli:periodType="instant"/>
+	<xs:element name="appropriationAccount" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_appropriationAccount" xbrli:periodType="instant"/>
+	<xs:element name="entryDetail" type="ussglfin:entryDetailComplexType" substitutionGroup="xbrli:tuple" nillable="true" id="ussglfin_entryDetail"/>
+	<xs:element name="amount" type="gen:amountItemType" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_amount" xbrli:periodType="instant"/>
+	<xs:element name="beginningEndIndicator" type="ussglfin:beginningEndIndicatorItemType" abstract="false" substitutionGroup="xbrli:item" nillable="false" id="ussglfin_beginningEndIndicator" xbrli:periodType="instant"/>
+	<xs:element name="programActivity" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_programActivity" xbrli:periodType="instant"/>
+	<xs:element name="account" type="ussglfin:accountComplexType" substitutionGroup="xbrli:tuple" nillable="true" id="ussglfin_account"/>
+	<xs:element name="accountNumber" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_accountNumber" xbrli:periodType="instant"/>
+	<xs:element name="objectClass" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_objectClass" xbrli:periodType="instant"/>
+	<xs:element name="accountDescription" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="ussglfin_accountDescription" xbrli:periodType="instant"/>
+	<!--end of USSGL financial taxonomy element definitions-->
+	<xs:element name="debitCreditCode" id="ussglfin_debitCreditCode" type="gen:debitCreditCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+
+</xs:schema>

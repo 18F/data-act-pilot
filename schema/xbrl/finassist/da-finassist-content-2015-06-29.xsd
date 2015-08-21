@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xmlns:finassist="http://www.xbrl.org/int/finassist/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:award="http://www.xbrl.org/int/award/2006-10-25" targetNamespace="http://www.xbrl.org/int/finassist/2006-10-25" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/int/gl/gen/2006-10-25" schemaLocation="../gen/da-gen-2015-06-29.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/int/award/2006-10-25" schemaLocation="../award/da-award-content-2015-06-29.xsd"/>
+	<!--beginning of DATA Act financial assistance type definitions-->
+	<xs:complexType name="awardComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:awardDescription" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="gen:awardID" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:parentAwardID" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:modificationAmendmentNumber" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:recordType" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:typeOfAction" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:typeOfTransactionCode" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="finassist:awardeeInformation" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:primaryPlaceOfPerformance" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="finassist:periodOfPerformance" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:awardingAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:fundingAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:awardingSubTierAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:fundingSubTierAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:highlyCompensatedOfficer" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="finassist:catalogOfFederalDomesticAssistanceProgram" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="finassist:awardAmounts" minOccurs="0" maxOccurs="1"/>
+					<!--<xs:element ref="award:specialLegislativeIndicator" minOccurs="0" maxOccurs="1"/>-->
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="catalogOfFederalDomesticAssistanceProgramComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="finassist:catalogOfFederalDomesticAssistanceTitle" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="finassist:catalogOfFederalDomesticAssistanceNumber" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="awardAmountsComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:federalFundingAmount" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="finassist:totalFundingAmount" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="finassist:nonFederalFundingAmount" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="awardeeInformationComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:businessType" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeLegalBusinessName" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:ultimateParentUniqueIdentifier" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeUniqueIdentifier" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeUniqueIdentifierSupplemental" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:ultimateParentLegalBusinessName" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeAddress" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="periodOfPerformanceComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:periodOfPerformanceActionDate" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:periodOfPerformanceStartDate" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:periodOfPerformanceCurrentEndDate" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:periodOfPerformancePotentialEndDate" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--end of DATA Act financial assistance type definitions-->
+	<!--beginning of DATA Act financial assistance element definitions-->
+	<xs:element name="award" type="finassist:awardComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="finassist_award"/>
+	<xs:element name="awardeeInformation" type="finassist:awardeeInformationComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="finassist_awardeeInformation"/>
+	<xs:element name="catalogOfFederalDomesticAssistanceProgram" type="finassist:catalogOfFederalDomesticAssistanceProgramComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="finassist_catalogOfFederalDomesticAssistance"/>
+	<xs:element name="catalogOfFederalDomesticAssistanceTitle" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="finassist_catalogOfFederalDomesticAssistanceTitle" xbrli:periodType="instant"/>
+	<xs:element name="catalogOfFederalDomesticAssistanceNumber" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="finassist_catalogOfFederalDomesticAssistanceNumber" xbrli:periodType="instant"/>
+	<xs:element name="awardAmounts" type="finassist:awardAmountsComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="finassist_awardAmounts"/>
+	<xs:element name="periodOfPerformance" type="finassist:periodOfPerformanceComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="finassist_periodOfPerformance"/>
+	<xs:element name="totalFundingAmount" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="finassist_currentTotalFundingObligationAmountOnAward" xbrli:periodType="instant"/>
+	<xs:element name="nonFederalFundingAmount" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="finassist_nonFederalFundingAmount" xbrli:periodType="instant"/>
+	<!--end of DATA Act financial assistance element definitions-->
+</xs:schema>
