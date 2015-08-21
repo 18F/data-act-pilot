@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xmlns:proc="http://www.xbrl.org/int/proc/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:award="http://www.xbrl.org/int/award/2006-10-25" targetNamespace="http://www.xbrl.org/int/proc/2006-10-25" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/int/gl/gen/2006-10-25" schemaLocation="../gen/da-gen-2015-06-29.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/int/award/2006-10-25" schemaLocation="../award/da-award-content-2015-06-29.xsd"/>
+	<!--beginning of DATA Act financial assistance type definitions-->
+	<xs:complexType name="awardComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:awardDescription" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="gen:awardID" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:parentAwardID" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:modificationAmendmentNumber" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:recordType" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:typeOfAction" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:typeOfTransactionCode" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="proc:awardeeInformation" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:primaryPlaceOfPerformance" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="proc:periodOfPerformance" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:awardingAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:fundingAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:awardingSubTierAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:fundingSubTierAgency" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="award:highlyCompensatedOfficer" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="proc:awardAmounts" minOccurs="0" maxOccurs="1"/>
+					<!--<xs:element ref="award:specialLegislativeIndicator" minOccurs="0" maxOccurs="1"/>-->
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="awardAmountsComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:federalFundingAmount" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="proc:currentTotalValueOfAward" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="proc:potentialTotalValueOfAward" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="awardeeInformationComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:businessType" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeLegalBusinessName" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:ultimateParentUniqueIdentifier" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeUniqueIdentifier" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeUniqueIdentifierSupplemental" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:ultimateParentLegalBusinessName" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="award:awardeeAddress" minOccurs="1" maxOccurs="1"/>
+					<xs:element ref="proc:awardeenaics" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="naicsComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="proc:naicsNumber" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="proc:naicsDescription" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="periodOfPerformanceComplexType">
+		<xs:complexContent>
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:element ref="award:periodOfPerformanceActionDate" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:periodOfPerformanceStartDate" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:periodOfPerformanceCurrentEndDate" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="award:periodOfPerformancePotentialEndDate" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="proc:periodOfPerformanceOrderingPeriodEndDate" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="id" type="xs:ID"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--end of DATA Act procurement type definitions-->
+	<!--beginning of DATA Act procurement element definitions -->
+	<!--beginning of proc_awardComplexType element definitions -->
+	<xs:element name="award" type="proc:awardComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="proc_award"/>
+	<!--beginnig of proc_awardeeInformation complex type element definitions -->
+	<xs:element name="awardeeInformation" type="proc:awardeeInformationComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="proc_awardeeInformation"/>
+	<xs:element name="periodOfPerformance" type="proc:periodOfPerformanceComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="proc_periodOfPerformance"/>
+	<xs:element name="awardAmounts" type="proc:awardAmountsComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="proc_awardAmounts"/>
+	<xs:element name="currentTotalValueOfAward" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="proc_currentTotalValueOfAward" xbrli:periodType="instant"/>
+	<xs:element name="potentialTotalValueOfAward" type="gen:amountItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="proc_potentialTotalValueOfAward" xbrli:periodType="instant"/>
+	<xs:element name="periodOfPerformanceOrderingPeriodEndDate" type="xbrli:dateItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="proc_periodOfPerformanceOrderingPeriodEndDate" xbrli:periodType="instant"/>
+	<!--beginning of proc_naicsComplexType element definitions-->
+	<xs:element name="awardeenaics" type="proc:naicsComplexType" abstract="false" substitutionGroup="xbrli:tuple" nillable="true" id="proc_awardeenaics"/>
+	<xs:element name="naicsNumber" type="xbrli:integerItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="proc_naicsNumber" xbrli:periodType="instant"/>
+	<xs:element name="naicsDescription" type="xbrli:stringItemType" abstract="false" substitutionGroup="xbrli:item" nillable="true" id="proc_naicsDescription" xbrli:periodType="instant"/>
+	<!--end of proc_naicsComplexType element definitions-->
+	<!--beginnig of proc_awardeeInformation complex type element definitions -->
+	<!--end of proc_awardComplexType element definitions -->
+	<!--end of DATA Act procurement element definitions-->
+</xs:schema>
