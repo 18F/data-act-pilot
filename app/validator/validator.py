@@ -11,6 +11,28 @@ ERROR_STRINGS = {
     'len_error': ('"{0} must be no more than {1} characters.".format'
                   '(fieldname, length)')
 }
+APPROPRIATION_KEY_IDENTIFIERS = [
+    'AllocationTransferAgencyIdentifier',
+    'AgencyIdentifier',
+    'BeginningPeriodOfAvailability',
+    'EndingPeriodOfAvailability',
+    'AvailabilityTypeCode',
+    'MainAccountCode'
+]
+KEY_IDENTIFIERS = {
+    'appropriation': APPROPRIATION_KEY_IDENTIFIERS,
+    'object_class_program_activity': APPROPRIATION_KEY_IDENTIFIERS + [
+        'ProgramActivity',
+        'ObjectClass'
+    ],
+    'award': [
+        'FainAwardNumber'
+    ],
+    'award_financial': APPROPRIATION_KEY_IDENTIFIERS + [
+        'ObjectClass',
+        'FainAwardNumber'
+    ]
+}
 
 
 class Validator(object):
@@ -90,6 +112,14 @@ class Validator(object):
         result['error_string'] = eval(ERROR_STRINGS[error_type])
         return result
 
+    def build_key(self, data, fields):
+        key = ''
+        for field in fields:
+            if data[field]:
+                key += data[field] + '-'
+
+        return key[:-1]
+
     def validate_row(self, row, rules):
         '''Runs a set of simple validation rules against submitted data.
 
@@ -143,6 +173,8 @@ class Validator(object):
                 result = {}
                 result['errors'] = errors
                 result['data'] = row
+                result['identifier'] = self.build_key(
+                        row, KEY_IDENTIFIERS[filename])
                 results[row_id] = result
         return results
 

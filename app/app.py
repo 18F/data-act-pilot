@@ -212,6 +212,7 @@ def check_file(file, valid_headers, template_name):
     return None
 
 def validate_file(file, template_name):
+    to_return = {}
     validator = ValidatorSingle(
             file,
             template_name,
