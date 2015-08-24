@@ -14,3 +14,12 @@ speaklater==1.3
 traceback2==1.4.0
 unittest2==1.1.0
 wsgiref==0.1.2
+pyopenssl
+pandas==0.16.0
+jupyter
+requests
+beautifulsoup4
+unidecode
+ndg-httpsclient
+pyasn1
+lxml
