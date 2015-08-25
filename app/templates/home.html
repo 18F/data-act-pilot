@@ -35,7 +35,7 @@
 </form>
 {% if wrong_files or invalid_files or correct_files %}
 <div class="section">
-  <h2>Here&rsquo;s what we&rsquo;ve got</h2>
+  <h3 class="separator">Results</h3>
   {% if correct_files|length > 1 %}
     <section class="files files-valid">
       {% trans count=correct_files|length %}
@@ -46,7 +46,7 @@
 
       {% for file in correct_files %}
       <article class="file">
-        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
+        <h3>{{ file['template_name'] }} - {{ file['filename'] }}</h3>
       </article>
       {% endfor %}
     </section>
@@ -56,32 +56,22 @@
     <section class="box-muted">
       <header>
         {% trans count=wrong_files|length %}
-        <h3 class="alert">This file is <strong>not in the correct format.</strong></h3>
+        <h2 class="alert">This file is <strong>not in the correct
+            format.</strong></h2>
         {% pluralize %}
-        <h3 class="alert">These files are <strong>not in the correct format.</strong></h3>
+        <h2 class="alert">These files are <strong>not in the correct
+            format.</strong></h2>
         {% endtrans %}
         <p>Sometimes this happens when the uploaded file isn&rsquo;t a .csv or the the .csv column names don&rsquo;t match the template.</p>
       </header>
-      <table class="usa-table-bordered">
-        <thead>
-        <tr>
-          <th>File name</th>
-          <th>Error</th>
-        </tr>
-        </thead>
-        <tbody>
-          {% for file in wrong_files %}
-          <tr>
-            <td>
-              {{ file['template_name'] }} - {{ file['filename'] }}
-            </td>
-            <td>
-              {{ file['message'] }}
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      {% for file in wrong_files %}
+        <div class="box-error">
+          <h3>{{ file['template_name'] }} {% if file['filename'] %}
+              <span>file: {{ file['filename'] }}</span>
+            {% endif %}</h3>
+          <h4>Error: <strong>{{ file['message'] }}</strong></h4>
+        </div>
+      {% endfor %}
     </section>
   {% endif %}
 
@@ -89,17 +79,28 @@
   {% if invalid_files|length > 1 %}
     <section class="box-muted">
       {% trans count=invalid_files|length %}
-        <h3 class="alert">This file <strong>contains invalid fields.</strong></h3>
+        <h2 class="alert">This file <strong>contains invalid
+            fields.</strong></h2>
       {% pluralize %}
-        <h3 class="alert">These files <strong>contain invalid fields.</strong></h3>
+        <h2 class="alert">These files <strong>contain invalid
+            fields.</strong></h2>
       {% endtrans %}
 
       {% for file in invalid_files %}
-        <h4>{{ file['template_name'] }} - {{ file['filename'] }}</h4>
-        <article class="error">
+        <div class="box-error">
+          <h3>{{ file['template_name'] }} 
+            <span>file: {{ file['filename'] }}</span>
+          </h3>
           {% for rows in file['errors'] %}
           {% for row, errors in rows.iteritems() %}
-          <p><strong>Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</strong></p>
+          <p><span class="key">Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</span>
+            {% if errors['tas_identifier'] %}
+            <span class="key">TAS: {{  errors['tas_identifier'] }}</span>
+            {% endif %}
+            {% for identifier, value in errors['identifiers'].iteritems() %}
+              <span class="key">{{ identifier }}: {{ value }}</span>
+            {% endfor %}
+          </p>
             <table class="usa-table-bordered">
               <thead>
               <tr>
@@ -118,7 +119,7 @@
             </table>
           {% endfor %}
           {% endfor %}
-        </article>
+        </div>
       {% endfor %}
     </section>
   {% endif %}

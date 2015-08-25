@@ -11,6 +11,28 @@ ERROR_STRINGS = {
     'len_error': ('"{0} must be no more than {1} characters.".format'
                   '(fieldname, length)')
 }
+TAS_KEY_IDENTIFIERS = [
+    'AllocationTransferAgencyIdentifier',
+    'AgencyIdentifier',
+    'BeginningPeriodOfAvailability',
+    'EndingPeriodOfAvailability',
+    'AvailabilityTypeCode',
+    'MainAccountCode'
+]
+KEY_IDENTIFIERS = {
+    'appropriation': [],
+    'object_class_program_activity': [
+        'ProgramActivity',
+        'ObjectClass'
+    ],
+    'award': [
+        'FainAwardNumber'
+    ],
+    'award_financial': [
+        'ObjectClass',
+        'FainAwardNumber'
+    ]
+}
 
 
 class Validator(object):
@@ -90,6 +112,22 @@ class Validator(object):
         result['error_string'] = eval(ERROR_STRINGS[error_type])
         return result
 
+    def build_tas(self, data):
+        key = ''
+        for field in TAS_KEY_IDENTIFIERS:
+            if data[field]:
+                key += data[field] + '-'
+
+        return key[:-1]
+
+    def build_key(self, data, fields):
+        keys = {}
+        for field in fields:
+            if data[field]:
+                keys[field] = data[field]
+
+        return keys
+
     def validate_row(self, row, rules):
         '''Runs a set of simple validation rules against submitted data.
 
@@ -143,6 +181,10 @@ class Validator(object):
                 result = {}
                 result['errors'] = errors
                 result['data'] = row
+                if filename != 'award':
+                    result['tas_identifier'] = self.build_tas(row)
+                result['identifiers'] = self.build_key(
+                        row, KEY_IDENTIFIERS[filename])
                 results[row_id] = result
         return results
 

@@ -42,6 +42,11 @@ body {
   clear: both;
 }
 
+.separator {
+  padding: .5rem 0;
+  border-bottom: 2px dotted #ccc;
+}
+
 .box {
   background: #F0F0F0;
   padding: 1rem 2rem;
@@ -53,8 +58,39 @@ body {
   margin: 3rem 0 4rem 0;
   border-left-width: 0;
   border-right-width: 0;
-  border-top-width: 2px;
+  border-top-width: 0;
   border-bottom-width: 0;
+}
+
+.box-muted header {
+  margin-bottom: 3rem;
+}
+
+.box-error {
+  border-top: 2px dotted #EDD7D7;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.box-error h3 {
+  background: #F7F0F0;
+  padding: .5rem;
+}
+
+.box-error h3 span {
+  font-size: 1.6rem;
+  padding-left: 1.5rem;
+  text-align: right;
+}
+
+.key {
+  border-left: 1px dotted #EDD7D7;
+  padding: 0 1.5rem;
+}
+
+.key:first-child {
+  border-left: 0;
+  padding-left: 0;
 }
 
 .section {
@@ -62,7 +98,7 @@ body {
 }
 
 .section h2 {
-  margin-bottom: .5em;
+  margin-bottom: 0;
 }
 
 .alert {
