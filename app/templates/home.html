@@ -67,7 +67,8 @@
       {% for file in wrong_files %}
         <div class="box-error">
           <h3>{{ file['template_name'] }} {% if file['filename'] %}
-              - {{ file['filename'] }}{% endif %}</h3>
+              <span>file: {{ file['filename'] }}</span>
+            {% endif %}</h3>
           <h4>Error: <strong>{{ file['message'] }}</strong></h4>
         </div>
       {% endfor %}
@@ -87,7 +88,9 @@
 
       {% for file in invalid_files %}
         <div class="box-error">
-          <h3>{{ file['template_name'] }} - {{ file['filename'] }}</h3>
+          <h3>{{ file['template_name'] }} 
+            <span>file: {{ file['filename'] }}</span>
+          </h3>
           {% for rows in file['errors'] %}
           {% for row, errors in rows.iteritems() %}
           <p><span class="key">Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</span>
