@@ -206,7 +206,8 @@ def check_file(file, valid_headers, template_name):
         message = 'File is of incorrect type'
         return file_info(file, template_name, [], message)
     if not validate_headers(file, valid_headers):
-        message = 'File headers are incorrect'
+        message = 'File spreadsheet headers dont\'t match with the data act \
+            template'
         return file_info(file, template_name, [], message)
 
     return None
@@ -244,15 +245,13 @@ def requires_auth(f):
 @requires_auth
 def hello_world():
     if request.method == 'POST':
-        log.warning('post')
         correct_files = []
         files = request.files
-        wrong_files  = []
         invalid_files = []
         for name in VALIDATION.keys():
             error = check_file(files[name], VALIDATION[name], name)
             if error:
-                wrong_files.append(error)
+                invalid_files.append(error)
             else:
                 error = validate_file(files[name], name)
                 if error:
@@ -270,8 +269,7 @@ def hello_world():
 
         return render_template('home.html',
                                 correct_files=correct_files,
-                                invalid_files=invalid_files,
-                                wrong_files=wrong_files)
+                                invalid_files=invalid_files)
 
     return render_template('home.html')
 
