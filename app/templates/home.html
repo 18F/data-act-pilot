@@ -2,6 +2,15 @@
 
 {% block title %}Home{% endblock %}
 
+{%
+  set key_colors = {
+    'Award': 'key-award',
+    'Appropriation': 'key-appropration',
+    'Object class program activity': 'key-object_class',
+    'Award financial': 'key-financial'
+  }
+%}
+
 
 {% block main_content %}
 <h1>Validator</h1>
@@ -10,22 +19,22 @@
     class="usa-grid box">
   <div class="usa-width-one-half">
     <label>
-      <span class="label-text">appropriation.csv</span>
-      <input type="file" accept=".csv" name="appropriation.csv">
+      <span class="key-appropration label-text">appropriation.csv</span>
+      <input class="key-appropration" type="file" accept=".csv" name="appropriation.csv">
     </label>
     <label>
-      <span class="label-text">object_class_program_activity.csv</span>
-      <input type="file" accept=".csv" name="object_class_program_activity.csv">
+      <span class="key-object_class label-text">object_class_program_activity.csv</span>
+      <input class="key-object_class" type="file" accept=".csv" name="object_class_program_activity.csv">
     </label>
   </div>
   <div class="usa-width-one-half usa-end-row">
     <label>
-      <span class="label-text">award.csv</span>
-      <input type="file" accept=".csv" name="award.csv">
+      <span class="key-award label-text">award.csv</span>
+      <input class="key-award" type="file" accept=".csv" name="award.csv">
     </label>
     <label>
-      <span class="label-text">award_financial.csv</span>
-      <input type="file" accept=".csv" name="award_financial.csv">
+      <span class="key-financial label-text">award_financial.csv</span>
+      <input class="key-financial" type="file" accept=".csv" name="award_financial.csv">
     </label>
   </div>
   <div class="clear"></div>
@@ -50,7 +59,7 @@
     {% if invalid_files|length > 1 %}
     {% for file in invalid_files %}
       <div class="box-error">
-        <h3>{{ file['template_name'] }} 
+        <h3 class="{{ key_colors[file['template_name']] }}">{{ file['template_name'] }} 
           <span>file: {{ file['filename'] }}</span>
         </h3>
         <h4>{{ file['message'] }}</h4>

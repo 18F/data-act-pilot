@@ -176,7 +176,7 @@ def regex_replace(s, find, replace):
 def file_info(file_obj, template_name, errors, err_message=''):
     return {
         'filename': file_obj.filename or '',
-        'template_name': template_name[:-4].replace('_', ' ').capitalize(),
+        'template_name': template_name[:-4].replace('_', ' ').capitalize().strip(),
         'message': err_message,
         'errors': errors
     }

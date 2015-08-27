@@ -101,8 +101,20 @@ body {
   margin-bottom: 0;
 }
 
-.alert {
-  color: #af0000;
+.key-appropration, .key-appropration * {
+  color: #008206 !important;
+}
+
+.key-object_class, .key-object_class * {
+  color: #0061A7 !important;
+}
+
+.key-award, .key-award * {
+  color: #964A00 !important;
+}
+
+.key-financial, .key-financial * {
+  color: #5300A9 !important;
 }
 
 /* USFWDS overrides */
