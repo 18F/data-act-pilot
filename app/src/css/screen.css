@@ -91,6 +91,11 @@ body {
   padding: 1em 0;
 }
 
+.icon {
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .key {
   border-left: 1px dotted #EDD7D7;
   padding: 0 1.5rem;
@@ -162,4 +167,29 @@ p + table {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
+}
+
+.usa-accordion .usa-button-unstyled {
+  border-bottom: 1px dotted #a60000;
+  color: #a60000;
+  display: inline;
+  font-weight: 400;
+  padding: 0;
+  width: auto;
+}
+
+.usa-accordion-content {
+  padding: 0;
+}
+
+.usa-accordion .usa-button-unstyled[aria-expanded="true"] .icon:after {
+  content: '\25B2';
+}
+
+.usa-accordion .usa-button-unstyled[aria-expanded="false"] .icon:after {
+  content: '\25BC';
+}
+
+.usa-accordion .usa-button-unstyled:hover {
+  background: transparent;
 }

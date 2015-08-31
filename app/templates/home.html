@@ -71,34 +71,43 @@
             <p>{{ file['detail'] }}</p>
           </div>
         </div>
-        {% for rows in file['errors'] %}
-        {% for row, errors in rows.iteritems() %}
-        <p><span class="key">Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</span>
-          {% if errors['tas_identifier'] %}
-          <span class="key">TAS: {{  errors['tas_identifier'] }}</span>
-          {% endif %}
-          {% for identifier, value in errors['identifiers'].iteritems() %}
-            <span class="key">{{ identifier }}: {{ value }}</span>
-          {% endfor %}
-        </p>
-          <table class="usa-table-bordered">
-            <thead>
-            <tr>
-              <th>Field name</th>
-              <th>Error</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for error in errors['errors'] %}
-              <tr>
-                <td>{{ error['fieldname'] }}</td>
-                <td>{{ error['error_string'] }}</td>
-              </tr>
+        {% if file['errors']|length > 0 %}
+        <div class="usa-accordion">
+          <button class="usa-button-unstyled" aria-expanded="true" aria-controls="collapsible-0">
+            <span class="action">View</span> error details <span class="icon"></span>
+          </button>
+          <div id="collapsible-0" aria-hidden="false" class="usa-accordion-content">
+          {% for rows in file['errors'] %}
+            {% for row, errors in rows.iteritems() %}
+            <p><span class="key">Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</span>
+              {% if errors['tas_identifier'] %}
+              <span class="key">TAS: {{  errors['tas_identifier'] }}</span>
+              {% endif %}
+              {% for identifier, value in errors['identifiers'].iteritems() %}
+                <span class="key">{{ identifier }}: {{ value }}</span>
+              {% endfor %}
+            </p>
+              <table class="usa-table-bordered">
+                <thead>
+                <tr>
+                  <th>Field name</th>
+                  <th>Error</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for error in errors['errors'] %}
+                  <tr>
+                    <td>{{ error['fieldname'] }}</td>
+                    <td>{{ error['error_string'] }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
             {% endfor %}
-            </tbody>
-          </table>
-        {% endfor %}
-        {% endfor %}
+          {% endfor %}
+          </div>
+        </div>
+      {% endif %}
       </div>
     {% endfor %}
     {% endif %}
