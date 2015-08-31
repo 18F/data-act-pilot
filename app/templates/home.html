@@ -44,7 +44,7 @@
 </form>
 {% if invalid_files or correct_files %}
 <div class="section">
-  <h3 class="separator">Results</h3>
+  <h4 class="separator">Results</h4>
   <section class="box-muted">
     {% if correct_files|length > 1 %}
       <section class="files files-valid">
@@ -58,11 +58,19 @@
 
     {% if invalid_files|length > 1 %}
     {% for file in invalid_files %}
-      <div class="box-error">
-        <h3 class="{{ key_colors[file['template_name']] }}">{{ file['template_name'] }} 
-          <span>file: {{ file['filename'] }}</span>
-        </h3>
-        <h4>{{ file['message'] }}</h4>
+      <div class="box-error usa-grid">
+        <div class="">
+          <h3 class="usa-width-one-half {{ key_colors[file['template_name']] }}">{{
+            file['template_name'] }} file
+          </h3>
+          <h4 class="usa-width-one-half usa-end-row">{{ file['filename'] }}</h4>
+        </div>
+        <div class="usa-alert usa-alert-error error">
+          <div class="usa-alert-body">
+            <h4>{{ file['message'] }}</h4>
+            <p>{{ file['detail'] }}</p>
+          </div>
+        </div>
         {% for rows in file['errors'] %}
         {% for row, errors in rows.iteritems() %}
         <p><span class="key">Row: {{ row|regex_replace("[A-Za-z\_\.\-]", "") }}</span>

@@ -68,19 +68,18 @@ body {
 
 .box-error {
   border-top: 2px dotted #EDD7D7;
-  margin: 2rem 0;
+  clear: both;
+  margin: 5rem 0;
   padding: 1rem 0;
 }
 
-.box-error h3 {
-  background: #F7F0F0;
-  padding: .5rem;
+.box-error:first-child {
+  margin-top: 0;
 }
 
-.box-error h3 span {
-  font-size: 1.6rem;
-  padding-left: 1.5rem;
-  text-align: right;
+.box-error .error {
+  clear: both;
+  margin-top: 0;
 }
 
 .key {
