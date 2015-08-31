@@ -67,7 +67,6 @@ body {
 }
 
 .box-error {
-  border-top: 2px dotted #EDD7D7;
   clear: both;
   margin: 5rem 0;
   padding: 1rem 0;
@@ -80,6 +79,16 @@ body {
 .box-error .error {
   clear: both;
   margin-top: 0;
+}
+
+.usa-alert-body {
+  color: #a60000;
+}
+
+.usa-alert-error {
+  background-color: transparent;
+  background-position: 0 2rem;
+  padding: 1em 0;
 }
 
 .key {
