@@ -20,6 +20,9 @@
         {% block main_content %}{% endblock %}
       </main>
     </div>
-    {% block scripts %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}">
+    </script>
+    <script src="{{ url_for('static', filename='js/components.js') }}">
+    </script>
   </body>
 </html>

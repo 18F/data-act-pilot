@@ -1,11 +1,9 @@
 @charset "UTF-8";
 html {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box; }
+  box-sizing: border-box; }
 
 *, *::after, *::before {
-  -moz-box-sizing: inherit;
-       box-sizing: inherit; }
+  box-sizing: inherit; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -285,8 +283,7 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -309,6 +306,7 @@ input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -367,19 +365,16 @@ th {
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box; }
+  box-sizing: border-box; }
 
 *, *:before, *:after {
-  -moz-box-sizing: inherit;
-       box-sizing: inherit; }
+  box-sizing: inherit; }
 
 body {
   background-color: #ffffff; }
 
 .lt-ie9 * {
-  -webkit-filter: none !important;
-          filter: none !important; }
+  filter: none !important; }
 
 [aria-hidden=true] {
   display: none !important; }
@@ -389,13 +384,104 @@ body {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 980px; }
+  max-width: 1040px; }
   .usa-grid::after,
   .usa-grid-full::after {
     clear: both;
     content: "";
     display: table; }
   @media screen and (min-width: 600px) {
+    .usa-grid .usa-width-one-whole,
+    .usa-grid-full .usa-width-one-whole {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 100%; }
+      .usa-grid .usa-width-one-whole:last-child,
+      .usa-grid-full .usa-width-one-whole:last-child {
+        margin-right: 0; }
+    .usa-grid .usa-width-one-half,
+    .usa-grid-full .usa-width-one-half {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 47.58542%; }
+      .usa-grid .usa-width-one-half:last-child,
+      .usa-grid-full .usa-width-one-half:last-child {
+        margin-right: 0; }
+    .usa-grid .usa-width-one-third,
+    .usa-grid-full .usa-width-one-third {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 30.11389%; }
+      .usa-grid .usa-width-one-third:last-child,
+      .usa-grid-full .usa-width-one-third:last-child {
+        margin-right: 0; }
+    .usa-grid .usa-width-two-thirds,
+    .usa-grid-full .usa-width-two-thirds {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 65.05695%; }
+      .usa-grid .usa-width-two-thirds:last-child,
+      .usa-grid-full .usa-width-two-thirds:last-child {
+        margin-right: 0; }
+    .usa-grid .usa-width-one-fourth,
+    .usa-grid-full .usa-width-one-fourth {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 47.58542%; }
+      .usa-grid .usa-width-one-fourth:last-child,
+      .usa-grid-full .usa-width-one-fourth:last-child {
+        margin-right: 0; }
+      .usa-grid .usa-width-one-fourth:nth-child(2n),
+      .usa-grid-full .usa-width-one-fourth:nth-child(2n) {
+        margin-right: 0; }
+    .usa-grid .usa-width-three-fourths,
+    .usa-grid-full .usa-width-three-fourths {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 100%; }
+      .usa-grid .usa-width-three-fourths:last-child,
+      .usa-grid-full .usa-width-three-fourths:last-child {
+        margin-right: 0; }
+    .usa-grid .usa-width-one-sixth,
+    .usa-grid-full .usa-width-one-sixth {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 30.11389%; }
+      .usa-grid .usa-width-one-sixth:last-child,
+      .usa-grid-full .usa-width-one-sixth:last-child {
+        margin-right: 0; }
+      .usa-grid .usa-width-one-sixth:nth-child(3n),
+      .usa-grid-full .usa-width-one-sixth:nth-child(3n) {
+        margin-right: 0; }
+    .usa-grid .usa-width-five-sixths,
+    .usa-grid-full .usa-width-five-sixths {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 82.52847%; }
+      .usa-grid .usa-width-five-sixths:last-child,
+      .usa-grid-full .usa-width-five-sixths:last-child {
+        margin-right: 0; }
+    .usa-grid .usa-width-one-twelfth,
+    .usa-grid-full .usa-width-one-twelfth {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 30.11389%; }
+      .usa-grid .usa-width-one-twelfth:last-child,
+      .usa-grid-full .usa-width-one-twelfth:last-child {
+        margin-right: 0; }
+      .usa-grid .usa-width-one-twelfth:nth-child(3n),
+      .usa-grid-full .usa-width-one-twelfth:nth-child(3n) {
+        margin-right: 0; } }
+  @media screen and (min-width: 1201px) {
     .usa-grid .usa-width-one-whole,
     .usa-grid-full .usa-width-one-whole {
       float: left;
@@ -441,6 +527,18 @@ body {
       .usa-grid .usa-width-one-fourth:last-child,
       .usa-grid-full .usa-width-one-fourth:last-child {
         margin-right: 0; }
+      .usa-grid .usa-width-one-fourth:nth-child(2n),
+      .usa-grid-full .usa-width-one-fourth:nth-child(2n) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%; }
+        .usa-grid .usa-width-one-fourth:nth-child(2n):last-child,
+        .usa-grid-full .usa-width-one-fourth:nth-child(2n):last-child {
+          margin-right: 0; }
+      .usa-grid .usa-width-one-fourth:nth-child(4n),
+      .usa-grid-full .usa-width-one-fourth:nth-child(4n) {
+        margin-right: 0; }
     .usa-grid .usa-width-three-fourths,
     .usa-grid-full .usa-width-three-fourths {
       float: left;
@@ -458,6 +556,18 @@ body {
       width: 14.70196%; }
       .usa-grid .usa-width-one-sixth:last-child,
       .usa-grid-full .usa-width-one-sixth:last-child {
+        margin-right: 0; }
+      .usa-grid .usa-width-one-sixth:nth-child(3n),
+      .usa-grid-full .usa-width-one-sixth:nth-child(3n) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 14.70196%; }
+        .usa-grid .usa-width-one-sixth:nth-child(3n):last-child,
+        .usa-grid-full .usa-width-one-sixth:nth-child(3n):last-child {
+          margin-right: 0; }
+      .usa-grid .usa-width-one-sixth:nth-child(6n),
+      .usa-grid-full .usa-width-one-sixth:nth-child(6n) {
         margin-right: 0; }
     .usa-grid .usa-width-five-sixths,
     .usa-grid-full .usa-width-five-sixths {
@@ -477,12 +587,24 @@ body {
       .usa-grid .usa-width-one-twelfth:last-child,
       .usa-grid-full .usa-width-one-twelfth:last-child {
         margin-right: 0; }
-    .usa-grid .usa-end-row,
-    .usa-grid-full .usa-end-row {
-      margin-right: 0; } }
+      .usa-grid .usa-width-one-twelfth:nth-child(3n),
+      .usa-grid-full .usa-width-one-twelfth:nth-child(3n) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 6.17215%; }
+        .usa-grid .usa-width-one-twelfth:nth-child(3n):last-child,
+        .usa-grid-full .usa-width-one-twelfth:nth-child(3n):last-child {
+          margin-right: 0; }
+      .usa-grid .usa-width-one-twelfth:nth-child(12n),
+      .usa-grid-full .usa-width-one-twelfth:nth-child(12n) {
+        margin-right: 0; } }
+  .usa-grid .usa-end-row,
+  .usa-grid-full .usa-end-row {
+    margin-right: 0; }
 
 .usa-grid {
-  padding: 0 2.5rem; }
+  padding: 0 3rem; }
 
 .usa-grid-full {
   padding: 0; }
@@ -496,12 +618,11 @@ html {
   font-size: 10px; }
 
 body {
-  font-size: 1.6rem; }
+  font-size: 1.7rem; }
 
 p {
-  font-family: "Georgia", "Times New Roman", serif;
-  font-size: 1.6rem;
-  line-height: 1.5em;
+  font-size: 1.7rem;
+  line-height: 1.375em;
   margin-top: 1em;
   margin-bottom: 1em; }
 
@@ -518,27 +639,28 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  font-family: "Merriweather", "Georgia", "Times New Roman", serif;
+  line-height: 1.375em;
   margin-top: 1.5em;
-  margin-bottom: .5em;
-  line-height: 1.3em; }
+  margin-bottom: .5em; }
 
 h5 {
   text-transform: uppercase; }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 4rem;
   font-weight: 700; }
 
 h2 {
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-weight: 700; }
 
 h3 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 700; }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 700; }
 
 h5 {
@@ -570,19 +692,19 @@ dfn {
   font-weight: 700; }
 
 .usa-serif {
-  font-family: "Georgia", "Times New Roman", serif; }
+  font-family: "Merriweather", "Georgia", "Times New Roman", serif; }
 
 .usa-display {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0; }
   @media (min-width: 481px) {
     .usa-display {
-      font-size: 3.6rem;
+      font-size: 4rem;
       font-weight: 700; } }
   @media (min-width: 600px) {
     .usa-display {
-      font-size: 4.8rem;
+      font-size: 5.2rem;
       font-weight: 700; } }
 
 .usa-image-block {
@@ -605,8 +727,7 @@ ul, ol {
   margin-top: 2em;
   margin-bottom: 2em; }
   ul li, ol li {
-    font-family: "Georgia", "Times New Roman", serif;
-    line-height: 1.5em;
+    line-height: 1.375em;
     margin-top: .75em;
     margin-bottom: .75em; }
 
@@ -691,14 +812,12 @@ input[type="time"],
 input[type="week"],
 textarea,
 select {
-  border: 1px solid #9e9e9e;
-  border-radius: 0.4rem;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  border: 1px solid #5b616b;
+  box-sizing: border-box;
   color: #000;
   display: block;
-  font-size: 1.6rem;
-  margin: 1.5rem 0;
+  font-size: 1.7rem;
+  margin: .2em 0;
   max-width: 46rem;
   width: 100%;
   outline: none;
@@ -735,26 +854,7 @@ select {
   textarea.usa-input-focus,
   select:focus,
   select.usa-input-focus {
-    border-color: #3e94cf;
-    box-shadow: 0 0 0 1px #3e94cf; }
-  input.usa-input-error,
-  input[type="text"].usa-input-error,
-  input[type="email"].usa-input-error,
-  input[type="password"].usa-input-error,
-  input[type="url"].usa-input-error,
-  input[type="tel"].usa-input-error,
-  input[type="number"].usa-input-error,
-  input[type="search"].usa-input-error,
-  input[type="file"].usa-input-error,
-  input[type="date"].usa-input-error,
-  input[type="datetime-local"].usa-input-error,
-  input[type="month"].usa-input-error,
-  input[type="time"].usa-input-error,
-  input[type="week"].usa-input-error,
-  textarea.usa-input-error,
-  select.usa-input-error {
-    border-color: #cd2026;
-    box-shadow: 0 0 0 1px #cd2026; }
+    box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf; }
   input.usa-input-success,
   input[type="text"].usa-input-success,
   input[type="email"].usa-input-success,
@@ -771,20 +871,35 @@ select {
   input[type="week"].usa-input-success,
   textarea.usa-input-success,
   select.usa-input-success {
-    border-color: #2e8540;
-    box-shadow: 0 0 0 1px #2e8540; }
+    border: 3px solid #2e8540; }
+
+.usa-input-error {
+  border-left: 4px solid #cd2026;
+  padding: .5em 1.5rem;
+  position: relative;
+  right: 1.5rem;
+  margin-top: 3rem; }
+  .usa-input-error input {
+    border: 3px solid #cd2026; }
+  .usa-input-error label {
+    margin-top: 0; }
+
+.usa-input-error-message {
+  color: #cd2026;
+  font-size: 1.4rem;
+  font-weight: 700; }
 
 label {
   display: block;
-  font-weight: 700;
   margin-top: 3rem;
-  margin-bottom: 1.5rem;
   max-width: 46rem; }
 
 textarea {
   height: 16rem; }
 
 select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
   background: url("../img/arrow-down.png") no-repeat;
   background-position: right 1.3rem center; }
@@ -814,7 +929,7 @@ input[type="radio"] + label {
 input[type="checkbox"] + label::before,
 input[type="radio"] + label::before {
   background: white;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
   box-shadow: 0 0 0 1px #757575;
   content: '\a0';
   display: inline-block;
@@ -956,20 +1071,27 @@ input[type=range]:focus::-ms-thumb {
 .usa-form-group-year {
   width: 7rem; }
 
+.usa-button,
+.usa-button-primary,
+.usa-button:visited,
+.usa-button-primary:visited,
 button,
-button[type="button"],
-button[type="submit"],
-button[type="reset"],
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="image"] {
+[type="button"],
+[type="submit"],
+[type="reset"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+[type="image"] {
   appearance: none;
-  background-color: #212121;
+  background-color: #0071bc;
   border: 0;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
   color: #ffffff;
-  font-size: 1.6rem;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  font-size: 1.7rem;
   font-weight: 700;
   line-height: 1;
   margin-top: .5em;
@@ -980,139 +1102,443 @@ input[type="image"] {
   text-align: center;
   width: 100%;
   -webkit-font-smoothing: antialiased; }
-  button:hover, button.usa-button-hover,
-  button[type="button"]:hover,
-  button[type="button"].usa-button-hover,
-  button[type="submit"]:hover,
-  button[type="submit"].usa-button-hover,
-  button[type="reset"]:hover,
-  button[type="reset"].usa-button-hover,
-  input[type="button"]:hover,
-  input[type="button"].usa-button-hover,
-  input[type="submit"]:hover,
-  input[type="submit"].usa-button-hover,
-  input[type="reset"]:hover,
-  input[type="reset"].usa-button-hover,
-  input[type="image"]:hover,
-  input[type="image"].usa-button-hover {
-    background-color: #616161; }
-  button:focus, button.usa-button-focus,
-  button[type="button"]:focus,
-  button[type="button"].usa-button-focus,
-  button[type="submit"]:focus,
-  button[type="submit"].usa-button-focus,
-  button[type="reset"]:focus,
-  button[type="reset"].usa-button-focus,
-  input[type="button"]:focus,
-  input[type="button"].usa-button-focus,
-  input[type="submit"]:focus,
-  input[type="submit"].usa-button-focus,
-  input[type="reset"]:focus,
-  input[type="reset"].usa-button-focus,
-  input[type="image"]:focus,
-  input[type="image"].usa-button-focus {
-    box-shadow: 0 0 0 2px #3e94cf; }
-  button:active, button.usa-button-active,
-  button[type="button"]:active,
-  button[type="button"].usa-button-active,
-  button[type="submit"]:active,
-  button[type="submit"].usa-button-active,
-  button[type="reset"]:active,
-  button[type="reset"].usa-button-active,
-  input[type="button"]:active,
-  input[type="button"].usa-button-active,
-  input[type="submit"]:active,
-  input[type="submit"].usa-button-active,
-  input[type="reset"]:active,
-  input[type="reset"].usa-button-active,
-  input[type="image"]:active,
-  input[type="image"].usa-button-active {
-    background-color: #000; }
+  .usa-button:hover, .usa-button.usa-button-hover,
+  .usa-button-primary:hover,
+  .usa-button-primary.usa-button-hover,
+  .usa-button:visited:hover,
+  .usa-button:visited.usa-button-hover,
+  .usa-button-primary:visited:hover,
+  .usa-button-primary:visited.usa-button-hover,
+  button:hover,
+  button.usa-button-hover,
+  [type="button"]:hover,
+  [type="button"].usa-button-hover,
+  [type="submit"]:hover,
+  [type="submit"].usa-button-hover,
+  [type="reset"]:hover,
+  [type="reset"].usa-button-hover,
+  [type="button"]:hover,
+  [type="button"].usa-button-hover,
+  [type="submit"]:hover,
+  [type="submit"].usa-button-hover,
+  [type="reset"]:hover,
+  [type="reset"].usa-button-hover,
+  [type="image"]:hover,
+  [type="image"].usa-button-hover {
+    background-color: #205493;
+    border-bottom: 0;
+    color: #ffffff; }
+  .usa-button:focus, .usa-button.usa-button-focus,
+  .usa-button-primary:focus,
+  .usa-button-primary.usa-button-focus,
+  .usa-button:visited:focus,
+  .usa-button:visited.usa-button-focus,
+  .usa-button-primary:visited:focus,
+  .usa-button-primary:visited.usa-button-focus,
+  button:focus,
+  button.usa-button-focus,
+  [type="button"]:focus,
+  [type="button"].usa-button-focus,
+  [type="submit"]:focus,
+  [type="submit"].usa-button-focus,
+  [type="reset"]:focus,
+  [type="reset"].usa-button-focus,
+  [type="button"]:focus,
+  [type="button"].usa-button-focus,
+  [type="submit"]:focus,
+  [type="submit"].usa-button-focus,
+  [type="reset"]:focus,
+  [type="reset"].usa-button-focus,
+  [type="image"]:focus,
+  [type="image"].usa-button-focus {
+    box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf; }
+  .usa-button:active, .usa-button.usa-button-active,
+  .usa-button-primary:active,
+  .usa-button-primary.usa-button-active,
+  .usa-button:visited:active,
+  .usa-button:visited.usa-button-active,
+  .usa-button-primary:visited:active,
+  .usa-button-primary:visited.usa-button-active,
+  button:active,
+  button.usa-button-active,
+  [type="button"]:active,
+  [type="button"].usa-button-active,
+  [type="submit"]:active,
+  [type="submit"].usa-button-active,
+  [type="reset"]:active,
+  [type="reset"].usa-button-active,
+  [type="button"]:active,
+  [type="button"].usa-button-active,
+  [type="submit"]:active,
+  [type="submit"].usa-button-active,
+  [type="reset"]:active,
+  [type="reset"].usa-button-active,
+  [type="image"]:active,
+  [type="image"].usa-button-active {
+    background-color: #112e51; }
   @media (min-width: 481px) {
+    .usa-button,
+    .usa-button-primary,
+    .usa-button:visited,
+    .usa-button-primary:visited,
     button,
-    button[type="button"],
-    button[type="submit"],
-    button[type="reset"],
-    input[type="button"],
-    input[type="submit"],
-    input[type="reset"],
-    input[type="image"] {
+    [type="button"],
+    [type="submit"],
+    [type="reset"],
+    [type="button"],
+    [type="submit"],
+    [type="reset"],
+    [type="image"] {
       width: auto; } }
+  .usa-button.usa-button-primary-alt,
+  .usa-button-primary.usa-button-primary-alt,
+  .usa-button:visited.usa-button-primary-alt,
+  .usa-button-primary:visited.usa-button-primary-alt,
+  button.usa-button-primary-alt,
+  [type="button"].usa-button-primary-alt,
+  [type="submit"].usa-button-primary-alt,
+  [type="reset"].usa-button-primary-alt,
+  [type="button"].usa-button-primary-alt,
+  [type="submit"].usa-button-primary-alt,
+  [type="reset"].usa-button-primary-alt,
+  [type="image"].usa-button-primary-alt {
+    background-color: #02bfe7;
+    color: #212121; }
+    .usa-button.usa-button-primary-alt:hover, .usa-button.usa-button-primary-alt.usa-button-hover,
+    .usa-button-primary.usa-button-primary-alt:hover,
+    .usa-button-primary.usa-button-primary-alt.usa-button-hover,
+    .usa-button:visited.usa-button-primary-alt:hover,
+    .usa-button:visited.usa-button-primary-alt.usa-button-hover,
+    .usa-button-primary:visited.usa-button-primary-alt:hover,
+    .usa-button-primary:visited.usa-button-primary-alt.usa-button-hover,
+    button.usa-button-primary-alt:hover,
+    button.usa-button-primary-alt.usa-button-hover,
+    [type="button"].usa-button-primary-alt:hover,
+    [type="button"].usa-button-primary-alt.usa-button-hover,
+    [type="submit"].usa-button-primary-alt:hover,
+    [type="submit"].usa-button-primary-alt.usa-button-hover,
+    [type="reset"].usa-button-primary-alt:hover,
+    [type="reset"].usa-button-primary-alt.usa-button-hover,
+    [type="button"].usa-button-primary-alt:hover,
+    [type="button"].usa-button-primary-alt.usa-button-hover,
+    [type="submit"].usa-button-primary-alt:hover,
+    [type="submit"].usa-button-primary-alt.usa-button-hover,
+    [type="reset"].usa-button-primary-alt:hover,
+    [type="reset"].usa-button-primary-alt.usa-button-hover,
+    [type="image"].usa-button-primary-alt:hover,
+    [type="image"].usa-button-primary-alt.usa-button-hover {
+      background-color: #00a6d2; }
+    .usa-button.usa-button-primary-alt:active, .usa-button.usa-button-primary-alt.usa-button-active,
+    .usa-button-primary.usa-button-primary-alt:active,
+    .usa-button-primary.usa-button-primary-alt.usa-button-active,
+    .usa-button:visited.usa-button-primary-alt:active,
+    .usa-button:visited.usa-button-primary-alt.usa-button-active,
+    .usa-button-primary:visited.usa-button-primary-alt:active,
+    .usa-button-primary:visited.usa-button-primary-alt.usa-button-active,
+    button.usa-button-primary-alt:active,
+    button.usa-button-primary-alt.usa-button-active,
+    [type="button"].usa-button-primary-alt:active,
+    [type="button"].usa-button-primary-alt.usa-button-active,
+    [type="submit"].usa-button-primary-alt:active,
+    [type="submit"].usa-button-primary-alt.usa-button-active,
+    [type="reset"].usa-button-primary-alt:active,
+    [type="reset"].usa-button-primary-alt.usa-button-active,
+    [type="button"].usa-button-primary-alt:active,
+    [type="button"].usa-button-primary-alt.usa-button-active,
+    [type="submit"].usa-button-primary-alt:active,
+    [type="submit"].usa-button-primary-alt.usa-button-active,
+    [type="reset"].usa-button-primary-alt:active,
+    [type="reset"].usa-button-primary-alt.usa-button-active,
+    [type="image"].usa-button-primary-alt:active,
+    [type="image"].usa-button-primary-alt.usa-button-active {
+      background-color: #046b99;
+      color: #ffffff; }
+  .usa-button.usa-button-secondary,
+  .usa-button-primary.usa-button-secondary,
+  .usa-button:visited.usa-button-secondary,
+  .usa-button-primary:visited.usa-button-secondary,
+  button.usa-button-secondary,
+  [type="button"].usa-button-secondary,
+  [type="submit"].usa-button-secondary,
+  [type="reset"].usa-button-secondary,
+  [type="button"].usa-button-secondary,
+  [type="submit"].usa-button-secondary,
+  [type="reset"].usa-button-secondary,
+  [type="image"].usa-button-secondary {
+    background-color: #e31c3d; }
+    .usa-button.usa-button-secondary:hover, .usa-button.usa-button-secondary.usa-button-hover,
+    .usa-button-primary.usa-button-secondary:hover,
+    .usa-button-primary.usa-button-secondary.usa-button-hover,
+    .usa-button:visited.usa-button-secondary:hover,
+    .usa-button:visited.usa-button-secondary.usa-button-hover,
+    .usa-button-primary:visited.usa-button-secondary:hover,
+    .usa-button-primary:visited.usa-button-secondary.usa-button-hover,
+    button.usa-button-secondary:hover,
+    button.usa-button-secondary.usa-button-hover,
+    [type="button"].usa-button-secondary:hover,
+    [type="button"].usa-button-secondary.usa-button-hover,
+    [type="submit"].usa-button-secondary:hover,
+    [type="submit"].usa-button-secondary.usa-button-hover,
+    [type="reset"].usa-button-secondary:hover,
+    [type="reset"].usa-button-secondary.usa-button-hover,
+    [type="button"].usa-button-secondary:hover,
+    [type="button"].usa-button-secondary.usa-button-hover,
+    [type="submit"].usa-button-secondary:hover,
+    [type="submit"].usa-button-secondary.usa-button-hover,
+    [type="reset"].usa-button-secondary:hover,
+    [type="reset"].usa-button-secondary.usa-button-hover,
+    [type="image"].usa-button-secondary:hover,
+    [type="image"].usa-button-secondary.usa-button-hover {
+      background-color: #cd2026; }
+    .usa-button.usa-button-secondary:active, .usa-button.usa-button-secondary.usa-button-active,
+    .usa-button-primary.usa-button-secondary:active,
+    .usa-button-primary.usa-button-secondary.usa-button-active,
+    .usa-button:visited.usa-button-secondary:active,
+    .usa-button:visited.usa-button-secondary.usa-button-active,
+    .usa-button-primary:visited.usa-button-secondary:active,
+    .usa-button-primary:visited.usa-button-secondary.usa-button-active,
+    button.usa-button-secondary:active,
+    button.usa-button-secondary.usa-button-active,
+    [type="button"].usa-button-secondary:active,
+    [type="button"].usa-button-secondary.usa-button-active,
+    [type="submit"].usa-button-secondary:active,
+    [type="submit"].usa-button-secondary.usa-button-active,
+    [type="reset"].usa-button-secondary:active,
+    [type="reset"].usa-button-secondary.usa-button-active,
+    [type="button"].usa-button-secondary:active,
+    [type="button"].usa-button-secondary.usa-button-active,
+    [type="submit"].usa-button-secondary:active,
+    [type="submit"].usa-button-secondary.usa-button-active,
+    [type="reset"].usa-button-secondary:active,
+    [type="reset"].usa-button-secondary.usa-button-active,
+    [type="image"].usa-button-secondary:active,
+    [type="image"].usa-button-secondary.usa-button-active {
+      background-color: #981b1e; }
+  .usa-button.usa-button-gray,
+  .usa-button-primary.usa-button-gray,
+  .usa-button:visited.usa-button-gray,
+  .usa-button-primary:visited.usa-button-gray,
+  button.usa-button-gray,
+  [type="button"].usa-button-gray,
+  [type="submit"].usa-button-gray,
+  [type="reset"].usa-button-gray,
+  [type="button"].usa-button-gray,
+  [type="submit"].usa-button-gray,
+  [type="reset"].usa-button-gray,
+  [type="image"].usa-button-gray {
+    background-color: #5b616b; }
+    .usa-button.usa-button-gray:hover, .usa-button.usa-button-gray.usa-button-hover,
+    .usa-button-primary.usa-button-gray:hover,
+    .usa-button-primary.usa-button-gray.usa-button-hover,
+    .usa-button:visited.usa-button-gray:hover,
+    .usa-button:visited.usa-button-gray.usa-button-hover,
+    .usa-button-primary:visited.usa-button-gray:hover,
+    .usa-button-primary:visited.usa-button-gray.usa-button-hover,
+    button.usa-button-gray:hover,
+    button.usa-button-gray.usa-button-hover,
+    [type="button"].usa-button-gray:hover,
+    [type="button"].usa-button-gray.usa-button-hover,
+    [type="submit"].usa-button-gray:hover,
+    [type="submit"].usa-button-gray.usa-button-hover,
+    [type="reset"].usa-button-gray:hover,
+    [type="reset"].usa-button-gray.usa-button-hover,
+    [type="button"].usa-button-gray:hover,
+    [type="button"].usa-button-gray.usa-button-hover,
+    [type="submit"].usa-button-gray:hover,
+    [type="submit"].usa-button-gray.usa-button-hover,
+    [type="reset"].usa-button-gray:hover,
+    [type="reset"].usa-button-gray.usa-button-hover,
+    [type="image"].usa-button-gray:hover,
+    [type="image"].usa-button-gray.usa-button-hover {
+      background-color: #323a45; }
+    .usa-button.usa-button-gray:active, .usa-button.usa-button-gray.usa-button-active,
+    .usa-button-primary.usa-button-gray:active,
+    .usa-button-primary.usa-button-gray.usa-button-active,
+    .usa-button:visited.usa-button-gray:active,
+    .usa-button:visited.usa-button-gray.usa-button-active,
+    .usa-button-primary:visited.usa-button-gray:active,
+    .usa-button-primary:visited.usa-button-gray.usa-button-active,
+    button.usa-button-gray:active,
+    button.usa-button-gray.usa-button-active,
+    [type="button"].usa-button-gray:active,
+    [type="button"].usa-button-gray.usa-button-active,
+    [type="submit"].usa-button-gray:active,
+    [type="submit"].usa-button-gray.usa-button-active,
+    [type="reset"].usa-button-gray:active,
+    [type="reset"].usa-button-gray.usa-button-active,
+    [type="button"].usa-button-gray:active,
+    [type="button"].usa-button-gray.usa-button-active,
+    [type="submit"].usa-button-gray:active,
+    [type="submit"].usa-button-gray.usa-button-active,
+    [type="reset"].usa-button-gray:active,
+    [type="reset"].usa-button-gray.usa-button-active,
+    [type="image"].usa-button-gray:active,
+    [type="image"].usa-button-gray.usa-button-active {
+      background-color: #212121; }
+  .usa-button.usa-button-outline,
+  .usa-button-primary.usa-button-outline,
+  .usa-button:visited.usa-button-outline,
+  .usa-button-primary:visited.usa-button-outline,
+  button.usa-button-outline,
+  [type="button"].usa-button-outline,
+  [type="submit"].usa-button-outline,
+  [type="reset"].usa-button-outline,
+  [type="button"].usa-button-outline,
+  [type="submit"].usa-button-outline,
+  [type="reset"].usa-button-outline,
+  [type="image"].usa-button-outline {
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: #0071bc;
+    color: #0071bc;
+    padding: .8rem 1.8rem; }
+    .usa-button.usa-button-outline:hover, .usa-button.usa-button-outline.usa-button-hover,
+    .usa-button-primary.usa-button-outline:hover,
+    .usa-button-primary.usa-button-outline.usa-button-hover,
+    .usa-button:visited.usa-button-outline:hover,
+    .usa-button:visited.usa-button-outline.usa-button-hover,
+    .usa-button-primary:visited.usa-button-outline:hover,
+    .usa-button-primary:visited.usa-button-outline.usa-button-hover,
+    button.usa-button-outline:hover,
+    button.usa-button-outline.usa-button-hover,
+    [type="button"].usa-button-outline:hover,
+    [type="button"].usa-button-outline.usa-button-hover,
+    [type="submit"].usa-button-outline:hover,
+    [type="submit"].usa-button-outline.usa-button-hover,
+    [type="reset"].usa-button-outline:hover,
+    [type="reset"].usa-button-outline.usa-button-hover,
+    [type="button"].usa-button-outline:hover,
+    [type="button"].usa-button-outline.usa-button-hover,
+    [type="submit"].usa-button-outline:hover,
+    [type="submit"].usa-button-outline.usa-button-hover,
+    [type="reset"].usa-button-outline:hover,
+    [type="reset"].usa-button-outline.usa-button-hover,
+    [type="image"].usa-button-outline:hover,
+    [type="image"].usa-button-outline.usa-button-hover {
+      border-color: #205493;
+      color: #205493; }
+    .usa-button.usa-button-outline:active, .usa-button.usa-button-outline.usa-button-active,
+    .usa-button-primary.usa-button-outline:active,
+    .usa-button-primary.usa-button-outline.usa-button-active,
+    .usa-button:visited.usa-button-outline:active,
+    .usa-button:visited.usa-button-outline.usa-button-active,
+    .usa-button-primary:visited.usa-button-outline:active,
+    .usa-button-primary:visited.usa-button-outline.usa-button-active,
+    button.usa-button-outline:active,
+    button.usa-button-outline.usa-button-active,
+    [type="button"].usa-button-outline:active,
+    [type="button"].usa-button-outline.usa-button-active,
+    [type="submit"].usa-button-outline:active,
+    [type="submit"].usa-button-outline.usa-button-active,
+    [type="reset"].usa-button-outline:active,
+    [type="reset"].usa-button-outline.usa-button-active,
+    [type="button"].usa-button-outline:active,
+    [type="button"].usa-button-outline.usa-button-active,
+    [type="submit"].usa-button-outline:active,
+    [type="submit"].usa-button-outline.usa-button-active,
+    [type="reset"].usa-button-outline:active,
+    [type="reset"].usa-button-outline.usa-button-active,
+    [type="image"].usa-button-outline:active,
+    [type="image"].usa-button-outline.usa-button-active {
+      border-color: #112e51;
+      color: #112e51; }
+  .usa-button.usa-button-outline-inverse,
+  .usa-button-primary.usa-button-outline-inverse,
+  .usa-button:visited.usa-button-outline-inverse,
+  .usa-button-primary:visited.usa-button-outline-inverse,
+  button.usa-button-outline-inverse,
+  [type="button"].usa-button-outline-inverse,
+  [type="submit"].usa-button-outline-inverse,
+  [type="reset"].usa-button-outline-inverse,
+  [type="button"].usa-button-outline-inverse,
+  [type="submit"].usa-button-outline-inverse,
+  [type="reset"].usa-button-outline-inverse,
+  [type="image"].usa-button-outline-inverse {
+    background: transparent;
+    border: 2px solid;
+    border-color: #ffffff;
+    color: #ffffff;
+    padding: .8rem 1.8rem; }
+    .usa-button.usa-button-outline-inverse:hover, .usa-button.usa-button-outline-inverse.usa-button-hover,
+    .usa-button-primary.usa-button-outline-inverse:hover,
+    .usa-button-primary.usa-button-outline-inverse.usa-button-hover,
+    .usa-button:visited.usa-button-outline-inverse:hover,
+    .usa-button:visited.usa-button-outline-inverse.usa-button-hover,
+    .usa-button-primary:visited.usa-button-outline-inverse:hover,
+    .usa-button-primary:visited.usa-button-outline-inverse.usa-button-hover,
+    button.usa-button-outline-inverse:hover,
+    button.usa-button-outline-inverse.usa-button-hover,
+    [type="button"].usa-button-outline-inverse:hover,
+    [type="button"].usa-button-outline-inverse.usa-button-hover,
+    [type="submit"].usa-button-outline-inverse:hover,
+    [type="submit"].usa-button-outline-inverse.usa-button-hover,
+    [type="reset"].usa-button-outline-inverse:hover,
+    [type="reset"].usa-button-outline-inverse.usa-button-hover,
+    [type="button"].usa-button-outline-inverse:hover,
+    [type="button"].usa-button-outline-inverse.usa-button-hover,
+    [type="submit"].usa-button-outline-inverse:hover,
+    [type="submit"].usa-button-outline-inverse.usa-button-hover,
+    [type="reset"].usa-button-outline-inverse:hover,
+    [type="reset"].usa-button-outline-inverse.usa-button-hover,
+    [type="image"].usa-button-outline-inverse:hover,
+    [type="image"].usa-button-outline-inverse.usa-button-hover {
+      border-color: #d6d7d9;
+      color: #d6d7d9; }
+    .usa-button.usa-button-outline-inverse:active, .usa-button.usa-button-outline-inverse.usa-button-active,
+    .usa-button-primary.usa-button-outline-inverse:active,
+    .usa-button-primary.usa-button-outline-inverse.usa-button-active,
+    .usa-button:visited.usa-button-outline-inverse:active,
+    .usa-button:visited.usa-button-outline-inverse.usa-button-active,
+    .usa-button-primary:visited.usa-button-outline-inverse:active,
+    .usa-button-primary:visited.usa-button-outline-inverse.usa-button-active,
+    button.usa-button-outline-inverse:active,
+    button.usa-button-outline-inverse.usa-button-active,
+    [type="button"].usa-button-outline-inverse:active,
+    [type="button"].usa-button-outline-inverse.usa-button-active,
+    [type="submit"].usa-button-outline-inverse:active,
+    [type="submit"].usa-button-outline-inverse.usa-button-active,
+    [type="reset"].usa-button-outline-inverse:active,
+    [type="reset"].usa-button-outline-inverse.usa-button-active,
+    [type="button"].usa-button-outline-inverse:active,
+    [type="button"].usa-button-outline-inverse.usa-button-active,
+    [type="submit"].usa-button-outline-inverse:active,
+    [type="submit"].usa-button-outline-inverse.usa-button-active,
+    [type="reset"].usa-button-outline-inverse:active,
+    [type="reset"].usa-button-outline-inverse.usa-button-active,
+    [type="image"].usa-button-outline-inverse:active,
+    [type="image"].usa-button-outline-inverse.usa-button-active {
+      border-color: #aeb0b5;
+      color: #d6d7d9; }
+  .usa-button.usa-button-big,
+  .usa-button-primary.usa-button-big,
+  .usa-button:visited.usa-button-big,
+  .usa-button-primary:visited.usa-button-big,
+  button.usa-button-big,
+  [type="button"].usa-button-big,
+  [type="submit"].usa-button-big,
+  [type="reset"].usa-button-big,
+  [type="button"].usa-button-big,
+  [type="submit"].usa-button-big,
+  [type="reset"].usa-button-big,
+  [type="image"].usa-button-big {
+    font-size: 1.9rem;
+    padding: 1.5rem 3rem; }
 
-input[type="submit"]:disabled,
+[type="submit"]:disabled,
 .usa-button-disabled {
-  background-color: #e0e0e0;
-  color: #616161;
+  background-color: #d6d7d9;
+  color: #323a45;
   cursor: default; }
-  input[type="submit"]:disabled:hover,
-  .usa-button-disabled:hover {
-    background-color: #e0e0e0; }
-
-button.usa-button-secondary,
-button[type="button"].usa-button-secondary,
-button[type="submit"].usa-button-secondary,
-button[type="reset"].usa-button-secondary,
-input[type="button"].usa-button-secondary,
-input[type="submit"].usa-button-secondary,
-input[type="reset"].usa-button-secondary,
-input[type="image"].usa-button-secondary {
-  background-color: #757575; }
-  button.usa-button-secondary:hover, button.usa-button-secondary.usa-button-secondary-hover,
-  button[type="button"].usa-button-secondary:hover,
-  button[type="button"].usa-button-secondary.usa-button-secondary-hover,
-  button[type="submit"].usa-button-secondary:hover,
-  button[type="submit"].usa-button-secondary.usa-button-secondary-hover,
-  button[type="reset"].usa-button-secondary:hover,
-  button[type="reset"].usa-button-secondary.usa-button-secondary-hover,
-  input[type="button"].usa-button-secondary:hover,
-  input[type="button"].usa-button-secondary.usa-button-secondary-hover,
-  input[type="submit"].usa-button-secondary:hover,
-  input[type="submit"].usa-button-secondary.usa-button-secondary-hover,
-  input[type="reset"].usa-button-secondary:hover,
-  input[type="reset"].usa-button-secondary.usa-button-secondary-hover,
-  input[type="image"].usa-button-secondary:hover,
-  input[type="image"].usa-button-secondary.usa-button-secondary-hover {
-    background-color: #424242; }
-  button.usa-button-secondary:active, button.usa-button-secondary.usa-button-secondary-active,
-  button[type="button"].usa-button-secondary:active,
-  button[type="button"].usa-button-secondary.usa-button-secondary-active,
-  button[type="submit"].usa-button-secondary:active,
-  button[type="submit"].usa-button-secondary.usa-button-secondary-active,
-  button[type="reset"].usa-button-secondary:active,
-  button[type="reset"].usa-button-secondary.usa-button-secondary-active,
-  input[type="button"].usa-button-secondary:active,
-  input[type="button"].usa-button-secondary.usa-button-secondary-active,
-  input[type="submit"].usa-button-secondary:active,
-  input[type="submit"].usa-button-secondary.usa-button-secondary-active,
-  input[type="reset"].usa-button-secondary:active,
-  input[type="reset"].usa-button-secondary.usa-button-secondary-active,
-  input[type="image"].usa-button-secondary:active,
-  input[type="image"].usa-button-secondary.usa-button-secondary-active {
-    background-color: #000; }
-
-.usa-button-outlined,
-button[type="button"].usa-button-outlined,
-button[type="submit"].usa-button-outlined,
-button[type="reset"].usa-button-outlined,
-input[type="button"].usa-button-outlined,
-input[type="submit"].usa-button-outlined,
-input[type="reset"].usa-button-outlined,
-input[type="image"].usa-button-outlined {
-  background-color: #ffffff;
-  border: 2px solid #212121;
-  color: #212121;
-  padding: .8rem 1.8rem; }
-
-.usa-button-big,
-button[type="button"].usa-button-big,
-button[type="submit"].usa-button-big,
-button[type="reset"].usa-button-big,
-input[type="button"].usa-button-big,
-input[type="submit"].usa-button-big,
-input[type="reset"].usa-button-big,
-input[type="image"].usa-button-big {
-  font-size: 1.9rem;
-  padding: 1.5rem 3rem; }
+  [type="submit"]:disabled:hover, [type="submit"]:disabled.usa-button-hover, [type="submit"]:disabled:active, [type="submit"]:disabled.usa-button-active, [type="submit"]:disabled:focus,
+  .usa-button-disabled:hover,
+  .usa-button-disabled.usa-button-hover,
+  .usa-button-disabled:active,
+  .usa-button-disabled.usa-button-active,
+  .usa-button-disabled:focus {
+    background-color: #d6d7d9;
+    border: 0;
+    box-shadow: none;
+    color: #323a45; }
 
 .usa-button-unstyled {
   background: none;
@@ -1125,22 +1551,22 @@ input[type="image"].usa-button-big {
     box-shadow: initial !important; }
 
 table {
+  border-spacing: 0;
   margin: 2em 0;
   min-width: 100%; }
+  table thead tr {
+    background-color: #efefef; }
   table thead th {
     text-align: left; }
   table th, table td {
-    border: 1px solid #757575;
+    border: 1px solid #5b616b;
     line-height: 1;
     padding: 1.5rem; }
 
-.usa-table-bordered {
-  border-spacing: 0; }
-  .usa-table-bordered thead tr {
-    background-color: #eeeeee; }
-
-.usa-table-borderless thead tr th {
-  border-top: 0; }
+.usa-table-borderless thead tr {
+  background-color: transparent; }
+  .usa-table-borderless thead tr th {
+    border-top: 0; }
 .usa-table-borderless th, .usa-table-borderless td {
   border-left: 0;
   border-right: 0; }
@@ -1150,7 +1576,7 @@ img {
 
 .usa-label, .usa-label-big {
   background-color: #0071bc;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
   color: #ffffff;
   font-size: 1.4rem;
   margin-right: .5rem;
@@ -1163,7 +1589,7 @@ img {
     margin-right: 0; }
 
 .usa-label-big {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   padding-left: .9rem;
   padding-right: .9rem; }
 
@@ -1174,6 +1600,71 @@ a.usa-label:hover, a.usa-label-big:hover {
   background-color: #205493;
   border-bottom: none;
   color: #ffffff; }
+
+.usa-disclaimer {
+  background-color: #d6d7d9;
+  font-size: 1.5rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem; }
+
+.usa-disclaimer-stage {
+  display: none;
+  float: right; }
+  @media screen and (min-width: 600px) {
+    .usa-disclaimer-stage {
+      display: block; } }
+
+.usa-sidenav-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 101%; }
+  .usa-sidenav-list li {
+    display: list-item;
+    margin: 0; }
+    .usa-sidenav-list li:before {
+      display: none; }
+    .usa-sidenav-list li:after {
+      display: none; }
+  .usa-sidenav-list li {
+    border-top: 1px solid #5b616b;
+    font-size: 2rem; }
+  .usa-sidenav-list a {
+    border: none;
+    color: #212121;
+    display: block;
+    font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+    line-height: 1;
+    padding-bottom: 1rem;
+    padding-left: 1.8rem;
+    padding-right: 1rem;
+    padding-top: 1rem; }
+    .usa-sidenav-list a:hover {
+      background-color: #efefef;
+      color: #0071bc; }
+    .usa-sidenav-list a.usa-current-page {
+      color: #0071bc;
+      font-weight: 700; }
+    .usa-sidenav-list a.usa-current-page {
+      border-left: 4px solid #0071bc;
+      padding-left: 1.4rem; }
+
+.usa-sidenav-sub_list {
+  margin: 0;
+  width: 100%; }
+  .usa-sidenav-sub_list li {
+    border: none;
+    font-size: 1.7rem; }
+  .usa-sidenav-sub_list a {
+    padding-left: 2.8rem; }
+  .usa-sidenav-sub_list a:hover,
+  .usa-sidenav-sub_list a.usa-current-page {
+    border: none;
+    padding-left: 2.8rem; }
+  .usa-sidenav-sub_list .usa-sidenav-sub_list a {
+    padding-left: 3.8rem; }
+  .usa-sidenav-sub_list .usa-sidenav-sub_list a:hover {
+    padding-left: 3.8rem; }
 
 .usa-footer .usa-unstyled-list {
   display: block; }
@@ -1212,7 +1703,7 @@ a.usa-label:hover, a.usa-label-big:hover {
       padding-left: 2.5rem;
       padding-right: 2.5rem; } }
 
-@media screen and (min-width: min-width 600px 2) {
+@media screen and (min-width: min-width 600px 6) {
   .width-one-sixth {
     float: left;
     display: block;
@@ -1229,13 +1720,7 @@ a.usa-label:hover, a.usa-label-big:hover {
       padding-bottom: 1rem; } }
 @media (min-width: 600px) {
   .usa-footer-medium .usa-footer-nav ul {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    align-items: center;
     display: flex; } }
 
 .usa-footer-slim .usa-footer-nav a {
@@ -1247,13 +1732,7 @@ a.usa-label:hover, a.usa-label-big:hover {
       padding-bottom: 1rem;
       padding-top: 1rem; }
       .usa-footer-slim .usa-footer-primary-section .usa-grid-full {
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
+        align-items: center;
         display: flex; } }
 
 ul.usa-footer-primary-content,
@@ -1411,7 +1890,7 @@ fieldset {
   padding: 0; }
 
 legend {
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-weight: 700; }
 
 @media screen and (min-width: 600px) {
@@ -1533,7 +2012,7 @@ legend {
     .usa-search.usa-search-big [type="submit"],
     .usa-search.usa-search-big .usa-search-submit {
       height: 4.4rem;
-      font-size: 1.9rem;
+      font-size: 2rem;
       width: 11.6rem; } }
   @media screen and (min-width: 481px) {
     .usa-search.usa-search-small [type="search"],
@@ -1605,38 +2084,53 @@ legend {
 .usa-alert-no_icon {
   background-image: none; }
 
-.usa-accordion ul {
-  border: 1px solid #757575;
-  border-radius: 5px;
+.usa-accordion ul,
+.usa-accordion-bordered ul {
   color: #212121;
   margin: 0;
   overflow: hidden;
-  padding: 0; }
-  .usa-accordion ul li {
-    background-color: #eeeeee;
-    border-bottom: 1px solid #757575;
+  padding: 0;
+  width: 100%; }
+  .usa-accordion ul li,
+  .usa-accordion-bordered ul li {
+    background-color: #efefef;
     font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
     list-style: none;
-    margin: 0; }
-    .usa-accordion ul li:last-child {
-      border-bottom: 0; }
-  .usa-accordion ul button[aria-expanded=false] {
-    background: url("../img/arrow-right.png") no-repeat;
-    background-position: 15px;
-    border-bottom: 0; }
-  .usa-accordion ul button {
-    background: url("../img/arrow-down.png") no-repeat;
-    background-position: 15px;
-    border-bottom: 1px solid #757575;
-    color: #212121;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
-    margin: 0;
-    padding: 10px 15px 10px 35px;
-    width: 100%; }
+    margin-bottom: 6px; }
+.usa-accordion button[aria-expanded=false],
+.usa-accordion-bordered button[aria-expanded=false] {
+  background: url("../img/plus.png") no-repeat;
+  background-position: 90.5%;
+  background-size: 13px; }
+  @media screen and (min-width: 481px) {
+    .usa-accordion button[aria-expanded=false],
+    .usa-accordion-bordered button[aria-expanded=false] {
+      background-position: 96.5%; } }
+.usa-accordion button,
+.usa-accordion-bordered button {
+  background: url("../img/minus.png") no-repeat;
+  background-position: 90.5%;
+  background-size: 13px;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 1.5rem 3rem;
+  width: 100%; }
+  .usa-accordion button:hover,
+  .usa-accordion-bordered button:hover {
+    background-color: #d6d7d9;
+    color: #212121; }
+  @media screen and (min-width: 481px) {
+    .usa-accordion button,
+    .usa-accordion-bordered button {
+      background-position: 96.5%; } }
+
+.usa-accordion-bordered .usa-accordion-content {
+  border: 3px solid #efefef; }
 
 .usa-accordion-content {
   display: block;
   background-color: white;
-  padding: 15px; }
+  padding: 3rem; }

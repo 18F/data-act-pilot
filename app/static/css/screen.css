@@ -67,20 +67,33 @@ body {
 }
 
 .box-error {
-  border-top: 2px dotted #EDD7D7;
-  margin: 2rem 0;
+  clear: both;
+  margin: 5rem 0;
   padding: 1rem 0;
 }
 
-.box-error h3 {
-  background: #F7F0F0;
-  padding: .5rem;
+.box-error:first-child {
+  margin-top: 0;
 }
 
-.box-error h3 span {
-  font-size: 1.6rem;
-  padding-left: 1.5rem;
-  text-align: right;
+.box-error .error {
+  clear: both;
+  margin-top: 0;
+}
+
+.usa-alert-body {
+  color: #a60000;
+}
+
+.usa-alert-error {
+  background-color: transparent;
+  background-position: 0 2rem;
+  padding: 1em 0;
+}
+
+.icon {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .key {
@@ -101,8 +114,20 @@ body {
   margin-bottom: 0;
 }
 
-.alert {
-  color: #af0000;
+.key-appropration, .key-appropration * {
+  color: #008206 !important;
+}
+
+.key-object_class, .key-object_class * {
+  color: #0061A7 !important;
+}
+
+.key-award, .key-award * {
+  color: #964A00 !important;
+}
+
+.key-financial, .key-financial * {
+  color: #5300A9 !important;
 }
 
 /* USFWDS overrides */
@@ -142,4 +167,29 @@ p + table {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
+}
+
+.usa-accordion .usa-button-unstyled {
+  border-bottom: 1px dotted #a60000;
+  color: #a60000;
+  display: inline;
+  font-weight: 400;
+  padding: 0;
+  width: auto;
+}
+
+.usa-accordion-content {
+  padding: 0;
+}
+
+.usa-accordion .usa-button-unstyled[aria-expanded="true"] .icon:after {
+  content: '\25B2';
+}
+
+.usa-accordion .usa-button-unstyled[aria-expanded="false"] .icon:after {
+  content: '\25BC';
+}
+
+.usa-accordion .usa-button-unstyled:hover {
+  background: transparent;
 }
