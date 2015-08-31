@@ -5,18 +5,17 @@
 # Generated  by generateDS.py.
 #
 # Command line options:
-#   ('-o', 'finassist_ussglfin.py')
-#   ('-s', 'finassist_ussglfin_sub.py')
+#   ('-o', 'gen.py')
+#   ('-q', '')
 #   ('-f', '')
 #   ('--no-dates', '')
 #   ('--no-versions', '')
-#   ('--member-specs', 'list')
 #
 # Command line arguments:
-#   ../schema/xbrl/plt/case-finassist-ussglfin/da-palette-finassist-ussglfin-2015-06-29.xsd
+#   ../schema/xbrl/gen/da-gen-2015-06-29.xsd
 #
 # Command line:
-#   /Users/rebeccasweger/Dev/.virtualenvs/intercessor/lib/python2.7/site-packages/generateDS-2.17a0/generateDS.py -o "finassist_ussglfin.py" -s "finassist_ussglfin_sub.py" -f --no-dates --no-versions --member-specs="list" ../schema/xbrl/plt/case-finassist-ussglfin/da-palette-finassist-ussglfin-2015-06-29.xsd
+#   /Users/rebeccasweger/Dev/.virtualenvs/intercessor/lib/python2.7/site-packages/generateDS-2.17a0/generateDS.py -o "gen.py" -q -f --no-dates --no-versions ../schema/xbrl/gen/da-gen-2015-06-29.xsd
 #
 # Current working directory (os.getcwd()):
 #   mappings
@@ -620,51 +619,79 @@ def _cast(typ, value):
 #
 
 
-class accountingEntriesComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('fiscalYear', 'stringItemType', 0),
-        MemberSpec_('period', 'stringItemType', 0),
-        MemberSpec_('USSGLentryHeader', 'USSGLentryHeaderComplexType', 1),
-    ]
+class TreasuryAccountSymbolComplexType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, id=None, fiscalYear=None, period=None, USSGLentryHeader=None):
+    def __init__(self, id=None, agency=None, allocationTransferAgencyIdentifier=None, mainAccountNumber=None, subAccountSymbol=None, beginningPeriodOfAvailability=None, endingPeriodOfAvailability=None, availabilityTypeCode=None):
         self.original_tagname_ = None
         self.id = _cast(None, id)
-        self.fiscalYear = fiscalYear
-        self.period = period
-        if USSGLentryHeader is None:
-            self.USSGLentryHeader = []
+        self.agency = agency
+        if allocationTransferAgencyIdentifier is None:
+            self.allocationTransferAgencyIdentifier = []
         else:
-            self.USSGLentryHeader = USSGLentryHeader
+            self.allocationTransferAgencyIdentifier = allocationTransferAgencyIdentifier
+        self.mainAccountNumber = mainAccountNumber
+        if subAccountSymbol is None:
+            self.subAccountSymbol = []
+        else:
+            self.subAccountSymbol = subAccountSymbol
+        if beginningPeriodOfAvailability is None:
+            self.beginningPeriodOfAvailability = []
+        else:
+            self.beginningPeriodOfAvailability = beginningPeriodOfAvailability
+        if endingPeriodOfAvailability is None:
+            self.endingPeriodOfAvailability = []
+        else:
+            self.endingPeriodOfAvailability = endingPeriodOfAvailability
+        self.availabilityTypeCode = availabilityTypeCode
     def factory(*args_, **kwargs_):
-        if accountingEntriesComplexType.subclass:
-            return accountingEntriesComplexType.subclass(*args_, **kwargs_)
+        if TreasuryAccountSymbolComplexType.subclass:
+            return TreasuryAccountSymbolComplexType.subclass(*args_, **kwargs_)
         else:
-            return accountingEntriesComplexType(*args_, **kwargs_)
+            return TreasuryAccountSymbolComplexType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_fiscalYear(self): return self.fiscalYear
-    def set_fiscalYear(self, fiscalYear): self.fiscalYear = fiscalYear
-    def get_period(self): return self.period
-    def set_period(self, period): self.period = period
-    def get_USSGLentryHeader(self): return self.USSGLentryHeader
-    def set_USSGLentryHeader(self, USSGLentryHeader): self.USSGLentryHeader = USSGLentryHeader
-    def add_USSGLentryHeader(self, value): self.USSGLentryHeader.append(value)
-    def insert_USSGLentryHeader_at(self, index, value): self.USSGLentryHeader.insert(index, value)
-    def replace_USSGLentryHeader_at(self, index, value): self.USSGLentryHeader[index] = value
+    def get_agency(self): return self.agency
+    def set_agency(self, agency): self.agency = agency
+    def get_allocationTransferAgencyIdentifier(self): return self.allocationTransferAgencyIdentifier
+    def set_allocationTransferAgencyIdentifier(self, allocationTransferAgencyIdentifier): self.allocationTransferAgencyIdentifier = allocationTransferAgencyIdentifier
+    def add_allocationTransferAgencyIdentifier(self, value): self.allocationTransferAgencyIdentifier.append(value)
+    def insert_allocationTransferAgencyIdentifier_at(self, index, value): self.allocationTransferAgencyIdentifier.insert(index, value)
+    def replace_allocationTransferAgencyIdentifier_at(self, index, value): self.allocationTransferAgencyIdentifier[index] = value
+    def get_mainAccountNumber(self): return self.mainAccountNumber
+    def set_mainAccountNumber(self, mainAccountNumber): self.mainAccountNumber = mainAccountNumber
+    def get_subAccountSymbol(self): return self.subAccountSymbol
+    def set_subAccountSymbol(self, subAccountSymbol): self.subAccountSymbol = subAccountSymbol
+    def add_subAccountSymbol(self, value): self.subAccountSymbol.append(value)
+    def insert_subAccountSymbol_at(self, index, value): self.subAccountSymbol.insert(index, value)
+    def replace_subAccountSymbol_at(self, index, value): self.subAccountSymbol[index] = value
+    def get_beginningPeriodOfAvailability(self): return self.beginningPeriodOfAvailability
+    def set_beginningPeriodOfAvailability(self, beginningPeriodOfAvailability): self.beginningPeriodOfAvailability = beginningPeriodOfAvailability
+    def add_beginningPeriodOfAvailability(self, value): self.beginningPeriodOfAvailability.append(value)
+    def insert_beginningPeriodOfAvailability_at(self, index, value): self.beginningPeriodOfAvailability.insert(index, value)
+    def replace_beginningPeriodOfAvailability_at(self, index, value): self.beginningPeriodOfAvailability[index] = value
+    def get_endingPeriodOfAvailability(self): return self.endingPeriodOfAvailability
+    def set_endingPeriodOfAvailability(self, endingPeriodOfAvailability): self.endingPeriodOfAvailability = endingPeriodOfAvailability
+    def add_endingPeriodOfAvailability(self, value): self.endingPeriodOfAvailability.append(value)
+    def insert_endingPeriodOfAvailability_at(self, index, value): self.endingPeriodOfAvailability.insert(index, value)
+    def replace_endingPeriodOfAvailability_at(self, index, value): self.endingPeriodOfAvailability[index] = value
+    def get_availabilityTypeCode(self): return self.availabilityTypeCode
+    def set_availabilityTypeCode(self, availabilityTypeCode): self.availabilityTypeCode = availabilityTypeCode
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
     def hasContent_(self):
         if (
-            self.fiscalYear is not None or
-            self.period is not None or
-            self.USSGLentryHeader
+            self.agency is not None or
+            self.allocationTransferAgencyIdentifier or
+            self.mainAccountNumber is not None or
+            self.subAccountSymbol or
+            self.beginningPeriodOfAvailability or
+            self.endingPeriodOfAvailability or
+            self.availabilityTypeCode is not None
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='accountingEntriesComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='TreasuryAccountSymbolComplexType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -674,29 +701,37 @@ class accountingEntriesComplexType(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='accountingEntriesComplexType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='TreasuryAccountSymbolComplexType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='accountingEntriesComplexType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='TreasuryAccountSymbolComplexType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='accountingEntriesComplexType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='TreasuryAccountSymbolComplexType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='accountingEntriesComplexType', fromsubclass_=False, pretty_print=True):
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='TreasuryAccountSymbolComplexType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.fiscalYear is not None:
-            self.fiscalYear.export(outfile, level, namespace_='ussglfin:', name_='fiscalYear', pretty_print=pretty_print)
-        if self.period is not None:
-            self.period.export(outfile, level, namespace_='ussglfin:', name_='period', pretty_print=pretty_print)
-        for USSGLentryHeader_ in self.USSGLentryHeader:
-            USSGLentryHeader_.export(outfile, level, namespace_='ussglfin:', name_='USSGLentryHeader', pretty_print=pretty_print)
+        if self.agency is not None:
+            self.agency.export(outfile, level, namespace_='gen:', name_='agency', pretty_print=pretty_print)
+        for allocationTransferAgencyIdentifier_ in self.allocationTransferAgencyIdentifier:
+            allocationTransferAgencyIdentifier_.export(outfile, level, namespace_='gen:', name_='allocationTransferAgencyIdentifier', pretty_print=pretty_print)
+        if self.mainAccountNumber is not None:
+            self.mainAccountNumber.export(outfile, level, namespace_='gen:', name_='mainAccountNumber', pretty_print=pretty_print)
+        for subAccountSymbol_ in self.subAccountSymbol:
+            subAccountSymbol_.export(outfile, level, namespace_='gen:', name_='subAccountSymbol', pretty_print=pretty_print)
+        for beginningPeriodOfAvailability_ in self.beginningPeriodOfAvailability:
+            beginningPeriodOfAvailability_.export(outfile, level, namespace_='gen:', name_='beginningPeriodOfAvailability', pretty_print=pretty_print)
+        for endingPeriodOfAvailability_ in self.endingPeriodOfAvailability:
+            endingPeriodOfAvailability_.export(outfile, level, namespace_='gen:', name_='endingPeriodOfAvailability', pretty_print=pretty_print)
+        if self.availabilityTypeCode is not None:
+            self.availabilityTypeCode.export(outfile, level, namespace_='gen:', name_='availabilityTypeCode', pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -710,94 +745,101 @@ class accountingEntriesComplexType(GeneratedsSuper):
             already_processed.add('id')
             self.id = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'fiscalYear':
+        if nodeName_ == 'agency':
+            obj_ = agencyComplexType.factory()
+            obj_.build(child_)
+            self.agency = obj_
+            obj_.original_tagname_ = 'agency'
+        elif nodeName_ == 'allocationTransferAgencyIdentifier':
+            obj_ = integerItemType.factory()
+            obj_.build(child_)
+            self.allocationTransferAgencyIdentifier.append(obj_)
+            obj_.original_tagname_ = 'allocationTransferAgencyIdentifier'
+        elif nodeName_ == 'mainAccountNumber':
+            obj_ = integerItemType.factory()
+            obj_.build(child_)
+            self.mainAccountNumber = obj_
+            obj_.original_tagname_ = 'mainAccountNumber'
+        elif nodeName_ == 'subAccountSymbol':
+            obj_ = integerItemType.factory()
+            obj_.build(child_)
+            self.subAccountSymbol.append(obj_)
+            obj_.original_tagname_ = 'subAccountSymbol'
+        elif nodeName_ == 'beginningPeriodOfAvailability':
             obj_ = stringItemType.factory()
             obj_.build(child_)
-            self.fiscalYear = obj_
-            obj_.original_tagname_ = 'fiscalYear'
-        elif nodeName_ == 'period':
+            self.beginningPeriodOfAvailability.append(obj_)
+            obj_.original_tagname_ = 'beginningPeriodOfAvailability'
+        elif nodeName_ == 'endingPeriodOfAvailability':
             obj_ = stringItemType.factory()
             obj_.build(child_)
-            self.period = obj_
-            obj_.original_tagname_ = 'period'
-        elif nodeName_ == 'USSGLentryHeader':
-            obj_ = USSGLentryHeaderComplexType.factory()
+            self.endingPeriodOfAvailability.append(obj_)
+            obj_.original_tagname_ = 'endingPeriodOfAvailability'
+        elif nodeName_ == 'availabilityTypeCode':
+            obj_ = availableTypeCodeItemType.factory()
             obj_.build(child_)
-            self.USSGLentryHeader.append(obj_)
-            obj_.original_tagname_ = 'USSGLentryHeader'
-# end class accountingEntriesComplexType
+            self.availabilityTypeCode = obj_
+            obj_.original_tagname_ = 'availabilityTypeCode'
+# end class TreasuryAccountSymbolComplexType
 
 
-class USSGLentryHeaderComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('treasuryAccountSymbol', 'TreasuryAccountSymbolComplexType', 0),
-        MemberSpec_('entryDetail', 'entryDetailComplexType', 1),
-        MemberSpec_('obligatedAmount', 'amountItemType', 0),
-        MemberSpec_('unobligatedAmount', 'amountItemType', 0),
-        MemberSpec_('budgetAuthorityAppropriated', 'amountItemType', 0),
-        MemberSpec_('otherBudgetaryResources', 'amountItemType', 0),
-        MemberSpec_('outlays', 'amountItemType', 0),
-        MemberSpec_('appropriationAccount', 'stringItemType', 0),
-    ]
+class addressComplexType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, id=None, treasuryAccountSymbol=None, entryDetail=None, obligatedAmount=None, unobligatedAmount=None, budgetAuthorityAppropriated=None, otherBudgetaryResources=None, outlays=None, appropriationAccount=None):
+    def __init__(self, id=None, streetAddress=None, city=None, county=None, state=None, postalCode=None, zipCodePlus4=None, countryName=None, countryCode=None, congressionalDistrict=None):
         self.original_tagname_ = None
         self.id = _cast(None, id)
-        self.treasuryAccountSymbol = treasuryAccountSymbol
-        if entryDetail is None:
-            self.entryDetail = []
-        else:
-            self.entryDetail = entryDetail
-        self.obligatedAmount = obligatedAmount
-        self.unobligatedAmount = unobligatedAmount
-        self.budgetAuthorityAppropriated = budgetAuthorityAppropriated
-        self.otherBudgetaryResources = otherBudgetaryResources
-        self.outlays = outlays
-        self.appropriationAccount = appropriationAccount
+        self.streetAddress = streetAddress
+        self.city = city
+        self.county = county
+        self.state = state
+        self.postalCode = postalCode
+        self.zipCodePlus4 = zipCodePlus4
+        self.countryName = countryName
+        self.countryCode = countryCode
+        self.congressionalDistrict = congressionalDistrict
     def factory(*args_, **kwargs_):
-        if USSGLentryHeaderComplexType.subclass:
-            return USSGLentryHeaderComplexType.subclass(*args_, **kwargs_)
+        if addressComplexType.subclass:
+            return addressComplexType.subclass(*args_, **kwargs_)
         else:
-            return USSGLentryHeaderComplexType(*args_, **kwargs_)
+            return addressComplexType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_treasuryAccountSymbol(self): return self.treasuryAccountSymbol
-    def set_treasuryAccountSymbol(self, treasuryAccountSymbol): self.treasuryAccountSymbol = treasuryAccountSymbol
-    def get_entryDetail(self): return self.entryDetail
-    def set_entryDetail(self, entryDetail): self.entryDetail = entryDetail
-    def add_entryDetail(self, value): self.entryDetail.append(value)
-    def insert_entryDetail_at(self, index, value): self.entryDetail.insert(index, value)
-    def replace_entryDetail_at(self, index, value): self.entryDetail[index] = value
-    def get_obligatedAmount(self): return self.obligatedAmount
-    def set_obligatedAmount(self, obligatedAmount): self.obligatedAmount = obligatedAmount
-    def get_unobligatedAmount(self): return self.unobligatedAmount
-    def set_unobligatedAmount(self, unobligatedAmount): self.unobligatedAmount = unobligatedAmount
-    def get_budgetAuthorityAppropriated(self): return self.budgetAuthorityAppropriated
-    def set_budgetAuthorityAppropriated(self, budgetAuthorityAppropriated): self.budgetAuthorityAppropriated = budgetAuthorityAppropriated
-    def get_otherBudgetaryResources(self): return self.otherBudgetaryResources
-    def set_otherBudgetaryResources(self, otherBudgetaryResources): self.otherBudgetaryResources = otherBudgetaryResources
-    def get_outlays(self): return self.outlays
-    def set_outlays(self, outlays): self.outlays = outlays
-    def get_appropriationAccount(self): return self.appropriationAccount
-    def set_appropriationAccount(self, appropriationAccount): self.appropriationAccount = appropriationAccount
+    def get_streetAddress(self): return self.streetAddress
+    def set_streetAddress(self, streetAddress): self.streetAddress = streetAddress
+    def get_city(self): return self.city
+    def set_city(self, city): self.city = city
+    def get_county(self): return self.county
+    def set_county(self, county): self.county = county
+    def get_state(self): return self.state
+    def set_state(self, state): self.state = state
+    def get_postalCode(self): return self.postalCode
+    def set_postalCode(self, postalCode): self.postalCode = postalCode
+    def get_zipCodePlus4(self): return self.zipCodePlus4
+    def set_zipCodePlus4(self, zipCodePlus4): self.zipCodePlus4 = zipCodePlus4
+    def get_countryName(self): return self.countryName
+    def set_countryName(self, countryName): self.countryName = countryName
+    def get_countryCode(self): return self.countryCode
+    def set_countryCode(self, countryCode): self.countryCode = countryCode
+    def get_congressionalDistrict(self): return self.congressionalDistrict
+    def set_congressionalDistrict(self, congressionalDistrict): self.congressionalDistrict = congressionalDistrict
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
     def hasContent_(self):
         if (
-            self.treasuryAccountSymbol is not None or
-            self.entryDetail or
-            self.obligatedAmount is not None or
-            self.unobligatedAmount is not None or
-            self.budgetAuthorityAppropriated is not None or
-            self.otherBudgetaryResources is not None or
-            self.outlays is not None or
-            self.appropriationAccount is not None
+            self.streetAddress is not None or
+            self.city is not None or
+            self.county is not None or
+            self.state is not None or
+            self.postalCode is not None or
+            self.zipCodePlus4 is not None or
+            self.countryName is not None or
+            self.countryCode is not None or
+            self.congressionalDistrict is not None
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='USSGLentryHeaderComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='addressComplexType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -807,39 +849,41 @@ class USSGLentryHeaderComplexType(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='USSGLentryHeaderComplexType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='addressComplexType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='USSGLentryHeaderComplexType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='addressComplexType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='USSGLentryHeaderComplexType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='addressComplexType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='USSGLentryHeaderComplexType', fromsubclass_=False, pretty_print=True):
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='addressComplexType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.treasuryAccountSymbol is not None:
-            self.treasuryAccountSymbol.export(outfile, level, namespace_='gen:', name_='treasuryAccountSymbol', pretty_print=pretty_print)
-        for entryDetail_ in self.entryDetail:
-            entryDetail_.export(outfile, level, namespace_='ussglfin:', name_='entryDetail', pretty_print=pretty_print)
-        if self.obligatedAmount is not None:
-            self.obligatedAmount.export(outfile, level, namespace_='ussglfin:', name_='obligatedAmount', pretty_print=pretty_print)
-        if self.unobligatedAmount is not None:
-            self.unobligatedAmount.export(outfile, level, namespace_='ussglfin:', name_='unobligatedAmount', pretty_print=pretty_print)
-        if self.budgetAuthorityAppropriated is not None:
-            self.budgetAuthorityAppropriated.export(outfile, level, namespace_='ussglfin:', name_='budgetAuthorityAppropriated', pretty_print=pretty_print)
-        if self.otherBudgetaryResources is not None:
-            self.otherBudgetaryResources.export(outfile, level, namespace_='ussglfin:', name_='otherBudgetaryResources', pretty_print=pretty_print)
-        if self.outlays is not None:
-            self.outlays.export(outfile, level, namespace_='ussglfin:', name_='outlays', pretty_print=pretty_print)
-        if self.appropriationAccount is not None:
-            self.appropriationAccount.export(outfile, level, namespace_='ussglfin:', name_='appropriationAccount', pretty_print=pretty_print)
+        if self.streetAddress is not None:
+            self.streetAddress.export(outfile, level, namespace_='gen:', name_='streetAddress', pretty_print=pretty_print)
+        if self.city is not None:
+            self.city.export(outfile, level, namespace_='gen:', name_='city', pretty_print=pretty_print)
+        if self.county is not None:
+            self.county.export(outfile, level, namespace_='gen:', name_='county', pretty_print=pretty_print)
+        if self.state is not None:
+            self.state.export(outfile, level, namespace_='gen:', name_='state', pretty_print=pretty_print)
+        if self.postalCode is not None:
+            self.postalCode.export(outfile, level, namespace_='gen:', name_='postalCode', pretty_print=pretty_print)
+        if self.zipCodePlus4 is not None:
+            self.zipCodePlus4.export(outfile, level, namespace_='gen:', name_='zipCodePlus4', pretty_print=pretty_print)
+        if self.countryName is not None:
+            self.countryName.export(outfile, level, namespace_='gen:', name_='countryName', pretty_print=pretty_print)
+        if self.countryCode is not None:
+            self.countryCode.export(outfile, level, namespace_='gen:', name_='countryCode', pretty_print=pretty_print)
+        if self.congressionalDistrict is not None:
+            self.congressionalDistrict.export(outfile, level, namespace_='gen:', name_='congressionalDistrict', pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -853,98 +897,85 @@ class USSGLentryHeaderComplexType(GeneratedsSuper):
             already_processed.add('id')
             self.id = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'treasuryAccountSymbol':
-            obj_ = TreasuryAccountSymbolComplexType.factory()
+        if nodeName_ == 'streetAddress':
+            obj_ = streetAddressComplexType.factory()
             obj_.build(child_)
-            self.treasuryAccountSymbol = obj_
-            obj_.original_tagname_ = 'treasuryAccountSymbol'
-        elif nodeName_ == 'entryDetail':
-            obj_ = entryDetailComplexType.factory()
-            obj_.build(child_)
-            self.entryDetail.append(obj_)
-            obj_.original_tagname_ = 'entryDetail'
-        elif nodeName_ == 'obligatedAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.obligatedAmount = obj_
-            obj_.original_tagname_ = 'obligatedAmount'
-        elif nodeName_ == 'unobligatedAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.unobligatedAmount = obj_
-            obj_.original_tagname_ = 'unobligatedAmount'
-        elif nodeName_ == 'budgetAuthorityAppropriated':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.budgetAuthorityAppropriated = obj_
-            obj_.original_tagname_ = 'budgetAuthorityAppropriated'
-        elif nodeName_ == 'otherBudgetaryResources':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.otherBudgetaryResources = obj_
-            obj_.original_tagname_ = 'otherBudgetaryResources'
-        elif nodeName_ == 'outlays':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.outlays = obj_
-            obj_.original_tagname_ = 'outlays'
-        elif nodeName_ == 'appropriationAccount':
+            self.streetAddress = obj_
+            obj_.original_tagname_ = 'streetAddress'
+        elif nodeName_ == 'city':
             obj_ = stringItemType.factory()
             obj_.build(child_)
-            self.appropriationAccount = obj_
-            obj_.original_tagname_ = 'appropriationAccount'
-# end class USSGLentryHeaderComplexType
+            self.city = obj_
+            obj_.original_tagname_ = 'city'
+        elif nodeName_ == 'county':
+            obj_ = stringItemType.factory()
+            obj_.build(child_)
+            self.county = obj_
+            obj_.original_tagname_ = 'county'
+        elif nodeName_ == 'state':
+            obj_ = stateItemType.factory()
+            obj_.build(child_)
+            self.state = obj_
+            obj_.original_tagname_ = 'state'
+        elif nodeName_ == 'postalCode':
+            obj_ = stringItemType.factory()
+            obj_.build(child_)
+            self.postalCode = obj_
+            obj_.original_tagname_ = 'postalCode'
+        elif nodeName_ == 'zipCodePlus4':
+            obj_ = stringItemType.factory()
+            obj_.build(child_)
+            self.zipCodePlus4 = obj_
+            obj_.original_tagname_ = 'zipCodePlus4'
+        elif nodeName_ == 'countryName':
+            obj_ = stringItemType.factory()
+            obj_.build(child_)
+            self.countryName = obj_
+            obj_.original_tagname_ = 'countryName'
+        elif nodeName_ == 'countryCode':
+            obj_ = stringItemType.factory()
+            obj_.build(child_)
+            self.countryCode = obj_
+            obj_.original_tagname_ = 'countryCode'
+        elif nodeName_ == 'congressionalDistrict':
+            obj_ = congressionalDistrictItemType.factory()
+            obj_.build(child_)
+            self.congressionalDistrict = obj_
+            obj_.original_tagname_ = 'congressionalDistrict'
+# end class addressComplexType
 
 
-class entryDetailComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('account', 'accountComplexType', 0),
-        MemberSpec_('amount', 'amountItemType', 0),
-        MemberSpec_('debitCreditCode', 'debitCreditCodeItemType', 0),
-        MemberSpec_('beginningEndIndicator', 'beginningEndIndicatorItemType', 0),
-        MemberSpec_('programActivity', 'stringItemType', 0),
-    ]
+class streetAddressComplexType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, id=None, account=None, amount=None, debitCreditCode=None, beginningEndIndicator=None, programActivity=None):
+    def __init__(self, id=None, streetAddressLine=None):
         self.original_tagname_ = None
         self.id = _cast(None, id)
-        self.account = account
-        self.amount = amount
-        self.debitCreditCode = debitCreditCode
-        self.beginningEndIndicator = beginningEndIndicator
-        self.programActivity = programActivity
-    def factory(*args_, **kwargs_):
-        if entryDetailComplexType.subclass:
-            return entryDetailComplexType.subclass(*args_, **kwargs_)
+        if streetAddressLine is None:
+            self.streetAddressLine = []
         else:
-            return entryDetailComplexType(*args_, **kwargs_)
+            self.streetAddressLine = streetAddressLine
+    def factory(*args_, **kwargs_):
+        if streetAddressComplexType.subclass:
+            return streetAddressComplexType.subclass(*args_, **kwargs_)
+        else:
+            return streetAddressComplexType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_account(self): return self.account
-    def set_account(self, account): self.account = account
-    def get_amount(self): return self.amount
-    def set_amount(self, amount): self.amount = amount
-    def get_debitCreditCode(self): return self.debitCreditCode
-    def set_debitCreditCode(self, debitCreditCode): self.debitCreditCode = debitCreditCode
-    def get_beginningEndIndicator(self): return self.beginningEndIndicator
-    def set_beginningEndIndicator(self, beginningEndIndicator): self.beginningEndIndicator = beginningEndIndicator
-    def get_programActivity(self): return self.programActivity
-    def set_programActivity(self, programActivity): self.programActivity = programActivity
+    def get_streetAddressLine(self): return self.streetAddressLine
+    def set_streetAddressLine(self, streetAddressLine): self.streetAddressLine = streetAddressLine
+    def add_streetAddressLine(self, value): self.streetAddressLine.append(value)
+    def insert_streetAddressLine_at(self, index, value): self.streetAddressLine.insert(index, value)
+    def replace_streetAddressLine_at(self, index, value): self.streetAddressLine[index] = value
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
     def hasContent_(self):
         if (
-            self.account is not None or
-            self.amount is not None or
-            self.debitCreditCode is not None or
-            self.beginningEndIndicator is not None or
-            self.programActivity is not None
+            self.streetAddressLine
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='entryDetailComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='streetAddressComplexType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -954,33 +985,25 @@ class entryDetailComplexType(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='entryDetailComplexType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='streetAddressComplexType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='entryDetailComplexType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='streetAddressComplexType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='entryDetailComplexType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='streetAddressComplexType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='entryDetailComplexType', fromsubclass_=False, pretty_print=True):
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='streetAddressComplexType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.account is not None:
-            self.account.export(outfile, level, namespace_='ussglfin:', name_='account', pretty_print=pretty_print)
-        if self.amount is not None:
-            self.amount.export(outfile, level, namespace_='ussglfin:', name_='amount', pretty_print=pretty_print)
-        if self.debitCreditCode is not None:
-            self.debitCreditCode.export(outfile, level, namespace_='ussglfin:', name_='debitCreditCode', pretty_print=pretty_print)
-        if self.beginningEndIndicator is not None:
-            self.beginningEndIndicator.export(outfile, level, namespace_='ussglfin:', name_='beginningEndIndicator', pretty_print=pretty_print)
-        if self.programActivity is not None:
-            self.programActivity.export(outfile, level, namespace_='ussglfin:', name_='programActivity', pretty_print=pretty_print)
+        for streetAddressLine_ in self.streetAddressLine:
+            streetAddressLine_.export(outfile, level, namespace_='gen:', name_='streetAddressLine', pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -994,78 +1017,53 @@ class entryDetailComplexType(GeneratedsSuper):
             already_processed.add('id')
             self.id = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'account':
-            obj_ = accountComplexType.factory()
-            obj_.build(child_)
-            self.account = obj_
-            obj_.original_tagname_ = 'account'
-        elif nodeName_ == 'amount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.amount = obj_
-            obj_.original_tagname_ = 'amount'
-        elif nodeName_ == 'debitCreditCode':
-            obj_ = debitCreditCodeItemType.factory()
-            obj_.build(child_)
-            self.debitCreditCode = obj_
-            obj_.original_tagname_ = 'debitCreditCode'
-        elif nodeName_ == 'beginningEndIndicator':
-            obj_ = beginningEndIndicatorItemType.factory()
-            obj_.build(child_)
-            self.beginningEndIndicator = obj_
-            obj_.original_tagname_ = 'beginningEndIndicator'
-        elif nodeName_ == 'programActivity':
+        if nodeName_ == 'streetAddressLine':
             obj_ = stringItemType.factory()
             obj_.build(child_)
-            self.programActivity = obj_
-            obj_.original_tagname_ = 'programActivity'
-# end class entryDetailComplexType
+            self.streetAddressLine.append(obj_)
+            obj_.original_tagname_ = 'streetAddressLine'
+# end class streetAddressComplexType
 
 
-class accountComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('accountNumber', 'stringItemType', 0),
-        MemberSpec_('objectClass', 'stringItemType', 0),
-        MemberSpec_('awardID', 'stringItemType', 0),
-        MemberSpec_('accountDescription', 'stringItemType', 0),
-    ]
+class agencyComplexType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, id=None, accountNumber=None, objectClass=None, awardID=None, accountDescription=None):
+    def __init__(self, id=None, agencyIdentifier=None, agencyName=None, agencyOffice=None):
         self.original_tagname_ = None
         self.id = _cast(None, id)
-        self.accountNumber = accountNumber
-        self.objectClass = objectClass
-        self.awardID = awardID
-        self.accountDescription = accountDescription
-    def factory(*args_, **kwargs_):
-        if accountComplexType.subclass:
-            return accountComplexType.subclass(*args_, **kwargs_)
+        self.agencyIdentifier = agencyIdentifier
+        self.agencyName = agencyName
+        if agencyOffice is None:
+            self.agencyOffice = []
         else:
-            return accountComplexType(*args_, **kwargs_)
+            self.agencyOffice = agencyOffice
+    def factory(*args_, **kwargs_):
+        if agencyComplexType.subclass:
+            return agencyComplexType.subclass(*args_, **kwargs_)
+        else:
+            return agencyComplexType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_accountNumber(self): return self.accountNumber
-    def set_accountNumber(self, accountNumber): self.accountNumber = accountNumber
-    def get_objectClass(self): return self.objectClass
-    def set_objectClass(self, objectClass): self.objectClass = objectClass
-    def get_awardID(self): return self.awardID
-    def set_awardID(self, awardID): self.awardID = awardID
-    def get_accountDescription(self): return self.accountDescription
-    def set_accountDescription(self, accountDescription): self.accountDescription = accountDescription
+    def get_agencyIdentifier(self): return self.agencyIdentifier
+    def set_agencyIdentifier(self, agencyIdentifier): self.agencyIdentifier = agencyIdentifier
+    def get_agencyName(self): return self.agencyName
+    def set_agencyName(self, agencyName): self.agencyName = agencyName
+    def get_agencyOffice(self): return self.agencyOffice
+    def set_agencyOffice(self, agencyOffice): self.agencyOffice = agencyOffice
+    def add_agencyOffice(self, value): self.agencyOffice.append(value)
+    def insert_agencyOffice_at(self, index, value): self.agencyOffice.insert(index, value)
+    def replace_agencyOffice_at(self, index, value): self.agencyOffice[index] = value
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
     def hasContent_(self):
         if (
-            self.accountNumber is not None or
-            self.objectClass is not None or
-            self.awardID is not None or
-            self.accountDescription is not None
+            self.agencyIdentifier is not None or
+            self.agencyName is not None or
+            self.agencyOffice
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='accountComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='agencyComplexType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1075,31 +1073,29 @@ class accountComplexType(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='accountComplexType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='agencyComplexType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='accountComplexType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='agencyComplexType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='accountComplexType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='agencyComplexType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='accountComplexType', fromsubclass_=False, pretty_print=True):
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='agencyComplexType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.accountNumber is not None:
-            self.accountNumber.export(outfile, level, namespace_='ussglfin:', name_='accountNumber', pretty_print=pretty_print)
-        if self.objectClass is not None:
-            self.objectClass.export(outfile, level, namespace_='ussglfin:', name_='objectClass', pretty_print=pretty_print)
-        if self.awardID is not None:
-            self.awardID.export(outfile, level, namespace_='gen:', name_='awardID', pretty_print=pretty_print)
-        if self.accountDescription is not None:
-            self.accountDescription.export(outfile, level, namespace_='ussglfin:', name_='accountDescription', pretty_print=pretty_print)
+        if self.agencyIdentifier is not None:
+            self.agencyIdentifier.export(outfile, level, namespace_='gen:', name_='agencyIdentifier', pretty_print=pretty_print)
+        if self.agencyName is not None:
+            self.agencyName.export(outfile, level, namespace_='gen:', name_='agencyName', pretty_print=pretty_print)
+        for agencyOffice_ in self.agencyOffice:
+            agencyOffice_.export(outfile, level, namespace_='gen:', name_='agencyOffice', pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -1113,38 +1109,110 @@ class accountComplexType(GeneratedsSuper):
             already_processed.add('id')
             self.id = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'accountNumber':
+        if nodeName_ == 'agencyIdentifier':
+            obj_ = integerItemType.factory()
+            obj_.build(child_)
+            self.agencyIdentifier = obj_
+            obj_.original_tagname_ = 'agencyIdentifier'
+        elif nodeName_ == 'agencyName':
             obj_ = stringItemType.factory()
             obj_.build(child_)
-            self.accountNumber = obj_
-            obj_.original_tagname_ = 'accountNumber'
-        elif nodeName_ == 'objectClass':
+            self.agencyName = obj_
+            obj_.original_tagname_ = 'agencyName'
+        elif nodeName_ == 'agencyOffice':
+            obj_ = agencyOfficeComplexType.factory()
+            obj_.build(child_)
+            self.agencyOffice.append(obj_)
+            obj_.original_tagname_ = 'agencyOffice'
+# end class agencyComplexType
+
+
+class agencyOfficeComplexType(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self, id=None, officeIdentifier=None, officeName=None):
+        self.original_tagname_ = None
+        self.id = _cast(None, id)
+        self.officeIdentifier = officeIdentifier
+        self.officeName = officeName
+    def factory(*args_, **kwargs_):
+        if agencyOfficeComplexType.subclass:
+            return agencyOfficeComplexType.subclass(*args_, **kwargs_)
+        else:
+            return agencyOfficeComplexType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_officeIdentifier(self): return self.officeIdentifier
+    def set_officeIdentifier(self, officeIdentifier): self.officeIdentifier = officeIdentifier
+    def get_officeName(self): return self.officeName
+    def set_officeName(self, officeName): self.officeName = officeName
+    def get_id(self): return self.id
+    def set_id(self, id): self.id = id
+    def hasContent_(self):
+        if (
+            self.officeIdentifier is not None or
+            self.officeName is not None
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='agencyOfficeComplexType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='agencyOfficeComplexType')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='agencyOfficeComplexType', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='agencyOfficeComplexType'):
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='agencyOfficeComplexType', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.officeIdentifier is not None:
+            self.officeIdentifier.export(outfile, level, namespace_='gen:', name_='officeIdentifier', pretty_print=pretty_print)
+        if self.officeName is not None:
+            self.officeName.export(outfile, level, namespace_='gen:', name_='officeName', pretty_print=pretty_print)
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        value = find_attr_value_('id', node)
+        if value is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            self.id = value
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'officeIdentifier':
+            obj_ = integerItemType.factory()
+            obj_.build(child_)
+            self.officeIdentifier = obj_
+            obj_.original_tagname_ = 'officeIdentifier'
+        elif nodeName_ == 'officeName':
             obj_ = stringItemType.factory()
             obj_.build(child_)
-            self.objectClass = obj_
-            obj_.original_tagname_ = 'objectClass'
-        elif nodeName_ == 'awardID':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.awardID = obj_
-            obj_.original_tagname_ = 'awardID'
-        elif nodeName_ == 'accountDescription':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.accountDescription = obj_
-            obj_.original_tagname_ = 'accountDescription'
-# end class accountComplexType
+            self.officeName = obj_
+            obj_.original_tagname_ = 'officeName'
+# end class agencyOfficeComplexType
 
 
 class decimalItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'decimal', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -1180,7 +1248,7 @@ class decimalItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='decimalItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='decimalItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1194,11 +1262,11 @@ class decimalItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='decimalItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='decimalItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='decimalItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='decimalItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -1214,7 +1282,7 @@ class decimalItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='decimalItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='decimalItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -1251,14 +1319,6 @@ class decimalItemType(GeneratedsSuper):
 
 
 class floatItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'float', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -1294,7 +1354,7 @@ class floatItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='floatItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='floatItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1308,11 +1368,11 @@ class floatItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='floatItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='floatItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='floatItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='floatItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -1328,7 +1388,7 @@ class floatItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='floatItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='floatItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -1365,14 +1425,6 @@ class floatItemType(GeneratedsSuper):
 
 
 class doubleItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'double', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -1408,7 +1460,7 @@ class doubleItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='doubleItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='doubleItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1422,11 +1474,11 @@ class doubleItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='doubleItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='doubleItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='doubleItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='doubleItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -1442,7 +1494,7 @@ class doubleItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='doubleItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='doubleItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -1479,14 +1531,6 @@ class doubleItemType(GeneratedsSuper):
 
 
 class monetaryItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', ['monetary', 'decimal'], 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None, extensiontype_=None):
@@ -1525,7 +1569,7 @@ class monetaryItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='monetaryItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='monetaryItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1539,11 +1583,11 @@ class monetaryItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='monetaryItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='monetaryItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='monetaryItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='monetaryItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -1563,7 +1607,7 @@ class monetaryItemType(GeneratedsSuper):
             already_processed.add('xsi:type')
             outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
             outfile.write(' xsi:type="%s"' % self.extensiontype_)
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='monetaryItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='monetaryItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -1604,14 +1648,6 @@ class monetaryItemType(GeneratedsSuper):
 
 
 class sharesItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', ['shares', 'decimal'], 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -1647,7 +1683,7 @@ class sharesItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='sharesItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='sharesItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1661,11 +1697,11 @@ class sharesItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='sharesItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='sharesItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='sharesItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='sharesItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -1681,7 +1717,7 @@ class sharesItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='sharesItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='sharesItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -1718,17 +1754,9 @@ class sharesItemType(GeneratedsSuper):
 
 
 class pureItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', ['pure', 'decimal'], 0),
-    ]
     subclass = None
     superclass = None
-    def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None, extensiontype_=None):
+    def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
         self.original_tagname_ = None
         self.unitRef = _cast(None, unitRef)
         self.decimals = _cast(None, decimals)
@@ -1736,7 +1764,6 @@ class pureItemType(GeneratedsSuper):
         self.contextRef = _cast(None, contextRef)
         self.precision = _cast(None, precision)
         self.valueOf_ = valueOf_
-        self.extensiontype_ = extensiontype_
     def factory(*args_, **kwargs_):
         if pureItemType.subclass:
             return pureItemType.subclass(*args_, **kwargs_)
@@ -1755,8 +1782,6 @@ class pureItemType(GeneratedsSuper):
     def set_precision(self, precision): self.precision = precision
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def get_extensiontype_(self): return self.extensiontype_
-    def set_extensiontype_(self, extensiontype_): self.extensiontype_ = extensiontype_
     def hasContent_(self):
         if (
             self.valueOf_
@@ -1764,7 +1789,7 @@ class pureItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='pureItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='pureItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1778,11 +1803,11 @@ class pureItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='pureItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='pureItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='pureItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='pureItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -1798,11 +1823,7 @@ class pureItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-        if self.extensiontype_ is not None and 'xsi:type' not in already_processed:
-            already_processed.add('xsi:type')
-            outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
-            outfile.write(' xsi:type="%s"' % self.extensiontype_)
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='pureItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='pureItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -1833,23 +1854,12 @@ class pureItemType(GeneratedsSuper):
         if value is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             self.precision = value
-        value = find_attr_value_('xsi:type', node)
-        if value is not None and 'xsi:type' not in already_processed:
-            already_processed.add('xsi:type')
-            self.extensiontype_ = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
 # end class pureItemType
 
 
 class fractionItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('numerator', 'decimal', 0),
-        MemberSpec_('denominator', 'decimal', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, id=None, contextRef=None, numerator=None, denominator=None):
@@ -1883,7 +1893,7 @@ class fractionItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='fractionItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='fractionItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1896,12 +1906,12 @@ class fractionItemType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='fractionItemType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='fractionItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='fractionItemType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='fractionItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='fractionItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -1911,7 +1921,7 @@ class fractionItemType(GeneratedsSuper):
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='fractionItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='fractionItemType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1963,14 +1973,6 @@ class fractionItemType(GeneratedsSuper):
 
 
 class integerItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'integer', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2006,7 +2008,7 @@ class integerItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='integerItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='integerItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2020,11 +2022,11 @@ class integerItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='integerItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='integerItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='integerItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='integerItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2040,7 +2042,7 @@ class integerItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='integerItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='integerItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2077,14 +2079,6 @@ class integerItemType(GeneratedsSuper):
 
 
 class nonPositiveIntegerItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'nonPositiveInteger', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2120,7 +2114,7 @@ class nonPositiveIntegerItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='nonPositiveIntegerItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='nonPositiveIntegerItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2134,11 +2128,11 @@ class nonPositiveIntegerItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='nonPositiveIntegerItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='nonPositiveIntegerItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='nonPositiveIntegerItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='nonPositiveIntegerItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2154,7 +2148,7 @@ class nonPositiveIntegerItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='nonPositiveIntegerItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='nonPositiveIntegerItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2191,14 +2185,6 @@ class nonPositiveIntegerItemType(GeneratedsSuper):
 
 
 class negativeIntegerItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'negativeInteger', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2234,7 +2220,7 @@ class negativeIntegerItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='negativeIntegerItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='negativeIntegerItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2248,11 +2234,11 @@ class negativeIntegerItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='negativeIntegerItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='negativeIntegerItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='negativeIntegerItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='negativeIntegerItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2268,7 +2254,7 @@ class negativeIntegerItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='negativeIntegerItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='negativeIntegerItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2305,14 +2291,6 @@ class negativeIntegerItemType(GeneratedsSuper):
 
 
 class longItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'long', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2348,7 +2326,7 @@ class longItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='longItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='longItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2362,11 +2340,11 @@ class longItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='longItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='longItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='longItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='longItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2382,7 +2360,7 @@ class longItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='longItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='longItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2419,14 +2397,6 @@ class longItemType(GeneratedsSuper):
 
 
 class intItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'int', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2462,7 +2432,7 @@ class intItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='intItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='intItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2476,11 +2446,11 @@ class intItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='intItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='intItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='intItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='intItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2496,7 +2466,7 @@ class intItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='intItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='intItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2533,14 +2503,6 @@ class intItemType(GeneratedsSuper):
 
 
 class shortItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'short', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2576,7 +2538,7 @@ class shortItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='shortItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='shortItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2590,11 +2552,11 @@ class shortItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='shortItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='shortItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='shortItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='shortItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2610,7 +2572,7 @@ class shortItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='shortItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='shortItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2647,14 +2609,6 @@ class shortItemType(GeneratedsSuper):
 
 
 class byteItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'byte', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2690,7 +2644,7 @@ class byteItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='byteItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='byteItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2704,11 +2658,11 @@ class byteItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='byteItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='byteItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='byteItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='byteItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2724,7 +2678,7 @@ class byteItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='byteItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='byteItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2761,14 +2715,6 @@ class byteItemType(GeneratedsSuper):
 
 
 class nonNegativeIntegerItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'nonNegativeInteger', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2804,7 +2750,7 @@ class nonNegativeIntegerItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='nonNegativeIntegerItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='nonNegativeIntegerItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2818,11 +2764,11 @@ class nonNegativeIntegerItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='nonNegativeIntegerItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='nonNegativeIntegerItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='nonNegativeIntegerItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='nonNegativeIntegerItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2838,7 +2784,7 @@ class nonNegativeIntegerItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='nonNegativeIntegerItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='nonNegativeIntegerItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2875,14 +2821,6 @@ class nonNegativeIntegerItemType(GeneratedsSuper):
 
 
 class unsignedLongItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'unsignedLong', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -2918,7 +2856,7 @@ class unsignedLongItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='unsignedLongItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='unsignedLongItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2932,11 +2870,11 @@ class unsignedLongItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='unsignedLongItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='unsignedLongItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='unsignedLongItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='unsignedLongItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -2952,7 +2890,7 @@ class unsignedLongItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='unsignedLongItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='unsignedLongItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -2989,14 +2927,6 @@ class unsignedLongItemType(GeneratedsSuper):
 
 
 class unsignedIntItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'unsignedInt', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -3032,7 +2962,7 @@ class unsignedIntItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='unsignedIntItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='unsignedIntItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3046,11 +2976,11 @@ class unsignedIntItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='unsignedIntItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='unsignedIntItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='unsignedIntItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='unsignedIntItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -3066,7 +2996,7 @@ class unsignedIntItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='unsignedIntItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='unsignedIntItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3103,14 +3033,6 @@ class unsignedIntItemType(GeneratedsSuper):
 
 
 class unsignedShortItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'unsignedShort', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -3146,7 +3068,7 @@ class unsignedShortItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='unsignedShortItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='unsignedShortItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3160,11 +3082,11 @@ class unsignedShortItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='unsignedShortItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='unsignedShortItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='unsignedShortItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='unsignedShortItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -3180,7 +3102,7 @@ class unsignedShortItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='unsignedShortItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='unsignedShortItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3217,14 +3139,6 @@ class unsignedShortItemType(GeneratedsSuper):
 
 
 class unsignedByteItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'unsignedByte', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -3260,7 +3174,7 @@ class unsignedByteItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='unsignedByteItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='unsignedByteItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3274,11 +3188,11 @@ class unsignedByteItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='unsignedByteItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='unsignedByteItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='unsignedByteItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='unsignedByteItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -3294,7 +3208,7 @@ class unsignedByteItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='unsignedByteItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='unsignedByteItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3331,14 +3245,6 @@ class unsignedByteItemType(GeneratedsSuper):
 
 
 class positiveIntegerItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('unitRef', 'string', 0),
-        MemberSpec_('decimals', 'xbrli:decimalsType', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('precision', 'xbrli:precisionType', 0),
-        MemberSpec_('valueOf_', 'positiveInteger', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
@@ -3374,7 +3280,7 @@ class positiveIntegerItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='positiveIntegerItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='positiveIntegerItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3388,11 +3294,11 @@ class positiveIntegerItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='positiveIntegerItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='positiveIntegerItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='positiveIntegerItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='positiveIntegerItemType'):
         if self.unitRef is not None and 'unitRef' not in already_processed:
             already_processed.add('unitRef')
             outfile.write(' unitRef=%s' % (self.gds_format_string(quote_attrib(self.unitRef).encode(ExternalEncoding), input_name='unitRef'), ))
@@ -3408,7 +3314,7 @@ class positiveIntegerItemType(GeneratedsSuper):
         if self.precision is not None and 'precision' not in already_processed:
             already_processed.add('precision')
             outfile.write(' precision=%s' % (quote_attrib(self.precision), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='positiveIntegerItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='positiveIntegerItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3445,11 +3351,6 @@ class positiveIntegerItemType(GeneratedsSuper):
 
 
 class stringItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'string', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -3476,7 +3377,7 @@ class stringItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='stringItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='stringItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3490,18 +3391,18 @@ class stringItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='stringItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='stringItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='stringItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='stringItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='stringItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='stringItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3526,11 +3427,6 @@ class stringItemType(GeneratedsSuper):
 
 
 class booleanItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'boolean', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -3557,7 +3453,7 @@ class booleanItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='booleanItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='booleanItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3571,18 +3467,18 @@ class booleanItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='booleanItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='booleanItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='booleanItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='booleanItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='booleanItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='booleanItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3607,11 +3503,6 @@ class booleanItemType(GeneratedsSuper):
 
 
 class hexBinaryItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'hexBinary', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -3638,7 +3529,7 @@ class hexBinaryItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='hexBinaryItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='hexBinaryItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3652,18 +3543,18 @@ class hexBinaryItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='hexBinaryItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='hexBinaryItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='hexBinaryItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='hexBinaryItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='hexBinaryItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='hexBinaryItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3688,11 +3579,6 @@ class hexBinaryItemType(GeneratedsSuper):
 
 
 class base64BinaryItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'base64Binary', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -3719,7 +3605,7 @@ class base64BinaryItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='base64BinaryItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='base64BinaryItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3733,18 +3619,18 @@ class base64BinaryItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='base64BinaryItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='base64BinaryItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='base64BinaryItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='base64BinaryItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='base64BinaryItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='base64BinaryItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3769,11 +3655,6 @@ class base64BinaryItemType(GeneratedsSuper):
 
 
 class anyURIItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'anyURI', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -3800,7 +3681,7 @@ class anyURIItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='anyURIItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='anyURIItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3814,18 +3695,18 @@ class anyURIItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='anyURIItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='anyURIItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='anyURIItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='anyURIItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='anyURIItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='anyURIItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3850,11 +3731,6 @@ class anyURIItemType(GeneratedsSuper):
 
 
 class QNameItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'QName', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -3881,7 +3757,7 @@ class QNameItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='QNameItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='QNameItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3895,18 +3771,18 @@ class QNameItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='QNameItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='QNameItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='QNameItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='QNameItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='QNameItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='QNameItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3931,11 +3807,6 @@ class QNameItemType(GeneratedsSuper):
 
 
 class durationItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'duration', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -3962,7 +3833,7 @@ class durationItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='durationItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='durationItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3976,18 +3847,18 @@ class durationItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='durationItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='durationItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='durationItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='durationItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='durationItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='durationItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4012,11 +3883,6 @@ class durationItemType(GeneratedsSuper):
 
 
 class dateTimeItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'dateUnion', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4043,7 +3909,7 @@ class dateTimeItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='dateTimeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='dateTimeItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4057,18 +3923,18 @@ class dateTimeItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='dateTimeItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='dateTimeItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='dateTimeItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='dateTimeItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='dateTimeItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='dateTimeItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4093,11 +3959,6 @@ class dateTimeItemType(GeneratedsSuper):
 
 
 class timeItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'time', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4124,7 +3985,7 @@ class timeItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='timeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='timeItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4138,18 +3999,18 @@ class timeItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='timeItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='timeItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='timeItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='timeItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='timeItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='timeItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4174,11 +4035,6 @@ class timeItemType(GeneratedsSuper):
 
 
 class dateItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'date', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4205,7 +4061,7 @@ class dateItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='dateItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='dateItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4219,18 +4075,18 @@ class dateItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='dateItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='dateItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='dateItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='dateItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='dateItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='dateItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4255,11 +4111,6 @@ class dateItemType(GeneratedsSuper):
 
 
 class gYearMonthItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'gYearMonth', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4286,7 +4137,7 @@ class gYearMonthItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='gYearMonthItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='gYearMonthItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4300,18 +4151,18 @@ class gYearMonthItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='gYearMonthItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='gYearMonthItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='gYearMonthItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='gYearMonthItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='gYearMonthItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='gYearMonthItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4336,11 +4187,6 @@ class gYearMonthItemType(GeneratedsSuper):
 
 
 class gYearItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'gYear', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4367,7 +4213,7 @@ class gYearItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='gYearItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='gYearItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4381,18 +4227,18 @@ class gYearItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='gYearItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='gYearItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='gYearItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='gYearItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='gYearItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='gYearItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4417,11 +4263,6 @@ class gYearItemType(GeneratedsSuper):
 
 
 class gMonthDayItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'gMonthDay', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4448,7 +4289,7 @@ class gMonthDayItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='gMonthDayItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='gMonthDayItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4462,18 +4303,18 @@ class gMonthDayItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='gMonthDayItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='gMonthDayItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='gMonthDayItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='gMonthDayItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='gMonthDayItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='gMonthDayItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4498,11 +4339,6 @@ class gMonthDayItemType(GeneratedsSuper):
 
 
 class gDayItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'gDay', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4529,7 +4365,7 @@ class gDayItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='gDayItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='gDayItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4543,18 +4379,18 @@ class gDayItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='gDayItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='gDayItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='gDayItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='gDayItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='gDayItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='gDayItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4579,11 +4415,6 @@ class gDayItemType(GeneratedsSuper):
 
 
 class gMonthItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'gMonth', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4610,7 +4441,7 @@ class gMonthItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='gMonthItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='gMonthItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4624,18 +4455,18 @@ class gMonthItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='gMonthItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='gMonthItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='gMonthItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='gMonthItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='gMonthItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='gMonthItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4660,11 +4491,6 @@ class gMonthItemType(GeneratedsSuper):
 
 
 class normalizedStringItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'normalizedString', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4691,7 +4517,7 @@ class normalizedStringItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='normalizedStringItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='normalizedStringItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4705,18 +4531,18 @@ class normalizedStringItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='normalizedStringItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='normalizedStringItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='normalizedStringItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='normalizedStringItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='normalizedStringItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='normalizedStringItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4741,11 +4567,6 @@ class normalizedStringItemType(GeneratedsSuper):
 
 
 class tokenItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'token', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None, extensiontype_=None):
@@ -4775,7 +4596,7 @@ class tokenItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='tokenItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='tokenItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4789,11 +4610,11 @@ class tokenItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='tokenItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='tokenItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='tokenItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='tokenItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
@@ -4804,7 +4625,7 @@ class tokenItemType(GeneratedsSuper):
             already_processed.add('xsi:type')
             outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
             outfile.write(' xsi:type="%s"' % self.extensiontype_)
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='tokenItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='tokenItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4833,11 +4654,6 @@ class tokenItemType(GeneratedsSuper):
 
 
 class languageItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'language', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4864,7 +4680,7 @@ class languageItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='languageItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='languageItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4878,18 +4694,18 @@ class languageItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='languageItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='languageItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='languageItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='languageItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='languageItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='languageItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4914,11 +4730,6 @@ class languageItemType(GeneratedsSuper):
 
 
 class NameItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'Name', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -4945,7 +4756,7 @@ class NameItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='NameItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='NameItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4959,18 +4770,18 @@ class NameItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='NameItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='NameItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='NameItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='NameItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='NameItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='NameItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -4995,11 +4806,6 @@ class NameItemType(GeneratedsSuper):
 
 
 class NCNameItemType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('contextRef', 'string', 0),
-        MemberSpec_('valueOf_', 'NCName', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, contextRef=None, valueOf_=None):
@@ -5026,7 +4832,7 @@ class NCNameItemType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='NCNameItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='NCNameItemType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5040,18 +4846,18 @@ class NCNameItemType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='NCNameItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='NCNameItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='NCNameItemType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='NCNameItemType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
         if self.contextRef is not None and 'contextRef' not in already_processed:
             already_processed.add('contextRef')
             outfile.write(' contextRef=%s' % (self.gds_format_string(quote_attrib(self.contextRef).encode(ExternalEncoding), input_name='contextRef'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='NCNameItemType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='NCNameItemType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -5076,9 +4882,6 @@ class NCNameItemType(GeneratedsSuper):
 
 
 class segment(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('', 'string', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, anytypeobjs_=None):
@@ -5104,7 +4907,7 @@ class segment(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='segment', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='segment', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5117,14 +4920,14 @@ class segment(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='segment')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='segment', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='segment', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='segment'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='segment'):
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='segment', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='segment', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5151,10 +4954,6 @@ class contextEntityType(GeneratedsSuper):
     """The type for the entity element, used to describe the reporting
     entity. Note that the scheme attribute is required and cannot be
     empty."""
-    member_data_items_ = [
-        MemberSpec_('identifier', 'token', 0),
-        MemberSpec_('segment', 'segment', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, identifier=None, segment=None):
@@ -5179,7 +4978,7 @@ class contextEntityType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='contextEntityType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='contextEntityType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5192,14 +4991,14 @@ class contextEntityType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='contextEntityType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='contextEntityType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='contextEntityType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='contextEntityType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='contextEntityType'):
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='contextEntityType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='contextEntityType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5232,10 +5031,6 @@ class contextEntityType(GeneratedsSuper):
 
 
 class identifier(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('scheme', 'anyURI', 0),
-        MemberSpec_('valueOf_', 'token', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, scheme=None, valueOf_=None):
@@ -5259,7 +5054,7 @@ class identifier(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='identifier', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='identifier', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5273,15 +5068,15 @@ class identifier(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='identifier', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='identifier', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='identifier'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='identifier'):
         if self.scheme is not None and 'scheme' not in already_processed:
             already_processed.add('scheme')
             outfile.write(' scheme=%s' % (self.gds_format_string(quote_attrib(self.scheme).encode(ExternalEncoding), input_name='scheme'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='identifier', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='identifier', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -5304,12 +5099,6 @@ class identifier(GeneratedsSuper):
 class contextPeriodType(GeneratedsSuper):
     """The type for the period element, used to describe the reporting date
     info."""
-    member_data_items_ = [
-        MemberSpec_('startDate', 'dateUnion', 0),
-        MemberSpec_('endDate', 'dateUnion', 0),
-        MemberSpec_('instant', 'dateUnion', 0),
-        MemberSpec_('forever', 'string', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, startDate=None, endDate=None, instant=None, forever=None):
@@ -5348,7 +5137,7 @@ class contextPeriodType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='contextPeriodType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='contextPeriodType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5361,14 +5150,14 @@ class contextPeriodType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='contextPeriodType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='contextPeriodType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='contextPeriodType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='contextPeriodType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='contextPeriodType'):
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='contextPeriodType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='contextPeriodType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5421,8 +5210,6 @@ class contextPeriodType(GeneratedsSuper):
 
 
 class forever(GeneratedsSuper):
-    member_data_items_ = [
-    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None):
@@ -5441,7 +5228,7 @@ class forever(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='forever', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='forever', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5454,13 +5241,13 @@ class forever(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='forever')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='forever', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='forever', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='forever'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='forever'):
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='forever', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='forever', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -5478,9 +5265,6 @@ class forever(GeneratedsSuper):
 
 class contextScenarioType(GeneratedsSuper):
     """Used for the scenario under which fact have been reported."""
-    member_data_items_ = [
-        MemberSpec_('', 'string', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, anytypeobjs_=None):
@@ -5506,7 +5290,7 @@ class contextScenarioType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='contextScenarioType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='contextScenarioType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5519,14 +5303,14 @@ class contextScenarioType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='contextScenarioType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='contextScenarioType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='contextScenarioType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='contextScenarioType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='contextScenarioType'):
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='contextScenarioType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='contextScenarioType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5551,12 +5335,6 @@ class contextScenarioType(GeneratedsSuper):
 
 class context(GeneratedsSuper):
     """Used for an island of context to which facts can be related."""
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('entity', 'contextEntityType', 0),
-        MemberSpec_('period', 'stringItemType', 0),
-        MemberSpec_('scenario', 'contextScenarioType', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, entity=None, period=None, scenario=None):
@@ -5588,7 +5366,7 @@ class context(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='context', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='context', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5601,16 +5379,16 @@ class context(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='context')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='context', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='context', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='context'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='context'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='context', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='context', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5654,9 +5432,6 @@ class context(GeneratedsSuper):
 
 class measuresType(GeneratedsSuper):
     """A collection of sibling measure elements"""
-    member_data_items_ = [
-        MemberSpec_('measure', 'QName', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, measure=None):
@@ -5683,7 +5458,7 @@ class measuresType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='measuresType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='measuresType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5696,14 +5471,14 @@ class measuresType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='measuresType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='measuresType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='measuresType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='measuresType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='measuresType'):
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='measuresType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='measuresType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5730,10 +5505,6 @@ class measuresType(GeneratedsSuper):
 
 class divide(GeneratedsSuper):
     """Element used to represent division in units"""
-    member_data_items_ = [
-        MemberSpec_('unitNumerator', 'measuresType', 0),
-        MemberSpec_('unitDenominator', 'measuresType', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, unitNumerator=None, unitDenominator=None):
@@ -5758,7 +5529,7 @@ class divide(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='divide', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='divide', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5771,14 +5542,14 @@ class divide(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='divide')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='divide', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='divide', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='divide'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='divide'):
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='divide', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='divide', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5812,11 +5583,6 @@ class divide(GeneratedsSuper):
 
 class unit(GeneratedsSuper):
     """Element used to represent units information about numeric items"""
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('measure', 'QName', 1),
-        MemberSpec_('divide', 'divide', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, measure=None, divide=None):
@@ -5850,7 +5616,7 @@ class unit(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='unit', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='unit', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5863,16 +5629,16 @@ class unit(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='unit')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='unit', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='unit', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='unit'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='unit'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='unit', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='unit', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5909,18 +5675,6 @@ class unit(GeneratedsSuper):
 
 class xbrl(GeneratedsSuper):
     """XBRL instance root element."""
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('schemaRef', 'simpleType', 1),
-        MemberSpec_('linkbaseRef', 'linkbaseRef', 1),
-        MemberSpec_('roleRef', 'roleRef', 1),
-        MemberSpec_('arcroleRef', 'arcroleRef', 1),
-        MemberSpec_('item', 'string', 1),
-        MemberSpec_('tuple', 'string', 1),
-        MemberSpec_('context', 'context', 1),
-        MemberSpec_('unit', 'unit', 1),
-        MemberSpec_('footnoteLink', 'footnoteLink', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, schemaRef=None, linkbaseRef=None, roleRef=None, arcroleRef=None, item=None, tuple=None, context=None, unit=None, footnoteLink=None):
@@ -6033,7 +5787,7 @@ class xbrl(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='xbrl', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase"  xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='xbrl', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" xmlns:xbrli="http://www.xbrl.org/2003/instance" ', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6046,12 +5800,12 @@ class xbrl(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='xbrl')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='xbrl', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='xbrl', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='xbrl'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='xbrl'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -6086,7 +5840,7 @@ class xbrl(GeneratedsSuper):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='xbrl', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='xbrl', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6153,81 +5907,6 @@ class xbrl(GeneratedsSuper):
             item_ = child_.text
             item_ = self.gds_validate_string(item_, node, 'item')
             self.item.append(item_)
-        elif nodeName_ == 'fiscalYear':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'fiscalYear'
-        elif nodeName_ == 'period':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'period'
-        elif nodeName_ == 'obligatedAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'obligatedAmount'
-        elif nodeName_ == 'unobligatedAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'unobligatedAmount'
-        elif nodeName_ == 'budgetAuthorityAppropriated':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'budgetAuthorityAppropriated'
-        elif nodeName_ == 'otherBudgetaryResources':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'otherBudgetaryResources'
-        elif nodeName_ == 'outlays':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'outlays'
-        elif nodeName_ == 'appropriationAccount':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'appropriationAccount'
-        elif nodeName_ == 'amount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'amount'
-        elif nodeName_ == 'beginningEndIndicator':
-            obj_ = beginningEndIndicatorItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'beginningEndIndicator'
-        elif nodeName_ == 'programActivity':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'programActivity'
-        elif nodeName_ == 'accountNumber':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'accountNumber'
-        elif nodeName_ == 'objectClass':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'objectClass'
-        elif nodeName_ == 'accountDescription':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'accountDescription'
-        elif nodeName_ == 'debitCreditCode':
-            obj_ = debitCreditCodeItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'debitCreditCode'
         elif nodeName_ == 'allocationTransferAgencyIdentifier':
             obj_ = integerItemType.factory()
             obj_.build(child_)
@@ -6328,155 +6007,10 @@ class xbrl(GeneratedsSuper):
             obj_.build(child_)
             self.item.append(obj_)
             obj_.original_tagname_ = 'awardID'
-        elif nodeName_ == 'catalogOfFederalDomesticAssistanceTitle':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'catalogOfFederalDomesticAssistanceTitle'
-        elif nodeName_ == 'catalogOfFederalDomesticAssistanceNumber':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'catalogOfFederalDomesticAssistanceNumber'
-        elif nodeName_ == 'totalFundingAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'totalFundingAmount'
-        elif nodeName_ == 'nonFederalFundingAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'nonFederalFundingAmount'
-        elif nodeName_ == 'awardDescription':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'awardDescription'
-        elif nodeName_ == 'parentAwardID':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'parentAwardID'
-        elif nodeName_ == 'awardeeLegalBusinessName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'awardeeLegalBusinessName'
-        elif nodeName_ == 'businessType':
-            obj_ = businessTypeItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'businessType'
-        elif nodeName_ == 'recordType':
-            obj_ = recordTypeItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'recordType'
-        elif nodeName_ == 'typeOfAction':
-            obj_ = typeOfActionItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'typeOfAction'
-        elif nodeName_ == 'typeOfTransactionCode':
-            obj_ = typeOfTransactionCodeItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'typeOfTransactionCode'
-        elif nodeName_ == 'modificationAmendmentNumber':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'modificationAmendmentNumber'
-        elif nodeName_ == 'ultimateParentUniqueIdentifier':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'ultimateParentUniqueIdentifier'
-        elif nodeName_ == 'awardeeUniqueIdentifier':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'awardeeUniqueIdentifier'
-        elif nodeName_ == 'awardeeUniqueIdentifierSupplemental':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'awardeeUniqueIdentifierSupplemental'
-        elif nodeName_ == 'ultimateParentLegalBusinessName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'ultimateParentLegalBusinessName'
-        elif nodeName_ == 'periodOfPerformanceActionDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'periodOfPerformanceActionDate'
-        elif nodeName_ == 'periodOfPerformanceStartDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'periodOfPerformanceStartDate'
-        elif nodeName_ == 'periodOfPerformanceCurrentEndDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'periodOfPerformanceCurrentEndDate'
-        elif nodeName_ == 'periodOfPerformancePotentialEndDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'periodOfPerformancePotentialEndDate'
-        elif nodeName_ == 'highlyCompensatedOfficerFirstName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'highlyCompensatedOfficerFirstName'
-        elif nodeName_ == 'highlyCompensatedOfficerMiddleInitial':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'highlyCompensatedOfficerMiddleInitial'
-        elif nodeName_ == 'highlyCompensatedOfficerLastName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'highlyCompensatedOfficerLastName'
-        elif nodeName_ == 'highlyCompensatedOfficerCompensation':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'highlyCompensatedOfficerCompensation'
-        elif nodeName_ == 'federalFundingAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.item.append(obj_)
-            obj_.original_tagname_ = 'federalFundingAmount'
         elif nodeName_ == 'tuple':
             tuple_ = child_.text
             tuple_ = self.gds_validate_string(tuple_, node, 'tuple')
             self.tuple.append(tuple_)
-        elif nodeName_ == 'accountingEntries':
-            obj_ = accountingEntriesComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'accountingEntries'
-        elif nodeName_ == 'USSGLentryHeader':
-            obj_ = USSGLentryHeaderComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'USSGLentryHeader'
-        elif nodeName_ == 'entryDetail':
-            obj_ = entryDetailComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'entryDetail'
-        elif nodeName_ == 'account':
-            obj_ = accountComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'account'
         elif nodeName_ == 'treasuryAccountSymbol':
             obj_ = TreasuryAccountSymbolComplexType.factory()
             obj_.build(child_)
@@ -6502,66 +6036,6 @@ class xbrl(GeneratedsSuper):
             obj_.build(child_)
             self.tuple.append(obj_)
             obj_.original_tagname_ = 'agencyOffice'
-        elif nodeName_ == 'award':
-            obj_ = awardComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'award'
-        elif nodeName_ == 'awardeeInformation':
-            obj_ = awardeeInformationComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'awardeeInformation'
-        elif nodeName_ == 'catalogOfFederalDomesticAssistanceProgram':
-            obj_ = catalogOfFederalDomesticAssistanceProgramComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'catalogOfFederalDomesticAssistanceProgram'
-        elif nodeName_ == 'awardAmounts':
-            obj_ = awardAmountsComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'awardAmounts'
-        elif nodeName_ == 'periodOfPerformance':
-            obj_ = periodOfPerformanceComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'periodOfPerformance'
-        elif nodeName_ == 'awardeeAddress':
-            obj_ = addressComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'awardeeAddress'
-        elif nodeName_ == 'primaryPlaceOfPerformance':
-            obj_ = addressComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'primaryPlaceOfPerformance'
-        elif nodeName_ == 'awardingAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'awardingAgency'
-        elif nodeName_ == 'fundingAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'fundingAgency'
-        elif nodeName_ == 'awardingSubTierAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'awardingSubTierAgency'
-        elif nodeName_ == 'fundingSubTierAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'fundingSubTierAgency'
-        elif nodeName_ == 'highlyCompensatedOfficer':
-            obj_ = highlyCompensatedOfficerComplexType.factory()
-            obj_.build(child_)
-            self.tuple.append(obj_)
-            obj_.original_tagname_ = 'highlyCompensatedOfficer'
         elif nodeName_ == 'context':
             obj_ = context.factory()
             obj_.build(child_)
@@ -6582,12 +6056,6 @@ class xbrl(GeneratedsSuper):
 
 class presentationLink(GeneratedsSuper):
     """presentation extended link element definition."""
-    member_data_items_ = [
-        MemberSpec_('title', 'titleType', 1),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('loc', 'locatorType', 1),
-        MemberSpec_('presentationArc', 'presentationArc', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, title=None, documentation=None, loc=None, presentationArc=None):
@@ -6647,7 +6115,7 @@ class presentationLink(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='presentationLink', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='presentationLink', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6660,12 +6128,12 @@ class presentationLink(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='presentationLink')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='presentationLink', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='presentationLink', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='presentationLink'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='presentationLink'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -6698,7 +6166,7 @@ class presentationLink(GeneratedsSuper):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='presentationLink', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='presentationLink', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6782,12 +6250,6 @@ class presentationLink(GeneratedsSuper):
 
 class definitionLink(GeneratedsSuper):
     """definition extended link element definition"""
-    member_data_items_ = [
-        MemberSpec_('title', 'titleType', 1),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('loc', 'locatorType', 1),
-        MemberSpec_('definitionArc', 'arcType', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, title=None, documentation=None, loc=None, definitionArc=None):
@@ -6847,7 +6309,7 @@ class definitionLink(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='definitionLink', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='definitionLink', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6860,12 +6322,12 @@ class definitionLink(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='definitionLink')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='definitionLink', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='definitionLink', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='definitionLink'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='definitionLink'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -6898,7 +6360,7 @@ class definitionLink(GeneratedsSuper):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='definitionLink', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='definitionLink', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6983,12 +6445,6 @@ class definitionLink(GeneratedsSuper):
 
 class calculationLink(GeneratedsSuper):
     """calculation extended link element definition"""
-    member_data_items_ = [
-        MemberSpec_('title', 'titleType', 1),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('loc', 'locatorType', 1),
-        MemberSpec_('calculationArc', 'calculationArc', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, title=None, documentation=None, loc=None, calculationArc=None):
@@ -7048,7 +6504,7 @@ class calculationLink(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='calculationLink', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='calculationLink', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7061,12 +6517,12 @@ class calculationLink(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='calculationLink')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='calculationLink', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='calculationLink', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='calculationLink'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='calculationLink'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -7099,7 +6555,7 @@ class calculationLink(GeneratedsSuper):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='calculationLink', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='calculationLink', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7183,13 +6639,6 @@ class calculationLink(GeneratedsSuper):
 
 class labelLink(GeneratedsSuper):
     """label extended link element definition"""
-    member_data_items_ = [
-        MemberSpec_('title', 'titleType', 1),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('loc', 'locatorType', 1),
-        MemberSpec_('labelArc', 'arcType', 1),
-        MemberSpec_('label', 'label', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, title=None, documentation=None, loc=None, labelArc=None, label=None):
@@ -7259,7 +6708,7 @@ class labelLink(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='labelLink', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='labelLink', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7272,12 +6721,12 @@ class labelLink(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='labelLink')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='labelLink', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='labelLink', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='labelLink'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='labelLink'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -7310,7 +6759,7 @@ class labelLink(GeneratedsSuper):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='labelLink', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='labelLink', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7402,13 +6851,6 @@ class labelLink(GeneratedsSuper):
 
 class referenceLink(GeneratedsSuper):
     """reference extended link element definition"""
-    member_data_items_ = [
-        MemberSpec_('title', 'titleType', 1),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('loc', 'locatorType', 1),
-        MemberSpec_('referenceArc', 'arcType', 1),
-        MemberSpec_('reference', 'reference', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, title=None, documentation=None, loc=None, referenceArc=None, reference=None):
@@ -7478,7 +6920,7 @@ class referenceLink(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='referenceLink', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='referenceLink', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7491,12 +6933,12 @@ class referenceLink(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='referenceLink')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='referenceLink', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='referenceLink', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='referenceLink'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='referenceLink'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -7529,7 +6971,7 @@ class referenceLink(GeneratedsSuper):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='referenceLink', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='referenceLink', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7621,13 +7063,6 @@ class referenceLink(GeneratedsSuper):
 
 class footnoteLink(GeneratedsSuper):
     """footnote extended link element definition"""
-    member_data_items_ = [
-        MemberSpec_('title', 'titleType', 1),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('loc', 'locatorType', 1),
-        MemberSpec_('footnoteArc', 'arcType', 1),
-        MemberSpec_('footnote', 'footnote', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, title=None, documentation=None, loc=None, footnoteArc=None, footnote=None):
@@ -7697,7 +7132,7 @@ class footnoteLink(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='footnoteLink', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='footnoteLink', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7710,12 +7145,12 @@ class footnoteLink(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='footnoteLink')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='footnoteLink', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='footnoteLink', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='footnoteLink'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='footnoteLink'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -7748,7 +7183,7 @@ class footnoteLink(GeneratedsSuper):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='footnoteLink', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='footnoteLink', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7841,13 +7276,6 @@ class footnoteLink(GeneratedsSuper):
 class linkbase(GeneratedsSuper):
     """Definition of the linkbase element. Used to contain a set of zero or
     more extended link elements."""
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('roleRef', 'roleRef', 1),
-        MemberSpec_('arcroleRef', 'arcroleRef', 1),
-        MemberSpec_('extended', 'extendedType', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, id=None, documentation=None, roleRef=None, arcroleRef=None, extended=None):
@@ -7910,7 +7338,7 @@ class linkbase(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='linkbase', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='linkbase', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7923,12 +7351,12 @@ class linkbase(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='linkbase')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='linkbase', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='linkbase', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='linkbase'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='linkbase'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -7963,7 +7391,7 @@ class linkbase(GeneratedsSuper):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='linkbase', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='linkbase', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8084,9 +7512,6 @@ class linkbaseRef(GeneratedsSuper):
     taxonomy extended links from taxonomy schema documents and from
     XBRL instances. This attribute must have the value:
     http://www.w3.org/1999/xlink/properties/linkbase"""
-    member_data_items_ = [
-        MemberSpec_('arcrole', 'string', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, arcrole=None):
@@ -8110,7 +7535,7 @@ class linkbaseRef(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='linkbaseRef', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='linkbaseRef', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8123,11 +7548,11 @@ class linkbaseRef(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='linkbaseRef')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='linkbaseRef', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='linkbaseRef', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='linkbaseRef'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='linkbaseRef'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -8162,7 +7587,7 @@ class linkbaseRef(GeneratedsSuper):
         if self.arcrole is not None and 'arcrole' not in already_processed:
             already_processed.add('arcrole')
             outfile.write(' arcrole=%s' % (self.gds_format_string(quote_attrib(self.arcrole).encode(ExternalEncoding), input_name='arcrole'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='linkbaseRef', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='linkbaseRef', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -8188,12 +7613,6 @@ class linkbaseRef(GeneratedsSuper):
 class roleType(GeneratedsSuper):
     """The roleType element definition - used to define custom role values
     in XBRL extended links."""
-    member_data_items_ = [
-        MemberSpec_('roleURI', 'xl:nonEmptyURI', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('definition', 'string', 0),
-        MemberSpec_('usedOn', 'QName', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, roleURI=None, id=None, definition=None, usedOn=None):
@@ -8230,7 +7649,7 @@ class roleType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='roleType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='roleType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8243,19 +7662,19 @@ class roleType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='roleType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='roleType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='roleType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='roleType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='roleType'):
         if self.roleURI is not None and 'roleURI' not in already_processed:
             already_processed.add('roleURI')
             outfile.write(' roleURI=%s' % (quote_attrib(self.roleURI), ))
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='roleType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='roleType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8297,13 +7716,6 @@ class roleType(GeneratedsSuper):
 class arcroleType(GeneratedsSuper):
     """The arcroleType element definition - used to define custom arc role
     values in XBRL extended links."""
-    member_data_items_ = [
-        MemberSpec_('arcroleURI', 'xl:nonEmptyURI', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('cyclesAllowed', 'NMTOKEN', 0),
-        MemberSpec_('definition', 'string', 0),
-        MemberSpec_('usedOn', 'QName', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, arcroleURI=None, id=None, cyclesAllowed=None, definition=None, usedOn=None):
@@ -8343,7 +7755,7 @@ class arcroleType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='arcroleType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:link="http://www.xbrl.org/2003/linkbase" ', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='arcroleType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8356,12 +7768,12 @@ class arcroleType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='arcroleType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='arcroleType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='arcroleType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='arcroleType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='arcroleType'):
         if self.arcroleURI is not None and 'arcroleURI' not in already_processed:
             already_processed.add('arcroleURI')
             outfile.write(' arcroleURI=%s' % (quote_attrib(self.arcroleURI), ))
@@ -8371,7 +7783,7 @@ class arcroleType(GeneratedsSuper):
         if self.cyclesAllowed is not None and 'cyclesAllowed' not in already_processed:
             already_processed.add('cyclesAllowed')
             outfile.write(' cyclesAllowed=%s' % (self.gds_format_string(quote_attrib(self.cyclesAllowed).encode(ExternalEncoding), input_name='cyclesAllowed'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='arcroleType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='arcroleType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8417,9 +7829,6 @@ class arcroleType(GeneratedsSuper):
 class documentationType(GeneratedsSuper):
     """Element type to use for documentation of extended links and
     linkbases."""
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'string', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None):
@@ -8443,7 +7852,7 @@ class documentationType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='documentationType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='documentationType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8457,11 +7866,11 @@ class documentationType(GeneratedsSuper):
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='documentationType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='documentationType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='documentationType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='documentationType'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -8494,7 +7903,7 @@ class documentationType(GeneratedsSuper):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         pass
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='documentationType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='documentationType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -8517,9 +7926,6 @@ class documentationType(GeneratedsSuper):
 class titleType(GeneratedsSuper):
     """Type for the abstract title element - used as a title element
     template."""
-    member_data_items_ = [
-        MemberSpec_('type', 'string', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, type_=None):
@@ -8540,7 +7946,7 @@ class titleType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='titleType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='titleType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8553,15 +7959,15 @@ class titleType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='titleType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='titleType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='titleType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='titleType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='titleType'):
         if self.type_ is not None and 'type_' not in already_processed:
             already_processed.add('type_')
             outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='titleType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='titleType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -8582,14 +7988,6 @@ class titleType(GeneratedsSuper):
 
 class locatorType(GeneratedsSuper):
     """Generic locator type."""
-    member_data_items_ = [
-        MemberSpec_('title_attr', 'xs:string', 0),
-        MemberSpec_('label', 'NCName', 0),
-        MemberSpec_('href', 'anyURI', 0),
-        MemberSpec_('role', 'string', 0),
-        MemberSpec_('type', 'string', 0),
-        MemberSpec_('title', 'titleType', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, title_attr=None, label=None, href=None, role=None, type_=None, title=None):
@@ -8631,7 +8029,7 @@ class locatorType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='locatorType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='locatorType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8644,12 +8042,12 @@ class locatorType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='locatorType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='locatorType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='locatorType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='locatorType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='locatorType'):
         if self.title_attr is not None and 'title_attr' not in already_processed:
             already_processed.add('title_attr')
             outfile.write(' title=%s' % (quote_attrib(self.title_attr), ))
@@ -8665,7 +8063,7 @@ class locatorType(GeneratedsSuper):
         if self.type_ is not None and 'type_' not in already_processed:
             already_processed.add('type_')
             outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='locatorType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='locatorType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8727,19 +8125,6 @@ class arcType(GeneratedsSuper):
     """basic extended link arc type - extended where necessary for specific
     arcs Extends the generic arc type by adding use, priority and
     order attributes."""
-    member_data_items_ = [
-        MemberSpec_('use', 'xl:useEnum', 0),
-        MemberSpec_('from', 'NCName', 0),
-        MemberSpec_('title_attr', 'xs:string', 0),
-        MemberSpec_('show', 'string', 0),
-        MemberSpec_('arcrole', 'string', 0),
-        MemberSpec_('actuate', 'string', 0),
-        MemberSpec_('priority', 'integer', 0),
-        MemberSpec_('to', 'NCName', 0),
-        MemberSpec_('type', 'string', 0),
-        MemberSpec_('order', 'decimal', 0),
-        MemberSpec_('title', 'titleType', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, use=None, from_=None, title_attr=None, show=None, arcrole=None, actuate=None, priority=None, to=None, type_=None, order=None, title=None, extensiontype_=None):
@@ -8802,7 +8187,7 @@ class arcType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='arcType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='arcType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8815,12 +8200,12 @@ class arcType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='arcType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='arcType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='arcType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='arcType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='arcType'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -8886,7 +8271,7 @@ class arcType(GeneratedsSuper):
             already_processed.add('xsi:type')
             outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
             outfile.write(' xsi:type="%s"' % self.extensiontype_)
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='arcType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='arcType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8980,14 +8365,6 @@ class arcType(GeneratedsSuper):
 
 class resourceType(GeneratedsSuper):
     """Generic type for the resource type element"""
-    member_data_items_ = [
-        MemberSpec_('role', 'string', 0),
-        MemberSpec_('title', 'string', 0),
-        MemberSpec_('type', 'string', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('label', 'NCName', 0),
-        MemberSpec_('valueOf_', [], 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, role=None, title=None, type_=None, id=None, label=None, valueOf_=None, mixedclass_=None, content_=None, extensiontype_=None):
@@ -9035,7 +8412,7 @@ class resourceType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='resourceType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='resourceType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9049,7 +8426,7 @@ class resourceType(GeneratedsSuper):
         outfile.write('>')
         self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
         outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='resourceType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='resourceType'):
         if self.role is not None and 'role' not in already_processed:
             already_processed.add('role')
             outfile.write(' role=%s' % (self.gds_format_string(quote_attrib(self.role).encode(ExternalEncoding), input_name='role'), ))
@@ -9069,7 +8446,7 @@ class resourceType(GeneratedsSuper):
             already_processed.add('xsi:type')
             outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
             outfile.write(' xsi:type="%s"' % self.extensiontype_)
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='resourceType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='resourceType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -9119,17 +8496,6 @@ class resourceType(GeneratedsSuper):
 
 class extendedType(GeneratedsSuper):
     """Generic extended link type"""
-    member_data_items_ = [
-        MemberSpec_('role', 'string', 0),
-        MemberSpec_('type', 'string', 0),
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('title_attr', 'xs:string', 0),
-        MemberSpec_('title', 'titleType', 1),
-        MemberSpec_('documentation', 'documentationType', 1),
-        MemberSpec_('locator', 'locatorType', 1),
-        MemberSpec_('arc', 'arcType', 1),
-        MemberSpec_('resource', 'resourceType', 1),
-    ]
     subclass = None
     superclass = None
     def __init__(self, role=None, type_=None, id=None, title_attr=None, title=None, documentation=None, locator=None, arc=None, resource=None):
@@ -9211,7 +8577,7 @@ class extendedType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='extendedType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='extendedType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9224,12 +8590,12 @@ class extendedType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='extendedType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='extendedType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='extendedType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='extendedType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='extendedType'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -9273,7 +8639,7 @@ class extendedType(GeneratedsSuper):
         if self.title_attr is not None and 'title_attr' not in already_processed:
             already_processed.add('title_attr')
             outfile.write(' title=%s' % (quote_attrib(self.title_attr), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='extendedType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='extendedType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9476,15 +8842,6 @@ class extendedType(GeneratedsSuper):
 
 class simpleType(GeneratedsSuper):
     """Type for the simple links defined in XBRL"""
-    member_data_items_ = [
-        MemberSpec_('show', 'string', 0),
-        MemberSpec_('title', 'string', 0),
-        MemberSpec_('actuate', 'string', 0),
-        MemberSpec_('href', 'anyURI', 0),
-        MemberSpec_('role', 'string', 0),
-        MemberSpec_('arcrole', 'string', 0),
-        MemberSpec_('type', 'string', 0),
-    ]
     subclass = None
     superclass = None
     def __init__(self, show=None, title=None, actuate=None, href=None, role=None, arcrole=None, type_=None, extensiontype_=None):
@@ -9529,7 +8886,7 @@ class simpleType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='simpleType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='simpleType', namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9542,11 +8899,11 @@ class simpleType(GeneratedsSuper):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='simpleType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='simpleType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='simpleType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='simpleType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='simpleType'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -9603,7 +8960,7 @@ class simpleType(GeneratedsSuper):
             already_processed.add('xsi:type')
             outfile.write(' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
             outfile.write(' xsi:type="%s"' % self.extensiontype_)
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='simpleType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='simpleType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -9654,3177 +9011,10 @@ class simpleType(GeneratedsSuper):
 # end class simpleType
 
 
-class accountPurposeCodeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(accountPurposeCodeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if accountPurposeCodeItemType.subclass:
-            return accountPurposeCodeItemType.subclass(*args_, **kwargs_)
-        else:
-            return accountPurposeCodeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(accountPurposeCodeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='accountPurposeCodeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='accountPurposeCodeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='accountPurposeCodeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='accountPurposeCodeItemType'):
-        super(accountPurposeCodeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='accountPurposeCodeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='accountPurposeCodeItemType', fromsubclass_=False, pretty_print=True):
-        super(accountPurposeCodeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(accountPurposeCodeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class accountPurposeCodeItemType
-
-
-class accountTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(accountTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if accountTypeItemType.subclass:
-            return accountTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return accountTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(accountTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='accountTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='accountTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='accountTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='accountTypeItemType'):
-        super(accountTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='accountTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='accountTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(accountTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(accountTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class accountTypeItemType
-
-
-class bookTaxDifferenceItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(bookTaxDifferenceItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if bookTaxDifferenceItemType.subclass:
-            return bookTaxDifferenceItemType.subclass(*args_, **kwargs_)
-        else:
-            return bookTaxDifferenceItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(bookTaxDifferenceItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='bookTaxDifferenceItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='bookTaxDifferenceItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='bookTaxDifferenceItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='bookTaxDifferenceItemType'):
-        super(bookTaxDifferenceItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='bookTaxDifferenceItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='bookTaxDifferenceItemType', fromsubclass_=False, pretty_print=True):
-        super(bookTaxDifferenceItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(bookTaxDifferenceItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class bookTaxDifferenceItemType
-
-
-class identifierOrganizationTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(identifierOrganizationTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if identifierOrganizationTypeItemType.subclass:
-            return identifierOrganizationTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return identifierOrganizationTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(identifierOrganizationTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='identifierOrganizationTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='identifierOrganizationTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='identifierOrganizationTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='identifierOrganizationTypeItemType'):
-        super(identifierOrganizationTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='identifierOrganizationTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='identifierOrganizationTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(identifierOrganizationTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(identifierOrganizationTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class identifierOrganizationTypeItemType
-
-
-class debitCreditCodeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(debitCreditCodeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if debitCreditCodeItemType.subclass:
-            return debitCreditCodeItemType.subclass(*args_, **kwargs_)
-        else:
-            return debitCreditCodeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(debitCreditCodeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='debitCreditCodeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='debitCreditCodeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='debitCreditCodeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='debitCreditCodeItemType'):
-        super(debitCreditCodeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='debitCreditCodeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='debitCreditCodeItemType', fromsubclass_=False, pretty_print=True):
-        super(debitCreditCodeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(debitCreditCodeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class debitCreditCodeItemType
-
-
-class documentTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(documentTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if documentTypeItemType.subclass:
-            return documentTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return documentTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(documentTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='documentTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='documentTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='documentTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='documentTypeItemType'):
-        super(documentTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='documentTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='documentTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(documentTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(documentTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class documentTypeItemType
-
-
-class invoiceTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(invoiceTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if invoiceTypeItemType.subclass:
-            return invoiceTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return invoiceTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(invoiceTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='invoiceTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='invoiceTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='invoiceTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='invoiceTypeItemType'):
-        super(invoiceTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='invoiceTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='invoiceTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(invoiceTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(invoiceTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class invoiceTypeItemType
-
-
-class entriesTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(entriesTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if entriesTypeItemType.subclass:
-            return entriesTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return entriesTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(entriesTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='entriesTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='entriesTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='entriesTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='entriesTypeItemType'):
-        super(entriesTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='entriesTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='entriesTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(entriesTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(entriesTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class entriesTypeItemType
-
-
-class entryTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(entryTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if entryTypeItemType.subclass:
-            return entryTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return entryTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(entryTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='entryTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='entryTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='entryTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='entryTypeItemType'):
-        super(entryTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='entryTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='entryTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(entryTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(entryTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class entryTypeItemType
-
-
-class identifierTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(identifierTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if identifierTypeItemType.subclass:
-            return identifierTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return identifierTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(identifierTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='identifierTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='identifierTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='identifierTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='identifierTypeItemType'):
-        super(identifierTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='identifierTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='identifierTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(identifierTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(identifierTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class identifierTypeItemType
-
-
-class mainAccountTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(mainAccountTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if mainAccountTypeItemType.subclass:
-            return mainAccountTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return mainAccountTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(mainAccountTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='mainAccountTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='mainAccountTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='mainAccountTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='mainAccountTypeItemType'):
-        super(mainAccountTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='mainAccountTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='mainAccountTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(mainAccountTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(mainAccountTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class mainAccountTypeItemType
-
-
-class postingStatusItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(postingStatusItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if postingStatusItemType.subclass:
-            return postingStatusItemType.subclass(*args_, **kwargs_)
-        else:
-            return postingStatusItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(postingStatusItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='postingStatusItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='postingStatusItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='postingStatusItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='postingStatusItemType'):
-        super(postingStatusItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='postingStatusItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='postingStatusItemType', fromsubclass_=False, pretty_print=True):
-        super(postingStatusItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(postingStatusItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class postingStatusItemType
-
-
-class qualifierEntryItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(qualifierEntryItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if qualifierEntryItemType.subclass:
-            return qualifierEntryItemType.subclass(*args_, **kwargs_)
-        else:
-            return qualifierEntryItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(qualifierEntryItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='qualifierEntryItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='qualifierEntryItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='qualifierEntryItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='qualifierEntryItemType'):
-        super(qualifierEntryItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='qualifierEntryItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='qualifierEntryItemType', fromsubclass_=False, pretty_print=True):
-        super(qualifierEntryItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(qualifierEntryItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class qualifierEntryItemType
-
-
-class revisesUniqueIDActionItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(revisesUniqueIDActionItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if revisesUniqueIDActionItemType.subclass:
-            return revisesUniqueIDActionItemType.subclass(*args_, **kwargs_)
-        else:
-            return revisesUniqueIDActionItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(revisesUniqueIDActionItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='revisesUniqueIDActionItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='revisesUniqueIDActionItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='revisesUniqueIDActionItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='revisesUniqueIDActionItemType'):
-        super(revisesUniqueIDActionItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='revisesUniqueIDActionItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='revisesUniqueIDActionItemType', fromsubclass_=False, pretty_print=True):
-        super(revisesUniqueIDActionItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(revisesUniqueIDActionItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class revisesUniqueIDActionItemType
-
-
-class signOfAmountItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(signOfAmountItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if signOfAmountItemType.subclass:
-            return signOfAmountItemType.subclass(*args_, **kwargs_)
-        else:
-            return signOfAmountItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(signOfAmountItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='signOfAmountItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='signOfAmountItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='signOfAmountItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='signOfAmountItemType'):
-        super(signOfAmountItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='signOfAmountItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='signOfAmountItemType', fromsubclass_=False, pretty_print=True):
-        super(signOfAmountItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(signOfAmountItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class signOfAmountItemType
-
-
-class sourceJournalIDItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(sourceJournalIDItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if sourceJournalIDItemType.subclass:
-            return sourceJournalIDItemType.subclass(*args_, **kwargs_)
-        else:
-            return sourceJournalIDItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(sourceJournalIDItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='sourceJournalIDItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sourceJournalIDItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='sourceJournalIDItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='sourceJournalIDItemType'):
-        super(sourceJournalIDItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='sourceJournalIDItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='sourceJournalIDItemType', fromsubclass_=False, pretty_print=True):
-        super(sourceJournalIDItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(sourceJournalIDItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class sourceJournalIDItemType
-
-
-class xbrlIncludeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(xbrlIncludeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if xbrlIncludeItemType.subclass:
-            return xbrlIncludeItemType.subclass(*args_, **kwargs_)
-        else:
-            return xbrlIncludeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(xbrlIncludeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='xbrlIncludeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='xbrlIncludeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='xbrlIncludeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='xbrlIncludeItemType'):
-        super(xbrlIncludeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='xbrlIncludeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='xbrlIncludeItemType', fromsubclass_=False, pretty_print=True):
-        super(xbrlIncludeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(xbrlIncludeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class xbrlIncludeItemType
-
-
-class phoneNumberDescriptionItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(phoneNumberDescriptionItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if phoneNumberDescriptionItemType.subclass:
-            return phoneNumberDescriptionItemType.subclass(*args_, **kwargs_)
-        else:
-            return phoneNumberDescriptionItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(phoneNumberDescriptionItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='phoneNumberDescriptionItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='phoneNumberDescriptionItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='phoneNumberDescriptionItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='phoneNumberDescriptionItemType'):
-        super(phoneNumberDescriptionItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='phoneNumberDescriptionItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='phoneNumberDescriptionItemType', fromsubclass_=False, pretty_print=True):
-        super(phoneNumberDescriptionItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(phoneNumberDescriptionItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class phoneNumberDescriptionItemType
-
-
-class availableTypeCodeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(availableTypeCodeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if availableTypeCodeItemType.subclass:
-            return availableTypeCodeItemType.subclass(*args_, **kwargs_)
-        else:
-            return availableTypeCodeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(availableTypeCodeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='availableTypeCodeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='availableTypeCodeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='availableTypeCodeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='availableTypeCodeItemType'):
-        super(availableTypeCodeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='availableTypeCodeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='availableTypeCodeItemType', fromsubclass_=False, pretty_print=True):
-        super(availableTypeCodeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(availableTypeCodeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class availableTypeCodeItemType
-
-
-class TreasuryAccountSymbolComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('agency', 'agencyComplexType', 0),
-        MemberSpec_('allocationTransferAgencyIdentifier', 'integerItemType', 1),
-        MemberSpec_('mainAccountNumber', 'integerItemType', 0),
-        MemberSpec_('subAccountSymbol', 'integerItemType', 1),
-        MemberSpec_('beginningPeriodOfAvailability', 'stringItemType', 1),
-        MemberSpec_('endingPeriodOfAvailability', 'stringItemType', 1),
-        MemberSpec_('availabilityTypeCode', 'availableTypeCodeItemType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, agency=None, allocationTransferAgencyIdentifier=None, mainAccountNumber=None, subAccountSymbol=None, beginningPeriodOfAvailability=None, endingPeriodOfAvailability=None, availabilityTypeCode=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.agency = agency
-        if allocationTransferAgencyIdentifier is None:
-            self.allocationTransferAgencyIdentifier = []
-        else:
-            self.allocationTransferAgencyIdentifier = allocationTransferAgencyIdentifier
-        self.mainAccountNumber = mainAccountNumber
-        if subAccountSymbol is None:
-            self.subAccountSymbol = []
-        else:
-            self.subAccountSymbol = subAccountSymbol
-        if beginningPeriodOfAvailability is None:
-            self.beginningPeriodOfAvailability = []
-        else:
-            self.beginningPeriodOfAvailability = beginningPeriodOfAvailability
-        if endingPeriodOfAvailability is None:
-            self.endingPeriodOfAvailability = []
-        else:
-            self.endingPeriodOfAvailability = endingPeriodOfAvailability
-        self.availabilityTypeCode = availabilityTypeCode
-    def factory(*args_, **kwargs_):
-        if TreasuryAccountSymbolComplexType.subclass:
-            return TreasuryAccountSymbolComplexType.subclass(*args_, **kwargs_)
-        else:
-            return TreasuryAccountSymbolComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_agency(self): return self.agency
-    def set_agency(self, agency): self.agency = agency
-    def get_allocationTransferAgencyIdentifier(self): return self.allocationTransferAgencyIdentifier
-    def set_allocationTransferAgencyIdentifier(self, allocationTransferAgencyIdentifier): self.allocationTransferAgencyIdentifier = allocationTransferAgencyIdentifier
-    def add_allocationTransferAgencyIdentifier(self, value): self.allocationTransferAgencyIdentifier.append(value)
-    def insert_allocationTransferAgencyIdentifier_at(self, index, value): self.allocationTransferAgencyIdentifier.insert(index, value)
-    def replace_allocationTransferAgencyIdentifier_at(self, index, value): self.allocationTransferAgencyIdentifier[index] = value
-    def get_mainAccountNumber(self): return self.mainAccountNumber
-    def set_mainAccountNumber(self, mainAccountNumber): self.mainAccountNumber = mainAccountNumber
-    def get_subAccountSymbol(self): return self.subAccountSymbol
-    def set_subAccountSymbol(self, subAccountSymbol): self.subAccountSymbol = subAccountSymbol
-    def add_subAccountSymbol(self, value): self.subAccountSymbol.append(value)
-    def insert_subAccountSymbol_at(self, index, value): self.subAccountSymbol.insert(index, value)
-    def replace_subAccountSymbol_at(self, index, value): self.subAccountSymbol[index] = value
-    def get_beginningPeriodOfAvailability(self): return self.beginningPeriodOfAvailability
-    def set_beginningPeriodOfAvailability(self, beginningPeriodOfAvailability): self.beginningPeriodOfAvailability = beginningPeriodOfAvailability
-    def add_beginningPeriodOfAvailability(self, value): self.beginningPeriodOfAvailability.append(value)
-    def insert_beginningPeriodOfAvailability_at(self, index, value): self.beginningPeriodOfAvailability.insert(index, value)
-    def replace_beginningPeriodOfAvailability_at(self, index, value): self.beginningPeriodOfAvailability[index] = value
-    def get_endingPeriodOfAvailability(self): return self.endingPeriodOfAvailability
-    def set_endingPeriodOfAvailability(self, endingPeriodOfAvailability): self.endingPeriodOfAvailability = endingPeriodOfAvailability
-    def add_endingPeriodOfAvailability(self, value): self.endingPeriodOfAvailability.append(value)
-    def insert_endingPeriodOfAvailability_at(self, index, value): self.endingPeriodOfAvailability.insert(index, value)
-    def replace_endingPeriodOfAvailability_at(self, index, value): self.endingPeriodOfAvailability[index] = value
-    def get_availabilityTypeCode(self): return self.availabilityTypeCode
-    def set_availabilityTypeCode(self, availabilityTypeCode): self.availabilityTypeCode = availabilityTypeCode
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.agency is not None or
-            self.allocationTransferAgencyIdentifier or
-            self.mainAccountNumber is not None or
-            self.subAccountSymbol or
-            self.beginningPeriodOfAvailability or
-            self.endingPeriodOfAvailability or
-            self.availabilityTypeCode is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='TreasuryAccountSymbolComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='TreasuryAccountSymbolComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='TreasuryAccountSymbolComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='TreasuryAccountSymbolComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='TreasuryAccountSymbolComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.agency is not None:
-            self.agency.export(outfile, level, namespace_='gen:', name_='agency', pretty_print=pretty_print)
-        for allocationTransferAgencyIdentifier_ in self.allocationTransferAgencyIdentifier:
-            allocationTransferAgencyIdentifier_.export(outfile, level, namespace_='gen:', name_='allocationTransferAgencyIdentifier', pretty_print=pretty_print)
-        if self.mainAccountNumber is not None:
-            self.mainAccountNumber.export(outfile, level, namespace_='gen:', name_='mainAccountNumber', pretty_print=pretty_print)
-        for subAccountSymbol_ in self.subAccountSymbol:
-            subAccountSymbol_.export(outfile, level, namespace_='gen:', name_='subAccountSymbol', pretty_print=pretty_print)
-        for beginningPeriodOfAvailability_ in self.beginningPeriodOfAvailability:
-            beginningPeriodOfAvailability_.export(outfile, level, namespace_='gen:', name_='beginningPeriodOfAvailability', pretty_print=pretty_print)
-        for endingPeriodOfAvailability_ in self.endingPeriodOfAvailability:
-            endingPeriodOfAvailability_.export(outfile, level, namespace_='gen:', name_='endingPeriodOfAvailability', pretty_print=pretty_print)
-        if self.availabilityTypeCode is not None:
-            self.availabilityTypeCode.export(outfile, level, namespace_='gen:', name_='availabilityTypeCode', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'agency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.agency = obj_
-            obj_.original_tagname_ = 'agency'
-        elif nodeName_ == 'allocationTransferAgencyIdentifier':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.allocationTransferAgencyIdentifier.append(obj_)
-            obj_.original_tagname_ = 'allocationTransferAgencyIdentifier'
-        elif nodeName_ == 'mainAccountNumber':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.mainAccountNumber = obj_
-            obj_.original_tagname_ = 'mainAccountNumber'
-        elif nodeName_ == 'subAccountSymbol':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.subAccountSymbol.append(obj_)
-            obj_.original_tagname_ = 'subAccountSymbol'
-        elif nodeName_ == 'beginningPeriodOfAvailability':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.beginningPeriodOfAvailability.append(obj_)
-            obj_.original_tagname_ = 'beginningPeriodOfAvailability'
-        elif nodeName_ == 'endingPeriodOfAvailability':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.endingPeriodOfAvailability.append(obj_)
-            obj_.original_tagname_ = 'endingPeriodOfAvailability'
-        elif nodeName_ == 'availabilityTypeCode':
-            obj_ = availableTypeCodeItemType.factory()
-            obj_.build(child_)
-            self.availabilityTypeCode = obj_
-            obj_.original_tagname_ = 'availabilityTypeCode'
-# end class TreasuryAccountSymbolComplexType
-
-
-class addressComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('streetAddress', 'streetAddressComplexType', 0),
-        MemberSpec_('city', 'stringItemType', 0),
-        MemberSpec_('county', 'stringItemType', 0),
-        MemberSpec_('state', 'stateItemType', 0),
-        MemberSpec_('postalCode', 'stringItemType', 0),
-        MemberSpec_('zipCodePlus4', 'stringItemType', 0),
-        MemberSpec_('countryName', 'stringItemType', 0),
-        MemberSpec_('countryCode', 'stringItemType', 0),
-        MemberSpec_('congressionalDistrict', 'congressionalDistrictItemType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, streetAddress=None, city=None, county=None, state=None, postalCode=None, zipCodePlus4=None, countryName=None, countryCode=None, congressionalDistrict=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.streetAddress = streetAddress
-        self.city = city
-        self.county = county
-        self.state = state
-        self.postalCode = postalCode
-        self.zipCodePlus4 = zipCodePlus4
-        self.countryName = countryName
-        self.countryCode = countryCode
-        self.congressionalDistrict = congressionalDistrict
-    def factory(*args_, **kwargs_):
-        if addressComplexType.subclass:
-            return addressComplexType.subclass(*args_, **kwargs_)
-        else:
-            return addressComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_streetAddress(self): return self.streetAddress
-    def set_streetAddress(self, streetAddress): self.streetAddress = streetAddress
-    def get_city(self): return self.city
-    def set_city(self, city): self.city = city
-    def get_county(self): return self.county
-    def set_county(self, county): self.county = county
-    def get_state(self): return self.state
-    def set_state(self, state): self.state = state
-    def get_postalCode(self): return self.postalCode
-    def set_postalCode(self, postalCode): self.postalCode = postalCode
-    def get_zipCodePlus4(self): return self.zipCodePlus4
-    def set_zipCodePlus4(self, zipCodePlus4): self.zipCodePlus4 = zipCodePlus4
-    def get_countryName(self): return self.countryName
-    def set_countryName(self, countryName): self.countryName = countryName
-    def get_countryCode(self): return self.countryCode
-    def set_countryCode(self, countryCode): self.countryCode = countryCode
-    def get_congressionalDistrict(self): return self.congressionalDistrict
-    def set_congressionalDistrict(self, congressionalDistrict): self.congressionalDistrict = congressionalDistrict
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.streetAddress is not None or
-            self.city is not None or
-            self.county is not None or
-            self.state is not None or
-            self.postalCode is not None or
-            self.zipCodePlus4 is not None or
-            self.countryName is not None or
-            self.countryCode is not None or
-            self.congressionalDistrict is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='addressComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='addressComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='addressComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='addressComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='addressComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.streetAddress is not None:
-            self.streetAddress.export(outfile, level, namespace_='gen:', name_='streetAddress', pretty_print=pretty_print)
-        if self.city is not None:
-            self.city.export(outfile, level, namespace_='gen:', name_='city', pretty_print=pretty_print)
-        if self.county is not None:
-            self.county.export(outfile, level, namespace_='gen:', name_='county', pretty_print=pretty_print)
-        if self.state is not None:
-            self.state.export(outfile, level, namespace_='gen:', name_='state', pretty_print=pretty_print)
-        if self.postalCode is not None:
-            self.postalCode.export(outfile, level, namespace_='gen:', name_='postalCode', pretty_print=pretty_print)
-        if self.zipCodePlus4 is not None:
-            self.zipCodePlus4.export(outfile, level, namespace_='gen:', name_='zipCodePlus4', pretty_print=pretty_print)
-        if self.countryName is not None:
-            self.countryName.export(outfile, level, namespace_='gen:', name_='countryName', pretty_print=pretty_print)
-        if self.countryCode is not None:
-            self.countryCode.export(outfile, level, namespace_='gen:', name_='countryCode', pretty_print=pretty_print)
-        if self.congressionalDistrict is not None:
-            self.congressionalDistrict.export(outfile, level, namespace_='gen:', name_='congressionalDistrict', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'streetAddress':
-            obj_ = streetAddressComplexType.factory()
-            obj_.build(child_)
-            self.streetAddress = obj_
-            obj_.original_tagname_ = 'streetAddress'
-        elif nodeName_ == 'city':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.city = obj_
-            obj_.original_tagname_ = 'city'
-        elif nodeName_ == 'county':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.county = obj_
-            obj_.original_tagname_ = 'county'
-        elif nodeName_ == 'state':
-            obj_ = stateItemType.factory()
-            obj_.build(child_)
-            self.state = obj_
-            obj_.original_tagname_ = 'state'
-        elif nodeName_ == 'postalCode':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.postalCode = obj_
-            obj_.original_tagname_ = 'postalCode'
-        elif nodeName_ == 'zipCodePlus4':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.zipCodePlus4 = obj_
-            obj_.original_tagname_ = 'zipCodePlus4'
-        elif nodeName_ == 'countryName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.countryName = obj_
-            obj_.original_tagname_ = 'countryName'
-        elif nodeName_ == 'countryCode':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.countryCode = obj_
-            obj_.original_tagname_ = 'countryCode'
-        elif nodeName_ == 'congressionalDistrict':
-            obj_ = congressionalDistrictItemType.factory()
-            obj_.build(child_)
-            self.congressionalDistrict = obj_
-            obj_.original_tagname_ = 'congressionalDistrict'
-# end class addressComplexType
-
-
-class streetAddressComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('streetAddressLine', 'stringItemType', 1),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, streetAddressLine=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        if streetAddressLine is None:
-            self.streetAddressLine = []
-        else:
-            self.streetAddressLine = streetAddressLine
-    def factory(*args_, **kwargs_):
-        if streetAddressComplexType.subclass:
-            return streetAddressComplexType.subclass(*args_, **kwargs_)
-        else:
-            return streetAddressComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_streetAddressLine(self): return self.streetAddressLine
-    def set_streetAddressLine(self, streetAddressLine): self.streetAddressLine = streetAddressLine
-    def add_streetAddressLine(self, value): self.streetAddressLine.append(value)
-    def insert_streetAddressLine_at(self, index, value): self.streetAddressLine.insert(index, value)
-    def replace_streetAddressLine_at(self, index, value): self.streetAddressLine[index] = value
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.streetAddressLine
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='streetAddressComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='streetAddressComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='streetAddressComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='streetAddressComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='streetAddressComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        for streetAddressLine_ in self.streetAddressLine:
-            streetAddressLine_.export(outfile, level, namespace_='gen:', name_='streetAddressLine', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'streetAddressLine':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.streetAddressLine.append(obj_)
-            obj_.original_tagname_ = 'streetAddressLine'
-# end class streetAddressComplexType
-
-
-class agencyComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('agencyIdentifier', 'integerItemType', 0),
-        MemberSpec_('agencyName', 'stringItemType', 0),
-        MemberSpec_('agencyOffice', 'agencyOfficeComplexType', 1),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, agencyIdentifier=None, agencyName=None, agencyOffice=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.agencyIdentifier = agencyIdentifier
-        self.agencyName = agencyName
-        if agencyOffice is None:
-            self.agencyOffice = []
-        else:
-            self.agencyOffice = agencyOffice
-    def factory(*args_, **kwargs_):
-        if agencyComplexType.subclass:
-            return agencyComplexType.subclass(*args_, **kwargs_)
-        else:
-            return agencyComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_agencyIdentifier(self): return self.agencyIdentifier
-    def set_agencyIdentifier(self, agencyIdentifier): self.agencyIdentifier = agencyIdentifier
-    def get_agencyName(self): return self.agencyName
-    def set_agencyName(self, agencyName): self.agencyName = agencyName
-    def get_agencyOffice(self): return self.agencyOffice
-    def set_agencyOffice(self, agencyOffice): self.agencyOffice = agencyOffice
-    def add_agencyOffice(self, value): self.agencyOffice.append(value)
-    def insert_agencyOffice_at(self, index, value): self.agencyOffice.insert(index, value)
-    def replace_agencyOffice_at(self, index, value): self.agencyOffice[index] = value
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.agencyIdentifier is not None or
-            self.agencyName is not None or
-            self.agencyOffice
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='agencyComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='agencyComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='agencyComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='agencyComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='agencyComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.agencyIdentifier is not None:
-            self.agencyIdentifier.export(outfile, level, namespace_='gen:', name_='agencyIdentifier', pretty_print=pretty_print)
-        if self.agencyName is not None:
-            self.agencyName.export(outfile, level, namespace_='gen:', name_='agencyName', pretty_print=pretty_print)
-        for agencyOffice_ in self.agencyOffice:
-            agencyOffice_.export(outfile, level, namespace_='gen:', name_='agencyOffice', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'agencyIdentifier':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.agencyIdentifier = obj_
-            obj_.original_tagname_ = 'agencyIdentifier'
-        elif nodeName_ == 'agencyName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.agencyName = obj_
-            obj_.original_tagname_ = 'agencyName'
-        elif nodeName_ == 'agencyOffice':
-            obj_ = agencyOfficeComplexType.factory()
-            obj_.build(child_)
-            self.agencyOffice.append(obj_)
-            obj_.original_tagname_ = 'agencyOffice'
-# end class agencyComplexType
-
-
-class agencyOfficeComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'string', 0),
-        MemberSpec_('officeIdentifier', 'integerItemType', 0),
-        MemberSpec_('officeName', 'stringItemType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, officeIdentifier=None, officeName=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.officeIdentifier = officeIdentifier
-        self.officeName = officeName
-    def factory(*args_, **kwargs_):
-        if agencyOfficeComplexType.subclass:
-            return agencyOfficeComplexType.subclass(*args_, **kwargs_)
-        else:
-            return agencyOfficeComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_officeIdentifier(self): return self.officeIdentifier
-    def set_officeIdentifier(self, officeIdentifier): self.officeIdentifier = officeIdentifier
-    def get_officeName(self): return self.officeName
-    def set_officeName(self, officeName): self.officeName = officeName
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.officeIdentifier is not None or
-            self.officeName is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='agencyOfficeComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='agencyOfficeComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='agencyOfficeComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='agencyOfficeComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='agencyOfficeComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.officeIdentifier is not None:
-            self.officeIdentifier.export(outfile, level, namespace_='gen:', name_='officeIdentifier', pretty_print=pretty_print)
-        if self.officeName is not None:
-            self.officeName.export(outfile, level, namespace_='gen:', name_='officeName', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'officeIdentifier':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.officeIdentifier = obj_
-            obj_.original_tagname_ = 'officeIdentifier'
-        elif nodeName_ == 'officeName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.officeName = obj_
-            obj_.original_tagname_ = 'officeName'
-# end class agencyOfficeComplexType
-
-
-class amountItemType(monetaryItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'monetaryItemType', 0),
-    ]
-    subclass = None
-    superclass = monetaryItemType
-    def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(amountItemType, self).__init__(unitRef, decimals, id, contextRef, precision, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if amountItemType.subclass:
-            return amountItemType.subclass(*args_, **kwargs_)
-        else:
-            return amountItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(amountItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='amountItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='amountItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='amountItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='amountItemType'):
-        super(amountItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='amountItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='amountItemType', fromsubclass_=False, pretty_print=True):
-        super(amountItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(amountItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class amountItemType
-
-
-class congressionalDistrictItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(congressionalDistrictItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if congressionalDistrictItemType.subclass:
-            return congressionalDistrictItemType.subclass(*args_, **kwargs_)
-        else:
-            return congressionalDistrictItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(congressionalDistrictItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='congressionalDistrictItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='congressionalDistrictItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='congressionalDistrictItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='congressionalDistrictItemType'):
-        super(congressionalDistrictItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='congressionalDistrictItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='congressionalDistrictItemType', fromsubclass_=False, pretty_print=True):
-        super(congressionalDistrictItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(congressionalDistrictItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class congressionalDistrictItemType
-
-
-class stateItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(stateItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if stateItemType.subclass:
-            return stateItemType.subclass(*args_, **kwargs_)
-        else:
-            return stateItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(stateItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='stateItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='stateItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='stateItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='stateItemType'):
-        super(stateItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='stateItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='stateItemType', fromsubclass_=False, pretty_print=True):
-        super(stateItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(stateItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class stateItemType
-
-
-class awardComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('awardDescription', 'stringItemType', 0),
-        MemberSpec_('awardID', 'stringItemType', 0),
-        MemberSpec_('parentAwardID', 'stringItemType', 0),
-        MemberSpec_('modificationAmendmentNumber', 'stringItemType', 0),
-        MemberSpec_('recordType', 'recordTypeItemType', 0),
-        MemberSpec_('typeOfAction', 'typeOfActionItemType', 0),
-        MemberSpec_('typeOfTransactionCode', 'typeOfTransactionCodeItemType', 0),
-        MemberSpec_('awardeeInformation', 'awardeeInformationComplexType', 0),
-        MemberSpec_('primaryPlaceOfPerformance', 'addressComplexType', 0),
-        MemberSpec_('periodOfPerformance', 'periodOfPerformanceComplexType', 0),
-        MemberSpec_('awardingAgency', 'agencyComplexType', 1),
-        MemberSpec_('fundingAgency', 'agencyComplexType', 1),
-        MemberSpec_('awardingSubTierAgency', 'agencyComplexType', 1),
-        MemberSpec_('fundingSubTierAgency', 'agencyComplexType', 1),
-        MemberSpec_('highlyCompensatedOfficer', 'highlyCompensatedOfficerComplexType', 1),
-        MemberSpec_('catalogOfFederalDomesticAssistanceProgram', 'catalogOfFederalDomesticAssistanceProgramComplexType', 0),
-        MemberSpec_('awardAmounts', 'awardAmountsComplexType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, awardDescription=None, awardID=None, parentAwardID=None, modificationAmendmentNumber=None, recordType=None, typeOfAction=None, typeOfTransactionCode=None, awardeeInformation=None, primaryPlaceOfPerformance=None, periodOfPerformance=None, awardingAgency=None, fundingAgency=None, awardingSubTierAgency=None, fundingSubTierAgency=None, highlyCompensatedOfficer=None, catalogOfFederalDomesticAssistanceProgram=None, awardAmounts=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.awardDescription = awardDescription
-        self.awardID = awardID
-        self.parentAwardID = parentAwardID
-        self.modificationAmendmentNumber = modificationAmendmentNumber
-        self.recordType = recordType
-        self.typeOfAction = typeOfAction
-        self.typeOfTransactionCode = typeOfTransactionCode
-        self.awardeeInformation = awardeeInformation
-        self.primaryPlaceOfPerformance = primaryPlaceOfPerformance
-        self.periodOfPerformance = periodOfPerformance
-        if awardingAgency is None:
-            self.awardingAgency = []
-        else:
-            self.awardingAgency = awardingAgency
-        if fundingAgency is None:
-            self.fundingAgency = []
-        else:
-            self.fundingAgency = fundingAgency
-        if awardingSubTierAgency is None:
-            self.awardingSubTierAgency = []
-        else:
-            self.awardingSubTierAgency = awardingSubTierAgency
-        if fundingSubTierAgency is None:
-            self.fundingSubTierAgency = []
-        else:
-            self.fundingSubTierAgency = fundingSubTierAgency
-        if highlyCompensatedOfficer is None:
-            self.highlyCompensatedOfficer = []
-        else:
-            self.highlyCompensatedOfficer = highlyCompensatedOfficer
-        self.catalogOfFederalDomesticAssistanceProgram = catalogOfFederalDomesticAssistanceProgram
-        self.awardAmounts = awardAmounts
-    def factory(*args_, **kwargs_):
-        if awardComplexType.subclass:
-            return awardComplexType.subclass(*args_, **kwargs_)
-        else:
-            return awardComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_awardDescription(self): return self.awardDescription
-    def set_awardDescription(self, awardDescription): self.awardDescription = awardDescription
-    def get_awardID(self): return self.awardID
-    def set_awardID(self, awardID): self.awardID = awardID
-    def get_parentAwardID(self): return self.parentAwardID
-    def set_parentAwardID(self, parentAwardID): self.parentAwardID = parentAwardID
-    def get_modificationAmendmentNumber(self): return self.modificationAmendmentNumber
-    def set_modificationAmendmentNumber(self, modificationAmendmentNumber): self.modificationAmendmentNumber = modificationAmendmentNumber
-    def get_recordType(self): return self.recordType
-    def set_recordType(self, recordType): self.recordType = recordType
-    def get_typeOfAction(self): return self.typeOfAction
-    def set_typeOfAction(self, typeOfAction): self.typeOfAction = typeOfAction
-    def get_typeOfTransactionCode(self): return self.typeOfTransactionCode
-    def set_typeOfTransactionCode(self, typeOfTransactionCode): self.typeOfTransactionCode = typeOfTransactionCode
-    def get_awardeeInformation(self): return self.awardeeInformation
-    def set_awardeeInformation(self, awardeeInformation): self.awardeeInformation = awardeeInformation
-    def get_primaryPlaceOfPerformance(self): return self.primaryPlaceOfPerformance
-    def set_primaryPlaceOfPerformance(self, primaryPlaceOfPerformance): self.primaryPlaceOfPerformance = primaryPlaceOfPerformance
-    def get_periodOfPerformance(self): return self.periodOfPerformance
-    def set_periodOfPerformance(self, periodOfPerformance): self.periodOfPerformance = periodOfPerformance
-    def get_awardingAgency(self): return self.awardingAgency
-    def set_awardingAgency(self, awardingAgency): self.awardingAgency = awardingAgency
-    def add_awardingAgency(self, value): self.awardingAgency.append(value)
-    def insert_awardingAgency_at(self, index, value): self.awardingAgency.insert(index, value)
-    def replace_awardingAgency_at(self, index, value): self.awardingAgency[index] = value
-    def get_fundingAgency(self): return self.fundingAgency
-    def set_fundingAgency(self, fundingAgency): self.fundingAgency = fundingAgency
-    def add_fundingAgency(self, value): self.fundingAgency.append(value)
-    def insert_fundingAgency_at(self, index, value): self.fundingAgency.insert(index, value)
-    def replace_fundingAgency_at(self, index, value): self.fundingAgency[index] = value
-    def get_awardingSubTierAgency(self): return self.awardingSubTierAgency
-    def set_awardingSubTierAgency(self, awardingSubTierAgency): self.awardingSubTierAgency = awardingSubTierAgency
-    def add_awardingSubTierAgency(self, value): self.awardingSubTierAgency.append(value)
-    def insert_awardingSubTierAgency_at(self, index, value): self.awardingSubTierAgency.insert(index, value)
-    def replace_awardingSubTierAgency_at(self, index, value): self.awardingSubTierAgency[index] = value
-    def get_fundingSubTierAgency(self): return self.fundingSubTierAgency
-    def set_fundingSubTierAgency(self, fundingSubTierAgency): self.fundingSubTierAgency = fundingSubTierAgency
-    def add_fundingSubTierAgency(self, value): self.fundingSubTierAgency.append(value)
-    def insert_fundingSubTierAgency_at(self, index, value): self.fundingSubTierAgency.insert(index, value)
-    def replace_fundingSubTierAgency_at(self, index, value): self.fundingSubTierAgency[index] = value
-    def get_highlyCompensatedOfficer(self): return self.highlyCompensatedOfficer
-    def set_highlyCompensatedOfficer(self, highlyCompensatedOfficer): self.highlyCompensatedOfficer = highlyCompensatedOfficer
-    def add_highlyCompensatedOfficer(self, value): self.highlyCompensatedOfficer.append(value)
-    def insert_highlyCompensatedOfficer_at(self, index, value): self.highlyCompensatedOfficer.insert(index, value)
-    def replace_highlyCompensatedOfficer_at(self, index, value): self.highlyCompensatedOfficer[index] = value
-    def get_catalogOfFederalDomesticAssistanceProgram(self): return self.catalogOfFederalDomesticAssistanceProgram
-    def set_catalogOfFederalDomesticAssistanceProgram(self, catalogOfFederalDomesticAssistanceProgram): self.catalogOfFederalDomesticAssistanceProgram = catalogOfFederalDomesticAssistanceProgram
-    def get_awardAmounts(self): return self.awardAmounts
-    def set_awardAmounts(self, awardAmounts): self.awardAmounts = awardAmounts
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.awardDescription is not None or
-            self.awardID is not None or
-            self.parentAwardID is not None or
-            self.modificationAmendmentNumber is not None or
-            self.recordType is not None or
-            self.typeOfAction is not None or
-            self.typeOfTransactionCode is not None or
-            self.awardeeInformation is not None or
-            self.primaryPlaceOfPerformance is not None or
-            self.periodOfPerformance is not None or
-            self.awardingAgency or
-            self.fundingAgency or
-            self.awardingSubTierAgency or
-            self.fundingSubTierAgency or
-            self.highlyCompensatedOfficer or
-            self.catalogOfFederalDomesticAssistanceProgram is not None or
-            self.awardAmounts is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='awardComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25" xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25" ', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='awardComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='awardComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='awardComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='awardComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.awardDescription is not None:
-            self.awardDescription.export(outfile, level, namespace_='award:', name_='awardDescription', pretty_print=pretty_print)
-        if self.awardID is not None:
-            self.awardID.export(outfile, level, namespace_='gen:', name_='awardID', pretty_print=pretty_print)
-        if self.parentAwardID is not None:
-            self.parentAwardID.export(outfile, level, namespace_='award:', name_='parentAwardID', pretty_print=pretty_print)
-        if self.modificationAmendmentNumber is not None:
-            self.modificationAmendmentNumber.export(outfile, level, namespace_='award:', name_='modificationAmendmentNumber', pretty_print=pretty_print)
-        if self.recordType is not None:
-            self.recordType.export(outfile, level, namespace_='award:', name_='recordType', pretty_print=pretty_print)
-        if self.typeOfAction is not None:
-            self.typeOfAction.export(outfile, level, namespace_='award:', name_='typeOfAction', pretty_print=pretty_print)
-        if self.typeOfTransactionCode is not None:
-            self.typeOfTransactionCode.export(outfile, level, namespace_='award:', name_='typeOfTransactionCode', pretty_print=pretty_print)
-        if self.awardeeInformation is not None:
-            self.awardeeInformation.export(outfile, level, namespace_='finassist:', name_='awardeeInformation', pretty_print=pretty_print)
-        if self.primaryPlaceOfPerformance is not None:
-            self.primaryPlaceOfPerformance.export(outfile, level, namespace_='award:', name_='primaryPlaceOfPerformance', pretty_print=pretty_print)
-        if self.periodOfPerformance is not None:
-            self.periodOfPerformance.export(outfile, level, namespace_='finassist:', name_='periodOfPerformance', pretty_print=pretty_print)
-        for awardingAgency_ in self.awardingAgency:
-            awardingAgency_.export(outfile, level, namespace_='award:', name_='awardingAgency', pretty_print=pretty_print)
-        for fundingAgency_ in self.fundingAgency:
-            fundingAgency_.export(outfile, level, namespace_='award:', name_='fundingAgency', pretty_print=pretty_print)
-        for awardingSubTierAgency_ in self.awardingSubTierAgency:
-            awardingSubTierAgency_.export(outfile, level, namespace_='award:', name_='awardingSubTierAgency', pretty_print=pretty_print)
-        for fundingSubTierAgency_ in self.fundingSubTierAgency:
-            fundingSubTierAgency_.export(outfile, level, namespace_='award:', name_='fundingSubTierAgency', pretty_print=pretty_print)
-        for highlyCompensatedOfficer_ in self.highlyCompensatedOfficer:
-            highlyCompensatedOfficer_.export(outfile, level, namespace_='award:', name_='highlyCompensatedOfficer', pretty_print=pretty_print)
-        if self.catalogOfFederalDomesticAssistanceProgram is not None:
-            self.catalogOfFederalDomesticAssistanceProgram.export(outfile, level, namespace_='finassist:', name_='catalogOfFederalDomesticAssistanceProgram', pretty_print=pretty_print)
-        if self.awardAmounts is not None:
-            self.awardAmounts.export(outfile, level, namespace_='finassist:', name_='awardAmounts', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'awardDescription':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.awardDescription = obj_
-            obj_.original_tagname_ = 'awardDescription'
-        elif nodeName_ == 'awardID':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.awardID = obj_
-            obj_.original_tagname_ = 'awardID'
-        elif nodeName_ == 'parentAwardID':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.parentAwardID = obj_
-            obj_.original_tagname_ = 'parentAwardID'
-        elif nodeName_ == 'modificationAmendmentNumber':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.modificationAmendmentNumber = obj_
-            obj_.original_tagname_ = 'modificationAmendmentNumber'
-        elif nodeName_ == 'recordType':
-            obj_ = recordTypeItemType.factory()
-            obj_.build(child_)
-            self.recordType = obj_
-            obj_.original_tagname_ = 'recordType'
-        elif nodeName_ == 'typeOfAction':
-            obj_ = typeOfActionItemType.factory()
-            obj_.build(child_)
-            self.typeOfAction = obj_
-            obj_.original_tagname_ = 'typeOfAction'
-        elif nodeName_ == 'typeOfTransactionCode':
-            obj_ = typeOfTransactionCodeItemType.factory()
-            obj_.build(child_)
-            self.typeOfTransactionCode = obj_
-            obj_.original_tagname_ = 'typeOfTransactionCode'
-        elif nodeName_ == 'awardeeInformation':
-            obj_ = awardeeInformationComplexType.factory()
-            obj_.build(child_)
-            self.awardeeInformation = obj_
-            obj_.original_tagname_ = 'awardeeInformation'
-        elif nodeName_ == 'primaryPlaceOfPerformance':
-            obj_ = addressComplexType.factory()
-            obj_.build(child_)
-            self.primaryPlaceOfPerformance = obj_
-            obj_.original_tagname_ = 'primaryPlaceOfPerformance'
-        elif nodeName_ == 'periodOfPerformance':
-            obj_ = periodOfPerformanceComplexType.factory()
-            obj_.build(child_)
-            self.periodOfPerformance = obj_
-            obj_.original_tagname_ = 'periodOfPerformance'
-        elif nodeName_ == 'awardingAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.awardingAgency.append(obj_)
-            obj_.original_tagname_ = 'awardingAgency'
-        elif nodeName_ == 'fundingAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.fundingAgency.append(obj_)
-            obj_.original_tagname_ = 'fundingAgency'
-        elif nodeName_ == 'awardingSubTierAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.awardingSubTierAgency.append(obj_)
-            obj_.original_tagname_ = 'awardingSubTierAgency'
-        elif nodeName_ == 'fundingSubTierAgency':
-            obj_ = agencyComplexType.factory()
-            obj_.build(child_)
-            self.fundingSubTierAgency.append(obj_)
-            obj_.original_tagname_ = 'fundingSubTierAgency'
-        elif nodeName_ == 'highlyCompensatedOfficer':
-            obj_ = highlyCompensatedOfficerComplexType.factory()
-            obj_.build(child_)
-            self.highlyCompensatedOfficer.append(obj_)
-            obj_.original_tagname_ = 'highlyCompensatedOfficer'
-        elif nodeName_ == 'catalogOfFederalDomesticAssistanceProgram':
-            obj_ = catalogOfFederalDomesticAssistanceProgramComplexType.factory()
-            obj_.build(child_)
-            self.catalogOfFederalDomesticAssistanceProgram = obj_
-            obj_.original_tagname_ = 'catalogOfFederalDomesticAssistanceProgram'
-        elif nodeName_ == 'awardAmounts':
-            obj_ = awardAmountsComplexType.factory()
-            obj_.build(child_)
-            self.awardAmounts = obj_
-            obj_.original_tagname_ = 'awardAmounts'
-# end class awardComplexType
-
-
-class catalogOfFederalDomesticAssistanceProgramComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('catalogOfFederalDomesticAssistanceTitle', 'stringItemType', 0),
-        MemberSpec_('catalogOfFederalDomesticAssistanceNumber', 'stringItemType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, catalogOfFederalDomesticAssistanceTitle=None, catalogOfFederalDomesticAssistanceNumber=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.catalogOfFederalDomesticAssistanceTitle = catalogOfFederalDomesticAssistanceTitle
-        self.catalogOfFederalDomesticAssistanceNumber = catalogOfFederalDomesticAssistanceNumber
-    def factory(*args_, **kwargs_):
-        if catalogOfFederalDomesticAssistanceProgramComplexType.subclass:
-            return catalogOfFederalDomesticAssistanceProgramComplexType.subclass(*args_, **kwargs_)
-        else:
-            return catalogOfFederalDomesticAssistanceProgramComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_catalogOfFederalDomesticAssistanceTitle(self): return self.catalogOfFederalDomesticAssistanceTitle
-    def set_catalogOfFederalDomesticAssistanceTitle(self, catalogOfFederalDomesticAssistanceTitle): self.catalogOfFederalDomesticAssistanceTitle = catalogOfFederalDomesticAssistanceTitle
-    def get_catalogOfFederalDomesticAssistanceNumber(self): return self.catalogOfFederalDomesticAssistanceNumber
-    def set_catalogOfFederalDomesticAssistanceNumber(self, catalogOfFederalDomesticAssistanceNumber): self.catalogOfFederalDomesticAssistanceNumber = catalogOfFederalDomesticAssistanceNumber
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.catalogOfFederalDomesticAssistanceTitle is not None or
-            self.catalogOfFederalDomesticAssistanceNumber is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='catalogOfFederalDomesticAssistanceProgramComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='catalogOfFederalDomesticAssistanceProgramComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='catalogOfFederalDomesticAssistanceProgramComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='catalogOfFederalDomesticAssistanceProgramComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='catalogOfFederalDomesticAssistanceProgramComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.catalogOfFederalDomesticAssistanceTitle is not None:
-            self.catalogOfFederalDomesticAssistanceTitle.export(outfile, level, namespace_='finassist:', name_='catalogOfFederalDomesticAssistanceTitle', pretty_print=pretty_print)
-        if self.catalogOfFederalDomesticAssistanceNumber is not None:
-            self.catalogOfFederalDomesticAssistanceNumber.export(outfile, level, namespace_='finassist:', name_='catalogOfFederalDomesticAssistanceNumber', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'catalogOfFederalDomesticAssistanceTitle':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.catalogOfFederalDomesticAssistanceTitle = obj_
-            obj_.original_tagname_ = 'catalogOfFederalDomesticAssistanceTitle'
-        elif nodeName_ == 'catalogOfFederalDomesticAssistanceNumber':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.catalogOfFederalDomesticAssistanceNumber = obj_
-            obj_.original_tagname_ = 'catalogOfFederalDomesticAssistanceNumber'
-# end class catalogOfFederalDomesticAssistanceProgramComplexType
-
-
-class awardAmountsComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('federalFundingAmount', 'amountItemType', 0),
-        MemberSpec_('totalFundingAmount', 'amountItemType', 0),
-        MemberSpec_('nonFederalFundingAmount', 'amountItemType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, federalFundingAmount=None, totalFundingAmount=None, nonFederalFundingAmount=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.federalFundingAmount = federalFundingAmount
-        self.totalFundingAmount = totalFundingAmount
-        self.nonFederalFundingAmount = nonFederalFundingAmount
-    def factory(*args_, **kwargs_):
-        if awardAmountsComplexType.subclass:
-            return awardAmountsComplexType.subclass(*args_, **kwargs_)
-        else:
-            return awardAmountsComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_federalFundingAmount(self): return self.federalFundingAmount
-    def set_federalFundingAmount(self, federalFundingAmount): self.federalFundingAmount = federalFundingAmount
-    def get_totalFundingAmount(self): return self.totalFundingAmount
-    def set_totalFundingAmount(self, totalFundingAmount): self.totalFundingAmount = totalFundingAmount
-    def get_nonFederalFundingAmount(self): return self.nonFederalFundingAmount
-    def set_nonFederalFundingAmount(self, nonFederalFundingAmount): self.nonFederalFundingAmount = nonFederalFundingAmount
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.federalFundingAmount is not None or
-            self.totalFundingAmount is not None or
-            self.nonFederalFundingAmount is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='awardAmountsComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='awardAmountsComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='awardAmountsComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='awardAmountsComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='awardAmountsComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.federalFundingAmount is not None:
-            self.federalFundingAmount.export(outfile, level, namespace_='award:', name_='federalFundingAmount', pretty_print=pretty_print)
-        if self.totalFundingAmount is not None:
-            self.totalFundingAmount.export(outfile, level, namespace_='finassist:', name_='totalFundingAmount', pretty_print=pretty_print)
-        if self.nonFederalFundingAmount is not None:
-            self.nonFederalFundingAmount.export(outfile, level, namespace_='finassist:', name_='nonFederalFundingAmount', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'federalFundingAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.federalFundingAmount = obj_
-            obj_.original_tagname_ = 'federalFundingAmount'
-        elif nodeName_ == 'totalFundingAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.totalFundingAmount = obj_
-            obj_.original_tagname_ = 'totalFundingAmount'
-        elif nodeName_ == 'nonFederalFundingAmount':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.nonFederalFundingAmount = obj_
-            obj_.original_tagname_ = 'nonFederalFundingAmount'
-# end class awardAmountsComplexType
-
-
-class awardeeInformationComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('businessType', 'businessTypeItemType', 0),
-        MemberSpec_('awardeeLegalBusinessName', 'stringItemType', 0),
-        MemberSpec_('ultimateParentUniqueIdentifier', 'integerItemType', 0),
-        MemberSpec_('awardeeUniqueIdentifier', 'integerItemType', 0),
-        MemberSpec_('awardeeUniqueIdentifierSupplemental', 'stringItemType', 0),
-        MemberSpec_('ultimateParentLegalBusinessName', 'stringItemType', 0),
-        MemberSpec_('awardeeAddress', 'addressComplexType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, businessType=None, awardeeLegalBusinessName=None, ultimateParentUniqueIdentifier=None, awardeeUniqueIdentifier=None, awardeeUniqueIdentifierSupplemental=None, ultimateParentLegalBusinessName=None, awardeeAddress=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.businessType = businessType
-        self.awardeeLegalBusinessName = awardeeLegalBusinessName
-        self.ultimateParentUniqueIdentifier = ultimateParentUniqueIdentifier
-        self.awardeeUniqueIdentifier = awardeeUniqueIdentifier
-        self.awardeeUniqueIdentifierSupplemental = awardeeUniqueIdentifierSupplemental
-        self.ultimateParentLegalBusinessName = ultimateParentLegalBusinessName
-        self.awardeeAddress = awardeeAddress
-    def factory(*args_, **kwargs_):
-        if awardeeInformationComplexType.subclass:
-            return awardeeInformationComplexType.subclass(*args_, **kwargs_)
-        else:
-            return awardeeInformationComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_businessType(self): return self.businessType
-    def set_businessType(self, businessType): self.businessType = businessType
-    def get_awardeeLegalBusinessName(self): return self.awardeeLegalBusinessName
-    def set_awardeeLegalBusinessName(self, awardeeLegalBusinessName): self.awardeeLegalBusinessName = awardeeLegalBusinessName
-    def get_ultimateParentUniqueIdentifier(self): return self.ultimateParentUniqueIdentifier
-    def set_ultimateParentUniqueIdentifier(self, ultimateParentUniqueIdentifier): self.ultimateParentUniqueIdentifier = ultimateParentUniqueIdentifier
-    def get_awardeeUniqueIdentifier(self): return self.awardeeUniqueIdentifier
-    def set_awardeeUniqueIdentifier(self, awardeeUniqueIdentifier): self.awardeeUniqueIdentifier = awardeeUniqueIdentifier
-    def get_awardeeUniqueIdentifierSupplemental(self): return self.awardeeUniqueIdentifierSupplemental
-    def set_awardeeUniqueIdentifierSupplemental(self, awardeeUniqueIdentifierSupplemental): self.awardeeUniqueIdentifierSupplemental = awardeeUniqueIdentifierSupplemental
-    def get_ultimateParentLegalBusinessName(self): return self.ultimateParentLegalBusinessName
-    def set_ultimateParentLegalBusinessName(self, ultimateParentLegalBusinessName): self.ultimateParentLegalBusinessName = ultimateParentLegalBusinessName
-    def get_awardeeAddress(self): return self.awardeeAddress
-    def set_awardeeAddress(self, awardeeAddress): self.awardeeAddress = awardeeAddress
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.businessType is not None or
-            self.awardeeLegalBusinessName is not None or
-            self.ultimateParentUniqueIdentifier is not None or
-            self.awardeeUniqueIdentifier is not None or
-            self.awardeeUniqueIdentifierSupplemental is not None or
-            self.ultimateParentLegalBusinessName is not None or
-            self.awardeeAddress is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='awardeeInformationComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='awardeeInformationComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='awardeeInformationComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='awardeeInformationComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='awardeeInformationComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.businessType is not None:
-            self.businessType.export(outfile, level, namespace_='award:', name_='businessType', pretty_print=pretty_print)
-        if self.awardeeLegalBusinessName is not None:
-            self.awardeeLegalBusinessName.export(outfile, level, namespace_='award:', name_='awardeeLegalBusinessName', pretty_print=pretty_print)
-        if self.ultimateParentUniqueIdentifier is not None:
-            self.ultimateParentUniqueIdentifier.export(outfile, level, namespace_='award:', name_='ultimateParentUniqueIdentifier', pretty_print=pretty_print)
-        if self.awardeeUniqueIdentifier is not None:
-            self.awardeeUniqueIdentifier.export(outfile, level, namespace_='award:', name_='awardeeUniqueIdentifier', pretty_print=pretty_print)
-        if self.awardeeUniqueIdentifierSupplemental is not None:
-            self.awardeeUniqueIdentifierSupplemental.export(outfile, level, namespace_='award:', name_='awardeeUniqueIdentifierSupplemental', pretty_print=pretty_print)
-        if self.ultimateParentLegalBusinessName is not None:
-            self.ultimateParentLegalBusinessName.export(outfile, level, namespace_='award:', name_='ultimateParentLegalBusinessName', pretty_print=pretty_print)
-        if self.awardeeAddress is not None:
-            self.awardeeAddress.export(outfile, level, namespace_='award:', name_='awardeeAddress', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'businessType':
-            obj_ = businessTypeItemType.factory()
-            obj_.build(child_)
-            self.businessType = obj_
-            obj_.original_tagname_ = 'businessType'
-        elif nodeName_ == 'awardeeLegalBusinessName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.awardeeLegalBusinessName = obj_
-            obj_.original_tagname_ = 'awardeeLegalBusinessName'
-        elif nodeName_ == 'ultimateParentUniqueIdentifier':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.ultimateParentUniqueIdentifier = obj_
-            obj_.original_tagname_ = 'ultimateParentUniqueIdentifier'
-        elif nodeName_ == 'awardeeUniqueIdentifier':
-            obj_ = integerItemType.factory()
-            obj_.build(child_)
-            self.awardeeUniqueIdentifier = obj_
-            obj_.original_tagname_ = 'awardeeUniqueIdentifier'
-        elif nodeName_ == 'awardeeUniqueIdentifierSupplemental':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.awardeeUniqueIdentifierSupplemental = obj_
-            obj_.original_tagname_ = 'awardeeUniqueIdentifierSupplemental'
-        elif nodeName_ == 'ultimateParentLegalBusinessName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.ultimateParentLegalBusinessName = obj_
-            obj_.original_tagname_ = 'ultimateParentLegalBusinessName'
-        elif nodeName_ == 'awardeeAddress':
-            obj_ = addressComplexType.factory()
-            obj_.build(child_)
-            self.awardeeAddress = obj_
-            obj_.original_tagname_ = 'awardeeAddress'
-# end class awardeeInformationComplexType
-
-
-class periodOfPerformanceComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('periodOfPerformanceActionDate', 'dateItemType', 0),
-        MemberSpec_('periodOfPerformanceStartDate', 'dateItemType', 0),
-        MemberSpec_('periodOfPerformanceCurrentEndDate', 'dateItemType', 0),
-        MemberSpec_('periodOfPerformancePotentialEndDate', 'dateItemType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, periodOfPerformanceActionDate=None, periodOfPerformanceStartDate=None, periodOfPerformanceCurrentEndDate=None, periodOfPerformancePotentialEndDate=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.periodOfPerformanceActionDate = periodOfPerformanceActionDate
-        self.periodOfPerformanceStartDate = periodOfPerformanceStartDate
-        self.periodOfPerformanceCurrentEndDate = periodOfPerformanceCurrentEndDate
-        self.periodOfPerformancePotentialEndDate = periodOfPerformancePotentialEndDate
-    def factory(*args_, **kwargs_):
-        if periodOfPerformanceComplexType.subclass:
-            return periodOfPerformanceComplexType.subclass(*args_, **kwargs_)
-        else:
-            return periodOfPerformanceComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_periodOfPerformanceActionDate(self): return self.periodOfPerformanceActionDate
-    def set_periodOfPerformanceActionDate(self, periodOfPerformanceActionDate): self.periodOfPerformanceActionDate = periodOfPerformanceActionDate
-    def get_periodOfPerformanceStartDate(self): return self.periodOfPerformanceStartDate
-    def set_periodOfPerformanceStartDate(self, periodOfPerformanceStartDate): self.periodOfPerformanceStartDate = periodOfPerformanceStartDate
-    def get_periodOfPerformanceCurrentEndDate(self): return self.periodOfPerformanceCurrentEndDate
-    def set_periodOfPerformanceCurrentEndDate(self, periodOfPerformanceCurrentEndDate): self.periodOfPerformanceCurrentEndDate = periodOfPerformanceCurrentEndDate
-    def get_periodOfPerformancePotentialEndDate(self): return self.periodOfPerformancePotentialEndDate
-    def set_periodOfPerformancePotentialEndDate(self, periodOfPerformancePotentialEndDate): self.periodOfPerformancePotentialEndDate = periodOfPerformancePotentialEndDate
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.periodOfPerformanceActionDate is not None or
-            self.periodOfPerformanceStartDate is not None or
-            self.periodOfPerformanceCurrentEndDate is not None or
-            self.periodOfPerformancePotentialEndDate is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='periodOfPerformanceComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='periodOfPerformanceComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='periodOfPerformanceComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='periodOfPerformanceComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='periodOfPerformanceComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.periodOfPerformanceActionDate is not None:
-            self.periodOfPerformanceActionDate.export(outfile, level, namespace_='award:', name_='periodOfPerformanceActionDate', pretty_print=pretty_print)
-        if self.periodOfPerformanceStartDate is not None:
-            self.periodOfPerformanceStartDate.export(outfile, level, namespace_='award:', name_='periodOfPerformanceStartDate', pretty_print=pretty_print)
-        if self.periodOfPerformanceCurrentEndDate is not None:
-            self.periodOfPerformanceCurrentEndDate.export(outfile, level, namespace_='award:', name_='periodOfPerformanceCurrentEndDate', pretty_print=pretty_print)
-        if self.periodOfPerformancePotentialEndDate is not None:
-            self.periodOfPerformancePotentialEndDate.export(outfile, level, namespace_='award:', name_='periodOfPerformancePotentialEndDate', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'periodOfPerformanceActionDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.periodOfPerformanceActionDate = obj_
-            obj_.original_tagname_ = 'periodOfPerformanceActionDate'
-        elif nodeName_ == 'periodOfPerformanceStartDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.periodOfPerformanceStartDate = obj_
-            obj_.original_tagname_ = 'periodOfPerformanceStartDate'
-        elif nodeName_ == 'periodOfPerformanceCurrentEndDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.periodOfPerformanceCurrentEndDate = obj_
-            obj_.original_tagname_ = 'periodOfPerformanceCurrentEndDate'
-        elif nodeName_ == 'periodOfPerformancePotentialEndDate':
-            obj_ = dateItemType.factory()
-            obj_.build(child_)
-            self.periodOfPerformancePotentialEndDate = obj_
-            obj_.original_tagname_ = 'periodOfPerformancePotentialEndDate'
-# end class periodOfPerformanceComplexType
-
-
-class businessTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(businessTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if businessTypeItemType.subclass:
-            return businessTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return businessTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(businessTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='businessTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='businessTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='businessTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='businessTypeItemType'):
-        super(businessTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='businessTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='businessTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(businessTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(businessTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class businessTypeItemType
-
-
-class recordTypeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(recordTypeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if recordTypeItemType.subclass:
-            return recordTypeItemType.subclass(*args_, **kwargs_)
-        else:
-            return recordTypeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(recordTypeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='recordTypeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='recordTypeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='recordTypeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='recordTypeItemType'):
-        super(recordTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='recordTypeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='recordTypeItemType', fromsubclass_=False, pretty_print=True):
-        super(recordTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(recordTypeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class recordTypeItemType
-
-
-class typeOfActionItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(typeOfActionItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if typeOfActionItemType.subclass:
-            return typeOfActionItemType.subclass(*args_, **kwargs_)
-        else:
-            return typeOfActionItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(typeOfActionItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='typeOfActionItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='typeOfActionItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='typeOfActionItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='typeOfActionItemType'):
-        super(typeOfActionItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='typeOfActionItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='typeOfActionItemType', fromsubclass_=False, pretty_print=True):
-        super(typeOfActionItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(typeOfActionItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class typeOfActionItemType
-
-
-class typeOfTransactionCodeItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
-    subclass = None
-    superclass = tokenItemType
-    def __init__(self, id=None, contextRef=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(typeOfTransactionCodeItemType, self).__init__(id, contextRef, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if typeOfTransactionCodeItemType.subclass:
-            return typeOfTransactionCodeItemType.subclass(*args_, **kwargs_)
-        else:
-            return typeOfTransactionCodeItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(typeOfTransactionCodeItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='typeOfTransactionCodeItemType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='typeOfTransactionCodeItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='typeOfTransactionCodeItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='typeOfTransactionCodeItemType'):
-        super(typeOfTransactionCodeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='typeOfTransactionCodeItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='typeOfTransactionCodeItemType', fromsubclass_=False, pretty_print=True):
-        super(typeOfTransactionCodeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(typeOfTransactionCodeItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class typeOfTransactionCodeItemType
-
-
-class highlyCompensatedOfficerComplexType(GeneratedsSuper):
-    member_data_items_ = [
-        MemberSpec_('id', 'xs:ID', 0),
-        MemberSpec_('highlyCompensatedOfficerFirstName', 'stringItemType', 0),
-        MemberSpec_('highlyCompensatedOfficerMiddleInitial', 'stringItemType', 0),
-        MemberSpec_('highlyCompensatedOfficerLastName', 'stringItemType', 0),
-        MemberSpec_('highlyCompensatedOfficerCompensation', 'amountItemType', 0),
-    ]
-    subclass = None
-    superclass = None
-    def __init__(self, id=None, highlyCompensatedOfficerFirstName=None, highlyCompensatedOfficerMiddleInitial=None, highlyCompensatedOfficerLastName=None, highlyCompensatedOfficerCompensation=None):
-        self.original_tagname_ = None
-        self.id = _cast(None, id)
-        self.highlyCompensatedOfficerFirstName = highlyCompensatedOfficerFirstName
-        self.highlyCompensatedOfficerMiddleInitial = highlyCompensatedOfficerMiddleInitial
-        self.highlyCompensatedOfficerLastName = highlyCompensatedOfficerLastName
-        self.highlyCompensatedOfficerCompensation = highlyCompensatedOfficerCompensation
-    def factory(*args_, **kwargs_):
-        if highlyCompensatedOfficerComplexType.subclass:
-            return highlyCompensatedOfficerComplexType.subclass(*args_, **kwargs_)
-        else:
-            return highlyCompensatedOfficerComplexType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_highlyCompensatedOfficerFirstName(self): return self.highlyCompensatedOfficerFirstName
-    def set_highlyCompensatedOfficerFirstName(self, highlyCompensatedOfficerFirstName): self.highlyCompensatedOfficerFirstName = highlyCompensatedOfficerFirstName
-    def get_highlyCompensatedOfficerMiddleInitial(self): return self.highlyCompensatedOfficerMiddleInitial
-    def set_highlyCompensatedOfficerMiddleInitial(self, highlyCompensatedOfficerMiddleInitial): self.highlyCompensatedOfficerMiddleInitial = highlyCompensatedOfficerMiddleInitial
-    def get_highlyCompensatedOfficerLastName(self): return self.highlyCompensatedOfficerLastName
-    def set_highlyCompensatedOfficerLastName(self, highlyCompensatedOfficerLastName): self.highlyCompensatedOfficerLastName = highlyCompensatedOfficerLastName
-    def get_highlyCompensatedOfficerCompensation(self): return self.highlyCompensatedOfficerCompensation
-    def set_highlyCompensatedOfficerCompensation(self, highlyCompensatedOfficerCompensation): self.highlyCompensatedOfficerCompensation = highlyCompensatedOfficerCompensation
-    def get_id(self): return self.id
-    def set_id(self, id): self.id = id
-    def hasContent_(self):
-        if (
-            self.highlyCompensatedOfficerFirstName is not None or
-            self.highlyCompensatedOfficerMiddleInitial is not None or
-            self.highlyCompensatedOfficerLastName is not None or
-            self.highlyCompensatedOfficerCompensation is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='highlyCompensatedOfficerComplexType', namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='highlyCompensatedOfficerComplexType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='highlyCompensatedOfficerComplexType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='highlyCompensatedOfficerComplexType'):
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            outfile.write(' id=%s' % (quote_attrib(self.id), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='highlyCompensatedOfficerComplexType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.highlyCompensatedOfficerFirstName is not None:
-            self.highlyCompensatedOfficerFirstName.export(outfile, level, namespace_='award:', name_='highlyCompensatedOfficerFirstName', pretty_print=pretty_print)
-        if self.highlyCompensatedOfficerMiddleInitial is not None:
-            self.highlyCompensatedOfficerMiddleInitial.export(outfile, level, namespace_='award:', name_='highlyCompensatedOfficerMiddleInitial', pretty_print=pretty_print)
-        if self.highlyCompensatedOfficerLastName is not None:
-            self.highlyCompensatedOfficerLastName.export(outfile, level, namespace_='award:', name_='highlyCompensatedOfficerLastName', pretty_print=pretty_print)
-        if self.highlyCompensatedOfficerCompensation is not None:
-            self.highlyCompensatedOfficerCompensation.export(outfile, level, namespace_='award:', name_='highlyCompensatedOfficerCompensation', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('id', node)
-        if value is not None and 'id' not in already_processed:
-            already_processed.add('id')
-            self.id = value
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'highlyCompensatedOfficerFirstName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.highlyCompensatedOfficerFirstName = obj_
-            obj_.original_tagname_ = 'highlyCompensatedOfficerFirstName'
-        elif nodeName_ == 'highlyCompensatedOfficerMiddleInitial':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.highlyCompensatedOfficerMiddleInitial = obj_
-            obj_.original_tagname_ = 'highlyCompensatedOfficerMiddleInitial'
-        elif nodeName_ == 'highlyCompensatedOfficerLastName':
-            obj_ = stringItemType.factory()
-            obj_.build(child_)
-            self.highlyCompensatedOfficerLastName = obj_
-            obj_.original_tagname_ = 'highlyCompensatedOfficerLastName'
-        elif nodeName_ == 'highlyCompensatedOfficerCompensation':
-            obj_ = amountItemType.factory()
-            obj_.build(child_)
-            self.highlyCompensatedOfficerCompensation = obj_
-            obj_.original_tagname_ = 'highlyCompensatedOfficerCompensation'
-# end class highlyCompensatedOfficerComplexType
-
-
 class arcroleRef(simpleType):
     """Definition of the roleRef element - used to link to resolve
     xlink:arcrole attribute values to the arcroleType element
     declaration. This attribute contains the arc role name."""
-    member_data_items_ = [
-        MemberSpec_('arcroleURI', 'xl:nonEmptyURI', 0),
-    ]
     subclass = None
     superclass = simpleType
     def __init__(self, show=None, title=None, actuate=None, href=None, role=None, arcrole=None, type_=None, arcroleURI=None):
@@ -12846,7 +9036,7 @@ class arcroleRef(simpleType):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='arcroleRef', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='arcroleRef', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12859,16 +9049,16 @@ class arcroleRef(simpleType):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='arcroleRef')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='arcroleRef', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='arcroleRef', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='arcroleRef'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='arcroleRef'):
         super(arcroleRef, self).exportAttributes(outfile, level, already_processed, namespace_, name_='arcroleRef')
         if self.arcroleURI is not None and 'arcroleURI' not in already_processed:
             already_processed.add('arcroleURI')
             outfile.write(' arcroleURI=%s' % (quote_attrib(self.arcroleURI), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='arcroleRef', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='arcroleRef', fromsubclass_=False, pretty_print=True):
         super(arcroleRef, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
         pass
     def build(self, node):
@@ -12894,9 +9084,6 @@ class roleRef(simpleType):
     """Definition of the roleRef element - used to link to resolve
     xlink:role attribute values to the roleType element declaration.
     This attribute contains the role name."""
-    member_data_items_ = [
-        MemberSpec_('roleURI', 'xl:nonEmptyURI', 0),
-    ]
     subclass = None
     superclass = simpleType
     def __init__(self, show=None, title=None, actuate=None, href=None, role=None, arcrole=None, type_=None, roleURI=None):
@@ -12918,7 +9105,7 @@ class roleRef(simpleType):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='roleRef', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='roleRef', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12931,16 +9118,16 @@ class roleRef(simpleType):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='roleRef')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='roleRef', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='roleRef', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='roleRef'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='roleRef'):
         super(roleRef, self).exportAttributes(outfile, level, already_processed, namespace_, name_='roleRef')
         if self.roleURI is not None and 'roleURI' not in already_processed:
             already_processed.add('roleURI')
             outfile.write(' roleURI=%s' % (quote_attrib(self.roleURI), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='roleRef', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='roleRef', fromsubclass_=False, pretty_print=True):
         super(roleRef, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
         pass
     def build(self, node):
@@ -12964,10 +9151,6 @@ class roleRef(simpleType):
 
 class footnote(resourceType):
     """Definition of the reference resource element"""
-    member_data_items_ = [
-        MemberSpec_('', 'string', 1),
-        MemberSpec_('valueOf_', 'resourceType', 0),
-    ]
     subclass = None
     superclass = resourceType
     def __init__(self, role=None, title=None, type_=None, id=None, label=None, anytypeobjs_=None, valueOf_=None, mixedclass_=None, content_=None):
@@ -13011,7 +9194,7 @@ class footnote(resourceType):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='footnote', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='footnote', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13024,12 +9207,12 @@ class footnote(resourceType):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='footnote')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='footnote', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='footnote', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='footnote'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='footnote'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -13062,7 +9245,7 @@ class footnote(resourceType):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         super(footnote, self).exportAttributes(outfile, level, already_processed, namespace_, name_='footnote')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='footnote', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='footnote', fromsubclass_=False, pretty_print=True):
         super(footnote, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
         if not fromsubclass_:
             for item_ in self.content_:
@@ -13106,10 +9289,6 @@ class footnote(resourceType):
 
 class reference(resourceType):
     """Definition of the reference resource element."""
-    member_data_items_ = [
-        MemberSpec_('part', 'anySimpleType', 1),
-        MemberSpec_('valueOf_', 'resourceType', 0),
-    ]
     subclass = None
     superclass = resourceType
     def __init__(self, role=None, title=None, type_=None, id=None, label=None, part=None, valueOf_=None, mixedclass_=None, content_=None):
@@ -13151,7 +9330,7 @@ class reference(resourceType):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='reference', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='reference', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13164,14 +9343,14 @@ class reference(resourceType):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='reference')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='reference', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='reference', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='reference'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='reference'):
         super(reference, self).exportAttributes(outfile, level, already_processed, namespace_, name_='reference')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='reference', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='reference', fromsubclass_=False, pretty_print=True):
         super(reference, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
         if not fromsubclass_:
             for item_ in self.content_:
@@ -13211,10 +9390,6 @@ class reference(resourceType):
 
 class label(resourceType):
     """Definition of the label resource element."""
-    member_data_items_ = [
-        MemberSpec_('', 'string', 1),
-        MemberSpec_('valueOf_', 'resourceType', 0),
-    ]
     subclass = None
     superclass = resourceType
     def __init__(self, role=None, title=None, type_=None, id=None, label=None, anytypeobjs_=None, valueOf_=None, mixedclass_=None, content_=None):
@@ -13258,7 +9433,7 @@ class label(resourceType):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='label', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='label', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13271,12 +9446,12 @@ class label(resourceType):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='label')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='label', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='label', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='label'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='label'):
         unique_counter = 0
         for name, value in self.anyAttributes_.items():
             xsinamespaceprefix = 'xsi'
@@ -13309,7 +9484,7 @@ class label(resourceType):
                         outfile.write(' %s=%s' % (
                             name, quote_attrib(value), ))
         super(label, self).exportAttributes(outfile, level, already_processed, namespace_, name_='label')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='label', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='label', fromsubclass_=False, pretty_print=True):
         super(label, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
         if not fromsubclass_:
             for item_ in self.content_:
@@ -13355,9 +9530,6 @@ class calculationArc(arcType):
     """Extension of the extended link arc type for calculation arcs. Adds a
     weight attribute to track weights on contributions to
     summations."""
-    member_data_items_ = [
-        MemberSpec_('weight', 'decimal', 0),
-    ]
     subclass = None
     superclass = arcType
     def __init__(self, use=None, from_=None, title_attr=None, show=None, arcrole=None, actuate=None, priority=None, to=None, type_=None, order=None, title=None, weight=None):
@@ -13379,7 +9551,7 @@ class calculationArc(arcType):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='calculationArc', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='calculationArc', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13392,17 +9564,17 @@ class calculationArc(arcType):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='calculationArc')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='calculationArc', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='calculationArc', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='calculationArc'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='calculationArc'):
         super(calculationArc, self).exportAttributes(outfile, level, already_processed, namespace_, name_='calculationArc')
         if self.weight is not None and 'weight' not in already_processed:
             already_processed.add('weight')
             outfile.write(' weight="%s"' % self.gds_format_float(self.weight, input_name='weight'))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='calculationArc', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='calculationArc', fromsubclass_=False, pretty_print=True):
         super(calculationArc, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
@@ -13431,9 +9603,6 @@ class presentationArc(arcType):
     a preferredLabel attribute that documents the role attribute
     value of preferred labels (as they occur in label extended
     links)."""
-    member_data_items_ = [
-        MemberSpec_('preferredLabel', 'anyURI', 0),
-    ]
     subclass = None
     superclass = arcType
     def __init__(self, use=None, from_=None, title_attr=None, show=None, arcrole=None, actuate=None, priority=None, to=None, type_=None, order=None, title=None, preferredLabel=None):
@@ -13455,7 +9624,7 @@ class presentationArc(arcType):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='presentationArc', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='presentationArc', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13468,17 +9637,17 @@ class presentationArc(arcType):
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='presentationArc')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='presentationArc', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='presentationArc', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='presentationArc'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='presentationArc'):
         super(presentationArc, self).exportAttributes(outfile, level, already_processed, namespace_, name_='presentationArc')
         if self.preferredLabel is not None and 'preferredLabel' not in already_processed:
             already_processed.add('preferredLabel')
             outfile.write(' preferredLabel=%s' % (self.gds_format_string(quote_attrib(self.preferredLabel).encode(ExternalEncoding), input_name='preferredLabel'), ))
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='presentationArc', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='presentationArc', fromsubclass_=False, pretty_print=True):
         super(presentationArc, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
@@ -13499,97 +9668,30 @@ class presentationArc(arcType):
 # end class presentationArc
 
 
-class fiscalYearItemType(pureItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'pureItemType', 0),
-    ]
-    subclass = None
-    superclass = pureItemType
-    def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
-        self.original_tagname_ = None
-        super(fiscalYearItemType, self).__init__(unitRef, decimals, id, contextRef, precision, valueOf_, )
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if fiscalYearItemType.subclass:
-            return fiscalYearItemType.subclass(*args_, **kwargs_)
-        else:
-            return fiscalYearItemType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_ or
-            super(fiscalYearItemType, self).hasContent_()
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='fiscalYearItemType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='fiscalYearItemType')
-        if self.hasContent_():
-            outfile.write('>')
-            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='fiscalYearItemType', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='fiscalYearItemType'):
-        super(fiscalYearItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='fiscalYearItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='fiscalYearItemType', fromsubclass_=False, pretty_print=True):
-        super(fiscalYearItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        super(fiscalYearItemType, self).buildAttributes(node, attrs, already_processed)
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class fiscalYearItemType
-
-
-class beginningEndIndicatorItemType(tokenItemType):
-    member_data_items_ = [
-        MemberSpec_('valueOf_', 'tokenItemType', 0),
-    ]
+class stateItemType(tokenItemType):
     subclass = None
     superclass = tokenItemType
     def __init__(self, id=None, contextRef=None, valueOf_=None):
         self.original_tagname_ = None
-        super(beginningEndIndicatorItemType, self).__init__(id, contextRef, valueOf_, )
+        super(stateItemType, self).__init__(id, contextRef, valueOf_, )
         self.valueOf_ = valueOf_
     def factory(*args_, **kwargs_):
-        if beginningEndIndicatorItemType.subclass:
-            return beginningEndIndicatorItemType.subclass(*args_, **kwargs_)
+        if stateItemType.subclass:
+            return stateItemType.subclass(*args_, **kwargs_)
         else:
-            return beginningEndIndicatorItemType(*args_, **kwargs_)
+            return stateItemType(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
     def hasContent_(self):
         if (
             self.valueOf_ or
-            super(beginningEndIndicatorItemType, self).hasContent_()
+            super(stateItemType, self).hasContent_()
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gl-plt:', name_='beginningEndIndicatorItemType', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='gen:', name_='stateItemType', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13599,18 +9701,18 @@ class beginningEndIndicatorItemType(tokenItemType):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='beginningEndIndicatorItemType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='stateItemType')
         if self.hasContent_():
             outfile.write('>')
             outfile.write(str(self.valueOf_).encode(ExternalEncoding))
-            self.exportChildren(outfile, level + 1, namespace_='gl-plt:', name_='beginningEndIndicatorItemType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='stateItemType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gl-plt:', name_='beginningEndIndicatorItemType'):
-        super(beginningEndIndicatorItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='beginningEndIndicatorItemType')
-    def exportChildren(self, outfile, level, namespace_='gl-plt:', name_='beginningEndIndicatorItemType', fromsubclass_=False, pretty_print=True):
-        super(beginningEndIndicatorItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='stateItemType'):
+        super(stateItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='stateItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='stateItemType', fromsubclass_=False, pretty_print=True):
+        super(stateItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
         pass
     def build(self, node):
         already_processed = set()
@@ -13621,111 +9723,1337 @@ class beginningEndIndicatorItemType(tokenItemType):
             self.buildChildren(child, node, nodeName_)
         return self
     def buildAttributes(self, node, attrs, already_processed):
-        super(beginningEndIndicatorItemType, self).buildAttributes(node, attrs, already_processed)
+        super(stateItemType, self).buildAttributes(node, attrs, already_processed)
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
-# end class beginningEndIndicatorItemType
+# end class stateItemType
+
+
+class congressionalDistrictItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(congressionalDistrictItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if congressionalDistrictItemType.subclass:
+            return congressionalDistrictItemType.subclass(*args_, **kwargs_)
+        else:
+            return congressionalDistrictItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(congressionalDistrictItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='congressionalDistrictItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='congressionalDistrictItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='congressionalDistrictItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='congressionalDistrictItemType'):
+        super(congressionalDistrictItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='congressionalDistrictItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='congressionalDistrictItemType', fromsubclass_=False, pretty_print=True):
+        super(congressionalDistrictItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(congressionalDistrictItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class congressionalDistrictItemType
+
+
+class amountItemType(monetaryItemType):
+    subclass = None
+    superclass = monetaryItemType
+    def __init__(self, unitRef=None, decimals=None, id=None, contextRef=None, precision=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(amountItemType, self).__init__(unitRef, decimals, id, contextRef, precision, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if amountItemType.subclass:
+            return amountItemType.subclass(*args_, **kwargs_)
+        else:
+            return amountItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(amountItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='amountItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='amountItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='amountItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='amountItemType'):
+        super(amountItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='amountItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='amountItemType', fromsubclass_=False, pretty_print=True):
+        super(amountItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(amountItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class amountItemType
+
+
+class availableTypeCodeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(availableTypeCodeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if availableTypeCodeItemType.subclass:
+            return availableTypeCodeItemType.subclass(*args_, **kwargs_)
+        else:
+            return availableTypeCodeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(availableTypeCodeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='availableTypeCodeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='availableTypeCodeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='availableTypeCodeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='availableTypeCodeItemType'):
+        super(availableTypeCodeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='availableTypeCodeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='availableTypeCodeItemType', fromsubclass_=False, pretty_print=True):
+        super(availableTypeCodeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(availableTypeCodeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class availableTypeCodeItemType
+
+
+class phoneNumberDescriptionItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(phoneNumberDescriptionItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if phoneNumberDescriptionItemType.subclass:
+            return phoneNumberDescriptionItemType.subclass(*args_, **kwargs_)
+        else:
+            return phoneNumberDescriptionItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(phoneNumberDescriptionItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='phoneNumberDescriptionItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='phoneNumberDescriptionItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='phoneNumberDescriptionItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='phoneNumberDescriptionItemType'):
+        super(phoneNumberDescriptionItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='phoneNumberDescriptionItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='phoneNumberDescriptionItemType', fromsubclass_=False, pretty_print=True):
+        super(phoneNumberDescriptionItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(phoneNumberDescriptionItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class phoneNumberDescriptionItemType
+
+
+class xbrlIncludeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(xbrlIncludeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if xbrlIncludeItemType.subclass:
+            return xbrlIncludeItemType.subclass(*args_, **kwargs_)
+        else:
+            return xbrlIncludeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(xbrlIncludeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='xbrlIncludeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='xbrlIncludeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='xbrlIncludeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='xbrlIncludeItemType'):
+        super(xbrlIncludeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='xbrlIncludeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='xbrlIncludeItemType', fromsubclass_=False, pretty_print=True):
+        super(xbrlIncludeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(xbrlIncludeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class xbrlIncludeItemType
+
+
+class sourceJournalIDItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(sourceJournalIDItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if sourceJournalIDItemType.subclass:
+            return sourceJournalIDItemType.subclass(*args_, **kwargs_)
+        else:
+            return sourceJournalIDItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(sourceJournalIDItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='sourceJournalIDItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sourceJournalIDItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='sourceJournalIDItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='sourceJournalIDItemType'):
+        super(sourceJournalIDItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='sourceJournalIDItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='sourceJournalIDItemType', fromsubclass_=False, pretty_print=True):
+        super(sourceJournalIDItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(sourceJournalIDItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class sourceJournalIDItemType
+
+
+class signOfAmountItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(signOfAmountItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if signOfAmountItemType.subclass:
+            return signOfAmountItemType.subclass(*args_, **kwargs_)
+        else:
+            return signOfAmountItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(signOfAmountItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='signOfAmountItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='signOfAmountItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='signOfAmountItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='signOfAmountItemType'):
+        super(signOfAmountItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='signOfAmountItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='signOfAmountItemType', fromsubclass_=False, pretty_print=True):
+        super(signOfAmountItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(signOfAmountItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class signOfAmountItemType
+
+
+class revisesUniqueIDActionItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(revisesUniqueIDActionItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if revisesUniqueIDActionItemType.subclass:
+            return revisesUniqueIDActionItemType.subclass(*args_, **kwargs_)
+        else:
+            return revisesUniqueIDActionItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(revisesUniqueIDActionItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='revisesUniqueIDActionItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='revisesUniqueIDActionItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='revisesUniqueIDActionItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='revisesUniqueIDActionItemType'):
+        super(revisesUniqueIDActionItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='revisesUniqueIDActionItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='revisesUniqueIDActionItemType', fromsubclass_=False, pretty_print=True):
+        super(revisesUniqueIDActionItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(revisesUniqueIDActionItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class revisesUniqueIDActionItemType
+
+
+class qualifierEntryItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(qualifierEntryItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if qualifierEntryItemType.subclass:
+            return qualifierEntryItemType.subclass(*args_, **kwargs_)
+        else:
+            return qualifierEntryItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(qualifierEntryItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='qualifierEntryItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='qualifierEntryItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='qualifierEntryItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='qualifierEntryItemType'):
+        super(qualifierEntryItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='qualifierEntryItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='qualifierEntryItemType', fromsubclass_=False, pretty_print=True):
+        super(qualifierEntryItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(qualifierEntryItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class qualifierEntryItemType
+
+
+class postingStatusItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(postingStatusItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if postingStatusItemType.subclass:
+            return postingStatusItemType.subclass(*args_, **kwargs_)
+        else:
+            return postingStatusItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(postingStatusItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='postingStatusItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='postingStatusItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='postingStatusItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='postingStatusItemType'):
+        super(postingStatusItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='postingStatusItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='postingStatusItemType', fromsubclass_=False, pretty_print=True):
+        super(postingStatusItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(postingStatusItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class postingStatusItemType
+
+
+class mainAccountTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(mainAccountTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if mainAccountTypeItemType.subclass:
+            return mainAccountTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return mainAccountTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(mainAccountTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='mainAccountTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='mainAccountTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='mainAccountTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='mainAccountTypeItemType'):
+        super(mainAccountTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='mainAccountTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='mainAccountTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(mainAccountTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(mainAccountTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class mainAccountTypeItemType
+
+
+class identifierTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(identifierTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if identifierTypeItemType.subclass:
+            return identifierTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return identifierTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(identifierTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='identifierTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='identifierTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='identifierTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='identifierTypeItemType'):
+        super(identifierTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='identifierTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='identifierTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(identifierTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(identifierTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class identifierTypeItemType
+
+
+class entryTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(entryTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if entryTypeItemType.subclass:
+            return entryTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return entryTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(entryTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='entryTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='entryTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='entryTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='entryTypeItemType'):
+        super(entryTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='entryTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='entryTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(entryTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(entryTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class entryTypeItemType
+
+
+class entriesTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(entriesTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if entriesTypeItemType.subclass:
+            return entriesTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return entriesTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(entriesTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='entriesTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='entriesTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='entriesTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='entriesTypeItemType'):
+        super(entriesTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='entriesTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='entriesTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(entriesTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(entriesTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class entriesTypeItemType
+
+
+class invoiceTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(invoiceTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if invoiceTypeItemType.subclass:
+            return invoiceTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return invoiceTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(invoiceTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='invoiceTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='invoiceTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='invoiceTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='invoiceTypeItemType'):
+        super(invoiceTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='invoiceTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='invoiceTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(invoiceTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(invoiceTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class invoiceTypeItemType
+
+
+class documentTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(documentTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if documentTypeItemType.subclass:
+            return documentTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return documentTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(documentTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='documentTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='documentTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='documentTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='documentTypeItemType'):
+        super(documentTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='documentTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='documentTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(documentTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(documentTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class documentTypeItemType
+
+
+class debitCreditCodeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(debitCreditCodeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if debitCreditCodeItemType.subclass:
+            return debitCreditCodeItemType.subclass(*args_, **kwargs_)
+        else:
+            return debitCreditCodeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(debitCreditCodeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='debitCreditCodeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='debitCreditCodeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='debitCreditCodeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='debitCreditCodeItemType'):
+        super(debitCreditCodeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='debitCreditCodeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='debitCreditCodeItemType', fromsubclass_=False, pretty_print=True):
+        super(debitCreditCodeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(debitCreditCodeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class debitCreditCodeItemType
+
+
+class identifierOrganizationTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(identifierOrganizationTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if identifierOrganizationTypeItemType.subclass:
+            return identifierOrganizationTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return identifierOrganizationTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(identifierOrganizationTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='identifierOrganizationTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='identifierOrganizationTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='identifierOrganizationTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='identifierOrganizationTypeItemType'):
+        super(identifierOrganizationTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='identifierOrganizationTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='identifierOrganizationTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(identifierOrganizationTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(identifierOrganizationTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class identifierOrganizationTypeItemType
+
+
+class bookTaxDifferenceItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(bookTaxDifferenceItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if bookTaxDifferenceItemType.subclass:
+            return bookTaxDifferenceItemType.subclass(*args_, **kwargs_)
+        else:
+            return bookTaxDifferenceItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(bookTaxDifferenceItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='bookTaxDifferenceItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='bookTaxDifferenceItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='bookTaxDifferenceItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='bookTaxDifferenceItemType'):
+        super(bookTaxDifferenceItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='bookTaxDifferenceItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='bookTaxDifferenceItemType', fromsubclass_=False, pretty_print=True):
+        super(bookTaxDifferenceItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(bookTaxDifferenceItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class bookTaxDifferenceItemType
+
+
+class accountTypeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(accountTypeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if accountTypeItemType.subclass:
+            return accountTypeItemType.subclass(*args_, **kwargs_)
+        else:
+            return accountTypeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(accountTypeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='accountTypeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='accountTypeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='accountTypeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='accountTypeItemType'):
+        super(accountTypeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='accountTypeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='accountTypeItemType', fromsubclass_=False, pretty_print=True):
+        super(accountTypeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(accountTypeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class accountTypeItemType
+
+
+class accountPurposeCodeItemType(tokenItemType):
+    subclass = None
+    superclass = tokenItemType
+    def __init__(self, id=None, contextRef=None, valueOf_=None):
+        self.original_tagname_ = None
+        super(accountPurposeCodeItemType, self).__init__(id, contextRef, valueOf_, )
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if accountPurposeCodeItemType.subclass:
+            return accountPurposeCodeItemType.subclass(*args_, **kwargs_)
+        else:
+            return accountPurposeCodeItemType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.valueOf_ or
+            super(accountPurposeCodeItemType, self).hasContent_()
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gen:', name_='accountPurposeCodeItemType', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='accountPurposeCodeItemType')
+        if self.hasContent_():
+            outfile.write('>')
+            outfile.write(str(self.valueOf_).encode(ExternalEncoding))
+            self.exportChildren(outfile, level + 1, namespace_='gen:', name_='accountPurposeCodeItemType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gen:', name_='accountPurposeCodeItemType'):
+        super(accountPurposeCodeItemType, self).exportAttributes(outfile, level, already_processed, namespace_, name_='accountPurposeCodeItemType')
+    def exportChildren(self, outfile, level, namespace_='gen:', name_='accountPurposeCodeItemType', fromsubclass_=False, pretty_print=True):
+        super(accountPurposeCodeItemType, self).exportChildren(outfile, level, namespace_, name_, True, pretty_print=pretty_print)
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        super(accountPurposeCodeItemType, self).buildAttributes(node, attrs, already_processed)
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class accountPurposeCodeItemType
 
 
 GDSClassesMapping = {
-    'catalogOfFederalDomesticAssistanceProgram': catalogOfFederalDomesticAssistanceProgramComplexType,
-    'recordType': recordTypeItemType,
-    'typeOfTransactionCode': typeOfTransactionCodeItemType,
-    'referenceArc': arcType,
-    'entity': contextEntityType,
-    'highlyCompensatedOfficer': highlyCompensatedOfficerComplexType,
-    'unitDenominator': measuresType,
-    'mainAccountNumber': integerItemType,
-    'title': titleType,
+    'treasuryAccountSymbol': TreasuryAccountSymbolComplexType,
+    'countryCode': stringItemType,
     'simple': simpleType,
-    'awardeeLegalBusinessName': stringItemType,
-    'officeIdentifier': integerItemType,
-    'accountNumber': stringItemType,
-    'primaryPlaceOfPerformance': addressComplexType,
-    'countryName': stringItemType,
-    'agencyOffice': agencyOfficeComplexType,
-    'periodOfPerformanceStartDate': dateItemType,
-    'nonFederalFundingAmount': amountItemType,
-    'beginningPeriodOfAvailability': stringItemType,
-    'highlyCompensatedOfficerMiddleInitial': stringItemType,
-    'appropriationAccount': stringItemType,
-    'resource': resourceType,
-    'allocationTransferAgencyIdentifier': integerItemType,
-    'ultimateParentUniqueIdentifier': integerItemType,
-    'definitionArc': arcType,
-    'highlyCompensatedOfficerLastName': stringItemType,
-    'highlyCompensatedOfficerFirstName': stringItemType,
-    'arc': arcType,
-    'programActivity': stringItemType,
-    'fundingSubTierAgency': agencyComplexType,
-    'periodOfPerformanceCurrentEndDate': dateItemType,
-    'awardeeUniqueIdentifier': integerItemType,
-    'modificationAmendmentNumber': stringItemType,
-    'state': stateItemType,
-    'totalFundingAmount': amountItemType,
-    'ultimateParentLegalBusinessName': stringItemType,
-    'businessType': businessTypeItemType,
-    'schemaRef': simpleType,
-    'city': stringItemType,
-    'officeName': stringItemType,
-    'awardAmounts': awardAmountsComplexType,
-    'address': addressComplexType,
-    'awardingAgency': agencyComplexType,
-    'agencyName': stringItemType,
-    'outlays': amountItemType,
-    'availabilityTypeCode': availableTypeCodeItemType,
-    'awardID': stringItemType,
-    'federalFundingAmount': amountItemType,
-    'objectClass': stringItemType,
     'period': contextPeriodType,
+    'entity': contextEntityType,
     'county': stringItemType,
     'locator': locatorType,
-    'awardDescription': stringItemType,
-    'budgetAuthorityAppropriated': amountItemType,
-    'otherBudgetaryResources': amountItemType,
-    'loc': locatorType,
-    'countryCode': stringItemType,
-    'fundingAgency': agencyComplexType,
-    'obligatedAmount': amountItemType,
+    'arc': arcType,
+    'city': stringItemType,
     'unitNumerator': measuresType,
-    'award': awardComplexType,
-    'fiscalYear': stringItemType,
-    'account': accountComplexType,
-    'agencyIdentifier': integerItemType,
-    'footnoteArc': arcType,
-    'accountDescription': stringItemType,
-    'periodOfPerformancePotentialEndDate': dateItemType,
-    'treasuryAccountSymbol': TreasuryAccountSymbolComplexType,
-    'labelArc': arcType,
-    'awardeeInformation': awardeeInformationComplexType,
-    'USSGLentryHeader': USSGLentryHeaderComplexType,
-    'parentAwardID': stringItemType,
-    'awardeeAddress': addressComplexType,
-    'debitCreditCode': debitCreditCodeItemType,
+    'mainAccountNumber': integerItemType,
+    'title': titleType,
     'agency': agencyComplexType,
-    'beginningEndIndicator': beginningEndIndicatorItemType,
     'streetAddress': streetAddressComplexType,
+    'state': stateItemType,
     'streetAddressLine': stringItemType,
+    'labelArc': arcType,
     'postalCode': stringItemType,
-    'awardingSubTierAgency': agencyComplexType,
-    'catalogOfFederalDomesticAssistanceTitle': stringItemType,
     'congressionalDistrict': congressionalDistrictItemType,
+    'officeIdentifier': integerItemType,
     'extended': extendedType,
-    'periodOfPerformance': periodOfPerformanceComplexType,
+    'schemaRef': simpleType,
     'endingPeriodOfAvailability': stringItemType,
-    'periodOfPerformanceActionDate': dateItemType,
-    'accountingEntries': accountingEntriesComplexType,
-    'awardeeUniqueIdentifierSupplemental': stringItemType,
-    'typeOfAction': typeOfActionItemType,
+    'loc': locatorType,
+    'officeName': stringItemType,
+    'referenceArc': arcType,
+    'countryName': stringItemType,
+    'agencyOffice': agencyOfficeComplexType,
+    'address': addressComplexType,
+    'beginningPeriodOfAvailability': stringItemType,
+    'unitDenominator': measuresType,
+    'footnoteArc': arcType,
+    'resource': resourceType,
     'scenario': contextScenarioType,
-    'unobligatedAmount': amountItemType,
-    'highlyCompensatedOfficerCompensation': amountItemType,
-    'amount': amountItemType,
+    'agencyName': stringItemType,
+    'allocationTransferAgencyIdentifier': integerItemType,
     'zipCodePlus4': stringItemType,
     'documentation': documentationType,
-    'catalogOfFederalDomesticAssistanceNumber': stringItemType,
+    'availabilityTypeCode': availableTypeCodeItemType,
     'subAccountSymbol': integerItemType,
-    'entryDetail': entryDetailComplexType,
+    'agencyIdentifier': integerItemType,
+    'definitionArc': arcType,
+    'awardID': stringItemType,
 }
 
 
@@ -13753,8 +11081,8 @@ def parse(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'accountingEntriesComplexType'
-        rootClass = accountingEntriesComplexType
+        rootTag = 'accountPurposeCodeItemType'
+        rootClass = accountPurposeCodeItemType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -13763,7 +11091,7 @@ def parse(inFileName, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"',
+            namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"',
             pretty_print=True)
     return rootObj
 
@@ -13774,8 +11102,8 @@ def parseEtree(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'accountingEntriesComplexType'
-        rootClass = accountingEntriesComplexType
+        rootTag = 'accountPurposeCodeItemType'
+        rootClass = accountPurposeCodeItemType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -13799,8 +11127,8 @@ def parseString(inString, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'accountingEntriesComplexType'
-        rootClass = accountingEntriesComplexType
+        rootTag = 'accountPurposeCodeItemType'
+        rootClass = accountPurposeCodeItemType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -13809,7 +11137,7 @@ def parseString(inString, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2006-10-25"')
+            namespacedef_='xmlns:gen="http://www.xbrl.org/int/gl/gen/2006-10-25"')
     return rootObj
 
 
@@ -13819,15 +11147,15 @@ def parseLiteral(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'accountingEntriesComplexType'
-        rootClass = accountingEntriesComplexType
+        rootTag = 'accountPurposeCodeItemType'
+        rootClass = accountPurposeCodeItemType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
     if not silence:
-        sys.stdout.write('#from finassist_ussglfin import *\n\n')
-        sys.stdout.write('import finassist_ussglfin as model_\n\n')
+        sys.stdout.write('#from gen import *\n\n')
+        sys.stdout.write('import gen as model_\n\n')
         sys.stdout.write('rootObj = model_.rootClass(\n')
         rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
         sys.stdout.write(')\n')
@@ -13852,11 +11180,8 @@ __all__ = [
     "NameItemType",
     "QNameItemType",
     "TreasuryAccountSymbolComplexType",
-    "USSGLentryHeaderComplexType",
-    "accountComplexType",
     "accountPurposeCodeItemType",
     "accountTypeItemType",
-    "accountingEntriesComplexType",
     "addressComplexType",
     "agencyComplexType",
     "agencyOfficeComplexType",
@@ -13866,18 +11191,12 @@ __all__ = [
     "arcroleRef",
     "arcroleType",
     "availableTypeCodeItemType",
-    "awardAmountsComplexType",
-    "awardComplexType",
-    "awardeeInformationComplexType",
     "base64BinaryItemType",
-    "beginningEndIndicatorItemType",
     "bookTaxDifferenceItemType",
     "booleanItemType",
-    "businessTypeItemType",
     "byteItemType",
     "calculationArc",
     "calculationLink",
-    "catalogOfFederalDomesticAssistanceProgramComplexType",
     "congressionalDistrictItemType",
     "context",
     "contextEntityType",
@@ -13894,10 +11213,8 @@ __all__ = [
     "doubleItemType",
     "durationItemType",
     "entriesTypeItemType",
-    "entryDetailComplexType",
     "entryTypeItemType",
     "extendedType",
-    "fiscalYearItemType",
     "floatItemType",
     "footnote",
     "footnoteLink",
@@ -13909,7 +11226,6 @@ __all__ = [
     "gYearItemType",
     "gYearMonthItemType",
     "hexBinaryItemType",
-    "highlyCompensatedOfficerComplexType",
     "identifier",
     "identifierOrganizationTypeItemType",
     "identifierTypeItemType",
@@ -13930,7 +11246,6 @@ __all__ = [
     "nonNegativeIntegerItemType",
     "nonPositiveIntegerItemType",
     "normalizedStringItemType",
-    "periodOfPerformanceComplexType",
     "phoneNumberDescriptionItemType",
     "positiveIntegerItemType",
     "postingStatusItemType",
@@ -13938,7 +11253,6 @@ __all__ = [
     "presentationLink",
     "pureItemType",
     "qualifierEntryItemType",
-    "recordTypeItemType",
     "reference",
     "referenceLink",
     "resourceType",
@@ -13957,8 +11271,6 @@ __all__ = [
     "timeItemType",
     "titleType",
     "tokenItemType",
-    "typeOfActionItemType",
-    "typeOfTransactionCodeItemType",
     "unit",
     "unsignedByteItemType",
     "unsignedIntItemType",
