@@ -4,6 +4,7 @@
 .DS_Store
 .ipynb_checkpoints/
 .vagrant
+.mov
 
 local_settings.py
 data/
