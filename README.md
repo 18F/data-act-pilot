@@ -35,11 +35,13 @@ Below is an overview of the process.
 Here's a list of DATA Act resources and artifacts that might be useful to people working on this pilot:
 
 * [Finalized data element definitions](https://max.gov/maxportal/assets/public/offm/DataStandardsFinal.htm "Finalized Data Act Element Definitions").
-* [In-progress data element definitions](http://fedspendingtransparency.github.io/dataelements/ "Collaboration Space: Federal Spending Data Elements"). For elements on this list that have been finalized, use the finalized version of the definition.
 * Mapping document. This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
 * [SBA Entity Relationship Diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD"). A diagram of the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
 * [Research Questions](https://github.com/18F/data-act-pilot/labels/research%20questions "open issues labeled as 'research'"). Questions (and some answers) that have emerged during the pilot. Closed (_i.e._, answered) questions are [here](https://github.com/18F/data-act-pilot/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
 * [DATA Act Playbook](https://www.usaspending.gov/Documents/Summary%20of%20DATA%20Act%20Playbook.pdf "DATA Act Playbook"). Recommended steps for agencies to fulfill DATA Act requirements.
+* Pilot Screencast:
+    * [Mac and newer versions of Windows](assets/screencast/data_act_pilot_screencast_sept_2015.mp4 "Pilot screencast, .mp4 version")
+    * [Older versions of Windows](assets/screencast/data_act_pilot_screencast_sept_2015.mp4 "Pilot screencast, .avi version")
 
 ## Data
 For the first iterations of this pilot, we're using SBA 2014 grants data.
