@@ -2,7 +2,7 @@
 
 We want to ensure a welcoming environment for all of our projects. Our staff follow the [18F Code of Conduct](https://github.com/18F/code-of-conduct/blob/master/code-of-conduct.md) and all contributors should do the same.
 
-## Submitting an issue
+## Asking a Question or Reporting a Problem
 
 To ask a question, share an idea, or report a problem with the project, you can create an _issue_. Issues are hosted on a site called GitHub (if you're reading this, you're already on GitHub!). To create an issue -- or weigh in on one that somewhere else opened -- you must first create a GitHub account. Sign up for a free account at [github.com](https://github.com "GitHub").
 
