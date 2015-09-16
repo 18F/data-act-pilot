@@ -23,6 +23,6 @@ source ~/.bashrc
 source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv data-act-pilot
 source ~/.virtualenvs/data-act-pilot/bin/activate
-pip install -r /vagrant/requirements.txt
+pip install -r /vagrant/app/requirements.txt
 python /vagrant/app/app.py
 EOF
