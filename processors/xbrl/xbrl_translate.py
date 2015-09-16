@@ -315,13 +315,13 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    with codecs.open(args.award) as f:
+    with codecs.open(args.award, 'U') as f:
         awards = [row for row in csv.DictReader(f)]
-    with codecs.open(args.appropriation) as f:
+    with codecs.open(args.appropriation, 'U') as f:
         appropriation = [row for row in csv.DictReader(f)]
-    with codecs.open(args.object_class) as f:
+    with codecs.open(args.object_class, 'U') as f:
         ocpa = [row for row in csv.DictReader(f)]
-    with codecs.open(args.award_financial) as f:
+    with codecs.open(args.award_financial, 'U') as f:
         award_financial = [row for row in csv.DictReader(f)]
 
     output_dir = args.output_dir
