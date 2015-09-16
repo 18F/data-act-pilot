@@ -13,8 +13,8 @@
 
 
 {% block main_content %}
-<h1>Validator</h1>
-<p>Use the form below to upload and validate your <a href="#">DATA Act files</a></p>
+<h1>Broker</h1>
+<p>Upload all four <a href="#">DATA Act files</a> in the form below</p>
 <form action="/" method="post" enctype="multipart/form-data"
     class="usa-grid box">
   <div class="usa-width-one-half">
@@ -39,9 +39,10 @@
   </div>
   <div class="clear"></div>
   <footer>
-    <button type="submit">Validate me</button>
+    <button type="submit">Validate Me</button>
   </footer>
 </form>
+
 {% if invalid_files or correct_files %}
 <div class="section">
   <h4 class="separator">Results</h4>
@@ -60,10 +61,9 @@
     {% for file in invalid_files %}
       <div class="box-error usa-grid">
         <div class="">
-          <h3 class="usa-width-one-half {{ key_colors[file['template_name']] }}">{{
-            file['template_name'] }} file
+          <h3 class="usa-width-one-half {{ key_colors[file['template_name']] }}"> {{ file['template_name'] }} file
           </h3>
-          <h4 class="usa-width-one-half usa-end-row">{{ file['filename'] }}</h4>
+          <h4 class="usa-width-one-half usa-end-row">In File: {{ file['filename'] }}</h4>
         </div>
         <div class="usa-alert usa-alert-error error">
           <div class="usa-alert-body">

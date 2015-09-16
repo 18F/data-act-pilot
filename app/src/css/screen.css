@@ -15,13 +15,17 @@ body {
 }
 
 .sidebar {
-  background: #606060;
+  background: #4E4D4D;
   bottom: 0;
   color: #fff;
   left: 0;
   padding: 2rem 1rem;
   top: 0;
   width: 100%;
+}
+
+.sidebar a {
+  color: #fff;
 }
 
 @media screen and (min-width: 1000px) {
