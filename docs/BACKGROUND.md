@@ -30,7 +30,7 @@ Below, we've identified some useful resources and artifacts for people working o
 * The [DATA Act Playbook](https://www.usaspending.gov/Documents/Summary%20of%20DATA%20Act%20Playbook.pdf "DATA Act Playbook") contains recommended steps for agencies to fulfill DATA Act requirements.
 * Pilot screencast:
     * [Mac and newer versions of Windows](assets/screencast/data_act_pilot_screencast_sept_2015.mp4 "Pilot screencast, .mp4 version")
-    * [Older versions of Windows](assets/screencast/data_act_pilot_screencast_sept_2015.avi "Pilot screencast, .avi version")
+    * [Older versions of Windows](/assets/screencast/data_act_pilot_screencast_sept_2015.avi "Pilot screencast, .avi version")
 
 ## Data
 This prototype explores the process for submitting DATA Act data to Treasury. Thus, it's tightly scoped and doesn't strive to answer every question or address every edge case.
