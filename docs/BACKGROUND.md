@@ -29,8 +29,8 @@ Below, we've identified some useful resources and artifacts for people working o
 * Explore [research questions](https://github.com/18F/data-act-pilot/labels/research%20questions "open issues labeled as 'research'") (and some answers) that have emerged during the pilot. Answered questions are [stored as "closed" in GitHub](https://github.com/18F/data-act-pilot/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
 * The [DATA Act Playbook](https://www.usaspending.gov/Documents/Summary%20of%20DATA%20Act%20Playbook.pdf "DATA Act Playbook") contains recommended steps for agencies to fulfill DATA Act requirements.
 * Pilot screencast:
-    * [Mac and newer versions of Windows](screencasts/data_act_pilot_screencast_sept_2015.mp4 "Pilot screencast, .mp4 version")
-    * [Older versions of Windows](screencasts/data_act_pilot_screencast_sept_2015.avi "Pilot screencast, .avi version")
+    * [Mac and newer versions of Windows](/assets/screencast/data_act_pilot_screencast_sept_2015.mp4 "Pilot screencast, .mp4 version")
+    * [Older versions of Windows](/assets/screencast/data_act_pilot_screencast_sept_2015.avi "Pilot screencast, .avi version")
 
 ## Data
 This prototype explores the process for submitting DATA Act data to Treasury. Thus, it's tightly scoped and doesn't strive to answer every question or address every edge case.
