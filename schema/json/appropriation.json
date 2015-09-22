@@ -1,0 +1,98 @@
+{
+    "fields": [
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The allocation agency identifies the department or agency that is receiving funds through an allocation (non-expenditure) transfer.",
+            "name": "AllocationTransferAgencyIdentifier",
+            "title": "Allocation Transfer Agency Identifier",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The agency code identifies the department or agency that is responsible for the account.",
+            "name": "AgencyIdentifier",
+            "title": "Agency Identifier",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "maximum": 2100,
+                "minimum": 1900,
+                "required": false
+            },
+            "description": "In annual and multi-year funds, the beginning period of availability identifies the first year of availability under law that an appropriation account may incur new obligations.",
+            "name": "BeginningPeriodOfAvailability",
+            "title": "Beginning Period Of Availability",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 2100,
+                "minimum": 1900,
+                "required": false
+            },
+            "description": "In annual and multi-year funds, the end period of availability identifies the last year of funds availability under law that an appropriation account may incur new obligations.",
+            "name": "EndingPeriodOfAvailability",
+            "title": "Ending Period Of Availability",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "X"
+                ],
+                "required": false
+            },
+            "description": "In appropriations accounts, the availability type code identifies an unlimited period to incur new obligations; this is denoted by the letter 'X'",
+            "name": "AvailabilityTypeCode",
+            "title": "Availability Type Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The main account code identifies the account in statute.",
+            "name": "MainAccountCode",
+            "title": "Main Account Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "minimum": 0,
+                "required": true
+            },
+            "description": "A provision of law (not necessarily in an appropriations act) authorizing an account to incur obligations and to make outlays for a given purpose. Usually, but not always, an appropriation provides budget authority. (defined in OMB Circular A-11)",
+            "format": "currency",
+            "name": "BudgetAuthorityAppropriatedAmount",
+            "title": "Budget Authority Appropriated Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "minimum": 0,
+                "required": true
+            },
+            "description": "New borrowing authority, contract authority, and spending authority from offsetting collections provided by Congress in an appropriations act or other legislation, or unobligated balances of budgetary resources made available in previous legislation, to incur obligations and to make outlays. (defined in OMB Circular A-11)",
+            "format": "currency",
+            "name": "OtherBudgetaryResourcesAmount",
+            "title": "Other Budgetary Resources Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "minimum": 0,
+                "required": true
+            },
+            "description": "Unobligated balance means the cumulative amount of budget authority that remains available for obligation under law in unexpired accounts at a point in time. The term \"expired balances available for adjustment only\" refers to unobligated amounts in expired accounts.\nAdditional detail is provided in Circular A\u201011",
+            "format": "currency",
+            "name": "UnobligatedAmount",
+            "title": "Unobligated Balance",
+            "type": "number"
+        }
+    ]
+}
