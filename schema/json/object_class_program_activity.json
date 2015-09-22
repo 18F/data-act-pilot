@@ -1,0 +1,105 @@
+{
+    "fields": [
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The allocation agency identifies the department or agency that is receiving funds through an allocation (non-expenditure) transfer.",
+            "name": "AllocationTransferAgencyIdentifier",
+            "title": "Allocation Transfer Agency Identifier",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The agency code identifies the department or agency that is responsible for the account.",
+            "name": "AgencyIdentifier",
+            "title": "Agency Identifier",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "maximum": 2100,
+                "minimum": 1900,
+                "required": false
+            },
+            "description": "In annual and multi-year funds, the beginning period of availability identifies the first year of availability under law that an appropriation account may incur new obligations.",
+            "name": "BeginningPeriodOfAvailability",
+            "title": "Beginning Period Of Availability",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 2100,
+                "minimum": 1900,
+                "required": false
+            },
+            "description": "In annual and multi-year funds, the end period of availability identifies the last year of funds availability under law that an appropriation account may incur new obligations.",
+            "name": "EndingPeriodOfAvailability",
+            "title": "Ending Period Of Availability",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "X"
+                ],
+                "required": false
+            },
+            "description": "In appropriations accounts, the availability type code identifies an unlimited period to incur new obligations; this is denoted by the letter 'X'",
+            "name": "AvailabilityTypeCode",
+            "title": "Availability Type Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The main account code identifies the account in statute.",
+            "name": "MainAccountCode",
+            "title": "Main Account Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "Categories in a classification system that presents obligations by the items or services purchased by the Federal Government. Each specific object class is defined in OMB Circular A-11 83.6.\n(defined in OMB Circular A-11)",
+            "name": "ObjectClass",
+            "title": "Object Class",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "minimum": 0,
+                "required": true
+            },
+            "description": "Obligation means a legally binding agreement that will result in outlays, immediately or in the future. When you place an order, sign a contract, award a grant, purchase a service, or take other actions that require the Government to make payments to the public or from one Government account to another, you incur an obligation. It is a violation of the Antideficiency Act (31 U.S.C. 1341(a)) to involve the Federal Government in a contract or obligation for payment of money before an appropriation is made, unless authorized by law. This means you cannot incur obligations in a vacuum; you incur an obligation against budget authority in a Treasury account that belongs to your agency. It is a violation of the Antideficiency Act to incur an obligation in an amount greater than the amount available in the Treasury account that is available. This means that the account must have budget authority sufficient to cover the total of such obligations at the time the obligation is incurred. In addition, the obligation you incur must conform to other applicable provisions of law, and you must be able to support the amounts reported by the documentary evidence required by 31 U.S.C. 1501. Moreover, you are required to maintain certifications and records showing that the amounts have been obligated (31 U.S.C. 1108). The following subsections provide additional guidance on when to record obligations for the different types of goods and services or the amount.\n\nAdditional detail is provided in Circular A-11.",
+            "format": "currency",
+            "name": "ObligatedAmount",
+            "title": "Obligated Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "A specific activity or project as listed in the program and financing schedules of the annual budget of the United States Government.\n(defined in OMB Circular A-11)",
+            "name": "ProgramActivity",
+            "title": "Program Activity",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "minimum": 0,
+                "required": true
+            },
+            "description": "Payments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are \"means of financing\" transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending.\n\n(defined in OMB Circular A-11)",
+            "format": "currency",
+            "name": "OutlayAmount",
+            "title": "Outlay Amount",
+            "type": "number"
+        }
+    ]
+}

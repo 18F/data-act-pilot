@@ -1,0 +1,1030 @@
+{
+    "fields": [
+        {
+            "constraints": {
+                "required": true,
+                "unique": true
+            },
+            "description": "Financial assistance awards (FAIN): The Federal Award Identification Number (FAIN) is the unique ID within the Federal agency for each financial assistance award.  Once an agency assigns a FAIN and reports it to USAspending.gov, the Federal agency may not- with limited exceptions modify the FAIN during the life of the award. Further, once a Federal agency assigns a FAIN, that Federal agency must ensure that the FAIN is clearly identified in all Federal award documents. As a term and condition of the award, Federal agencies must require that all recipients document the assigned FAIN on each subaward under the Federal award.",
+            "name": "FainAwardNumber",
+            "title": "FAIN Award Number",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "A brief description of the purpose of the award",
+            "name": "AwardDescription",
+            "title": "Award Description",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "The identifier of an action being reported that indicates the specific subsequent change to the initial award.",
+            "name": "AwardModAmendmentNumber",
+            "title": "Award Mod Amendment Number",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "Total amount that could be obligated on a contract, if the base and all options are exercised.",
+            "format": "currency",
+            "name": "PotentialTotalValueAwardAmount",
+            "title": "Potential Total Value Award Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "pattern": "[A-Z]{3}",
+                "required": false
+            },
+            "description": "Code for the country in which the awardee or recipient is located, using the ISO 3166-1 Alpha-3 GENC Profile, and not the codes listed for those territories and possessions of the United States already identified as 'states.'",
+            "name": "RecipientLegalEntityCountryCode",
+            "title": "Recipient Legal Entity Country Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The name corresponding to the country code",
+            "name": "RecipientLegalEntityCountryName",
+            "title": "Recipient Legal Entity Country Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "U.S. Congressional district where the predominant performance of the award will be accomplished.",
+            "name": "PlaceOfPerfCongressionalDistrict",
+            "title": "Place of Performance Congressional District",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The name of the awardee or recipient that relates to the unique identifier. For U.S. based companies, this name is what the business ordinarily files in formation documents with individual states (when required).",
+            "name": "RecipientLegalEntityName",
+            "title": "Recipient Legal Entity Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "pattern": "\\d{9}",
+                "required": true
+            },
+            "description": "The unique identification number for an awardee or recipient. Currently the identifier is the 9-digit number assigned by D&B referred to as the DUNS number.",
+            "name": "RecipientDunsNumber",
+            "title": "Recipient DUNS Number",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "First line of awardee or recipient\u2019s legal business address.",
+            "name": "RecipientLegalEntityAddressStreet1",
+            "title": "Recipient Legal Entity Address Street 1",
+            "type": "String"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Second line of awardee or recipient's legal business address.",
+            "name": "RecipientLegalEntityAddressStreet2",
+            "title": "Recipient Legal Entity Address Street 2",
+            "type": "String"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "Name of the city in which the awardee or recipient's legal business address is located.",
+            "name": "RecipientLegalEntityCityName",
+            "title": "Recipient Legal Entity City Name",
+            "type": "String"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "AK",
+                    "AL",
+                    "AR",
+                    "AZ",
+                    "CA",
+                    "CO",
+                    "CT",
+                    "DC",
+                    "DE",
+                    "FL",
+                    "GA",
+                    "GU",
+                    "HI",
+                    "IA",
+                    "ID",
+                    "IL",
+                    "IN",
+                    "KS",
+                    "KY",
+                    "LA",
+                    "MA",
+                    "MD",
+                    "ME",
+                    "MH",
+                    "MI",
+                    "MN",
+                    "MO",
+                    "MS",
+                    "MT",
+                    "NC",
+                    "ND",
+                    "NE",
+                    "NH",
+                    "NJ",
+                    "NM",
+                    "NV",
+                    "NY",
+                    "OH",
+                    "OK",
+                    "OR",
+                    "PA",
+                    "PR",
+                    "PW",
+                    "RI",
+                    "SC",
+                    "SD",
+                    "TN",
+                    "TX",
+                    "UT",
+                    "VA",
+                    "VI",
+                    "VT",
+                    "WA",
+                    "WI",
+                    "WV",
+                    "WY"
+                ],
+                "required": true
+            },
+            "description": "United States Postal Service (USPS) two-letter abbreviation for the state or territory in which the awardee or recipient\u2019s legal business address is located. Identify States, the District of Columbia, territories (i.e., American Samoa, Guam, Northern Mariana Islands, Puerto Rico, U.S. Virgin Islands) and associated states (i.e., Republic of the Marshall Islands, the Federated States of Micronesia, and Palau) by their USPS two-letter abbreviation for the purposes of reporting. Report legal business address located in the Puerto Rico, Northern Mariana Islands, American Samoa, Guam, and U.S. Virgin Islands using USPS assigned state codes.",
+            "name": "RecipientLegalEntityStateCode",
+            "title": "Recipient Legal Entity State Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Name of the level n organization that awarded, executed or is otherwise responsible for the transaction.",
+            "name": "AwardingOfficeName",
+            "title": "Awarding Office Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    1,
+                    2
+                ],
+                "required": true
+            },
+            "description": "Information should be identified in the FAADS PLUS files using the 'Record Type' field as follows:\n1 - County-level aggregate reporting (for payments to individuals and other amounts identifiable by a geographical unit)\n2- Normal transaction-level (action-by-action) reporting. These are non-aggregate records.",
+            "name": "RecordType",
+            "title": "Record Type",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11
+                ],
+                "required": true
+            },
+            "description": "Financial assistance awards: Type of Assistance: The type of assistance provided by the award. (From FAADS user guide)\n02 = block grant (A)\n03 = formula grant (A)\n04 = project grant (B)\n05 = cooperative agreement (B)\n06 = direct payment for specified use, as a subsidy or other non-reimbursable direct financial aid (C)\n07 = direct loan (E)\n08 = guaranteed/insured loan (F)\n09 = insurance (G)\n10 = direct payment with unrestricted use (retirement, pension, veterans benefits, etc.) (D)\n11 = other reimbursable, contingent, intangible, or indirect financial assistance",
+            "name": "AssistanceType",
+            "title": "Assistance Type",
+            "type": "integer"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "City where the predominant performance of the award will be accomplished.",
+            "name": "PlaceOfPerfCity",
+            "title": "Place of Performance City",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "State where the predominant performance of the award will be accomplished.",
+            "name": "PlaceOfPerfState",
+            "title": "Place Of Performance State",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "format": "\\d{5}(\\d{4})?",
+                "required": true
+            },
+            "description": "United States Zip code + 4 where the predominant performance of the award will be accomplished. This is the full zipcode with both parts.",
+            "name": "PlaceOfPerfZip+4",
+            "title": "Place of Performance Zip+4",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "format": "\\d{2}\\.\\d{3}",
+                "required": true
+            },
+            "description": "Six-position program number from the latest edition of the CFDA (left justified, space filled). Field is seven positions to accommodate possible expansion in this number. If CFDA program number is not available, a pseudo-code is used. This consists of the first two positions of the agency's CFDA program numbering series, followed by AAA, AAB, etc. for each program being reported. Program titles are listed in field 30.",
+            "name": "CFDA_Code",
+            "title": "CFDA Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": true
+            },
+            "description": "The title of the program under which the Federal award was funded in the CFDA.",
+            "name": "CFDA_Description",
+            "title": "CFDA Description",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    4,
+                    5,
+                    6,
+                    11,
+                    12,
+                    20,
+                    21,
+                    22,
+                    23,
+                    25
+                ],
+                "required": true
+            },
+            "description": "Financial assistance valid codes:\n00 = State government\n01 = county government\n02 = city or township government\n04 = special district government\n05 = independent school district\n06 = State controlled institution of higher education Nonprofit agencies:\n11 = Indian tribe\n12 = other nonprofit\nPrivate:\n20 = private higher education\n21 = individual\n22 = profit organization\n23 = small business\n25 = all other\n\nProcurement: Valid Code from FPDS-NG",
+            "name": "BusinessType",
+            "title": "Business Type",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 12,
+                "minimum": 1,
+                "required": true
+            },
+            "description": "The calendar month of the date on which, for the award referred to by the action being reported, awardee effort begins or the award is otherwise effective. ",
+            "name": "PeriodOfPerfStartMonth",
+            "title": "Period of Performance Start Month",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 31,
+                "minimum": 1,
+                "required": true
+            },
+            "description": "The calendar day of the date on which, for the award referred to by the action being reported, awardee effort begins or the award is otherwise effective.",
+            "name": "PeriodOfPerfStartDay",
+            "title": "Period of Performance Start Day",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 2200,
+                "minimum": 1900,
+                "required": true
+            },
+            "description": "The calendar year of the date on which, for the award referred to by the action being reported, awardee effort begins or the award is otherwise effective. ",
+            "name": "PeriodOfPerfStartYear",
+            "title": "Period of Performance Start Year",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 12,
+                "minimum": 1,
+                "required": true
+            },
+            "description": "The calendar month of the date on which, for the award referred to by the action being reported if all potential pre-determined or pre-negotiated options were exercised, awardee effort completes or the award is otherwise ended.  Administrative actions related to this award may continue to occur after this date.  This date does not apply to procurement indefinite delivery vehicles under which definitive orders may be awarded.",
+            "name": "number",
+            "title": "Period of Perf Potential End Month"
+        },
+        {
+            "constraints": {
+                "maximum": 31,
+                "minimum": 1,
+                "required": true
+            },
+            "description": "The calendar day of the date on which, for the award referred to by the action being reported if all potential pre-determined or pre-negotiated options were exercised, awardee effort completes or the award is otherwise ended.  Administrative actions related to this award may continue to occur after this date.  This date does not apply to procurement indefinite delivery vehicles under which definitive orders may be awarded.",
+            "name": "PeriodOfPerfPotentialEndDay",
+            "title": "Period of Perf Potential End Day",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 2200,
+                "minimum": 1900,
+                "required": true
+            },
+            "description": "The calendar year of the date on which, for the award referred to by the action being reported if all potential pre-determined or pre-negotiated options were exercised, awardee effort completes or the award is otherwise ended.  Administrative actions related to this award may continue to occur after this date.  This date does not apply to procurement indefinite delivery vehicles under which definitive orders may be awarded.",
+            "name": "PeriodOfPerfPotentialEndYear",
+            "title": "Period of Perf Potential End Year",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The prefix of the prime award indicating the Activity Address Code which is the department/agency and office issuing the instrument.  Use the AAC assigned to the program/funding office providing  the predominance of funding for the contract action as the program/funding office code.",
+            "name": "piidPrefix",
+            "title": "piid Prefix",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "maximum": 99,
+                "minimum": 0,
+                "required": false
+            },
+            "description": "The last two digits of the fiscal year in which the procurement instrument  is issued or awarded. This is the date the action is signed, not the effective date if the effective date is different.",
+            "name": "piidAwardYear",
+            "title": "piid Award Year",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Procurement awards (PIID): The type of instrument by entering one upper case letter in position nine of the PIID. Departments and independent agencies may assign those letters identified for department use in accordance with their agency policy; however, any use must be applied to the entire department or agency.",
+            "name": "piidAwardType",
+            "title": "piid Award Type",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Procurement awards (PIID): The number assigned by the issuing agency in these positions. Agencies may choose a minimum of four characters up to a maximum of eight characters to be used, but the same number of characters must be used agency-wide. If a number less than the maximum is used, do not use leading or trailing zeroes to make it equal the maximum in any system or data transmission. A separate series of numbers may be used for any type of instrument listed in paragraph (a)(3) of this section. An agency may reserve blocks of numbers or alpha-numeric numbers for use by its various components.",
+            "name": "piidAwardNumber",
+            "title": "piid Award Number",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Procurement awards (PIID): The prefix of the prime award indicating the Activity Address Code which is the department/agency and office issuing the instrument.  Use the AAC assigned to the program/funding office providing  the predominance of funding for the contract action as the program/funding office code.",
+            "name": "ParentAwardIDPrefix",
+            "title": "Parent Award ID Prefix",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "maximum": 99,
+                "minimum": 0,
+                "required": false
+            },
+            "description": "Procurement awards (PIID): The last two digits of the fiscal year in which the procurement instrument  is issued or awarded. This is the date the action is signed, not the effective date if the effective date is different.",
+            "name": "ParentAwardYear",
+            "title": "Parent Award Year",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Procurement awards (PIID): The type of instrument by entering one upper case letter in position nine of the PIID. Departments and independent agencies may assign those letters identified for department use in accordance with their agency policy; however, any use must be applied to the entire department or agency.",
+            "name": "ParentAwardType",
+            "title": "Parent Award Type",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Procurement awards (PIID): The identifier of the procurement award under which the specific award is issued (such as a Federal Supply Schedule). Term currently applies to procurement actions only.\n\nThe number assigned by the issuing agency in these positions. Agencies may choose a minimum of four characters up to a maximum of eight characters to be used, but the same number of characters must be used agency-wide. If a number less than the maximum is used, do not use leading or trailing zeroes to make it equal the maximum in any system or data transmission. A separate series of numbers may be used for any type of instrument listed in paragraph (a)(3) of this section. An agency may reserve blocks of numbers or alpha-numeric numbers for use by its various components.",
+            "name": "ParentAwardNumber",
+            "title": "Parent Award Number",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "maximum": 31,
+                "minimum": 1,
+                "required": false
+            },
+            "description": "Procurement and financial assistance awards:  The calendar day of the date the action being reported was issued / signed by the government or a binding agreement was reached.",
+            "name": "ActionDateDay",
+            "title": "Action Date Day",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 12,
+                "minimum": 1,
+                "required": false
+            },
+            "description": "Procurement and financial assistance awards:  The calendar month of the date the action being reported was issued / signed by the government or a binding agreement was reached.",
+            "name": "ActionDateMonth",
+            "title": "Action Date Month",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 2100,
+                "minimum": 1900,
+                "required": false
+            },
+            "description": "Procurement and financial assistance awards:  The calendar year of the date the action being reported was issued / signed by the government or a binding agreement was reached.",
+            "name": "ActionDateYear",
+            "title": "Action Date Year",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                ],
+                "required": false
+            },
+            "description": "Financial assistance awards: Identifies the type of change to the award as follows: 'B' - Continuation (funding in succeeding budget period which stemmed form prior agreement to fund amount of the current action) 'C' - Revision (any change in Federal Government's financial obligation or contingent liability in existing assistance transaction amount of the change in funding; or any change in Recipient Name, Recipient Address, Project Period or Project Scope 'D' - Funding adjustment to completed project",
+            "name": "TypeOfAction",
+            "title": "Type Of Action",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The type of modification award or IDV performed by this transaction. A modification / amendment number of zero ('0') indicates the initial award. Valid entry from FPDS\u2010NG.",
+            "name": "ReasonForModification",
+            "title": "Reason For Modification",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "A",
+                    "B",
+                    "J",
+                    "K",
+                    "L",
+                    "M",
+                    "R",
+                    "S",
+                    "T",
+                    "U",
+                    "V",
+                    "Y",
+                    "Z",
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "required": false
+            },
+            "description": "The type of contract as defined in FAR Part 16 that applies to this procurement. Valid code from FPDS-NG: A Fixed Price Redetermination; B Fixed Price Level of Effort; J Firm Fixed Price; K Fixed Price with Economic Price Adjustment; L Fixed Price Incentive; M Fixed Price Award Fee; R Cost Plus Award Fee; S Cost No Fee; T Cost Sharing; U Cost Plus Fixed Fee; V Cost Plus Incentive Fee; Y Time and Materials; Z Labor Hours; 1 Order Dependent (this applies to IDVs only.  IDV allows pricing arrangements to be determined separately for each order); 2 Combination \u2013 (this applies to awards only.  Applies to awards where two or more of the above apply.)  Note:  this value is not valid for awards after September 30, 2009.; 3 Other (This applies to Awards only.  Applies to Awards where none of the above apply).  Note:  this value is not valid for awards after Sept 30, 2009.",
+            "name": "TypeOfContractPricing",
+            "title": "Type of Contract Pricing"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D",
+                    "E"
+                ],
+                "required": false
+            },
+            "descrption": "The type of Indefinite Delivery Vehicle being (IDV) loaded by this transaction.\nValid code from FPDS-NG:\nA GWAC \u2013 Government-Wide Agency Contract approved by OMB\nB IDC \u2013 Indefinite delivery contract\nC FSS \u2013 GSA or VA Federal Supply Schedule\nD BOA \u2013 Basic Ordering Agreement\nE BPA \u2013 Blanket Purchase Agreement",
+            "name": "idvType",
+            "title": "Type of Indefinite Delivery Vehicle"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                ],
+                "required": false
+            },
+            "description": "The type of award being entered by this transaction.\nValid code from FPDS-NG:\nA BPA Call \u2013 call against a blanket purchase agreement\nB Purchase order\nC Delivery Order \u2013 delivery order or task order under an Indefinite Delivery Vehicle\nD Definitive contract",
+            "name": "ContractAwardType",
+            "title": "Contract Award Type",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "enum": [
+                    "G",
+                    "L",
+                    "C",
+                    "O",
+                    "P"
+                ],
+                "required": false
+            },
+            "description": "The required FFATA award types related to financial assistance and contracts and are defined as follows:\n G - Grant\nL - Loan\nC - Cooperative agreement\nO - Other form of financial assistance\nP - Procurement (which includes purchase order, delivery order, task order)\nThis categorization is determined to be procurement if the award is reported through FPDS. If the award is reported through the ASP using the FAADS+ format, the Type of Assistance field below is used.",
+            "name": "FederalPrimeAward",
+            "title": "Federal Prime Award",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The amount of the award funded by non-Federal source(s), in dollars. Program Income (as defined in 2 CFR 200.80) is not included until such time that Program Income is generated and credited to the agreement.",
+            "format": "currency",
+            "name": "NonFederalFundingAmount",
+            "title": "Nonfederal Funding Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The sum of the Amount of Award and the Non-Federal Funding Amount FIXME: renamed",
+            "format": "currency",
+            "name": "CurrentTotalFundingObligationAmount",
+            "title": "Current Total Funding Obligation Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Total amount obligated to date on a contract, including the base and exercised options.",
+            "format": "currency",
+            "name": "CurrentTotalValueAwardAmount",
+            "title": "Current Total Value Award Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The face value of the direct loan or loan guarantee.",
+            "name": "FaceValueLoanGuarantee",
+            "title": "Face Value Loan Guarantee",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "All spending: The name associated with a department or establishment of the Government as used in the Treasury Appropriation Fund Symbol (TAFS) Account.",
+            "name": "AwardingAgencyName",
+            "title": "Awarding Agency Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "A department or establishment of the Government as used in the Treasury Account Fund Symbol (TAFS). (defined in OMB Circular A-11)",
+            "name": "AwardingAgencyCode",
+            "title": "Awarding Agency Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Name of the level 2 organization that awarded, executed or is otherwise responsible for the transaction.",
+            "name": "AwardingSubTierAgencyName",
+            "title": "Awarding Subtier Agency Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Identifier of the level 2 organization that awarded, executed or is otherwise responsible for the transaction.",
+            "name": "AwardingSubTierAgencyCode",
+            "title": "Awarding Subtier Agency Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Procurement and financial assistance awards: Identifier of the level n organization that awarded, executed or is otherwise responsible for the transaction.",
+            "name": "AwardingOfficeCode",
+            "title": "Awarding Office Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Name of the department or establishment of the Government that provided the preponderance of the funds for an award and/or individual transactions related to an award.",
+            "name": "FundingAgencyName",
+            "title": "Funding Agency Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "pattern": "\\d{3}",
+                "required": false
+            },
+            "description": "The 3-digit CGAC agency code of the department or establishment of the Government that provided the preponderance of the funds for an award and/or individual transactions related to an award.",
+            "name": "FundingAgencyCode",
+            "title": "Funding Agency Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Name of the level 2 organization that provided the preponderance of the funds obligated by this transaction.",
+            "name": "FundingSubTierAgencyName",
+            "title": "Funding Subtier Agency Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "",
+            "name": "FundingSubTierAgencyCode",
+            "title": "Funding Subtier Agency Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Name of the level n organization who has the requirements for the award, and whose parent agency provided the preponderance of the funds obligated by this transaction.",
+            "name": "FundingOfficeName",
+            "title": "Funding Office Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Identifier of the level n organization who has the requirements for the award, and whose parent agency provided the preponderance of the funds obligated by this transaction.",
+            "name": "FundingOfficeCode",
+            "title": "Funding Office Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "format": "\\d{9}",
+                "required": false
+            },
+            "description": "The unique identification number for the ultimate parent of an awardee or recipient. Currently the identifier is the 9-digit number maintained by D&B as the global parent DUNS number.",
+            "name": "RecipientUltimateParentUniqueId",
+            "title": "Recipient Ultimate Parent Unique Id",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The name of the ultimate parent of the awardee or recipient. Currently the name is from the global parent DUNS number.",
+            "name": "RecipientUltimateParentLegalEntityName",
+            "title": "Recipient Ultimate Parent Legal Entity Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "pattern": "\\d{5}",
+                "required": false
+            },
+            "description": "USPS zoning code associated with the awardee or recipient's legal business address. This is not a required data element for non-US addresses. (First five digits)",
+            "name": "RecipientLegalEntityZip",
+            "title": "Recipient Legal Entity Zip Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "pattern": "\\d{4}",
+                "required": false
+            },
+            "description": "USPS zoning code associated with the awardee or recipient's legal business address. This is not a required data element for non-US addresses. (Last four digits)",
+            "name": "RecipientLegalEntityZip+4",
+            "title": "Recipient Legal Entity Zip+4 Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Postal service code for awardee or recipient not located in the United States. This is an optional data element, and used instead of the ZIP+4 Code for non-US addresses.",
+            "name": "RecipientLegalEntityPostalCode",
+            "title": "Recipient Legal Entity Postal Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The congressional district in which the awardee or recipient is located. This is not a required data element for non-U.S. addresses.",
+            "name": "RecipientLegalEntityCongressionalDistrict",
+            "title": "Recipient Legal Entity Congressional District",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The first name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer1FirstName",
+            "title": "High Comp Officer 1 First Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The middle initial of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer1MiddleInitial",
+            "title": "High Comp Officer 1 Middle Initial",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The last name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer1LastName",
+            "title": "High Comp Officer 1 Last Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The first name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer2FirstName",
+            "title": "High Comp Officer 2 First Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The middle initial of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer2MiddleInitial",
+            "title": "High Comp Officer 2 Middle Initial",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The last name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer2LastName",
+            "title": "High Comp Officer 2 Last Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The first name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer3FirstName",
+            "title": "High Comp Officer 3 First Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The middle initial of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer3MiddleInitial",
+            "title": "High Comp Officer 3 Middle Initial",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The last name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer3LastName",
+            "title": "High Comp Officer 3 Last Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The first name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer4FirstName",
+            "title": "High Comp Officer 4 First Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The middle initial of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer4MiddleInitial",
+            "title": "High Comp Officer 4 Middle Initial",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The last name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer4LastName",
+            "title": "High Comp Officer 4 Last Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The first name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer5FirstName",
+            "title": "High Comp Officer 5 First Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The middle initial of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer5MiddleInitial",
+            "title": "High Comp Officer 5 Middle Initial",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The last name of an individual identified as one of the five most highly compensated Executives. Executive means officers, managing partners, or any other employees in management positions.",
+            "name": "HighCompOfficer5LastName",
+            "title": "High Comp Officer 5 Last Name",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The cash and noncash dollar value earned by the one of the five most highly compensated Executives during the awardee's preceding fiscal year and includes the following (for more information see 17 CFR 229.402c2): salary and bonuses, awards of stock, stock options, and stock appreciation rights, earnings for services under non-equity incentive plans, change in pension value, above-market earnings on deferred compensation which is not tax qualified, and other compensation.",
+            "format": "currency",
+            "name": "HighCompOfficer1Amount",
+            "title": "High Comp Officer 1 Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The cash and noncash dollar value earned by the one of the five most highly compensated Executives during the awardee's preceding fiscal year and includes the following (for more information see 17 CFR 229.402c2): salary and bonuses, awards of stock, stock options, and stock appreciation rights, earnings for services under non-equity incentive plans, change in pension value, above-market earnings on deferred compensation which is not tax qualified, and other compensation.",
+            "format": "currency",
+            "name": "HighCompOfficer2Amount",
+            "title": "High Comp Officer 2 Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The cash and noncash dollar value earned by the one of the five most highly compensated Executives during the awardee's preceding fiscal year and includes the following (for more information see 17 CFR 229.402c2): salary and bonuses, awards of stock, stock options, and stock appreciation rights, earnings for services under non-equity incentive plans, change in pension value, above-market earnings on deferred compensation which is not tax qualified, and other compensation.",
+            "format": "currency",
+            "name": "HighCompOfficer3Amount",
+            "title": "High Comp Officer 3 Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The cash and noncash dollar value earned by the one of the five most highly compensated Executives during the awardee's preceding fiscal year and includes the following (for more information see 17 CFR 229.402c2): salary and bonuses, awards of stock, stock options, and stock appreciation rights, earnings for services under non-equity incentive plans, change in pension value, above-market earnings on deferred compensation which is not tax qualified, and other compensation.",
+            "format": "currency",
+            "name": "HighCompOfficer4Amount",
+            "title": "High Comp Officer 4 Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The cash and noncash dollar value earned by the one of the five most highly compensated Executives during the awardee's preceding fiscal year and includes the following (for more information see 17 CFR 229.402c2): salary and bonuses, awards of stock, stock options, and stock appreciation rights, earnings for services under non-equity incentive plans, change in pension value, above-market earnings on deferred compensation which is not tax qualified, and other compensation.",
+            "format": "currency",
+            "name": "HighCompOfficer5Amount",
+            "title": "High Comp Officer 5 Amount",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "pattern": "\\w{6}",
+                "required": false
+            },
+            "description": "The identifier that represents the North American Industrial Classification System Code assigned to the solicitation and resulting award identifying the industry in which the contract requirements are normally performed.",
+            "name": "NAICS_Code",
+            "title": "NAICS Code",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "The category name associated with the NAICS code",
+            "name": "NAICS_Description",
+            "title": "NAICS Description",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "maximum": 12,
+                "minimum": 1,
+                "required": false
+            },
+            "description": "The calendar month of the current date on which, for the award referred to by the action being reported, awardee effort completes or the award is otherwise ended.  Administrative actions related to this award may continue to occur after this date.  This date does not apply to procurement indefinite delivery vehicles under which definitive orders may be awarded.",
+            "name": "PerioOfPerfCurrentEndMonth",
+            "title": "Period of Performance Current End Month",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 31,
+                "minimum": 1,
+                "required": false
+            },
+            "description": "The calendar day of the date on which, for the award referred to by the action being reported, no additional orders referring to it may be placed.  This date applies only to procurement indefinite delivery vehicles (such as indefinite delivery contracts or blanket purchase agreements).  Administrative actions related to this award may continue to occur after this date.  The period of performance end dates for procurement orders issued under the indefinite delivery vehicle may extend beyond this date.",
+            "name": "OrderingPeriodEndDay",
+            "title": "Ordering Period End Day",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 12,
+                "minimum": 1,
+                "required": false
+            },
+            "description": "The calendar month of the date on which, for the award referred to by the action being reported, no additional orders referring to it may be placed.  This date applies only to procurement indefinite delivery vehicles (such as indefinite delivery contracts or blanket purchase agreements).  Administrative actions related to this award may continue to occur after this date.  The period of performance end dates for procurement orders issued under the indefinite delivery vehicle may extend beyond this date.",
+            "name": "OrderingPeriodEndMonth",
+            "title": "Ordering Period End Month",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "maximum": 2100,
+                "minimum": 1900,
+                "required": false
+            },
+            "description": "The calendar year of the date on which, for the award referred to by the action being reported, no additional orders referring to it may be placed.  This date applies only to procurement indefinite delivery vehicles (such as indefinite delivery contracts or blanket purchase agreements).  Administrative actions related to this award may continue to occur after this date.  The period of performance end dates for procurement orders issued under the indefinite delivery vehicle may extend beyond this date.",
+            "name": "OrderingPeriodEndYear",
+            "title": "Ordering Period End Year",
+            "type": "number"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "County where the predominant performance of the award will be accomplished.",
+            "name": "PlaceOfPerfCounty",
+            "title": "Place Of Perf County",
+            "type": "string"
+        },
+        {
+            "constraints": {
+                "required": false
+            },
+            "description": "Name of the country represented by the country code where the predominant performance of the award will be accomplished.",
+            "name": "PlaceOfPerfCountryName",
+            "title": "Place of Perf Country Name",
+            "type": "string"
+        }
+    ],
+    "primaryKey": "FainAwardNumber"
+}
