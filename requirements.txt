@@ -23,3 +23,4 @@ unidecode
 ndg-httpsclient
 pyasn1
 lxml
+pyxb
