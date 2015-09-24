@@ -13,7 +13,7 @@ import xbrli
 
 
 def fix_encoding(text):
-    """ Some files contain unknown decoding. This cleans that up."""
+    """ Some files contain unknown encoding. This cleans that up."""
     return unidecode(UnicodeDammit(text).unicode_markup)
 
 
@@ -39,7 +39,14 @@ def write_amount(value=''):
 
 
 def get_or_undefined(d, k):
-    '''Helper function for setting undefined enum values'''
+    '''Helper function for setting undefined enum values
+
+    Accepts:
+      d: a dict
+      k: a potential key in d
+
+    Returns:
+      d[k] or "undefined"'''
     result = 'undefined'
     try:
         if d[k]:
@@ -77,7 +84,13 @@ def create_date(year, month, date):
 
 
 def create_tas_element(data):
-    '''Creates a TAS element as defined in the gen XBRL schema'''
+    '''Creates a TAS element as defined in the gen XBRL schema
+
+    Accepts:
+      data: a dict loaded from one of the four csvs
+
+    Returns:
+      A gen.TreasuryAccountSymbol element'''
     tas = gen.treasuryAccountSymbol()
     tas.agency = create_agency(data.get('AgencyIdentifier'), '', '', '')
     tas.allocationTransferAgencyIdentifier.append(write_int(data.get('AllocationTransferAgencyIdentifier')))
@@ -89,7 +102,13 @@ def create_tas_element(data):
 
 
 def create_tas(data):
-    '''Create TAS, with X for unknown elements'''
+    '''Create TAS, with X for unknown elements
+
+    Accepts:
+      data: a dict loaded from on of the four csvs
+
+    Returns:
+      tas: a string version of the TAS'''
     tas = ''
     elements = ['AgencyIdentifier',
                 'AllocationTransferAgencyIdentifier',
@@ -262,6 +281,7 @@ def create_award(data):
 
 
 def create_USSGL_header(indexed_af, approp):
+    '''Creates a USSGLEntryHeader element'''
     tas = create_tas(approp)
     header = ussgl.USSGLentryHeader()
     header.treasuryAccountSymbol = create_tas_element(approp)
@@ -280,6 +300,7 @@ def create_USSGL_header(indexed_af, approp):
 
 
 def create_entry_detail(single_af):
+    '''Creates an entryDetail element'''
     entry = ussgl.entryDetail()
     entry.account = ussgl.account()
     entry.account.accountNumber = write_string(single_af.get('MainAccountCode'))
@@ -296,6 +317,8 @@ def create_entry_detail(single_af):
 
 
 def create_accounting(approps, af):
+    '''Creates the accountingEntries element which will contain all
+    financial level data'''
     result = ussgl.accountingEntries()
     result.fiscalYear = write_string('2014')
     result.period = write_string('FY')
@@ -320,7 +343,7 @@ if __name__ == '__main__':
     with codecs.open(args.appropriation, 'U') as f:
         appropriation = [row for row in csv.DictReader(f)]
     with codecs.open(args.object_class, 'U') as f:
-        ocpa = [row for row in csv.DictReader(f)]
+        ocpa = [row for row in csv.DictReader()]
     with codecs.open(args.award_financial, 'U') as f:
         award_financial = [row for row in csv.DictReader(f)]
 
