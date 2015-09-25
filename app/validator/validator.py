@@ -59,17 +59,17 @@ class Validator(object):
 
         self.results = self.validate_submission()
 
-    def load_data(self, filepath):
+    def load_data(self, dataframe):
         '''Loads data from submitted agency CSV
 
         Expects:
-            filepath: path to the CSV to be loaded
+            dataframe: dataframe of the agency-submitted CSV
         Outputs:
             A list of dicts produced by csv.DictReader'''
 
-        if filepath is None:
+        if dataframe is None:
             return ''
-        return [row for row in csv.DictReader(filepath)]
+        return dataframe.to_dict('records')
 
     def load_simple_rules(self, rules_file):
         base = os.path.dirname(__file__)
@@ -83,6 +83,8 @@ class Validator(object):
     def check_required(self, required, value):
         if not eval(required) or value:
                 return True
+        elif value == 0:
+            return True
 
     def check_data_type(self, data_type, value):
         try:
@@ -92,7 +94,7 @@ class Validator(object):
             return False
 
     def check_length(self, length, value):
-        if len(value) <= length:
+        if len(str(value)) <= length:
             return True
 
     def check_unique(self, value):
@@ -116,7 +118,7 @@ class Validator(object):
         key = ''
         for field in TAS_KEY_IDENTIFIERS:
             if data[field]:
-                key += data[field] + '-'
+                key += str(data[field]) + '-'
 
         return key[:-1]
 
@@ -157,7 +159,8 @@ class Validator(object):
                                                     length=rule['field_length'])
                         results.append(error)
             else:
-                raise TypeError('field ' + field + 'not recongized')
+                #for the prototype, ignore extra columns on submitted csvs
+                pass
         return results
 
     def validate_file(self, filename, data, rules):
@@ -206,10 +209,10 @@ class Validator(object):
 
 class ValidatorSingle(Validator):
     def __init__(self,
-               file_obj,
+               file_dataframe,
                file_template,
                rules_dir):
-        self.file_data = self.load_data(file_obj)
+        self.file_data = self.load_data(file_dataframe)
         self.file_template = file_template
         self.rules = self.load_simple_rules(rules_dir +
                 file_template[:-4] + '_rules' + file_template[-4:])

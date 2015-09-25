@@ -196,7 +196,8 @@ def validate_headers(dataframe, correct_headers):
     except:
         return False
 
-    return sorted(headers) == sorted(correct_headers)
+    #ignore extra columns in the uploaded files
+    return set(correct_headers).issubset(set(headers))
 
 def check_file(file, dataframe, valid_headers, template_name):
     message = ''
@@ -217,9 +218,9 @@ def check_file(file, dataframe, valid_headers, template_name):
 
     return None
 
-def validate_file(file, template_name):
+def validate_file(dataframe, template_name):
     validator = ValidatorSingle(
-            file,
+            dataframe,
             template_name,
             RULES_DIR)
 
@@ -257,6 +258,7 @@ def hello_world():
         for name in VALIDATION.keys():
             try:
                 dataframe = pd.read_csv(files[name].stream)
+                dataframe = dataframe.fillna('')
                 files[name].seek(0)
             except:
                 dataframe = pd.DataFrame()
@@ -264,7 +266,7 @@ def hello_world():
             if error:
                 invalid_files.append(error)
             else:
-                error = validate_file(files[name], name)
+                error = validate_file(dataframe, name)
                 if error:
                     invalid_files.append(file_info(
                        files[name],
