@@ -158,7 +158,6 @@ class Validator(object):
                                                     field,
                                                     length=rule['field_length'])
                         results.append(error)
-                    if not self.check_unique(rule['unique'], )
             else:
                 #for the prototype, ignore extra columns on submitted csvs
                 pass
