@@ -65,7 +65,7 @@ class Validator(object):
         Expects:
             dataframe: dataframe of the agency-submitted CSV
         Outputs:
-            A list of dicts produced by csv.DictReader'''
+            A list of dicts'''
 
         if dataframe is None:
             return ''
@@ -158,6 +158,7 @@ class Validator(object):
                                                     field,
                                                     length=rule['field_length'])
                         results.append(error)
+                    if not self.check_unique(rule['unique'], )
             else:
                 #for the prototype, ignore extra columns on submitted csvs
                 pass
