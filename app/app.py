@@ -5,6 +5,7 @@ import os
 import re
 import sys
 from functools import wraps
+import pandas as pd
 
 from flask import Flask, request, Response, url_for, render_template
 from flask.ext.babel import Babel
@@ -189,17 +190,16 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
-def validate_headers(csv_file, correct_headers):
-    reader = csv.reader(csv_file)
+def validate_headers(dataframe, correct_headers):
     try:
-        headers = reader.next()
-    except StopIteration:
+        headers = list(dataframe.columns.values)
+    except:
         return False
 
-    csv_file.seek(0)
-    return sorted(headers) == sorted(correct_headers)
+    #ignore extra columns in the uploaded files
+    return set(correct_headers).issubset(set(headers))
 
-def check_file(file, valid_headers, template_name):
+def check_file(file, dataframe, valid_headers, template_name):
     message = ''
     detail = ''
     if not file:
@@ -210,17 +210,17 @@ def check_file(file, valid_headers, template_name):
         message = 'File is of incorrect type'
         detail = 'The uploaded file must be a .csv file'
         return file_info(file, template_name, [], message, err_detail=detail)
-    if not validate_headers(file, valid_headers):
-        message = 'File spreadsheet headers dont\'t match with the data act \
+    if not validate_headers(dataframe, valid_headers):
+        message = 'File spreadsheet headers don\'t match with the data act \
             template'
         detail = 'Ensure csv file has the same headers as the templates'
         return file_info(file, template_name, [], message, err_detail=detail)
 
     return None
 
-def validate_file(file, template_name):
+def validate_file(dataframe, template_name):
     validator = ValidatorSingle(
-            file,
+            dataframe,
             template_name,
             RULES_DIR)
 
@@ -253,13 +253,20 @@ def hello_world():
     if request.method == 'POST':
         correct_files = []
         files = request.files
+        dataframes = {}
         invalid_files = []
         for name in VALIDATION.keys():
-            error = check_file(files[name], VALIDATION[name], name)
+            try:
+                dataframe = pd.read_csv(files[name].stream)
+                dataframe = dataframe.fillna('')
+                files[name].seek(0)
+            except:
+                dataframe = pd.DataFrame()
+            error = check_file(files[name], dataframe, VALIDATION[name], name)
             if error:
                 invalid_files.append(error)
             else:
-                error = validate_file(files[name], name)
+                error = validate_file(dataframe, name)
                 if error:
                     invalid_files.append(file_info(
                        files[name],
