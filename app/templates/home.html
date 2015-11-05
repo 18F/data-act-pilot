@@ -76,6 +76,9 @@
           <button class="usa-button-unstyled" aria-expanded="true" aria-controls="collapsible-0">
             <span class="action">View</span> error details <span class="icon"></span>
           </button>
+          <button class="usa-button-unstyled" aria-expanded="true" aria-controls="collapsible-1">
+            <span class="action">View</span> error csv <span class="icon"></span>
+          </button>
           <div id="collapsible-0" aria-hidden="false" class="usa-accordion-content">
           {% for rows in file['errors'] %}
             {% for row, errors in rows.iteritems() %}
@@ -105,6 +108,33 @@
               </table>
             {% endfor %}
           {% endfor %}
+          </div>
+          <div id="collapsible-1" aria-hidden="false" class="usa-accordion-content">
+
+
+            {% set first = file['errors'][0][file['errors'][0].keys()[0]] %}
+            {% if first['tas_identifier'] %}
+              TAS,
+            {% endif %}
+            {% for identifier, value in first['identifiers'].iteritems() %}
+              {{ identifier }},
+            {% endfor %}
+            Fieldname, Error <br />
+
+            {% for rows in file['errors'] %}
+                {% for row, errors in rows.iteritems() %}
+                    {% for error in errors['errors'] %}
+                        {% if errors['tas_identifier'] %}
+                            {{  errors['tas_identifier'] }},
+                        {% endif %}
+                        {% for identifier, value in errors['identifiers'].iteritems() %}
+                            {{ value }},
+                        {% endfor %}
+                        {{ error['fieldname'] }},
+                        {{ error['error_string'] }} <br />
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
           </div>
         </div>
       {% endif %}
