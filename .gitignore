@@ -5,6 +5,7 @@
 .ipynb_checkpoints/
 .vagrant
 .mov
+*.csv
 
 local_settings.py
 data/
