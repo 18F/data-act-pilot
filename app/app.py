@@ -271,13 +271,14 @@ def hello_world():
             else:
                 error = validate_file(dataframe, name)
                 if error:
-                    filename = os.path.join(os.path.dirname(__file__),
+                    filename = (name[:-4] +
+                                str(time.time()).replace('.', '') +
+                                '.csv')
+                    filepath = os.path.join(os.path.dirname(__file__),
                                             'static',
                                             'csvs',
-                                            name[:-4] +
-                                            str(time.time()).replace('.', '') +
-                                            '.csv')
-                    with open(filename, 'w') as f:
+                                            filename)
+                    with open(filepath, 'w') as f:
                         writer = csv.writer(f,
                                             delimiter=',',
                                             quotechar='"',
