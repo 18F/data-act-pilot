@@ -12,7 +12,7 @@ RecipientLegalEntityAddressStreet2,False,str,150,False
 RecipientLegalEntityCityName,False,str,40,False
 RecipientLegalEntityStateCode,False,str,2,False
 RecipientLegalEntityZip,False,int,5,False
-AwardingOfficeName,False,int,4,False
+AwardingOfficeName,False,str,25,False
 RecordType,False,int,1,True
 AssistanceType,False,int,2,True
 PlaceOfPerfCity,False,str,40,True
