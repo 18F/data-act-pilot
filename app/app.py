@@ -4,8 +4,10 @@ import logging
 import os
 import re
 import sys
+import tempfile
 from functools import wraps
 import pandas as pd
+import time
 
 from flask import Flask, request, Response, url_for, render_template
 from flask.ext.babel import Babel
@@ -175,13 +177,14 @@ def regex_replace(s, find, replace):
     return re.sub(find, replace, s)
 
 
-def file_info(file_obj, template_name, errors, err_message='', err_detail=''):
+def file_info(file_obj, template_name, errors, err_message='', err_detail='', csv_location=''):
     return {
         'filename': file_obj.filename or '',
         'template_name': template_name[:-4].replace('_', ' ').capitalize().strip(),
         'message': err_message,
         'detail': err_detail,
-        'errors': errors
+        'errors': errors,
+        'csv_location': csv_location
     }
 
 def allowed_file(filename):
@@ -268,14 +271,46 @@ def hello_world():
             else:
                 error = validate_file(dataframe, name)
                 if error:
+                    filename = (name[:-4] +
+                                str(time.time()).replace('.', '') +
+                                '.csv')
+                    filepath = os.path.join(os.path.dirname(__file__),
+                                            'static',
+                                            'csvs',
+                                            filename)
+                    with open(filepath, 'w') as f:
+                        writer = csv.writer(f,
+                                            delimiter=',',
+                                            quotechar='"',
+                                            quoting=csv.QUOTE_MINIMAL)
+                        headers = []
+                        errs = error[0]
+                        k = errs[errs.keys()[0]]
+                        if k.get('tas_identifier'):
+                            headers.append('TAS')
+                        for identifier in k['identifiers']:
+                            headers.append(identifier)
+                        headers += ['Fieldname', 'Error']
+                        writer.writerow(headers)
+                        for key, row in errs.iteritems():
+                            for err in row['errors']:
+                                output = []
+                                if row.get('tas_identifier'):
+                                    output.append(row['tas_identifier'])
+                                for value in row['identifiers'].values():
+                                    output.append(value)
+                                output.append(err['fieldname'])
+                                output.append(err['error_string'])
+                                writer.writerow(output)
                     invalid_files.append(file_info(
-                       files[name],
-                       name,
-                       error,
-                       err_message='Some fields are not valid',
-                       err_detail='Check the specific errors below and edit the \
-                           source data'
-                        ))
+                                         files[name],
+                                         name,
+                                         error,
+                                         err_message='Some fields are invalid',
+                                         err_detail=('Check the specific '
+                                                     'errors below and edit '
+                                                     'the source data'),
+                                         csv_location=filename))
                 else:
                     correct_file.append(file_info(
                         files[name],
@@ -284,8 +319,8 @@ def hello_world():
                         ))
 
         return render_template('home.html',
-                                correct_files=correct_files,
-                                invalid_files=invalid_files)
+                               correct_files=correct_files,
+                               invalid_files=invalid_files)
 
     return render_template('home.html')
 
