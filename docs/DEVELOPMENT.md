@@ -4,45 +4,85 @@ If you're a developer who wants to work on the broker prototype, you're in the r
 
 ## Setup
 
-These instruction explain how to set up the DATA Act pilot for development. The
+These instructions explain how to set up the DATA Act pilot for development. The
 development environment requires node.js and npm for the front end. For the
-backend there are two separate process to run the app: vagrant or python
+back end there are two separate process to run the app: vagrant or python
 virtualenv.
 
-### Frontend
+### Get the Code
+
+From the command line, clone the project repository from GitHub to your local environment:
+
+        $ git clone git@github.com:18F/data-act-pilot.git
+
+**Note:** if you don't have a GitHub account and want to get a read-only version of the code, use this command instead:
+
+        $ git clone git://github.com/18F/data-act-pilot.git
+
+### Install Front End Dependencies
 1. Install node.js, which also installs the npm package manager needed to get the website up and running:
 [https://github.com/nodejs/node-v0.x-archive/wiki/Installation](instructions)
-2. Install all the front end dependencies with `npm install`
-3. Run the front end build with `npm run build`. The command `npm run watch` can
-also be used to continually watch and rebuild on changes.
 
-### Backend
-There are two separate ways to run the backend: python virtualenv or vagrant.
-Vagrant should be used if there is not a python environment already set up or
-the system is any Windows. Otherwise python virtualenv is the easier option.
+2. Install the front end dependencies:
 
-#### Through python virtualenv
-1. Ensure python2.7 and python virtualenv are both installed.
-2. Make a py2.7 virtualenv for the site: `virtualenv -p /usr/bin/python2.7
-~/virtualenvs/data-act`
-3. Activate the just created virtualenv: `source
-~/virtualenvs/data-act/bin/activate`
-4. `cd app/`
-5. Install backend dependencies, `pip install -r requirements.txt`
-6. Run the app, `python app.py`
-7. Visit `http://127.0.0.1:5000` to see the live app.
+        npm install
+
+3. Run the front end build:
+
+        npm run build
+
+### Install Back End Dependencies
+There are two separate ways to run the Python-based backend:
+
+1. Python virtualenv
+2. Vagrant
+
+Use Vagrant if your machine doesn't already have a Python environment set up. Also use Vagrant if you're developing on a Windows machine. Otherwise, python virtualenv is the easier option.
+
+#### 1. Through Python Virtualenv
+1. Make sure that Python 2.7 and Python virtualenv are installed.
+2. Create a virtual environment for the site:
+
+        virtualenv -p /usr/bin/python2.7 ~/virtualenvs/data-act`
+3. Activate the virtualenv you just created:
+
+        source ~/virtualenvs/data-act/bin/activate
+4. Change to the folder that contains the web application:
+
+        cd app/
+
+5. Install the backend dependencies:
+
+        pip install -r requirements.txt
+
+6. Run the web app:
+
+        python app.py
+
+7. Visit `http://127.0.0.1:5000` in your web browser to see the live application.
 
 Note: The username and password are both blank with this setup
 
-#### Through vagrant
-1. Ensure and virtualbox ([https://www.virtualbox.org/wiki/Downloads](download))
-vagrant ([https://www.vagrantup.com/](download)) are both installed.
-2. Run the command to bring vagrant up, this command can take a signifigant
-amount of time the first time it is run but should run faster on subsequent
-runs. `vagrant up`
-6. Visit `http://127.0.0.1:5050` to see the live app.
-7. Once finished developing, the vagrant box can be brought down with `vagrant
-halt` and brought back up with `vagrant up`.
+#### 2. Through Vagrant
+
+1. Install VirtualBox ([https://www.virtualbox.org/wiki/Downloads](download))
+and Vagrant ([https://www.vagrantup.com/](download)).
+
+2. Run the command to bring Vagrant up. This can take a significant amount of time the first time you run it but should be faster on subsequent
+runs.
+
+        $ vagrant up
+
+3. Once the Vagrant box is up and running, ssh into it and start the web application:
+
+    $ vagrant ssh  
+    [you should now be on the Vagrant box]  
+    $ cd /vagrant/app  
+    $ python app.py
+
+4. Visit `http://127.0.0.1:5050` in your web browser to see the live application.
+5. Once you're finished developing, you can bring down the Vagrant box by typing `vagrant
+halt` on the command line and bring it up again by typing `vagrant up`.
 
 Note: The username and password are both blank with this setup
 
