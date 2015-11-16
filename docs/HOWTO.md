@@ -56,9 +56,9 @@ This prototype is a sandbox. The website uses anonymized analytics to track over
 1. Request access to the website. **TO DO:** decide who will be fielding these requests and what the process is.
 2. Go to the prototype website at https://data-act-pilot-v2.18f.gov/.
 3. When prompted, enter your _Name_ and _Password_.
-4. You should now be on a web page titled _Data Act Pilot_. In the _Validator_ part of the page, look for four boxes titled _Appropriation_, _Object Class Program Activity_, _Award_, and _Award Financial_.
+4. You should now be on a web page titled _Data Act Pilot_. In the _Broker_ part of the page, look for four boxes titled _Appropriation_, _Object Class Program Activity_, _Award_, and _Award Financial_.
 
-![validator](images/validator.png "validator")
+![broker](images/broker.png "broker")
 
 6. In one or more of the four boxes, click _Choose File_ to upload the data you've created.
 7. After you click _Choose File_, use the navigation that appears to find the file on your computer and click _Choose_.
@@ -67,7 +67,7 @@ This prototype is a sandbox. The website uses anonymized analytics to track over
 
 8. After you choose a file, the corresponding box on the main page will let you know you were successful by display the file's name in the box:
 
-![files for validation](images/validator-with-files.png "chosen files")
+![files for validation](images/broker-with-files.png "chosen files")
 
 9. Continue choosing the files you want to upload and validate. You don't have to upload all four files, but it's important to make sure that the file you choose for each box matches the title. For example, you can't upload your _Appropriation_ file using the _Award_ box.
 
@@ -85,7 +85,7 @@ Below the upload boxes, you should see a _Results_ section on the website. This 
 
 The most basic error message is _File was not uploaded_, and this appears for any of the four files you chose not to upload before running validations. This is just a reminder and not a cause for concern.
 
-![file not uploaded](images/error-file-not-uploaded.png "file not uploaded")
+![file not uploaded](images/error-file-not-uploaded-small.png "file not uploaded")
 
 ### File is of incorrect type
 
@@ -95,15 +95,15 @@ The broker checks the format of each file you upload to make sure:
 
 If there's a file format problem, you'll see the _file is of incorrect type_ message.
 
-![invalid format](images/error-invalid-format.png "invalid format")
+![invalid format](images/error-invalid-format-small.png "invalid format")
 
 ### Some fields are not valid
 
 Once the broker has checked the file format, it runs the file's actual data through a series of [validation rules](VALIDATIONS.md "validation rules").
 
-![some fields are not valid](images/error-fields-not-valid.png "some fields are not valid")
+![some fields are not valid](images/error-fields-not-valid-small.png "some fields are not valid")
 
-Click _View error details_ to see the specific errors.
+Click _View error details_ to see the specific errors. You can also download the error messages to a .csv by clicking _Download CSV_.
 
 ![error messages](images/error-messages.png "broker error messages")
 
@@ -114,3 +114,5 @@ The image above is an example of a simple validation rule that failed: Some of t
     * Following _Row_ are "key" fields in file. This example is the file that contains obligations and outlays by appropriations account, program activity, and object class. Thus, the error message displays TAS (_i.e._ appropriations account), object class, and program activity to help find the offending data in the source system.
 * For each row in the data that didn't pass validations, you'll see one or more _Field names_. This is the name of specific field that didn't pass.
 * For each _Field name_, you'll see an _Error_ that describes the problem. In this basic example, we're missing some required data.
+
+**Reminder:** use the _Download CSV_ link to download error messages to Excel or another spreadsheet application.
