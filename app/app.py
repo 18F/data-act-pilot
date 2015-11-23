@@ -217,10 +217,10 @@ def check_file(file, dataframe, valid_headers, template_name):
         detail = 'The uploaded file must be a .csv file'
         return file_info(file, template_name, [], message, err_detail=detail)
     headers = validate_headers(dataframe, valid_headers)
-    if not headers[0]: 
-        message = 'File spreadsheet headers don\'t match with the data act \
+    if not headers[0]:
+        message = 'File headers don\'t match the DATA Act \
             template'
-        detail = 'The following required fields were not found in your data: '
+        detail = 'The following fields were not found in the header row of your file: '
         detail += ', '.join(headers[1])
         return file_info(file, template_name, [], message, err_detail=detail)
 
@@ -288,7 +288,7 @@ def hello_world():
                                             delimiter=',',
                                             quotechar='"',
                                             quoting=csv.QUOTE_MINIMAL)
-                        headers = ['row']
+                        headers = ['Error Row Number']
                         errs = error[0]
                         k = errs[errs.keys()[0]]
                         if k.get('tas_identifier'):
@@ -300,7 +300,7 @@ def hello_world():
                         for key, row in errs.iteritems():
                             for err in row['errors']:
                                 output = []
-                                output.append(key.split('_')[-1])
+                                output.append(key.split('_')[-1][3:])
                                 if row.get('tas_identifier'):
                                     output.append(row['tas_identifier'])
                                 for value in row['identifiers'].values():
