@@ -8,6 +8,8 @@ import tempfile
 from functools import wraps
 import pandas as pd
 import time
+import glob
+import re
 
 from flask import Flask, request, Response, url_for, render_template
 from flask.ext.babel import Babel
@@ -22,148 +24,16 @@ app.jinja_env.add_extension('jinja2.ext.i18n')
 babel = Babel(app)
 
 RULES_DIR = './rules/'
+RULES_FILES = glob.glob('validator/rules/*.csv')
 
 ALLOWED_EXTENSIONS = ['csv']
-# TODO create this dict dynamically by reading csv schema files.
-VALIDATION = {
-    'appropriation.csv': [
-        'AllocationTransferAgencyIdentifier',
-        'AgencyIdentifier',
-        'BeginningPeriodOfAvailability',
-        'EndingPeriodOfAvailability',
-        'AvailabilityTypeCode',
-        'MainAccountCode',
-        'BudgetAuthorityAppropriatedAmount',
-        'UnobligatedAmount',
-        'OtherBudgetaryResourcesAmount'
-        ],
-    'object_class_program_activity.csv': [
-        'AllocationTransferAgencyIdentifier',
-        'AgencyIdentifier',
-        'BeginningPeriodOfAvailability',
-        'EndingPeriodOfAvailability',
-        'AvailabilityTypeCode',
-        'MainAccountCode',
-        'ObjectClass',
-        'ObligatedAmount',
-        'ProgramActivity',
-        'OutlayAmount'
-        ],
-    'award.csv': [
-        'piidPrefix',
-        'piidAwardYear',
-        'piidAwardType',
-        'piidAwardNumber',
-        'FainAwardNumber',
-        'AwardDescription',
-        'AwardModAmendmentNumber',
-        'ParentAwardIDprefix',
-        'ParentAwardYear',
-        'ParentAwardType',
-        'ParentAwardNumber',
-        'RecordType',
-        'ActionDateDay',
-        'ActionDateMonth',
-        'ActionDateYear',
-        'TypeOfAction',
-        'ReasonForModification',
-        'TypeOfContractPricing',
-        'idvType',
-        'ContractAwardType',
-        'AssistanceType',
-        'FederalPrimeAward',
-        'NonFederalFundingAmount',
-        'CurrentTotalFundingObligationAmount',
-        'CurrentTotalValueAwardAmount',
-        'FaceValueLoanGuarantee',
-        'PotentialTotalValueAwardAmount',
-        'AwardingAgencyName',
-        'AwardingAgencyCode',
-        'AwardingSubTierAgencyName',
-        'AwardingSubTierAgencyCode',
-        'AwardingOfficeName',
-        'AwardingOfficeCode',
-        'FundingAgencyName',
-        'FundingAgencyCode',
-        'FundingSubTierAgencyName',
-        'FundingSubTierAgencyCode',
-        'FundingOfficeName',
-        'FundingOfficeCode',
-        'RecipientLegalEntityName',
-        'RecipientDunsNumber',
-        'RecipientUltimateParentUniqueId',
-        'RecipientUltimateParentLegalEntityName',
-        'RecipientLegalEntityAddressStreet1',
-        'RecipientLegalEntityAddressStreet2',
-        'RecipientLegalEntityCityName',
-        'RecipientLegalEntityStateCode',
-        'RecipientLegalEntityZip',
-        'RecipientLegalEntityZip+4',
-        'RecipientLegalEntityPostalCode',
-        'RecipientLegalEntityCongressionalDistrict',
-        'RecipientLegalEntityCountryCode',
-        'RecipientLegalEntityCountryName',
-        'HighCompOfficer1FirstName',
-        'HighCompOfficer1MiddleInitial',
-        'HighCompOfficer1LastName',
-        'HighCompOfficer2FirstName',
-        'HighCompOfficer2MiddleInitial',
-        'HighCompOfficer2LastName',
-        'HighCompOfficer3FirstName',
-        'HighCompOfficer3MiddleInitial',
-        'HighCompOfficer3LastName',
-        'HighCompOfficer4FirstName',
-        'HighCompOfficer4MiddleInitial',
-        'HighCompOfficer4LastName',
-        'HighCompOfficer5FirstName',
-        'HighCompOfficer5MiddleInitial',
-        'HighCompOfficer5LastName',
-        'HighCompOfficer1Amount',
-        'HighCompOfficer2Amount',
-        'HighCompOfficer3Amount',
-        'HighCompOfficer4Amount',
-        'HighCompOfficer5Amount',
-        'BusinessType',
-        'NAICS_Code',
-        'NAICS_Description',
-        'CFDA_Code',
-        'CFDA_Description',
-        'PeriodOfPerfStartDay',
-        'PeriodOfPerfStartMonth',
-        'PeriodOfPerfStartYear',
-        'PeriodOfPerfCurrentEndDay',
-        'PerioOfPerfCurrentEndMonth',
-        'PeriodOfPerfCurrentEndYear',
-        'PeriodOfPerfPotentialEndDay',
-        'PeriodOfPerfPotentialEndMonth',
-        'PeriodOfPerfPotentialEndYear',
-        'OrderingPeriodEndDay',
-        'OrderingPeriodEndMonth',
-        'OrderingPeriodEndYear',
-        'PlaceOfPerfCity',
-        'PlaceOfPerfState',
-        'PlaceOfPerfCounty',
-        'PlaceOfPerfZip+4',
-        'PlaceOfPerfCongressionalDistrict',
-        'PlaceOfPerfCountryName'
-        ],
-    'award_financial.csv': [
-        'AllocationTransferAgencyIdentifier',
-        'AgencyIdentifier',
-        'BeginningPeriodOfAvailability',
-        'EndingPeriodOfAvailability',
-        'AvailabilityTypeCode',
-        'MainAccountCode',
-        'ParentAwardIDprefix',
-        'ParentAwardYear',
-        'ParentAwardType',
-        'ParentAwardNumber',
-        'FainAwardNumber',
-        'AwardModAmendmentNumber',
-        'ObjectClass',
-        'TransactionObligatedAmount'
-        ]
-}
+
+VALIDATION = {}
+for rule_file in RULES_FILES:
+    file_df = pd.read_csv(rule_file)
+    file_name = re.sub('_rules', '', rule_file.split('/')[-1])
+    field_list = file_df['fieldname'].tolist()
+    VALIDATION[file_name] = field_list
 
 ch = logging.StreamHandler(sys.stdout)
 ch.setLevel(logging.DEBUG)
