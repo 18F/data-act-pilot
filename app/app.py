@@ -67,10 +67,13 @@ def validate_headers(dataframe, correct_headers):
     try:
         headers = list(dataframe.columns.values)
     except:
-        return False
+        return (False)
 
     #ignore extra columns in the uploaded files
-    return set(correct_headers).issubset(set(headers))
+    #return set(correct_headers).issubset(set(headers))
+    valid = set(correct_headers).issubset(set(headers))
+    extra = [h for h in correct_headers if h not in headers]
+    return (valid, extra)
 
 def check_file(file, dataframe, valid_headers, template_name):
     message = ''
@@ -83,10 +86,12 @@ def check_file(file, dataframe, valid_headers, template_name):
         message = 'File is of incorrect type'
         detail = 'The uploaded file must be a .csv file'
         return file_info(file, template_name, [], message, err_detail=detail)
-    if not validate_headers(dataframe, valid_headers):
-        message = 'File spreadsheet headers don\'t match with the data act \
+    headers = validate_headers(dataframe, valid_headers)
+    if not headers[0]:
+        message = 'File headers don\'t match the DATA Act \
             template'
-        detail = 'Ensure csv file has the same headers as the templates'
+        detail = 'The following fields were not found in the header row of your file: '
+        detail += ', '.join(headers[1])
         return file_info(file, template_name, [], message, err_detail=detail)
 
     return None
@@ -153,7 +158,7 @@ def hello_world():
                                             delimiter=',',
                                             quotechar='"',
                                             quoting=csv.QUOTE_MINIMAL)
-                        headers = []
+                        headers = ['Error Row Number']
                         errs = error[0]
                         k = errs[errs.keys()[0]]
                         if k.get('tas_identifier'):
@@ -165,6 +170,7 @@ def hello_world():
                         for key, row in errs.iteritems():
                             for err in row['errors']:
                                 output = []
+                                output.append(key.split('_')[-1][3:])
                                 if row.get('tas_identifier'):
                                     output.append(row['tas_identifier'])
                                 for value in row['identifiers'].values():
