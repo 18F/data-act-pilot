@@ -24,7 +24,8 @@ app.jinja_env.add_extension('jinja2.ext.i18n')
 babel = Babel(app)
 
 RULES_DIR = './rules/'
-RULES_FILES = glob.glob('validator/rules/*.csv')
+RULES_FILES = glob.glob(os.path.join(os.path.dirname(__file__),
+                                     'validator/rules/*.csv'))
 
 ALLOWED_EXTENSIONS = ['csv']
 
@@ -165,7 +166,7 @@ def hello_world():
                             headers.append('TAS')
                         for identifier in k['identifiers']:
                             headers.append(identifier)
-                        headers += ['Fieldname', 'Error']
+                        headers += ['Fieldname', 'Value', 'Error']
                         writer.writerow(headers)
                         for key, row in errs.iteritems():
                             for err in row['errors']:
@@ -176,6 +177,7 @@ def hello_world():
                                 for value in row['identifiers'].values():
                                     output.append(value)
                                 output.append(err['fieldname'])
+                                output.append(err['value'])
                                 output.append(err['error_string'])
                                 writer.writerow(output)
                     invalid_files.append(file_info(

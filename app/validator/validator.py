@@ -104,6 +104,7 @@ class Validator(object):
     def generate_error(self,
                        error_type,
                        fieldname,
+                       submitted_value,
                        hard_fail=True,
                        data_type='',
                        length=''):
@@ -111,6 +112,7 @@ class Validator(object):
         result['error_type'] = error_type
         result['hard_fail'] = hard_fail
         result['fieldname'] = fieldname
+        result['value'] = submitted_value
         result['error_string'] = eval(ERROR_STRINGS[error_type])
         return result
 
@@ -144,18 +146,20 @@ class Validator(object):
             if field in rules:
                 rule = rules[field]
                 if not self.check_required(rule['required'], row[field]):
-                    error = self.generate_error('required_error', field)
+                    error = self.generate_error('required_error', field, 'n/a')
                     results.append(error)
                     continue
                 if row[field]:
                     if not self.check_data_type(rule['data_type'], row[field]):
                         error = self.generate_error('type_error',
                                                     field,
+                                                    row[field],
                                                     data_type=rule['data_type'])
                         results.append(error)
                     if not self.check_length(rule['field_length'], row[field]):
                         error = self.generate_error('len_error',
                                                     field,
+                                                    row[field],
                                                     length=rule['field_length'])
                         results.append(error)
             else:
