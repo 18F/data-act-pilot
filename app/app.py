@@ -102,8 +102,10 @@ def validate_file(dataframe, template_name):
             dataframe,
             template_name,
             RULES_DIR)
-
-    return validator.results
+    if len(validator.results[0]):
+        return validator.results
+    else:
+        return None
 
 def check_auth(ausername, apassword):
     """Checks that the username / password combination is valid for basic
@@ -190,7 +192,7 @@ def hello_world():
                                                      'the source data'),
                                          csv_location=filename))
                 else:
-                    correct_file.append(file_info(
+                    correct_files.append(file_info(
                         files[name],
                         name,
                         []

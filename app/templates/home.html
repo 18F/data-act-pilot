@@ -47,7 +47,7 @@
 <div class="section">
   <h4 class="separator">Results</h4>
   <section class="box-muted">
-    {% if correct_files|length > 1 %}
+    {% if correct_files|length > 0 %}
       <section class="files files-valid">
         {% for file in correct_files %}
         <article class="file">
@@ -57,7 +57,7 @@
       </section>
     {% endif %}
 
-    {% if invalid_files|length > 1 %}
+    {% if invalid_files|length > 0 %}
     {% for file in invalid_files %}
       <div class="box-error usa-grid">
         <div class="">
