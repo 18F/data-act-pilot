@@ -94,7 +94,7 @@ class Validator(object):
             return False
 
     def check_length(self, length, value):
-        if len(str(value)) <= length:
+        if len(str(value)) <= int(length):
             return True
 
     def check_unique(self, value):
