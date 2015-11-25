@@ -92,6 +92,7 @@
                 <thead>
                 <tr>
                   <th>Field name</th>
+                  <th>Value</th>
                   <th>Error</th>
                 </tr>
                 </thead>
@@ -99,6 +100,7 @@
                 {% for error in errors['errors'] %}
                   <tr>
                     <td>{{ error['fieldname'] }}</td>
+                    <td>{{ error['value'] }}</td>
                     <td>{{ error['error_string'] }}</td>
                   </tr>
                 {% endfor %}
