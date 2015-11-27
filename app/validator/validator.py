@@ -127,7 +127,8 @@ class Validator(object):
     def build_key(self, data, fields):
         keys = {}
         for field in fields:
-            if data[field]:
+            is_key = data.get(field,None)
+            if is_key:
                 keys[field] = data[field]
 
         return keys
