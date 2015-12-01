@@ -107,6 +107,14 @@ def validate_file(dataframe, template_name):
     else:
         return None
 
+def strip_value(value):
+    """Strip whitespace from beginning and end of incoming data
+    """
+    if type(value) == str:
+        return value.strip()
+    else:
+        return value
+
 def check_auth(ausername, apassword):
     """Checks that the username / password combination is valid for basic
     HTTP auth.
@@ -140,6 +148,7 @@ def hello_world():
             try:
                 dataframe = pd.read_csv(files[name].stream)
                 dataframe = dataframe.fillna('')
+                dataframe = dataframe.applymap(strip_value)
                 files[name].seek(0)
             except:
                 dataframe = pd.DataFrame()
