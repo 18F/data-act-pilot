@@ -102,8 +102,18 @@ def validate_file(dataframe, template_name):
             dataframe,
             template_name,
             RULES_DIR)
+    if len(validator.results[0]):
+        return validator.results
+    else:
+        return None
 
-    return validator.results
+def strip_value(value):
+    """Strip whitespace from beginning and end of incoming data
+    """
+    if type(value) == str:
+        return value.strip()
+    else:
+        return value
 
 def check_auth(ausername, apassword):
     """Checks that the username / password combination is valid for basic
@@ -138,6 +148,7 @@ def hello_world():
             try:
                 dataframe = pd.read_csv(files[name].stream)
                 dataframe = dataframe.fillna('')
+                dataframe = dataframe.applymap(strip_value)
                 files[name].seek(0)
             except:
                 dataframe = pd.DataFrame()
@@ -190,7 +201,7 @@ def hello_world():
                                                      'the source data'),
                                          csv_location=filename))
                 else:
-                    correct_file.append(file_info(
+                    correct_files.append(file_info(
                         files[name],
                         name,
                         []
