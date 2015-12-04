@@ -22,7 +22,7 @@ TAS_KEY_IDENTIFIERS = [
 KEY_IDENTIFIERS = {
     'appropriation': [],
     'object_class_program_activity': [
-        'ProgramActivity',
+        'ProgramActivityCode',
         'ObjectClass'
     ],
     'award': [
