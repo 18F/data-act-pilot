@@ -40,7 +40,7 @@ To create data files that are compatible with this pilot:
 
 1. Review Treasury's [_Data Act Elements Guidance_](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "Data Act Elements Guidance"). The _DATA Act field name(s)_ columns in those worksheets show the column headings expected in each of the four .csv files.
 
-2. For a better idea of what data the website expects, take a look at [these sample files](https://github.com/18F/data-act-pilot/tree/master/data/dummy "DATA Act broker dummy data") filled out with dummy data.
+2. For a better idea of what data the website expects, take a look at [these sample files](../data/dummy "DATA Act broker dummy data") filled out with dummy data.
 
 3. Based on your system inventory and mapping work, create the four files and populate them with data. The order of the columns in each file doesn't matter, but it's important that the column names match those used shown on the templates and dummy data.
 
