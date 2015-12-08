@@ -1,0 +1,5 @@
+AllocationTransferAgencyIdentifier,AgencyIdentifier,BeginningPeriodOfAvailability,EndingPeriodOfAvailability,AvailabilityTypeCode,MainAccountCode,ObjectClass,ObligatedAmount,ProgramActivityName,ProgramActivityCode,OutlayAmount
+,994,2015,,x,1234,11.1,3000000,School improvement grants,1,1000000
+,994,2015,,x,1234,11.1,17000000,School improvement grants,2,16345000
+,994,2015,,x,1234,31,3000000,School improvement grants,3,762000
+,994,2015,,x,5678,41,1759000,School improvement grants,1,900000
