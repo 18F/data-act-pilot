@@ -15,8 +15,7 @@ Agencies can use the prototype website for:
 * A chance to [provide feedback](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot") on this process and the experience of using the broker
 * A first, high-level validation check of files created for the DATA Act
 
-For a more comprehensive background about the project and submission process we're testing, [watch the pilot's screencast](#).
-**TO DO:** add link for updated version of the screencast.
+For a more comprehensive background about the project and submission process we're testing, [watch the pilot's screencast](https://github.com/18F/data-act-pilot/blob/master/assets/screencast/data_act_pilot_screencast_sept_2015.avi?raw=true "download screencast").
 
 ## How to use the prototype
 
@@ -35,17 +34,13 @@ The pilot currently expects DATA Act data in four separate files:
 
 These files roughly correspond to the _Relationships_ diagram in the _Data Act Elements Guidance_ published by Treasury and [available on MAX](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "Data Act Elements Guidance"). However, there are a few differences:
 * This pilot combines award attributes and awardee attributes into a single file.
-* This pilot's scope was the original 83 DATA Act elements, so it doesn't accept or validate the _Additional Required Elements_ from USAspending that are included in Treasury's Data Element Guidance.
+* This pilot's scope was the original 83 DATA Act elements, so it ignores the _Additional Required Elements_ from USAspending that are included in Treasury's Data Element Guidance.
 
 To create data files that are compatible with this pilot:
 
-1. Review the pilot's file templates. The _elementMappingName_ column on these templates show the column headings expected in each of the four .csv files.
-    * [appropriation.csv](https://github.com/18F/data-act-pilot/blob/master/schema/appropriation.csv)
-    * [object_class_program_activity.csv](https://github.com/18F/data-act-pilot/blob/master/schema/object_class_program_activity.csv)
-    * [award.csv](https://github.com/18F/data-act-pilot/blob/master/schema/award.csv)
-    * [award_financial.csv](https://github.com/18F/data-act-pilot/blob/master/schema/award_financial.csv)
+1. Review Treasury's [_Data Act Elements Guidance_](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "Data Act Elements Guidance"). The _DATA Act field name(s)_ columns in those worksheets show the column headings expected in each of the four .csv files.
 
-2. For a better idea of what data the website expects, take a look at these sample files filled out with dummy data. **TO DO:** make some sample files with dummy data.
+2. For a better idea of what data the website expects, take a look at [these sample files](https://github.com/18F/data-act-pilot/tree/master/data/dummy "DATA Act broker dummy data") filled out with dummy data.
 
 3. Based on your system inventory and mapping work, create the four files and populate them with data. The order of the columns in each file doesn't matter, but it's important that the column names match those used shown on the templates and dummy data.
 
@@ -53,7 +48,7 @@ To create data files that are compatible with this pilot:
 
 This prototype is a sandbox. The website uses anonymized analytics to track overall traffic and usage, but it doesn't track who is logging on, and it won't send or store your data anywhere.
 
-1. Request access to the website. **TO DO:** decide who will be fielding these requests and what the process is.
+1. Contact Treasury's DATA Act Project Management Office (dataPMO@fiscal.treasury.gov) to request access to the website.
 2. Go to the prototype website at https://data-act-pilot-v2.18f.gov/.
 3. When prompted, enter your _Name_ and _Password_.
 4. You should now be on a web page titled _Data Act Pilot_. In the _Broker_ part of the page, look for four boxes titled _Appropriation_, _Object Class Program Activity_, _Award_, and _Award Financial_.

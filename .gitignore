@@ -5,8 +5,11 @@
 .ipynb_checkpoints/
 .vagrant
 .mov
+!data/
+data/*
+!data/dummy/
 *.csv
+!data/dummy/*.csv
 
 local_settings.py
-data/
 node_modules/

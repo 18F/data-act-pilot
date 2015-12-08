@@ -1,0 +1,3 @@
+AllocationTransferAgencyIdentifier,AgencyIdentifier,BeginningPeriodOfAvailability,EndingPeriodOfAvailability,AvailabilityTypeCode,MainAccountCode,BudgetAuthorityAppropriatedAmount,OtherBudgetaryResourcesAmount,UnobligatedBalance
+,994,2015,,x,1234,23000000,1000000,1000000
+,994,2015,,x,5678,5000000,0,2000000
