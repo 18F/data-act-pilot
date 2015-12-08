@@ -21,7 +21,7 @@ PlaceOfPerfState,False,str,2,True
 PlaceOfPerfZip+4,True,str,9,True
 CFDA_Number,False,str,7,True
 CFDA_Description,False,str,100,True
-BusinessTypes,True,int,2,True
+BusinessType,True,int,2,True
 PeriodOfPerfPotentialEndDate,False,str,10,True
 piidPrefix,False,str,6,True
 piidAwardYear,False,int,2,True
