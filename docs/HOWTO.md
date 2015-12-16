@@ -6,7 +6,7 @@ Welcome! If you're a U.S. federal employee and want to explore this early protot
 
 The hosted version of the prototype is a sandbox where you can run your agency's DATA Act data through an early version of the validation and conversion process.
 
-The pilot team top priority was understanding how the agency data submission process might work and getting early feedback. The resulting prototype website is a [_minimum viable product_](https://en.wikipedia.org/wiki/Minimum_viable_product "minimum viable product"). This means it's not fully featured, but it provides something concrete for agencies to respond to. We hope you'll give it a try and [let us know what you think](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot").
+The pilot team's top priority was understanding how the agency data submission process might work and getting early feedback. The resulting prototype website is a [_minimum viable product_](https://en.wikipedia.org/wiki/Minimum_viable_product "minimum viable product"). This means it's not fully featured, but it provides something concrete for agencies to respond to. We hope you'll give it a try and [let us know what you think](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot").
 
 Official DATA Act guidance will continue to evolve, so the broker prototype doesn't represent the final version of the agency submission process, and the validations it performs aren't comprehensive.
 
@@ -46,29 +46,26 @@ To create data files that are compatible with this pilot:
 
 ### Submit data for validation
 
-This prototype is a sandbox. The website uses anonymized analytics to track overall traffic and usage, but it doesn't track who is logging on, and it won't send or store your data anywhere.
+This prototype is a sandbox. The website uses anonymized analytics to track overall traffic and usage, but it doesn't track who is logging on, and it won't send or store your data anywhere. When your four files are ready, contact Treasury's DATA Act Project Management Office (dataPMO@fiscal.treasury.gov) to set up an appointment to test the broker.
 
-1. Contact Treasury's DATA Act Project Management Office (dataPMO@fiscal.treasury.gov) to request access to the website.
-2. Go to the prototype website at https://data-act-pilot-v2.18f.gov/.
-3. When prompted, enter your _Name_ and _Password_.
-4. You should now be on a web page titled _Data Act Pilot_. In the _Broker_ part of the page, look for four boxes titled _Appropriation_, _Object Class Program Activity_, _Award_, and _Award Financial_.
+Below you can view the steps that you will go through to test your files in the prototype broker.
 
 ![broker](images/broker.png "broker")
 
-6. In one or more of the four boxes, click _Choose File_ to upload the data you've created.
-7. After you click _Choose File_, use the navigation that appears to find the file on your computer and click _Choose_.
+1. In one or more of the four boxes, click _Choose File_ to upload the data you've created.
+1. After you click _Choose File_, use the navigation that appears to find the file on your computer and click _Choose_.
 
-![choose file](images/choose-file.png "choose file")
+ ![choose file](images/choose-file.png "choose file")
 
-8. After you choose a file, the corresponding box on the main page will let you know you were successful by display the file's name in the box:
+1. After you choose a file, the corresponding box on the main page will let you know you were successful by display the file's name in the box:
 
-![files for validation](images/broker-with-files.png "chosen files")
+ ![files for validation](images/broker-with-files.png "chosen files")
 
-9. Continue choosing the files you want to upload and validate. You don't have to upload all four files, but it's important to make sure that the file you choose for each box matches the title. For example, you can't upload your _Appropriation_ file using the _Award_ box.
+1. Continue choosing the files you want to upload and validate. You don't have to upload all four files, but it's important to make sure that the file you choose for each box matches the title. For example, you can't upload your _Appropriation_ file using the _Award_ box.
 
-10. When you're done selecting the files to validate, click the _Validate Me_ button.
+1. When you're done selecting the files to validate, click the _Validate Me_ button.
 
-11. Once the validations are complete, the broker will display results on the website.
+1. Once the validations are complete, the broker will display results on the website.
 
 ## Review validation results
 
@@ -102,12 +99,12 @@ Click _View error details_ to see the specific errors. You can also download the
 
 ![error messages](images/error-messages.png "broker error messages")
 
-The image above is an example of a simple validation rule that failed: Some of the required fields were empty. You'll see a table like this for each row of the uploaded file that contains an error. Here are a few pointers for interpreting these messages:
+The image above is an example of simple validation rules that failed. You'll see a table like this for each row of the uploaded file that contains an error. Here are a few pointers for interpreting these messages:
 
 * Right above the table is some information meant to help track down the data causing the problem:
     * _Row_ is the row number in the uploaded file.
     * Following _Row_ are "key" fields in file. This example is the file that contains obligations and outlays by appropriations account, program activity, and object class. Thus, the error message displays TAS (_i.e._ appropriations account), object class, and program activity to help find the offending data in the source system.
 * For each row in the data that didn't pass validations, you'll see one or more _Field names_. This is the name of specific field that didn't pass.
-* For each _Field name_, you'll see an _Error_ that describes the problem. In this basic example, we're missing some required data.
+* For each _Field name_, you'll see a _Value_ that displays the data in question and an _Error_ that describes the problem. In this basic example, we're missing some required data and have provided text data for a field that expects integers.
 
 **Reminder:** use the _Download CSV_ link to download error messages to Excel or another spreadsheet application.
