@@ -99,12 +99,12 @@ Click _View error details_ to see the specific errors. You can also download the
 
 ![error messages](images/error-messages.png "broker error messages")
 
-The image above is an example of a simple validation rule that failed: Some of the required fields were empty. You'll see a table like this for each row of the uploaded file that contains an error. Here are a few pointers for interpreting these messages:
+The image above is an example of simple validation rules that failed. You'll see a table like this for each row of the uploaded file that contains an error. Here are a few pointers for interpreting these messages:
 
 * Right above the table is some information meant to help track down the data causing the problem:
     * _Row_ is the row number in the uploaded file.
     * Following _Row_ are "key" fields in file. This example is the file that contains obligations and outlays by appropriations account, program activity, and object class. Thus, the error message displays TAS (_i.e._ appropriations account), object class, and program activity to help find the offending data in the source system.
 * For each row in the data that didn't pass validations, you'll see one or more _Field names_. This is the name of specific field that didn't pass.
-* For each _Field name_, you'll see an _Error_ that describes the problem. In this basic example, we're missing some required data.
+* For each _Field name_, you'll see a _Value_ that displays the data in question and an _Error_ that describes the problem. In this basic example, we're missing some required data and have provided text data for a field that expects integers.
 
 **Reminder:** use the _Download CSV_ link to download error messages to Excel or another spreadsheet application.
