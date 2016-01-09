@@ -146,7 +146,7 @@ def hello_world():
         invalid_files = []
         for name in VALIDATION.keys():
             try:
-                dataframe = pd.read_csv(files[name].stream)
+                dataframe = pd.read_csv(files[name].stream, dtype='string')
                 dataframe = dataframe.fillna('')
                 dataframe = dataframe.applymap(strip_value)
                 files[name].seek(0)
