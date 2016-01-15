@@ -1,5 +1,5 @@
 fieldname,required,data_type,field_length,unique
-SubmittingAgencyId,TRUE,int,,TRUE
+SubmittingAgencyId,TRUE,int,3,TRUE
 PackageSubmissionDate,TRUE,str,10,FALSE
 ReportingPeriod/MeasureDate,TRUE,str,10,FALSE
 TreasuryAccountSymbolEntryID,TRUE,int,5,TRUE
