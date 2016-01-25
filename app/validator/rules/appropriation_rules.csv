@@ -33,4 +33,4 @@ AvailableForObligationAmountTotal,True,float,100,False
 ObligationsIncurredTotal,True,float,100,False
 ObligationsAmountTotal,True,float,100,False
 OutlaysAmountTotal,True,float,100,False
-UnobligatedAmountTotal,True,float,101,False
+UnobligatedAmountTotal,True,float,100,False
