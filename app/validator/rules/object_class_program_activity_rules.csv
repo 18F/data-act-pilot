@@ -1,6 +1,4 @@
 fieldname,required,data_type,field_length,unique
-TreasuryAccountSymbolEntryID,False,int,5,True
-TreasuryAccountSymbolCommonRenderingLabel,False,str,23,False
 AllocationTransferRecipientAgencyId,True,int,3,False
 AppropriationAccountResponsibleAgencyid,False,int,3,False
 ObligationUnlimitedAvailabilityPeriodIndicator,False,str,1,False
