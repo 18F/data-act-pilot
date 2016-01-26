@@ -12,7 +12,7 @@ ERROR_STRINGS = {
                   '(fieldname, length)')
 }
 TAS_KEY_IDENTIFIERS = [
-    'AllocationTransferAgencyIdentifier',
+    'AllocationTransferRecipientAgencyId',
     'AgencyIdentifier',
     'BeginningPeriodOfAvailability',
     'EndingPeriodOfAvailability',
@@ -117,12 +117,13 @@ class Validator(object):
         return result
 
     def build_tas(self, data):
-        key = ''
-        for field in TAS_KEY_IDENTIFIERS:
-            if data[field]:
-                key += str(data[field]) + '-'
+        #key = ''
+        #for field in TAS_KEY_IDENTIFIERS:
+         #   if data[field]:
+          #      key += str(data[field]) + '-'
 
-        return key[:-1]
+        #return key[:-1]
+        return "" # just return blank string since TAS fields changed
 
     def build_key(self, data, fields):
         keys = {}

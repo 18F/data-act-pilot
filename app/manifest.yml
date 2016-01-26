@@ -2,7 +2,8 @@
 #all applications use these settings and services
 applications:
 - name: data-act-pilot
-  memory: 1024M
+  memory: 524M
+  buildpack: python_buildpack
   command: "python app.py"
 #  instances: 1
   #path: ./app
