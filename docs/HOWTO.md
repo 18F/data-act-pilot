@@ -36,13 +36,11 @@ These files roughly correspond to the _Relationships_ diagram in the _Data Act E
 
 To create data files that are compatible with this pilot:
 
-1. Review Treasury's [_DATA Act Elements Guidance_](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "DATA Act Elements Guidance").
+1. Review Treasury's [_DATA Act Elements Guidance_](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "DATA Act Elements Guidance") (version DATA Act Elements Guidance_v0.1.4.1 - 12-31-15).
 
-2. Review the latest [_Reporting Submission Specification (RSS)_] LINK to RSS HERE for the prototype broker. The RSS provides the specification of the agency financial and award data through the prototype broker and is consistent with the [_DATA Act Information Model Schema (DAIMS) v0.7_](http://fedspendingtransparency.github.io/data-exchange-standard/ "DATA Act Information Model Schema v0.7")
+2. For a better idea of what data the website expects, take a look at [these sample files](../data/dummy "DATA Act broker dummy data") filled out with dummy data.
 
-3. For a better idea of what data the website expects, take a look at [these sample files](../data/dummy "DATA Act broker dummy data") filled out with dummy data.
-
-4. Based on your system inventory and mapping work, create the four files and populate them with data. The order of the columns in each file doesn't matter, but it's important that the column names match those used shown on the templates and dummy data.
+3. Based on your system inventory and mapping work, create the four files and populate them with data. The order of the columns in each file doesn't matter, but it's important that the column names match those used shown on the templates and dummy data.
 
 ### Submit data for validation
 
