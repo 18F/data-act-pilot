@@ -12,7 +12,7 @@ Official DATA Act guidance will continue to evolve, so the broker prototype does
 
 Agencies can use the prototype website for:
 * A better understanding of what the submission process is like
-* A chance to [provide feedback](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot") on this process and the experience of using the broker 
+* A chance to [provide feedback](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot") on this process and the experience of using the broker
 * A first, high-level validation check of files created for the DATA Act
 
 For a more comprehensive background about the project and submission process we're testing, [watch the pilot's screencast](https://github.com/18F/data-act-pilot/blob/master/assets/screencast/data_act_pilot_screencast_sept_2015.avi?raw=true "download screencast").
