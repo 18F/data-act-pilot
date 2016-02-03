@@ -1,17 +1,17 @@
-# Use the DATA Act broker prototype
+# How To Use the DATA Act prototype broker
 
 Welcome! If you're a U.S. federal employee and want to explore this early prototype of the DATA Act broker, you're in the right place.
 
-## What you can do
+## What can be done with the prototype
 
-The hosted version of the prototype is a sandbox where you can run your agency's DATA Act data through an early version of the validation and conversion process.
+The hosted version of the prototype is a 'sandbox' where you can run your agency's DATA Act data through an early version of the validation and conversion process.
 
-The pilot team's top priority was understanding how the agency data submission process might work and getting early feedback. The resulting prototype website is a [_minimum viable product_](https://en.wikipedia.org/wiki/Minimum_viable_product "minimum viable product"). This means it's not fully featured, but it provides something concrete for agencies to respond to. We hope you'll give it a try and [let us know what you think](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot").
+The pilot team's top priority in creating the prototype broker was understanding how the agency data submission process will work and getting early feedback. The resulting prototype website is a [_minimum viable product_](https://en.wikipedia.org/wiki/Minimum_viable_product "minimum viable product"). This means it's not fully featured, but it provides something concrete for agencies to respond to. We hope you'll give it a try and [let us know what you think](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot").
 
-Official DATA Act guidance will continue to evolve, so the broker prototype doesn't represent the final version of the agency submission process, and the validations it performs aren't comprehensive.
+Official DATA Act guidance will continue to evolve, so the broker prototype doesn't represent the final version of the agency submission process, and the validations it performs aren't complete. Rather, the validations for this prototype broker only check for basic, simple validations such as field name, field length, data type, and required/optional.
 
 Agencies can use the prototype website for:
-* A better understanding of what the submission process might look like
+* A better understanding of what the submission process is like
 * A chance to [provide feedback](CONTRIBUTING.md "give feedback or ask a question about the DATA Act broker pilot") on this process and the experience of using the broker
 * A first, high-level validation check of files created for the DATA Act
 
@@ -19,26 +19,24 @@ For a more comprehensive background about the project and submission process we'
 
 ## How to use the prototype
 
-The broker prototype website is only open to federal employees. This is a security restriction. If you're not a federal employee, the screencast provides a good overview of the site.
+The prototype broker website is only open to federal employees. This is a security restriction. If you're not a federal employee, the screencast provides a good overview of the site.
 
 ### Prepare your data
 
-If you've made progress on data inventory and mapping, you should be able to create the four data files used in this pilot. You can still go through the process with just one or two awards, which can be a useful way to get started and get additional insights into your agency's readiness.
+If you've made progress on data inventory and mapping, you should be able to create the four data files used in this pilot. You can still go through the process with just one or two records, which can be a useful way to get started and get additional insights into your agency's readiness.
 
 The pilot currently expects DATA Act data in four separate files:
 
-1. Appropriation
-2. Object Class Program Activity
-3. Award
-4. Award Financial
+1. [Appropriation (File A)](https://github.com/18F/data-act-pilot/blob/master/app/validator/rules/appropriation_rules.csv "Appropriation Rules")
+2. [Object Class Program Activity (File B)](https://github.com/18F/data-act-pilot/blob/master/app/validator/rules/object_class_program_activity_rules.csv "Object Class Program Activity Rules")
+3. [Award Financial (File C)](https://github.com/18F/data-act-pilot/blob/master/app/validator/rules/award_financial_rules.csv "Award Financial")
+4. [Award (File D)](https://github.com/18F/data-act-pilot/blob/master/app/validator/rules/award_rules.csv "Award Rules")
 
-These files roughly correspond to the _Relationships_ diagram in the _Data Act Elements Guidance_ published by Treasury and [available on MAX](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "Data Act Elements Guidance"). However, there are a few differences:
-* This pilot combines award attributes and awardee attributes into a single file.
-* This pilot's scope was the original 83 DATA Act elements, so it ignores the _Additional Required Elements_ from USAspending that are included in Treasury's Data Element Guidance.
+These files roughly correspond to the _Relationships_ diagram in the _Data Act Elements Guidance_ published by Treasury and [available on MAX](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "Data Act Elements Guidance"). 
 
 To create data files that are compatible with this pilot:
 
-1. Review Treasury's [_Data Act Elements Guidance_](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "Data Act Elements Guidance"). The _DATA Act field name(s)_ columns in those worksheets show the column headings expected in each of the four .csv files.
+1. Review Treasury's [_DATA Act Elements Guidance_](https://community.max.gov/display/Management/B%3A+DATA+Act+Elements+Guidance "DATA Act Elements Guidance") (version DATA Act Elements Guidance_v0.1.4.1 - 12-31-15).
 
 2. For a better idea of what data the website expects, take a look at [these sample files](../data/dummy "DATA Act broker dummy data") filled out with dummy data.
 
@@ -46,7 +44,7 @@ To create data files that are compatible with this pilot:
 
 ### Submit data for validation
 
-This prototype is a sandbox. The website uses anonymized analytics to track overall traffic and usage, but it doesn't track who is logging on, and it won't send or store your data anywhere. When your four files are ready, contact Treasury's DATA Act Project Management Office (dataPMO@fiscal.treasury.gov) to set up an appointment to test the broker.
+This prototype is a 'sandbox.' The website uses anonymized analytics to track overall traffic and usage, but it doesn't track who is logging on, and it won't send or store your data anywhere. When your four files are ready, contact Treasury's DATA Act Program Management Office (DATAPMO@fiscal.treasury.gov) to set up an appointment to test the broker. Because of security restrictions, the sandbox in an in-person sandbox -- meaning that Treasury will provide the environment and when you bring your data, we will help you walk through the process of submitting data. You will be aided by the DATA Act PMO to ensure that you maximize your experience with the sandbox.
 
 Below you can view the steps that you will go through to test your files in the prototype broker.
 
