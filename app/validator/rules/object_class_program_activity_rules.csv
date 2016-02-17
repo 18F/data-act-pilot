@@ -1,6 +1,6 @@
 fieldname,required,data_type,field_length,unique
-AllocationTransferAgencyIdentifier,True,int,3,False
-AgencyIdentifier,False,int,3,False
+AllocationTransferAgencyIdentifier,False,int,3,False
+AgencyIdentifier,True,int,3,False
 AvailabilityTypeCode,False,str,1,False
 BeginningPeriodOfAvailability,False,int,4,False
 ObligationAvailabilityPeriodStartDate,False,str,10,False
