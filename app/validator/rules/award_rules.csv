@@ -9,7 +9,7 @@ piidAwardNumber,False,str,8,False
 FainAwardNumber,False,str,30,False
 AwardModAmendmentNumber,True,int,50,False
 FederalPrimeAward,True,str,1,False
-TypeOfContractPricing,True,str,1,False
+TypeOfContractPricing,False,str,1,False
 ContractAwardType,False,str,1,False
 NAICS_Code,False,str,6,False
 NAICS_Description,False,str,150,False
@@ -18,7 +18,7 @@ CFDA_Number,False,str,7,False
 CFDA_Title,False,str,100,False
 AwardRecipientUniqueIdentifier,True,int,9,False
 AwardRecipientIdType,True,int,23,False
-BusinessTypes,True,int,2,False
+BusinessTypes,False,int,2,False
 AwardDescription,True,str,4000,False
 WebSiteUrl,False,str,100,False
 PlaceOfPerfStreetLine1,False,str,150,False
